@@ -28,7 +28,7 @@ namespace Prototype.Scripts
                 }
                 else
                 {
-                    StartCoroutine(waveManager.StartWave());
+                    //StartCoroutine(waveManager.StartWave());
                 }
                 yield return null;
             }
