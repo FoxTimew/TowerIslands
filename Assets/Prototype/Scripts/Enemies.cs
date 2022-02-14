@@ -19,7 +19,7 @@ namespace Prototype.Scripts
         {
             if (!enemies.Contains(enemy)) return;
             enemies.Find(e => e == enemy).target = tower;
-            enemy.Move();
+            enemies.Find(e => e == enemy).MoveToTarget();
         }
     }
 }

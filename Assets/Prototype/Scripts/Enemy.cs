@@ -19,7 +19,7 @@ namespace Prototype.Scripts
             tween = transform.DOMove(Vector3.zero, 12);
             health = enemySO.maxHp;
             Enemies.instance.enemies.Add(this);
-            Move();
+            MoveToTarget();
         }
         
         private void OnEnable()
@@ -32,12 +32,11 @@ namespace Prototype.Scripts
             throw new NotImplementedException();
         }
 
-        public void Move()
+        public void MoveToTarget()
         {
-            if(tween.active) tween.Kill();
             var distance = (transform.position - target.transform.position).magnitude;
             var time = distance / enemySO.moveSpeed;
-            tween = transform.DOMove(target.transform.position,time).SetEase(Ease.Linear);
+            tween = transform.DOMove(target.transform.position, time).SetEase(Ease.Linear);
         }
     }
 }
