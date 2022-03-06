@@ -77,7 +77,9 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         shooting = true;
         //Shoot
-        Instantiate(bulletPrefab, transform.position, Quaternion.identity).SetTarget(targets[0]);
+        GameObject bulletTemp = Pooler.instance.Pop("Bullet");
+        Pooler.instance.DelayedDepop( 2f,"Bullet", bulletTemp);
+        Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(targets[0], stats.bulletSpeed);
         yield return new WaitForSeconds(1/stats.attackSpeed);
         
         shooting = false;

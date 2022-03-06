@@ -22,3 +22,4 @@ MonoBehaviour:
   range: 2
   maxTargets: 1
   priority: 0
+  bulletSpeed: 5

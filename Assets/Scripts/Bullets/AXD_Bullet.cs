@@ -7,16 +7,23 @@ using UnityEngine;
 public class AXD_Bullet : MonoBehaviour
 {
     private GameObject target;
-    private float speed;
-    
+
+    [SerializeField]
+    private float speed { get; set; }
+
     private void Update()
     {
         if (target != null)
         {
-            transform.DOMove((target.transform.position - transform.position), speed*Time.deltaTime, false );
+            transform.DOMove(target.transform.position,(target.transform.position - transform.position).magnitude/speed , false );
         }
     }
 
+    public void Shoot(GameObject targetToSet, float speedToSet)
+    {
+        SetTarget(targetToSet);
+        speed = speedToSet;
+    }
     public void SetTarget(GameObject targetToSet)
     {
         target = targetToSet;
@@ -26,8 +33,7 @@ public class AXD_Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-            //Infliger des dégâts à l'ennemi
-            //Remettre le projectile dans le pooler
+            Pooler.instance.Depop("Bullet", gameObject);
             Destroy(this);
         }
     }

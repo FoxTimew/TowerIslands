@@ -18,4 +18,6 @@ public class AXD_TowerStatsSO : AXD_BuildingSO
 
     [field: SerializeField] public TargetPriority priority;
 
+    [field: SerializeField] public float bulletSpeed;
+
 }
