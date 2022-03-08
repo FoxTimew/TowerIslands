@@ -35,7 +35,6 @@ public class Pooler : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-                
         DontDestroyOnLoad(gameObject);
         instance = this;
 

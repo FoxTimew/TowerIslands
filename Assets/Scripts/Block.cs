@@ -8,7 +8,13 @@ public class Block : MonoBehaviour
     [SerializeField] private List<Block> adjacentBlocks;
     public int energy = 2;
 
+    public bool selected;
 
+    [SerializeField] private Material selectedMat;
+    [SerializeField] private Material initMat;
+
+    [SerializeField] private MeshRenderer meshRenderer;
+    
     Vector3[] InitAdajacents()
     {
         float posX = transform.position.x;
@@ -30,6 +36,21 @@ public class Block : MonoBehaviour
             adjacentBlocks.Add(GameManager.instance.blocks[adj]);
         }
     }
+
+
+    public void Select()
+    {
+        selected = true;
+        meshRenderer.material = selectedMat;
+    }
+
+    public void Deselect()
+    {
+        selected = false;
+        meshRenderer.material = initMat;
+    }
+    
+    
 
     
 

@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] private Camera cam;
+
     [SerializeField] private  Block[] baseBlock;
-    
-    
+
+    public Block selectedBlock;
     public Dictionary<Vector3, Block> blocks = new Dictionary<Vector3, Block>();
 
 
@@ -35,5 +37,29 @@ public class GameManager : MonoBehaviour
     }
     
     #endregion
-    
+
+
+    private void Update()
+    {
+        
+        if (Input.touchCount > 0)
+        {
+            
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = cam.ScreenPointToRay(touch.position);
+                RaycastHit hit;
+                if(Physics.Raycast(ray,out hit))
+                {
+                    if(selectedBlock is not null) selectedBlock.Deselect();
+                    if (hit.transform.GetComponent<Block>())
+                    {
+                        selectedBlock = blocks[hit.transform.position];
+                        selectedBlock.Select();
+                    }
+                }
+            }
+        }
+    }
 }
