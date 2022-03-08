@@ -7,9 +7,12 @@ public class Block : MonoBehaviour
 {
     [SerializeField] private List<Block> adjacentBlocks;
     public int energy = 2;
-
+ 
+        
     public bool selected;
 
+    [SerializeField] private GameObject building;
+    
     [SerializeField] private Material selectedMat;
     [SerializeField] private Material initMat;
 
@@ -49,7 +52,16 @@ public class Block : MonoBehaviour
         selected = false;
         meshRenderer.material = initMat;
     }
-    
+
+    public int GetMaxEnergy()
+    {
+        int result = energy;
+        foreach (var block in adjacentBlocks)
+        {
+            result += block.energy;
+        }
+        return result;
+    }
     
 
     
