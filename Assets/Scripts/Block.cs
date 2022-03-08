@@ -18,7 +18,7 @@ public class Block : MonoBehaviour
 
     [SerializeField] private MeshRenderer meshRenderer;
     
-    Vector3[] InitAdajacents()
+    Vector3[] InitAdjacents()
     {
         float posX = transform.position.x;
         float posZ = transform.position.z;
@@ -33,7 +33,7 @@ public class Block : MonoBehaviour
     
     public void FindAdjacents()
     {
-        foreach (Vector3 adj in InitAdajacents())
+        foreach (Vector3 adj in InitAdjacents())
         {
             if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
             adjacentBlocks.Add(GameManager.instance.blocks[adj]);

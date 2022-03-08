@@ -84,5 +84,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
+    public void Build()
+    {
+        GameObject building = Pooler.instance.Pop("Tower");
+        building.transform.parent = selectedBlock.transform;
+        building.transform.localPosition = Vector3.up;
+        selectedBlock.energy -= 2;
+    }
 }
