@@ -30,15 +30,14 @@ public class Pooler : MonoBehaviour
 
     void Awake()
     {
-        void Awake() {
-            if (instance != null) {
-                Destroy(gameObject);
-                return;
-            }
-        
-            DontDestroyOnLoad(gameObject);
-            Instance = this;
+        if (instance != null) 
+        { 
+            Destroy(gameObject);
+            return;
         }
+                
+        DontDestroyOnLoad(gameObject);
+        instance = this;
 
         InitPools();
         PopulatePools();
