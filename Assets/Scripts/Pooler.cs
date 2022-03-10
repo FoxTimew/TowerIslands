@@ -38,6 +38,12 @@ public class Pooler : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         instance = this;
 
+        if (instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+        instance = this;
         InitPools();
         PopulatePools();
     }
