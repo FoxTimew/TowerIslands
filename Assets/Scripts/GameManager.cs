@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -70,6 +71,8 @@ public class GameManager : MonoBehaviour
                 RaycastHit hit;
                 if(Physics.Raycast(ray,out hit))
                 {
+                    bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject();
+                    if (isOverUI) return;
                     if(selectedBlock is not null) selectedBlock.Deselect();
                     uiManager.CloseBlockUI();
                     if (hit.transform.GetComponent<Block>())
