@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class AXD_Bullet : MonoBehaviour
 {
-    private GameObject target;
+    private Enemy target;
+    private AXD_TowerShoot originTower;
 
     [SerializeField]
     private float speed { get; set; }
@@ -19,22 +20,31 @@ public class AXD_Bullet : MonoBehaviour
         }
     }
 
-    public void Shoot(GameObject targetToSet, float speedToSet)
+    public void Shoot(AXD_TowerShoot origin, Enemy targetToSet, float speedToSet)
     {
+        originTower = origin;
         SetTarget(targetToSet);
         speed = speedToSet;
     }
-    public void SetTarget(GameObject targetToSet)
+    public void SetTarget(Enemy targetToSet)
     {
         target = targetToSet;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        Debug.Log("Bonk");
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            
             Pooler.instance.Depop("Bullet", gameObject);
-            Destroy(this);
+            Enemy tmpEnemy = collision.gameObject.GetComponent<Enemy>();
+            if (tmpEnemy.TakeDamage(originTower.GetDamageType(),originTower.GetDamage()))
+            {
+                //Si l'enemy est détruit par le coup
+                originTower.RemoveTargetFromTargets(tmpEnemy);
+                originTower.RemoveTargetFromEnemiesWithinRange(tmpEnemy);
+            }
         }
     }
 }
