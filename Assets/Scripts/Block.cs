@@ -16,9 +16,9 @@ public class Block : MonoBehaviour
     [SerializeField] private Material selectedMat;
     [SerializeField] private Material initMat;
 
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] public MeshRenderer meshRenderer;
     
-    Vector3[] InitAdjacents()
+    public Vector3[] InitAdjacents()
     {
         float posX = transform.position.x;
         float posZ = transform.position.z;

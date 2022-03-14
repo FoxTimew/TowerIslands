@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             while (building)
             {
-                SelectTower();
+                //SelectTower();
                 yield return null;
             }
             GameObject go = Pooler.instance.Pop("Enemy");
