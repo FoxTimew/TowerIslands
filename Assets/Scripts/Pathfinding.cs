@@ -38,15 +38,32 @@ public class Pathfinding : MonoBehaviour
         {
             if (((Vector2)block.transform.position - (Vector2)destination.transform.position).magnitude < (nextPos - (Vector2)destination.transform.position).magnitude)
             {
-                nextPos = block.transform.position;
+                if(CheckItslef(block))  
+                    nextPos = block.transform.position;
             }
         }
+
+        if (nextPos == pos) return;
         blocks[nextPos].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         finalPath.Enqueue(blocks[nextPos]);
         FindNearestBlock(nextPos);
         
     }
-    
+
+    bool CheckItslef(Block block)
+    {
+        Vector2 nextPos = block.transform.position;
+        foreach (var b in block.adjacentBlocks)
+        {
+            if (((Vector2)b.transform.position - (Vector2)destination.transform.position).magnitude < (nextPos - (Vector2)destination.transform.position).magnitude)
+            {
+                nextPos = b.transform.position;
+            }
+        }
+        if (nextPos == (Vector2)block.transform.position)
+            return false;
+        return true;
+    }
     public Vector2[] InitAdjacents(Vector2 pos)
     {
         return new[]
