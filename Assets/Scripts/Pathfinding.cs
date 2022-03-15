@@ -40,6 +40,7 @@ public class Pathfinding : MonoBehaviour
             {
                 if(CheckItslef(block))  
                     nextPos = block.transform.position;
+                
             }
         }
 
@@ -92,5 +93,7 @@ public class Pathfinding : MonoBehaviour
             enemy.transform.DOMove(finalPath.Dequeue().transform.position, 0.5f).SetEase(Ease.Linear);
             yield return new WaitForSeconds(0.5f);
         }
+        enemy.transform.DOMove(destination.transform.position, 0.5f).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(0.5f);
     }
 }
