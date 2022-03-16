@@ -28,19 +28,37 @@ public class Drag : MonoBehaviour
             }
             IsPlaceable();
             ChangeMat();
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if (IsPlaceable() == 2)
+                {
+                    foreach (var block in blocks)
+                        GameManager.instance.blocks.Add(block.transform.position,block);
+                    foreach (var block in blocks)
+                        block.AddToAdjacents();
+                    SetMat(initMat);
+                    enabled = false;
+                }
+                else
+                {
+                    Pooler.instance.Depop("Tetris",gameObject);
+                    GameManager.instance.buildButton.SetActive(true);
+                }
+            }
+
+           
         }
     }
 
     private int state = 0;
-    void IsPlaceable()
+    int IsPlaceable()
     {
         state = 0;
         foreach (var block in blocks)
         {
             if(GameManager.instance.blocks.ContainsKey(block.transform.position))
             {
-                state = 1;
-                return;
+                return 1;
             }
             foreach (var vec in block.InitAdjacents())
             {
@@ -50,7 +68,7 @@ public class Drag : MonoBehaviour
                 }
             }
         }
-        Debug.Log(state);
+        return state;
     }
 
 
