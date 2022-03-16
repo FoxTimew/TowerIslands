@@ -40,6 +40,16 @@ public class Block : MonoBehaviour
         }
     }
 
+    public void AddToAdjacents()
+    {
+        foreach (Vector3 adj in InitAdjacents())
+        {
+            if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
+            if (GameManager.instance.blocks[adj].adjacentBlocks.Contains(this)) continue;
+            GameManager.instance.blocks[adj].adjacentBlocks.Add(this);
+        }
+    }
+
 
     public void Select()
     {
