@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] private List<Block> adjacentBlocks;
+    [SerializeField] public List<Block> adjacentBlocks;
     public int energy = 2;
  
         
