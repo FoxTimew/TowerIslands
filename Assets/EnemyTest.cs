@@ -12,27 +12,26 @@ public class EnemyTest : MonoBehaviour
     {
         transform.position = initPos.transform.position;
         Pathfinding pf = new Pathfinding();
-        List<Vector2> sheeeesh = new List<Vector2>();
+        List<Vector2> map = new List<Vector2>();
         foreach (var block in GameManager.instance.blocks.Values)
         {
-            sheeeesh.Add(block.transform.position);
+            map.Add(block.transform.position);
         }
-        List<Pathfinding.Node> sheeesh = Pathfinding.instance.FindPath(initPos.transform.position, destination.transform.position, sheeeesh);
+        List<Pathfinding.Node> path = Pathfinding.instance.FindPath(initPos.transform.position, destination.transform.position, map);
 
-        foreach (var node in sheeesh)
+        foreach (var node in path)
         {
-            Debug.Log(node.pos);
             GameManager.instance.blocks[node.pos].GetComponent<SpriteRenderer>().color = Color.green;
         }
 
-        //StartCoroutine(MoveEnemy(sheeesh));
+        StartCoroutine(MoveEnemy(path));
     }
     
-    IEnumerator MoveEnemy(List<Pathfinding.Node> sheeeesh)
+    IEnumerator MoveEnemy(List<Pathfinding.Node> path)
     {
-        for (int i = 0; i < sheeeesh.Count; i++)
+        for (int i = 0; i < path.Count; i++)
         {
-            transform.DOMove(sheeeesh[i].pos, 0.5f).SetEase(Ease.Linear);
+            transform.DOMove(path[i].pos, 0.5f).SetEase(Ease.Linear);
             yield return new WaitForSeconds(0.5f);
         }
         transform.DOMove(destination.transform.position, 0.5f).SetEase(Ease.Linear);

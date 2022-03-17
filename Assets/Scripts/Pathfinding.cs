@@ -45,9 +45,8 @@ public class Pathfinding
 
     public List<Node> FindPath(Vector2 start, Vector2 end, List<Vector2> map)
     {
-        Node startNode = new Node(start);
-        Node endNode = new Node(end);
-        toCheckList.Add(startNode);
+        
+
         foreach (var pos in map)
         {
             Node node = new Node(pos);
@@ -56,27 +55,26 @@ public class Pathfinding
             node.cameFrom = null;
             grid.Add(pos,node);
         }
-        
-        startNode.gCost = 0;
-        startNode.hCost = CalculateDistance(startNode, endNode);
-        startNode.CalculateFCost();
+        toCheckList.Add(grid[start]);
+        grid[start].gCost = 0;
+        grid[start].hCost = CalculateDistance(grid[start], grid[end]);
+        grid[start].CalculateFCost();
         while (toCheckList.Count > 0)
         {
             Node currentNode = GetLowestFCostNode(toCheckList);
-            if (currentNode.pos == endNode.pos)
-                return CalculatePath(endNode);
+            if (currentNode == grid[end])
+                return CalculatePath(grid[end]);
             toCheckList.Remove(currentNode);
             checkedList.Add(currentNode);
             foreach (var neighbour in NeighbourList(currentNode))
             {
                 if (checkedList.Contains(grid[neighbour])) continue;
-                Debug.Log(neighbour);
                 float tentativeGCost = currentNode.gCost + CalculateDistance(currentNode, grid[neighbour]);
                 if (tentativeGCost < grid[neighbour].gCost)
                 {
-                    grid[neighbour].cameFrom = currentNode;
+                    grid[neighbour].cameFrom = grid[currentNode.pos];
                     grid[neighbour].gCost = tentativeGCost;
-                    grid[neighbour].hCost = CalculateDistance(grid[neighbour], endNode);
+                    grid[neighbour].hCost = CalculateDistance(grid[neighbour], grid[end]);
                     grid[neighbour].CalculateFCost();
                     if (!toCheckList.Contains(grid[neighbour]))
                          toCheckList.Add(grid[neighbour]);
@@ -94,7 +92,11 @@ public class Pathfinding
             current.pos + new Vector2(0, 1),
             current.pos + new Vector2(1, 0),
             current.pos + new Vector2(0, -1),
-            current.pos + new Vector2(-1, 0)
+            current.pos + new Vector2(-1, 0),
+            // current.pos + new Vector2(1, 1),
+            // current.pos + new Vector2(-1, -1),
+            // current.pos + new Vector2(1, -1),
+            // current.pos + new Vector2(-1, 1)
             
         };
         foreach (var pos in neigbourPos)
@@ -129,17 +131,17 @@ public class Pathfinding
 
     private List<Node> CalculatePath(Node end)
     {
-        List<Node> paths = new List<Node>();
-        paths.Add(end);
+        List<Node> nodes = new List<Node>();
+        nodes.Add(end);
         Node current = end;
         while (current.cameFrom != null)
         {
-            paths.Add(current.cameFrom);
+            if (nodes.Contains(current.cameFrom)) continue;
+            nodes.Add(current.cameFrom);
             current = current.cameFrom;
         }
-
-        paths.Reverse();
-        return paths;
+        nodes.Reverse();
+        return nodes;
     }
 }
 
