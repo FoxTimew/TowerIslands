@@ -1,39 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-public class Pathfinding : MonoBehaviour
+public class Pathfinding
 {
-    private const int STRAIGHT_COST = 10;
-    private const int DIAGONAL_COST = 14;
-    
-    private Queue<Block> finalPath = new Queue<Block>();
+    public static Pathfinding instance;
 
-    [SerializeField] private Block initPos;
-    [SerializeField] private Block destination;
+    //private Queue<Block> finalPath = new Queue<Block>();
 
-    [SerializeField] private Block[] initBlocks;
+    private List<Node> toCheckList = new List<Node>();
+    private List<Node> checkedList = new List<Node>();
 
-    private Dictionary<Vector2, Block> blocks = new Dictionary<Vector2, Block>();
+    private Dictionary<Vector2, Node> grid = new Dictionary<Vector2, Node>();
 
-    [SerializeField] private GameObject enemy;
 
-    private List<Path> openList;
-    private List<Path> closedList = new List<Path>();
-    
-    public class Path
+    public Pathfinding()
+    {
+        instance = this;
+    }
+    public class Node
     {
         public Vector2 pos;
 
-        public int gCost;
-        public int hCost;
-        public int fCost;
+        public float gCost;
+        public float hCost;
+        public float fCost;
 
-        public Path cameFrom;
+        public Node cameFrom;
 
-        public Path(Vector2 pos)
+        public Node(Vector2 pos)
         {
             this.pos = pos;
         }
@@ -42,112 +41,81 @@ public class Pathfinding : MonoBehaviour
         {
             fCost = gCost + hCost;
         }
-        
-        
-    }
-    void Start()
-    {
-        foreach (var block in initBlocks)
-            blocks.Add(block.transform.position,block);
-        foreach (var block in blocks.Values)
-            FindAdjacents(block);
-
-        
-
-        /*initPos.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        enemy.transform.position = initPos.transform.position;
-        FindNearestBlock((Vector2)initPos.transform.position);
-        destination.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        StartCoroutine(MoveEnemy(finalPath.Count));*/
     }
 
-    public List<Path> FindPath()
+    public List<Node> FindPath(Vector2 start, Vector2 end, List<Vector2> map)
     {
-        Path start = new Path(initPos.transform.position);
-        Path end = new Path(destination.transform.position);
-        openList = new List<Path>() { start };
-
-        foreach (var block in blocks)
+        Node startNode = new Node(start);
+        Node endNode = new Node(end);
+        toCheckList.Add(startNode);
+        foreach (var pos in map)
         {
-            Path path = new Path(block.Key);
-            path.gCost = int.MaxValue;
-            path.CalculateFCost();
-            path.cameFrom = null;
+            Node node = new Node(pos);
+            node.gCost = int.MaxValue;
+            node.CalculateFCost();
+            node.cameFrom = null;
+            grid.Add(pos,node);
         }
-
-        start.gCost = 0;
-        start.hCost = CalculateDistance(start, end);
-        start.CalculateFCost();
-
-        while (openList.Count > 0)
+        
+        startNode.gCost = 0;
+        startNode.hCost = CalculateDistance(startNode, endNode);
+        startNode.CalculateFCost();
+        while (toCheckList.Count > 0)
         {
-            Path current = GetLowestFCostNode(openList);
-            if (current == end)
+            Node currentNode = GetLowestFCostNode(toCheckList);
+            if (currentNode.pos == endNode.pos)
+                return CalculatePath(endNode);
+            toCheckList.Remove(currentNode);
+            checkedList.Add(currentNode);
+            foreach (var neighbour in NeighbourList(currentNode))
             {
-                return CalculatePath(end);
-            }
-
-            openList.Remove(current);
-            closedList.Add(current);
-
-            foreach (var neighbour in GetNeighbourList(current))
-            {
-                if (closedList.Contains(neighbour)) continue;
-                int tentativeGCost = current.gCost + CalculateDistance(current, neighbour);
-                if (tentativeGCost < neighbour.gCost)
+                if (checkedList.Contains(grid[neighbour])) continue;
+                Debug.Log(neighbour);
+                float tentativeGCost = currentNode.gCost + CalculateDistance(currentNode, grid[neighbour]);
+                if (tentativeGCost < grid[neighbour].gCost)
                 {
-                    neighbour.cameFrom = current;
-                    neighbour.gCost = tentativeGCost;
-                    neighbour.hCost = CalculateDistance(neighbour, end);
-                    neighbour.CalculateFCost();
-                    if (!openList.Contains(neighbour))
-                    {
-                        openList.Add(neighbour);
-                    }
+                    grid[neighbour].cameFrom = currentNode;
+                    grid[neighbour].gCost = tentativeGCost;
+                    grid[neighbour].hCost = CalculateDistance(grid[neighbour], endNode);
+                    grid[neighbour].CalculateFCost();
+                    if (!toCheckList.Contains(grid[neighbour]))
+                         toCheckList.Add(grid[neighbour]);
                 }
             }
         }
-
         return null;
     }
 
-    private List<Path> GetNeighbourList(Path current)
+    private List<Vector2> NeighbourList(Node current)
     {
-        List<Path> neighbourList = new List<Path>();
-        foreach (var block in blocks[current.pos].adjacentBlocks)
+        List<Vector2> result = new List<Vector2>();
+        Vector2[] neigbourPos = new[]
         {
-            neighbourList.Add(new Path(block.transform.position));
-        }
-
-        return neighbourList;
-    }
-
-    private List<Path> CalculatePath(Path end)
-    {
-        List<Path> path = new List<Path>();
-        path.Add(end);
-        Path current = end;
-        while (current.cameFrom != null)
-        {
-            path.Add(current.cameFrom);
-            current = current.cameFrom;
+            current.pos + new Vector2(0, 1),
+            current.pos + new Vector2(1, 0),
+            current.pos + new Vector2(0, -1),
+            current.pos + new Vector2(-1, 0)
             
+        };
+        foreach (var pos in neigbourPos)
+        {
+            if (!grid.ContainsKey(pos)) continue;
+            result.Add(pos);
         }
-        path.Reverse();
-        return path;
+        return result;
     }
 
-    private int CalculateDistance(Path a, Path b)
+    private float CalculateDistance(Node a, Node b)
     {
-        int xDistance = (int)Mathf.Abs(a.pos.x - b.pos.x);
-        int yDistance = (int)Mathf.Abs(a.pos.y - b.pos.y);
-        int remaining = Mathf.Abs(xDistance - yDistance);
-        return DIAGONAL_COST * Mathf.Min(xDistance, yDistance) + STRAIGHT_COST * remaining;
+        float xDistance = Mathf.Abs(a.pos.x - b.pos.x);
+        float yDistance = Mathf.Abs(a.pos.y - b.pos.y);
+        float remaining = Mathf.Abs(xDistance - yDistance);
+        return 14 * Mathf.Min(xDistance, yDistance) + 10 * remaining;
     }
 
-    private Path GetLowestFCostNode(List<Path> pathList)
+    private Node GetLowestFCostNode(List<Node> pathList)
     {
-        Path lowestFCostNode = pathList[0];
+        Node lowestFCostNode = pathList[0];
         for (int i = 1; i < pathList.Count; i++)
         {
             if (pathList[i].fCost < lowestFCostNode.fCost)
@@ -158,75 +126,173 @@ public class Pathfinding : MonoBehaviour
 
         return lowestFCostNode;
     }
-    
-    void FindNearestBlock(Vector2 pos)
+
+    private List<Node> CalculatePath(Node end)
     {
-        if (pos == (Vector2)destination.transform.position) return;
-        Vector2 nextPos = pos;
-        foreach (var block in blocks[pos].adjacentBlocks)
+        List<Node> paths = new List<Node>();
+        paths.Add(end);
+        Node current = end;
+        while (current.cameFrom != null)
         {
-            if (((Vector2)block.transform.position - (Vector2)destination.transform.position).magnitude < (nextPos - (Vector2)destination.transform.position).magnitude)
-            {
-                if(CheckItslef(block))  
-                    nextPos = block.transform.position;
-                
-            }
+            paths.Add(current.cameFrom);
+            current = current.cameFrom;
         }
 
-        if (nextPos == pos) return;
-        blocks[nextPos].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-        finalPath.Enqueue(blocks[nextPos]);
-        FindNearestBlock(nextPos);
-        
-    }
-
-    bool CheckItslef(Block block)
-    {
-        Vector2 nextPos = block.transform.position;
-        foreach (var b in block.adjacentBlocks)
-        {
-            if (((Vector2)b.transform.position - (Vector2)destination.transform.position).magnitude < (nextPos - (Vector2)destination.transform.position).magnitude)
-            {
-                nextPos = b.transform.position;
-            }
-        }
-        if (nextPos == (Vector2)block.transform.position)
-            return false;
-        return true;
-    }
-    public Vector2[] InitAdjacents(Vector2 pos)
-    {
-        return new[]
-        {
-            new Vector2(pos.x+1,pos.y),
-            new Vector2(pos.x-1,pos.y),
-            new Vector2(pos.x,pos.y+1),
-            new Vector2(pos.x,pos.y-1),
-            new Vector2(pos.x+1,pos.y+1),
-            new Vector2(pos.x-1,pos.y-1),
-            new Vector2(pos.x-1,pos.y+1),
-            new Vector2(pos.x+1,pos.y-1),
-        };
-    }
-    public void FindAdjacents(Block block)
-    {
-        foreach (Vector3 adj in InitAdjacents(block.transform.position))
-        {
-            if (!blocks.ContainsKey(adj)) continue;
-            block.adjacentBlocks.Add(blocks[adj]);
-        }
-    }
-
-
-    IEnumerator MoveEnemy(int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            Debug.Log(finalPath.Peek().transform.position);
-            enemy.transform.DOMove(finalPath.Dequeue().transform.position, 0.5f).SetEase(Ease.Linear);
-            yield return new WaitForSeconds(0.5f);
-        }
-        enemy.transform.DOMove(destination.transform.position, 0.5f).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(0.5f);
+        paths.Reverse();
+        return paths;
     }
 }
+
+
+/*public List<Path> FindPath()
+{
+    Path start = new Path(initPos.transform.position);
+    Path end = new Path(destination.transform.position);
+    openList = new List<Path>();
+    openList.Add(start);
+
+    foreach (var block in blocks)
+    {
+        Path path = new Path(block.Key);
+        path.gCost = int.MaxValue;
+        path.CalculateFCost();
+        path.cameFrom = null;
+    }
+
+    start.gCost = 0;
+    start.hCost = CalculateDistance(start, end);
+    start.CalculateFCost();
+
+    while (openList.Count > 0)
+    {
+        Debug.Log(openList.Count);
+        Path current = GetLowestFCostNode(openList);
+        if (current == end)
+        {
+            return CalculatePath(end);
+        }
+
+        openList.Remove(current);
+        closedList.Add(current);
+
+        foreach (var neighbour in GetNeighbourList(current))
+        {
+            if (closedList.Contains(neighbour)) continue;
+            int tentativeGCost = current.gCost + CalculateDistance(current, neighbour);
+            if (tentativeGCost < neighbour.gCost)
+            {
+                neighbour.cameFrom = current;
+                neighbour.gCost = tentativeGCost;
+                neighbour.hCost = CalculateDistance(neighbour, end);
+                neighbour.CalculateFCost();
+                if (!openList.Contains(neighbour))
+                {
+                    openList.Add(neighbour);
+                }
+            }
+        }
+    }
+    return null;
+}
+
+private List<Path> GetNeighbourList(Path current)
+{
+    List<Path> neighbourList = new List<Path>();
+    foreach (var block in blocks[current.pos].adjacentBlocks)
+    {
+        neighbourList.Add(new Path(block.transform.position));
+    }
+
+    return neighbourList;
+}
+
+private List<Path> CalculatePath(Path end)
+{
+    List<Path> paths = new List<Path>();
+    paths.Add(end);
+    Path current = end;
+    while (current.cameFrom != null)
+    {
+        paths.Add(current.cameFrom);
+        current = current.cameFrom;
+        
+    }
+    paths.Reverse();
+    return paths;
+}
+
+
+
+
+
+void FindNearestBlock(Vector2 pos)
+{
+    if (pos == (Vector2)destination.transform.position) return;
+    Vector2 nextPos = pos;
+    foreach (var block in blocks[pos].adjacentBlocks)
+    {
+        if (((Vector2)block.transform.position - (Vector2)destination.transform.position).magnitude < (nextPos - (Vector2)destination.transform.position).magnitude)
+        {
+            if(CheckItslef(block))  
+                nextPos = block.transform.position;
+            
+        }
+    }
+
+    if (nextPos == pos) return;
+    blocks[nextPos].gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+    finalPath.Enqueue(blocks[nextPos]);
+    FindNearestBlock(nextPos);
+    
+}
+
+bool CheckItslef(Block block)
+{
+    Vector2 nextPos = block.transform.position;
+    foreach (var b in block.adjacentBlocks)
+    {
+        if (((Vector2)b.transform.position - (Vector2)destination.transform.position).magnitude < (nextPos - (Vector2)destination.transform.position).magnitude)
+        {
+            nextPos = b.transform.position;
+        }
+    }
+    if (nextPos == (Vector2)block.transform.position)
+        return false;
+    return true;
+}
+public Vector2[] InitAdjacents(Vector2 pos)
+{
+    return new[]
+    {
+        new Vector2(pos.x+1,pos.y),
+        new Vector2(pos.x-1,pos.y),
+        new Vector2(pos.x,pos.y+1),
+        new Vector2(pos.x,pos.y-1),
+        new Vector2(pos.x+1,pos.y+1),
+        new Vector2(pos.x-1,pos.y-1),
+        new Vector2(pos.x-1,pos.y+1),
+        new Vector2(pos.x+1,pos.y-1),
+    };
+}
+public void FindAdjacents(Block block)
+{
+    foreach (Vector3 adj in InitAdjacents(block.transform.position))
+    {
+        if (!blocks.ContainsKey(adj)) continue;
+        block.adjacentBlocks.Add(blocks[adj]);
+    }
+}
+
+
+IEnumerator MoveEnemy(int count)
+{
+    for (int i = 0; i < count; i++)
+    {
+        Debug.Log(finalPath.Peek().transform.position);
+        enemy.transform.DOMove(finalPath.Dequeue().transform.position, 0.5f).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(0.5f);
+    }
+    enemy.transform.DOMove(destination.transform.position, 0.5f).SetEase(Ease.Linear);
+    yield return new WaitForSeconds(0.5f);
+}
+}*/

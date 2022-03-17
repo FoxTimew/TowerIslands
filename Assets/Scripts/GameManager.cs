@@ -56,15 +56,16 @@ public class GameManager : MonoBehaviour
                 
         DontDestroyOnLoad(gameObject);
         instance = this;
-    }
-
-    void Start()
-    {
         foreach (var block in baseBlock)
             blocks.Add(block.transform.position,block);
         foreach (var block in blocks.Values)
             block.FindAdjacents();
-        StartCoroutine(GameLoop());
+    }
+
+    void Start()
+    {
+        
+        //StartCoroutine(GameLoop());
     }
     
     
