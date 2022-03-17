@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,35 +6,37 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] public List<Block> adjacentBlocks;
+    public List<Block> adjacentBlocks;
+    
     public int energy = 2;
- 
-        
+
     public bool selected;
-
-    [SerializeField] private GameObject building;
     
-    [SerializeField] private Material selectedMat;
-    [SerializeField] private Material initMat;
-
-    [SerializeField] public MeshRenderer meshRenderer;
     
-    public Vector3[] InitAdjacents()
+    #region Unity Methods
+
+    private void Start()
+    {
+        UpdateAdjacents();
+    }
+
+    #endregion
+    public Vector2[] InitAdjacents()
     {
         float posX = transform.position.x;
-        float posZ = transform.position.z;
+        float posY = transform.position.y;
         return new[]
         {
-            new Vector3(posX+1,0,posZ),
-            new Vector3(posX-1,0,posZ),
-            new Vector3(posX,0,posZ+1),
-            new Vector3(posX,0,posZ-1),
+            new Vector2(posX+0.5f,posY+0.25f),
+            new Vector2(posX+0.5f,posY-0.25f),
+            new Vector2(posX+0.5f,posY+0.25f),
+            new Vector2(posX-0.5f,posY-0.25f),
         };
     }
     
-    public void FindAdjacents()
+    public void UpdateAdjacents()
     {
-        foreach (Vector3 adj in InitAdjacents())
+        foreach (Vector2 adj in InitAdjacents())
         {
             if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
             adjacentBlocks.Add(GameManager.instance.blocks[adj]);
@@ -42,27 +45,14 @@ public class Block : MonoBehaviour
 
     public void AddToAdjacents()
     {
-        foreach (Vector3 adj in InitAdjacents())
+        foreach (Vector2 adj in InitAdjacents())
         {
             if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
             if (GameManager.instance.blocks[adj].adjacentBlocks.Contains(this)) continue;
             GameManager.instance.blocks[adj].adjacentBlocks.Add(this);
         }
     }
-
-
-    public void Select()
-    {
-        selected = true;
-        meshRenderer.material = selectedMat;
-    }
-
-    public void Deselect()
-    {
-        selected = false;
-        meshRenderer.material = initMat;
-    }
-
+    
     public int GetMaxEnergy()
     {
         int result = energy;

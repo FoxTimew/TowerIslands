@@ -27,7 +27,6 @@ public class Drag : MonoBehaviour
                 transform.position = new Vector3(posX, 0, posZ);
             }
             IsPlaceable();
-            ChangeMat();
             if (touch.phase == TouchPhase.Ended)
             {
                 if (IsPlaceable() == 2)
@@ -36,13 +35,11 @@ public class Drag : MonoBehaviour
                         GameManager.instance.blocks.Add(block.transform.position,block);
                     foreach (var block in blocks)
                         block.AddToAdjacents();
-                    SetMat(initMat);
                     enabled = false;
                 }
                 else
                 {
                     Pooler.instance.Depop("Tetris",gameObject);
-                    GameManager.instance.buildButton.SetActive(true);
                 }
             }
 
@@ -70,29 +67,5 @@ public class Drag : MonoBehaviour
         }
         return state;
     }
-
-
-    void ChangeMat()
-    {
-        switch (state)
-        {
-            case 0 :
-                SetMat(initMat);
-                break;
-            case 1 :
-                SetMat(cantPlaceMat);
-                break;
-            case 2 :
-                SetMat(canPlaceMat);
-                break;
-        }
-    }
     
-    void SetMat(Material mat)
-    {
-        foreach (var block in blocks)
-        {
-            block.meshRenderer.material = mat;
-        }
-    }
 }

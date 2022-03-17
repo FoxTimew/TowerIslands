@@ -9,22 +9,11 @@ using UnityEngine.Serialization;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
-    
-
-    public bool building = false;
-    public bool downtown = true;
-    
-    [SerializeField] private GameObject waveCanvas;
-    [SerializeField] private GameObject downtownCanvas;
-
-    public GameObject buildButton;
+    public Camera cam;
 
     [Header("Manager")] 
     [SerializeField] private UIManager uiManager;
     
-    
-    [SerializeField] private Camera cam;
     [SerializeField] private  Block[] baseBlock;
     
 
@@ -56,23 +45,24 @@ public class GameManager : MonoBehaviour
                 
         DontDestroyOnLoad(gameObject);
         instance = this;
+        cam.transparencySortMode = TransparencySortMode.CustomAxis;
+        cam.transparencySortAxis = Vector3.up;
+
         foreach (var block in baseBlock)
             blocks.Add(block.transform.position,block);
-        foreach (var block in blocks.Values)
-            block.FindAdjacents();
     }
 
     void Start()
     {
         
-        //StartCoroutine(GameLoop());
+        
     }
     
     
     #endregion
 
 
-    IEnumerator GameLoop()
+    /*IEnumerator GameLoop()
     {
         while (true)
         {
@@ -160,5 +150,5 @@ public class GameManager : MonoBehaviour
     {
         Pooler.instance.Pop("Tetris");
         buildButton.SetActive(false);
-    }
+    }*/
 }
