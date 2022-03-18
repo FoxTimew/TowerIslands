@@ -24,6 +24,8 @@ public class Drag : MonoBehaviour
             {
                 Touch touch = Input.GetTouch(0);
                 Vector3 pos = Camera.main.ScreenToWorldPoint(touch.position);
+                pos.y = RoundTo(pos.y, 0.25f);
+                pos.x = RoundTo(pos.x, 0.5f);
                 pos.z = 0;
                 transform.position = pos;
                 yield return null;
@@ -31,7 +33,11 @@ public class Drag : MonoBehaviour
             yield return null;
         }
     }
-    
+
+    private float RoundTo(float value, float step)
+    {
+        return Mathf.Round(value/step) * step;
+    }
     
 
     private int state = 0;
