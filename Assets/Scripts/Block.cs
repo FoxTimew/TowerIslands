@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+
+    public SpriteRenderer spriteRenderer;
     public List<Block> adjacentBlocks;
     
     public int energy = 2;
@@ -29,7 +31,7 @@ public class Block : MonoBehaviour
         {
             new Vector2(posX+0.5f,posY+0.25f),
             new Vector2(posX+0.5f,posY-0.25f),
-            new Vector2(posX+0.5f,posY+0.25f),
+            new Vector2(posX-0.5f,posY+0.25f),
             new Vector2(posX-0.5f,posY-0.25f),
         };
     }

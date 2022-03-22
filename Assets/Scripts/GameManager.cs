@@ -9,16 +9,18 @@ using UnityEngine.Serialization;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public GameObject blockGroup;
     public Camera cam;
 
     [Header("Manager")] 
-    [SerializeField] private UIManager uiManager;
+    public IslandCreator islandCreator;
     
     [SerializeField] private  Block[] baseBlock;
     
 
     public Block selectedBlock;
-    public Dictionary<Vector3, Block> blocks = new Dictionary<Vector3, Block>();
+    public Dictionary<Vector2, Block> blocks = new Dictionary<Vector2, Block>();
 
     public static bool IsPointerOverUI() {
         if (EventSystem.current.IsPointerOverGameObject()) {
@@ -52,16 +54,34 @@ public class GameManager : MonoBehaviour
             blocks.Add(block.transform.position,block);
     }
 
-    void Start()
-    {
-        
-        
-    }
-    
-    
     #endregion
 
 
+    private bool building;
+    public void StartLevel()
+    {
+        //building = true;
+        StartCoroutine(LevelCoroutine());
+    }
+
+    public void StartWave()
+    {
+        building = false;
+    }
+    
+    private IEnumerator LevelCoroutine()
+    {
+        while (building)
+        {
+            yield return null;
+        }
+
+        GameObject go = Pooler.instance.Pop("enemy");
+        go.transform.parent = null;
+        go.transform.position = new Vector3(-4.5f, -2.5f, 0);
+        yield return null;
+
+    }
     /*IEnumerator GameLoop()
     {
         while (true)

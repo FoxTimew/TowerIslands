@@ -89,14 +89,11 @@ public class Pathfinding
         List<Vector2> result = new List<Vector2>();
         Vector2[] neigbourPos = new[]
         {
-            current.pos + new Vector2(0, 1),
-            current.pos + new Vector2(1, 0),
-            current.pos + new Vector2(0, -1),
-            current.pos + new Vector2(-1, 0),
-            // current.pos + new Vector2(1, 1),
-            // current.pos + new Vector2(-1, -1),
-            // current.pos + new Vector2(1, -1),
-            // current.pos + new Vector2(-1, 1)
+            current.pos + new Vector2(0.5f, 0.25f),
+            current.pos + new Vector2(0.5f, -0.25f),
+            current.pos + new Vector2(-0.5f, -0.25f),
+            current.pos + new Vector2(-0.5f, 0.25f),
+            
             
         };
         foreach (var pos in neigbourPos)
