@@ -9,18 +9,24 @@ public class Block : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
     public List<Block> adjacentBlocks;
+
+
+    private Color baseColor;
     
+    
+    public AXD_TowerShoot tower;
     
     public int energy = 2;
 
     public bool selected;
-    
     
     #region Unity Methods
 
     private void Start()
     {
         UpdateAdjacents();
+        baseColor = spriteRenderer.color;
+        baseColor.a = 1;
     }
 
     #endregion
@@ -65,8 +71,16 @@ public class Block : MonoBehaviour
         }
         return result;
     }
-    
 
-    
+    public void Select()
+    {
+        spriteRenderer.color = Color.green;
+    }
 
+    public void Deselect()
+    {
+        spriteRenderer.color = baseColor;
+    }
+    
+    
 }

@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class AXD_TowerShoot : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] 
     private AXD_TowerStatsSO stats;
     [SerializeField]
     private List<Enemy> targets;
     [SerializeField]
     private List<Enemy> enemiesWithinRange;
     
+    public int hp { get; private set; }
     private bool shooting;
     
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         targets = new List<Enemy>();
         enemiesWithinRange = new List<Enemy>();
+        hp = stats.healthPoints;
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         if (targets.Count > 0 && !shooting)
         {
-            StartCoroutine(ShootCoroutine());
+            //StartCoroutine(ShootCoroutine());
         }
     }
     public void ChangeTargetToFirst()
@@ -38,6 +40,14 @@ public class AXD_TowerShoot : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int dmg)
+    {
+        hp -= dmg;
+        Debug.Log(hp);
+        if (hp <= 0)
+            Pooler.instance.Depop("Tower",gameObject);
+    }
+    
     public int GetDamage()
     {
         return stats.damage;

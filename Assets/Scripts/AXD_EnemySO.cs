@@ -9,7 +9,7 @@ public class AXD_EnemySO : ScriptableObject
     
     public int maxHealthPoints;
 
-    public float damage;
+    public int damage;
 
     public float attackSpeed;
 

@@ -67,6 +67,9 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);
+            if (GameManager.instance.blocks[path[i].pos].tower is not null)
+                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].tower));
+
             transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed);
@@ -94,13 +97,20 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("Direction", dir);
     }
 
-    IEnumerator Attack()
+    IEnumerator Attack(AXD_TowerShoot target)
     {
-        while (target.gameObject.activeSelf)
+        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
+        transform.DOMove(pos, (pos - transform.position).magnitude / enemyStats.speed)
+            .SetEase(Ease.Linear);
+        yield return new WaitForSeconds((pos - transform.position).magnitude / enemyStats.speed);
+        animator.SetInteger("Speed", 0);
+        while (target.hp > 0)
         {
-            
-        } 
-
-        yield return null;
+            animator.SetTrigger("Attack");
+            yield return new WaitForSeconds(enemyStats.attackSpeed);
+            target.TakeDamage(enemyStats.damage);
+        }
+        animator.SetTrigger("AttackEnd");
+        animator.SetInteger("Speed", 1);
     }
 }
