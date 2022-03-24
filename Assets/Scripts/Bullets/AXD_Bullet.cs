@@ -31,19 +31,19 @@ public class AXD_Bullet : MonoBehaviour
         target = targetToSet;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("Bonk");
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collider.gameObject.CompareTag("Enemy"))
         {
-            
             Pooler.instance.Depop("Bullet", gameObject);
-            Enemy tmpEnemy = collision.gameObject.GetComponent<Enemy>();
+            Enemy tmpEnemy = collider.gameObject.GetComponent<Enemy>();
             if (tmpEnemy.TakeDamage(originTower.GetDamageType(),originTower.GetDamage()))
             {
                 //Si l'enemy est détruit par le coup
                 originTower.RemoveTargetFromTargets(tmpEnemy);
                 originTower.RemoveTargetFromEnemiesWithinRange(tmpEnemy);
+                //Pooler.instance.Depop("Enemy", tmpEnemy.gameObject);
             }
         }
     }

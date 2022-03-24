@@ -452,7 +452,6 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 81f3fea1e85b49b4786d2fdb90ed31a2, type: 2}
   targets: []
   enemiesWithinRange: []
-  bulletPrefab: {fileID: 0}
 --- !u!1 &295218151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,7 +1802,7 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
@@ -1824,6 +1823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: poolKeys.Array.data[3].key
       value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
+        type: 3}
+      propertyPath: poolKeys.Array.data[4].key
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
@@ -1851,6 +1855,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
+      propertyPath: poolKeys.Array.data[4].pool.prefab
+      value: 
+      objectReference: {fileID: 6677225549744860415, guid: 586b280d0792ff743b5bdf76fc7124d0,
+        type: 3}
+    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
+        type: 3}
       propertyPath: poolKeys.Array.data[1].pool.baseCount
       value: 1
       objectReference: {fileID: 0}
@@ -1866,6 +1876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
+      propertyPath: poolKeys.Array.data[4].pool.baseCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
+        type: 3}
       propertyPath: poolKeys.Array.data[1].pool.baseRefreshSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -1877,6 +1892,11 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[3].pool.baseRefreshSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
+        type: 3}
+      propertyPath: poolKeys.Array.data[4].pool.baseRefreshSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7260527157548714834, guid: ab4f85309bc218a408ec2a2d958b80fb,
@@ -1958,26 +1978,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5066609975313469029, guid: d05fbcc84e77a6744b608bb2d82c1097,
+    - target: {fileID: 3899570175725506603, guid: d05fbcc84e77a6744b608bb2d82c1097,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -830306029, guid: 509905244854670448a67ea8b204f457,
-        type: 3}
-    - target: {fileID: 5066609975313469029, guid: d05fbcc84e77a6744b608bb2d82c1097,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 5066609975313469029, guid: d05fbcc84e77a6744b608bb2d82c1097,
+    - target: {fileID: 3899570175725506603, guid: d05fbcc84e77a6744b608bb2d82c1097,
         type: 3}
-      propertyPath: m_Color.g
-      value: 1
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.12
       objectReference: {fileID: 0}
-    - target: {fileID: 5066609975313469029, guid: d05fbcc84e77a6744b608bb2d82c1097,
+    - target: {fileID: 3899570175725506603, guid: d05fbcc84e77a6744b608bb2d82c1097,
         type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 6932898355827383686, guid: d05fbcc84e77a6744b608bb2d82c1097,
         type: 3}
@@ -4009,8 +4023,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1306280427
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 37f9eee2270843b4d9c6cc6944e8431c, type: 3}
   m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}

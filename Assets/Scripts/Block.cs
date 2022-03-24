@@ -10,6 +10,7 @@ public class Block : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public List<Block> adjacentBlocks;
     
+    
     public int energy = 2;
 
     public bool selected;

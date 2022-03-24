@@ -7,7 +7,7 @@ public class Drag : MonoBehaviour
     [SerializeField] private Block[] blocks;
     private void Start()
     {
-        
+    
         StartCoroutine(WaitForRelease());
     }
 
@@ -15,6 +15,7 @@ public class Drag : MonoBehaviour
     {
         var place = false;
         Color color;
+        yield return new WaitForSeconds(0.1f);
         while (Input.touchCount == 0) yield return null;
         while (gameObject.activeSelf)
         {

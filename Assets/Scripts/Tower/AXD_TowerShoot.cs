@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class AXD_TowerShoot : MonoBehaviour
@@ -11,9 +12,7 @@ public class AXD_TowerShoot : MonoBehaviour
     private List<Enemy> targets;
     [SerializeField]
     private List<Enemy> enemiesWithinRange;
-
-    [SerializeField] private AXD_Bullet bulletPrefab;
-
+    
     private bool shooting;
     
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         if (targets.Count > 0 && !shooting)
         {
-            //StartCoroutine(ShootCoroutine());
+            StartCoroutine(ShootCoroutine());
         }
     }
     public void ChangeTargetToFirst()
@@ -98,7 +97,11 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         shooting = true;
         //Shoot
-        Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
+        GameObject go = Pooler.instance.Pop("Bullet");
+        go.transform.position = transform.position + Vector3.up;
+        go.GetComponent<AXD_Bullet>().Shoot(this, targets[0], stats.bulletSpeed);
+        Pooler.instance.DelayedDepop(2,"Bullet",go);
+        //Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
         yield return new WaitForSeconds(1/stats.attackSpeed);
         
         shooting = false;

@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]
-    private AXD_EnemySO enemyStats;
+    [SerializeField] private AXD_EnemySO enemyStats;
 
     [SerializeField] private Animator animator;
     private Block initPos;
     private Block destination;
+
+
+    private AXD_TowerShoot target;
+
     private int currentHP { get; set; }
 
     private void Start()
@@ -20,34 +23,36 @@ public class Enemy : MonoBehaviour
         StartCoroutine(MoveEnemy());
     }
 
-    public bool TakeDamage(DamageType damageType,int damageToTake)
+    public bool TakeDamage(DamageType damageType, int damageToTake)
     {
-        if (damageToTake >= currentHP)
+        currentHP -= damageToTake;
+        if (currentHP <= 0)
         {
             currentHP = 0;
-            Pooler.instance.Depop("Enemy", this.gameObject);
+            Pooler.instance.Depop("enemy",gameObject);
             return true;
         }
-        currentHP -= damageToTake;
+        Debug.Log(currentHP);
         return false;
     }
-    
+
     IEnumerator MoveEnemy()
     {
-        animator.SetInteger("Speed",1);
+        animator.SetInteger("Speed", 1);
         destination = GameManager.instance.blocks[new Vector2(0, -0.25f)];
-        var des = Vector2.one * int.MaxValue; 
+        var des = Vector2.one * int.MaxValue;
         foreach (var pos in GameManager.instance.blocks.Keys)
         {
-            if ((transform.position - (Vector3)des).magnitude > (transform.position - (Vector3)pos).magnitude)
+            if ((transform.position - (Vector3) des).magnitude > (transform.position - (Vector3) pos).magnitude)
             {
                 des = pos;
             }
         }
-        CheckDirection(transform.position,des);
-        transform.DOMove(des, 2f).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(2f);
-        
+
+        CheckDirection(transform.position, des);
+        transform.DOMove(des, ((Vector3) des - transform.position).magnitude / enemyStats.speed).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(((Vector3) des - transform.position).magnitude / enemyStats.speed);
+
         initPos = GameManager.instance.blocks[transform.position];
         Pathfinding pf = new Pathfinding();
         List<Vector2> map = new List<Vector2>();
@@ -55,18 +60,19 @@ public class Enemy : MonoBehaviour
         {
             map.Add(block.transform.position);
         }
+
         List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, map);
 
-        
+
         for (int i = 0; i < path.Count; i++)
         {
-            CheckDirection(transform.position,path[i].pos);
-            transform.DOMove(path[i].pos, 0.5f).SetEase(Ease.Linear);
-            yield return new WaitForSeconds(0.5f);
+            CheckDirection(transform.position, path[i].pos);
+            transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed)
+                .SetEase(Ease.Linear);
+            yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed);
         }
-        animator.SetInteger("Speed",0);
-        //transform.DOMove(destination.transform.position, 0.5f).SetEase(Ease.Linear);
-        //yield return new WaitForSeconds(0.5f);
+
+        animator.SetInteger("Speed", 0);
     }
 
     void CheckDirection(Vector2 pos, Vector2 des)
@@ -83,27 +89,18 @@ public class Enemy : MonoBehaviour
         if (signX > 0 && signY > 0) dir = 1;
         if (signX > 0 && signY < 0) dir = 2;
         if (signX < 0 && signY < 0) dir = 3;
-        
-        animator.SetInteger("Direction", dir);
 
-        /*if ((des-pos).normalized == Vector2.left + Vector2.up/2)
+        //animator.SetInteger("Direction", dir);
+        animator.SetFloat("Direction", dir);
+    }
+
+    IEnumerator Attack()
+    {
+        while (target.gameObject.activeSelf)
         {
-            animator.SetInteger("Direction", 0);
-            return;
-        }
-        if((des-pos).normalized == Vector2.right + Vector2.up/2)
-        {
-            animator.SetInteger("Direction", 1);
-            return;
-        }
-        if((des-pos).normalized == Vector2.right + Vector2.down/2)
-        {
-            animator.SetInteger("Direction", 2);
-            return;
-        }
-        if((des-pos).normalized == Vector2.left + Vector2.down/2)
-        {
-            animator.SetInteger("Direction", 3);
-        }*/
+            
+        } 
+
+        yield return null;
     }
 }
