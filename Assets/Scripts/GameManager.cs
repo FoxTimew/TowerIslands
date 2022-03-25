@@ -77,8 +77,7 @@ public class GameManager : MonoBehaviour
     
 
     private IEnumerator LevelCoroutine()
-    {
-        
+    {     
         while (building)
         {
             if (Input.touchCount > 0)
@@ -105,7 +104,6 @@ public class GameManager : MonoBehaviour
             }
             yield return null;
         }
-
         GameObject go = Pooler.instance.Pop("enemy");
         go.transform.parent = null;
         go.transform.position = new Vector3(-4.5f, -2.5f, 0);
@@ -114,14 +112,25 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void BuildTower()
+    public void TowerButton()
     {
-        if (selectedBlock.tower is not null) return;
-        levelManager.CloseBlockUI();
-        selectedBlock.energy -= 2;
-        GameObject go = Pooler.instance.Pop("Tower");
-        go.transform.parent = selectedBlock.transform;
-        go.transform.position = selectedBlock.transform.position;
-        selectedBlock.tower = go.GetComponent<AXD_TowerShoot>();
+        if (selectedBlock.tower is not null)
+        {
+            selectedBlock.energy += selectedBlock.tower.stats.energyRequired;
+            Pooler.instance.Depop("Tower",selectedBlock.tower.gameObject);
+            selectedBlock.tower = null;
+            levelManager.OpenBlockUI();
+        }
+        else
+        {
+
+            GameObject go = Pooler.instance.Pop("Tower");
+            go.transform.parent = selectedBlock.transform;
+            go.transform.position = selectedBlock.transform.position;
+            selectedBlock.tower = go.GetComponent<AXD_TowerShoot>();
+            selectedBlock.energy -= selectedBlock.tower.stats.energyRequired;
+            levelManager.OpenBlockUI();
+        }
+        
     }
 }

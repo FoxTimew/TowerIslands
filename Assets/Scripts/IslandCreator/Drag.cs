@@ -1,5 +1,6 @@
 
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Drag : MonoBehaviour
@@ -92,7 +93,9 @@ public class Drag : MonoBehaviour
     {
         GameManager.instance.islandCreator.current = null;
         foreach (var block in blocks)
-            GameManager.instance.blocks.Add(block.transform.position,block);
+         GameManager.instance.blocks.Add(block.transform.position,block);
+        foreach (var block in  GameManager.instance.blocks.Values)
+            block.UpdateAdjacents();
         transform.parent = GameManager.instance.blockGroup.transform;
         enabled = false;
     }

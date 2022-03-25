@@ -7,11 +7,15 @@ using UnityEngine;
 public class AXD_TowerShoot : MonoBehaviour
 {
     [SerializeField] 
-    private AXD_TowerStatsSO stats;
+    public AXD_TowerStatsSO stats;
     [SerializeField]
     private List<Enemy> targets;
     [SerializeField]
     private List<Enemy> enemiesWithinRange;
+    
+    public delegate void ShootBullet();
+    public ShootBullet shootBullet;
+        
     
     public int hp { get; private set; }
     private bool shooting;
@@ -29,7 +33,7 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         if (targets.Count > 0 && !shooting)
         {
-            //StartCoroutine(ShootCoroutine());
+            StartCoroutine(ShootCoroutine());
         }
     }
     public void ChangeTargetToFirst()

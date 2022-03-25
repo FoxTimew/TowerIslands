@@ -45,6 +45,7 @@ public class Block : MonoBehaviour
     
     public void UpdateAdjacents()
     {
+        adjacentBlocks.Clear();
         foreach (Vector2 adj in InitAdjacents())
         {
             if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
@@ -52,16 +53,6 @@ public class Block : MonoBehaviour
         }
     }
 
-    public void AddToAdjacents()
-    {
-        foreach (Vector2 adj in InitAdjacents())
-        {
-            if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
-            if (GameManager.instance.blocks[adj].adjacentBlocks.Contains(this)) continue;
-            GameManager.instance.blocks[adj].adjacentBlocks.Add(this);
-        }
-    }
-    
     public int GetMaxEnergy()
     {
         int result = energy;
