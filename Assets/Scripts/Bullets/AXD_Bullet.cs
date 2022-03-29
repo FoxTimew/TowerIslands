@@ -33,7 +33,6 @@ public class AXD_Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Bonk");
         if (collision.gameObject.CompareTag("Enemy"))
         {
             
