@@ -16,6 +16,8 @@ public class EconomyManager : MonoBehaviour
         {
             instance = this;
         }
+
+        Enemy.EnemyDeathEvent += Enemy_EnemyDeathEvent;
         UpdateGoldUI();
     }
 
@@ -47,4 +49,10 @@ public class EconomyManager : MonoBehaviour
     {
         goldUI.text = goldAmount.ToString();
     }
+
+    public void Enemy_EnemyDeathEvent(int goldToAdd)
+    {
+        GainGold(goldToAdd);
+    }
+    
 }
