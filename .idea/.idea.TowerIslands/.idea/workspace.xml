@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AXD_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AXD_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/BasicEnemyTest.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/BasicEnemyTest.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Waves/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Waves/WaveManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
