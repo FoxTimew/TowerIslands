@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] private List<Block> adjacentBlocks;
+    [SerializeField] public List<Block> adjacentBlocks;
     public int energy = 2;
  
         
@@ -16,9 +16,9 @@ public class Block : MonoBehaviour
     [SerializeField] private Material selectedMat;
     [SerializeField] private Material initMat;
 
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] public MeshRenderer meshRenderer;
     
-    Vector3[] InitAdjacents()
+    public Vector3[] InitAdjacents()
     {
         float posX = transform.position.x;
         float posZ = transform.position.z;
@@ -37,6 +37,16 @@ public class Block : MonoBehaviour
         {
             if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
             adjacentBlocks.Add(GameManager.instance.blocks[adj]);
+        }
+    }
+
+    public void AddToAdjacents()
+    {
+        foreach (Vector3 adj in InitAdjacents())
+        {
+            if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
+            if (GameManager.instance.blocks[adj].adjacentBlocks.Contains(this)) continue;
+            GameManager.instance.blocks[adj].adjacentBlocks.Add(this);
         }
     }
 

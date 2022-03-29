@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-
-    #region temp
-
-    public bool building = true;
-    [SerializeField] private GameObject canvas;
-
-    #endregion
     
+
+    public bool building = false;
+    public bool downtown = true;
+    
+    [SerializeField] private GameObject waveCanvas;
+    [SerializeField] private GameObject downtownCanvas;
+
+    public GameObject buildButton;
 
     [Header("Manager")] 
     [SerializeField] private UIManager uiManager;
@@ -54,15 +56,16 @@ public class GameManager : MonoBehaviour
                 
         DontDestroyOnLoad(gameObject);
         instance = this;
-    }
-
-    void Start()
-    {
         foreach (var block in baseBlock)
             blocks.Add(block.transform.position,block);
         foreach (var block in blocks.Values)
             block.FindAdjacents();
-        StartCoroutine(GameLoop());
+    }
+
+    void Start()
+    {
+        
+        //StartCoroutine(GameLoop());
     }
     
     
@@ -73,21 +76,33 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            while (building)
+            while (downtown)
             {
-                SelectTower();
+                downtownCanvas.SetActive(true);
                 yield return null;
             }
-            GameObject go = Pooler.instance.Pop("Enemy");
+            downtownCanvas.SetActive(false);
+            EndWave(true);
+            for (int i = 0; i < 3; i++)
+            {
+                while (building)
+                {
+                    SelectTower();
+                    yield return null;
+                }
+                GameObject go = Pooler.instance.Pop("Enemy");
                 go.transform.position = new Vector3(5,1,0);
         
                 go = Pooler.instance.Pop("Enemy");
                 go.transform.position = new Vector3(0,1,5);
                 yield return new WaitForSeconds(10);
                 EndWave(true);
-
-
-                yield return null;
+            }
+            EndWave(false);
+            downtown = true;
+            downtownCanvas.SetActive(true);
+            buildButton.SetActive(true);
+            yield return null;
         }
     }
 
@@ -117,7 +132,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void nextLevel()
+    {
+        downtown = false;
+    }
+    
     public void Build()
     {
         GameObject building = Pooler.instance.Pop("Tower");
@@ -134,8 +153,12 @@ public class GameManager : MonoBehaviour
         if(selectedBlock is not null) selectedBlock.Deselect(); 
         uiManager.CloseBlockUI();
         building = b;
-        canvas.SetActive(b);
+        waveCanvas.SetActive(b);
+    }
 
-        
+    public void BuildTetris()
+    {
+        Pooler.instance.Pop("Tetris");
+        buildButton.SetActive(false);
     }
 }
