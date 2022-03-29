@@ -6,4 +6,5 @@ using UnityEngine;
 public class AXD_EnemySO : ScriptableObject
 {
     public int maxHealthPoints;
+    public int goldToAddOnDeath;
 }
