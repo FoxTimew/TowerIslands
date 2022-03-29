@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: BasicEnemyTest
   m_EditorClassIdentifier: 
   maxHealthPoints: 10
+  goldToAddOnDeath: 10
