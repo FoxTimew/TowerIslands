@@ -15,4 +15,5 @@ public class AXD_EnemySO : ScriptableObject
 
     public float range;
     
+    public int goldToAddOnDeath;
 }
