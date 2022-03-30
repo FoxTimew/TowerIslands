@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator animator;
     private Block initPos;
     private Block destination;
+    private BargeSO bargeItComesFrom;
 
 
     private AXD_TowerShoot target;
@@ -115,7 +116,12 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
     }
-    
+
+    public void OnSpawn(BargeSO _barge)
+    {
+        bargeItComesFrom = _barge;
+    }
+
     public void Death()
     {
         if (EnemyDeathEvent != null)
