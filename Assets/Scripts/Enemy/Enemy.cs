@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    
+    public static event Action<int> EnemyDeathEvent;
     [SerializeField] private AXD_EnemySO enemyStats;
 
     [SerializeField] private Animator animator;
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
         if (currentHP <= 0)
         {
             currentHP = 0;
-            Pooler.instance.Depop("enemy",gameObject);
+            Death(); 
             return true;
         }
         Debug.Log(currentHP);
@@ -112,5 +114,14 @@ public class Enemy : MonoBehaviour
         }
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
+    }
+    
+    public void Death()
+    {
+        if (EnemyDeathEvent != null)
+        {
+            EnemyDeathEvent(enemyStats.goldToAddOnDeath);
+        }
+        Pooler.instance.Depop("Enemy", this.gameObject);
     }
 }
