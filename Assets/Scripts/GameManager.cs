@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,32 +11,26 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    
-
-    public bool building = false;
-    public bool downtown = true;
-    
-    [SerializeField] private GameObject waveCanvas;
-    [SerializeField] private GameObject downtownCanvas;
-
-    public GameObject buildButton;
+    public GameObject blockGroup;
+    public Camera cam;
 
     [Header("Manager")] 
-    [SerializeField] private UIManager uiManager;
+    public IslandCreator islandCreator;
+    public LevelManager levelManager;
     
-    
-    [SerializeField] private Camera cam;
-    [SerializeField] private  Block[] baseBlock;
-    
+    [SerializeField] private Block[] baseBlock;
 
     public Block selectedBlock;
-    public Dictionary<Vector3, Block> blocks = new Dictionary<Vector3, Block>();
+    public Dictionary<Vector2, Block> blocks = new Dictionary<Vector2, Block>();
+    
 
-    public static bool IsPointerOverUI() {
-        if (EventSystem.current.IsPointerOverGameObject()) {
+    public static bool IsPointerOverUI()
+    {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
             return true;
-        } 
-            
+        }
+
         var pe = new PointerEventData(EventSystem.current)
         {
             position = Input.GetTouch(0).position
@@ -44,121 +39,98 @@ public class GameManager : MonoBehaviour
         EventSystem.current.RaycastAll(pe, hits);
         return hits.Count > 0;
     }
-    
+
     #region Unity Methods
+
     void Awake()
     {
-        if (instance != null) 
-        { 
+        if (instance != null)
+        {
             Destroy(gameObject);
             return;
         }
-                
+
         DontDestroyOnLoad(gameObject);
         instance = this;
+        cam.transparencySortMode = TransparencySortMode.CustomAxis;
+        cam.transparencySortAxis = Vector3.up;
+
         foreach (var block in baseBlock)
-            blocks.Add(block.transform.position,block);
-        foreach (var block in blocks.Values)
-            block.FindAdjacents();
+            blocks.Add(block.transform.position, block);
     }
 
-    void Start()
-    {
-        
-        //StartCoroutine(GameLoop());
-    }
-    
-    
     #endregion
 
 
-    IEnumerator GameLoop()
+    private bool building;
+
+    public void StartLevel()
     {
-        while (true)
-        {
-            while (downtown)
-            {
-                downtownCanvas.SetActive(true);
-                yield return null;
-            }
-            downtownCanvas.SetActive(false);
-            EndWave(true);
-            for (int i = 0; i < 3; i++)
-            {
-                while (building)
-                {
-                    SelectTower();
-                    yield return null;
-                }
-                GameObject go = Pooler.instance.Pop("Enemy");
-                go.transform.position = new Vector3(5,1,0);
-        
-                go = Pooler.instance.Pop("Enemy");
-                go.transform.position = new Vector3(0,1,5);
-                yield return new WaitForSeconds(10);
-                EndWave(true);
-            }
-            EndWave(false);
-            downtown = true;
-            downtownCanvas.SetActive(true);
-            buildButton.SetActive(true);
-            yield return null;
-        }
+        building = true;
+        StartCoroutine(LevelCoroutine());
     }
 
-    void SelectTower()
+    public void StartWave()
     {
-        if (Input.touchCount > 0)
-        {
-            
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-                Ray ray = cam.ScreenPointToRay(touch.position);
-                if (IsPointerOverUI()) return;
-                RaycastHit hit;
-                if(Physics.Raycast(ray,out hit))
-                {
-                    if(selectedBlock is not null) selectedBlock.Deselect();
-                    uiManager.CloseBlockUI();
-                    if (hit.transform.GetComponent<Block>())
-                    {
-                        selectedBlock = blocks[hit.transform.position];
-                        selectedBlock.Select();
-                        uiManager.OpenBlockUI();
-                    }
-                }
-            }
-        }
-    }
-
-    public void nextLevel()
-    {
-        downtown = false;
+        building = false;
     }
     
-    public void Build()
-    {
-        GameObject building = Pooler.instance.Pop("Tower");
-        building.transform.parent = selectedBlock.transform;
-        building.transform.localPosition = Vector3.up;
-        selectedBlock.energy -= 2;
-        selectedBlock.Deselect();
-        uiManager.CloseBlockUI();
+
+    private IEnumerator LevelCoroutine()
+    {     
+        while (building)
+        {
+            if (Input.touchCount > 0)
+            {
+                if (!IsPointerOverUI())
+                {
+                    if (selectedBlock is not null)
+                    {
+                        selectedBlock.Deselect();
+                        selectedBlock = null;
+                        levelManager.CloseBlockUI();
+                    }
+                    Touch touch = Input.GetTouch(0);
+                    RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(touch.position), Vector3.forward);
+                    if(hit.collider != null)
+                        if (blocks.ContainsKey(hit.transform.position))
+                        {
+                            selectedBlock = blocks[hit.transform.position];
+                            selectedBlock.Select();
+                            levelManager.OpenBlockUI();
+                        }
+                }
+                
+            }
+            yield return null;
+        }
+        GameObject go = Pooler.instance.Pop("enemy");
+        go.transform.parent = null;
+        go.transform.position = new Vector3(-4.5f, -2.5f, 0);
+        yield return null;
     }
 
 
-    public void EndWave(bool b)
-    {
-        if(selectedBlock is not null) selectedBlock.Deselect(); 
-        uiManager.CloseBlockUI();
-        building = b;
-        waveCanvas.SetActive(b);
-    }
 
-    public void BuildTetris()
+    public void TowerButton()
     {
-        Pooler.instance.Pop("Tetris");
-        buildButton.SetActive(false);
+        if (selectedBlock.tower is not null)
+        {
+            selectedBlock.energy += selectedBlock.tower.stats.energyRequired;
+            Pooler.instance.Depop("Tower",selectedBlock.tower.gameObject);
+            selectedBlock.tower = null;
+            levelManager.OpenBlockUI();
+        }
+        else
+        {
+
+            GameObject go = Pooler.instance.Pop("Tower");
+            go.transform.parent = selectedBlock.transform;
+            go.transform.position = selectedBlock.transform.position;
+            selectedBlock.tower = go.GetComponent<AXD_TowerShoot>();
+            selectedBlock.energy -= selectedBlock.tower.stats.energyRequired;
+            levelManager.OpenBlockUI();
+        }
+        
     }
 }

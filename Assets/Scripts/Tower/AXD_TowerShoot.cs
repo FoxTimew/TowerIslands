@@ -1,19 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class AXD_TowerShoot : MonoBehaviour
 {
-    [SerializeField]
-    private AXD_TowerStatsSO stats;
+    [SerializeField] 
+    public AXD_TowerStatsSO stats;
     [SerializeField]
     private List<Enemy> targets;
     [SerializeField]
     private List<Enemy> enemiesWithinRange;
-
-    [SerializeField] private AXD_Bullet bulletPrefab;
-
+    
+    public delegate void ShootBullet();
+    public ShootBullet shootBullet;
+        
+    
+    public int hp { get; private set; }
     private bool shooting;
     
     // Start is called before the first frame update
@@ -21,6 +25,7 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         targets = new List<Enemy>();
         enemiesWithinRange = new List<Enemy>();
+        hp = stats.healthPoints;
     }
 
     // Update is called once per frame
@@ -39,6 +44,14 @@ public class AXD_TowerShoot : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int dmg)
+    {
+        hp -= dmg;
+        Debug.Log(hp);
+        if (hp <= 0)
+            Pooler.instance.Depop("Tower",gameObject);
+    }
+    
     public int GetDamage()
     {
         return stats.damage;
@@ -69,19 +82,16 @@ public class AXD_TowerShoot : MonoBehaviour
         ChangeTargetToFirst();
         // TODO : sort by priority defined in the scriptable object
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
             enemiesWithinRange.Add(other.GetComponent<Enemy>());
             if (targets.Count == 0)
-            {
                 ChangeTargetToFirst();
-            }
             else
-            {
                 SortEnemiesByPriority();
-            }
+            
         }
     }
 
@@ -92,7 +102,6 @@ public class AXD_TowerShoot : MonoBehaviour
             enemiesWithinRange.Remove(other.GetComponent<Enemy>());
             targets.Clear();
             SortEnemiesByPriority();
-            
         }
     }
     
@@ -102,9 +111,11 @@ public class AXD_TowerShoot : MonoBehaviour
     {
         shooting = true;
         //Shoot
-        GameObject bulletTemp = Pooler.instance.Pop("Bullet");
-        Pooler.instance.DelayedDepop( 1f,"Bullet", bulletTemp);
-        Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
+        GameObject go = Pooler.instance.Pop("Bullet");
+        go.transform.position = transform.position + Vector3.up;
+        go.GetComponent<AXD_Bullet>().Shoot(this, targets[0], stats.bulletSpeed);
+        Pooler.instance.DelayedDepop(2,"Bullet",go);
+        //Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
         yield return new WaitForSeconds(1/stats.attackSpeed);
         
         shooting = false;

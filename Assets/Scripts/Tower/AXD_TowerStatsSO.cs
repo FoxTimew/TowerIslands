@@ -7,17 +7,17 @@ using UnityEngine;
 public class AXD_TowerStatsSO : AXD_BuildingSO
 {
 
-    [field: SerializeField] public int damage;
-    [field: SerializeField] public float attackSpeed;
+    public int damage;
+    public float attackSpeed;
 
-    [field: SerializeField] public DamageType damageType;
+    public DamageType damageType;
 
-    [field: SerializeField] public float range;
+    public float range;
 
-    [field: SerializeField] public int maxTargets;
+    public int maxTargets;
 
-    [field: SerializeField] public TargetPriority priority;
+    public TargetPriority priority;
 
-    [field: SerializeField] public float bulletSpeed;
-
+    public float bulletSpeed;
+    
 }
