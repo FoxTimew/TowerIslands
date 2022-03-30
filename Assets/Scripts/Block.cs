@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,62 +6,51 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] public List<Block> adjacentBlocks;
+
+    public SpriteRenderer spriteRenderer;
+    public List<Block> adjacentBlocks;
+
+
+    private Color baseColor;
+    
+    
+    public AXD_TowerShoot tower;
+    
     public int energy = 2;
- 
-        
+
     public bool selected;
-
-    [SerializeField] private GameObject building;
     
-    [SerializeField] private Material selectedMat;
-    [SerializeField] private Material initMat;
+    #region Unity Methods
 
-    [SerializeField] public MeshRenderer meshRenderer;
-    
-    public Vector3[] InitAdjacents()
+    private void Start()
+    {
+        UpdateAdjacents();
+        baseColor = spriteRenderer.color;
+        baseColor.a = 1;
+    }
+
+    #endregion
+    public Vector2[] InitAdjacents()
     {
         float posX = transform.position.x;
-        float posZ = transform.position.z;
+        float posY = transform.position.y;
         return new[]
         {
-            new Vector3(posX+1,0,posZ),
-            new Vector3(posX-1,0,posZ),
-            new Vector3(posX,0,posZ+1),
-            new Vector3(posX,0,posZ-1),
+            new Vector2(posX+0.5f,posY+0.25f),
+            new Vector2(posX+0.5f,posY-0.25f),
+            new Vector2(posX-0.5f,posY+0.25f),
+            new Vector2(posX-0.5f,posY-0.25f),
         };
     }
     
-    public void FindAdjacents()
+    public void UpdateAdjacents()
     {
-        foreach (Vector3 adj in InitAdjacents())
+        adjacentBlocks.Clear();
+        foreach (Vector2 adj in InitAdjacents())
         {
             if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
             adjacentBlocks.Add(GameManager.instance.blocks[adj]);
         }
-    }
-
-    public void AddToAdjacents()
-    {
-        foreach (Vector3 adj in InitAdjacents())
-        {
-            if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
-            if (GameManager.instance.blocks[adj].adjacentBlocks.Contains(this)) continue;
-            GameManager.instance.blocks[adj].adjacentBlocks.Add(this);
-        }
-    }
-
-
-    public void Select()
-    {
-        selected = true;
-        meshRenderer.material = selectedMat;
-    }
-
-    public void Deselect()
-    {
-        selected = false;
-        meshRenderer.material = initMat;
     }
 
     public int GetMaxEnergy()
@@ -72,8 +62,16 @@ public class Block : MonoBehaviour
         }
         return result;
     }
-    
 
-    
+    public void Select()
+    {
+        spriteRenderer.color = Color.green;
+    }
 
+    public void Deselect()
+    {
+        spriteRenderer.color = baseColor;
+    }
+    
+    
 }
