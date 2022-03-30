@@ -52,3 +52,10 @@ MonoBehaviour:
       baseCount: 1
       baseRefreshSpeed: 5
       refreshSpeed: 0
+  - key: Enemy
+    pool:
+      prefab: {fileID: 5805961861920261736, guid: 97056109632476f498061306809850ef,
+        type: 3}
+      baseCount: 1
+      baseRefreshSpeed: 5
+      refreshSpeed: 0

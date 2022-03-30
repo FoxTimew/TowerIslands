@@ -8,9 +8,9 @@ public class AXD_TowerShoot : MonoBehaviour
     [SerializeField]
     private AXD_TowerStatsSO stats;
     [SerializeField]
-    private List<GameObject> targets;
+    private List<Enemy> targets;
     [SerializeField]
-    private List<GameObject> enemiesWithinRange;
+    private List<Enemy> enemiesWithinRange;
 
     [SerializeField] private AXD_Bullet bulletPrefab;
 
@@ -19,8 +19,8 @@ public class AXD_TowerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targets = new List<GameObject>();
-        enemiesWithinRange = new List<GameObject>();
+        targets = new List<Enemy>();
+        enemiesWithinRange = new List<Enemy>();
     }
 
     // Update is called once per frame
@@ -38,12 +38,42 @@ public class AXD_TowerShoot : MonoBehaviour
             targets.Add(enemiesWithinRange[0]);
         }
     }
+
+    public int GetDamage()
+    {
+        return stats.damage;
+    }
+
+    public DamageType GetDamageType()
+    {
+        return stats.damageType;
+    }
+
+    public void RemoveTargetFromTargets(Enemy enemy)
+    {
+        if (targets.Contains(enemy))
+        {
+            targets.Remove(enemy);
+        }
+    }
+    public void RemoveTargetFromEnemiesWithinRange(Enemy enemy)
+    {
+        if (enemiesWithinRange.Contains(enemy))
+        {
+            enemiesWithinRange.Remove(enemy);
+        }
+    }
+    
+    public void SortEnemiesByPriority()
+    {
+        ChangeTargetToFirst();
+        // TODO : sort by priority defined in the scriptable object
+    }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name + " has entered the radius");
         if (other.CompareTag("Enemy"))
         {
-            enemiesWithinRange.Add(other.gameObject);
+            enemiesWithinRange.Add(other.GetComponent<Enemy>());
             if (targets.Count == 0)
             {
                 ChangeTargetToFirst();
@@ -57,29 +87,24 @@ public class AXD_TowerShoot : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.name + " has left the radius");
-        if (enemiesWithinRange.Contains(other.gameObject))
+        if (enemiesWithinRange.Contains(other.GetComponent<Enemy>()))
         {
-            enemiesWithinRange.Remove(other.gameObject);
+            enemiesWithinRange.Remove(other.GetComponent<Enemy>());
             targets.Clear();
             SortEnemiesByPriority();
             
         }
     }
     
-    public void SortEnemiesByPriority()
-    {
-        ChangeTargetToFirst();
-        // TODO : sort by priority defined in the scriptable object
-    }
+    
 
     IEnumerator ShootCoroutine()
     {
         shooting = true;
         //Shoot
         GameObject bulletTemp = Pooler.instance.Pop("Bullet");
-        Pooler.instance.DelayedDepop( 2f,"Bullet", bulletTemp);
-        Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(targets[0], stats.bulletSpeed);
+        Pooler.instance.DelayedDepop( 1f,"Bullet", bulletTemp);
+        Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
         yield return new WaitForSeconds(1/stats.attackSpeed);
         
         shooting = false;

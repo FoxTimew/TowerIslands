@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3900390867657741972}
   - component: {fileID: 1243179390780070661}
   - component: {fileID: 1592810218135309377}
-  - component: {fileID: 8724562030124256098}
   - component: {fileID: 5772621498960171673}
   m_Layer: 0
   m_Name: TowerBasic
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5647788295055806982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 1, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a420cbee81a874e4d8b7178b4abe1d5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,26 +128,8 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 81f3fea1e85b49b4786d2fdb90ed31a2, type: 2}
   targets: []
   enemiesWithinRange: []
---- !u!114 &8724562030124256098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5647788295055806982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c3a7b621da2cf4b8d57dddef602244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolKeys:
-  - key: 0
-    pool:
-      prefab: {fileID: 6321074685585687459, guid: 1d72c19154c1e754f954b7eaeeaa1df3,
-        type: 3}
-      baseCount: 0
-      baseRefreshSpeed: 0
-      refreshSpeed: 0
+  bulletPrefab: {fileID: 4980780579275434707, guid: 1d72c19154c1e754f954b7eaeeaa1df3,
+    type: 3}
 --- !u!54 &5772621498960171673
 Rigidbody:
   m_ObjectHideFlags: 0

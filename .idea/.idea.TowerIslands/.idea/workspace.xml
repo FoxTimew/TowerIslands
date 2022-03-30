@@ -7,16 +7,28 @@
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/AXD_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AXD_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/AXD_Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/AXD_Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/City/AXD_City.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/City/AXD_City.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pooler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pooler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/AXD_TowerShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/AXD_TowerShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/BasicEnemyTest.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/BasicEnemyTest.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AXD_EnemySO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,6 +47,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -70,10 +83,16 @@
       <updated>1646070513925</updated>
       <workItem from="1646070526621" duration="15000" />
       <workItem from="1646070719856" duration="262000" />
+      <workItem from="1646729951704" duration="9086000" />
+      <workItem from="1646771246226" duration="885000" />
+      <workItem from="1646772998821" duration="2999000" />
       <workItem from="1646559321782" duration="10000" />
       <workItem from="1646559363453" duration="1587000" />
       <workItem from="1646561720107" duration="6470000" />
       <workItem from="1646595350301" duration="1189000" />
+      <workItem from="1646943937378" duration="2280000" />
+      <workItem from="1647209785026" duration="3974000" />
+      <workItem from="1647251958135" duration="10077000" />
     </task>
     <servers />
   </component>
