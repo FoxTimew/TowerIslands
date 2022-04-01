@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private Block initPos;
     private Block destination;
     private BargeSO bargeItComesFrom;
+    private int cristalStored;
 
 
     private AXD_TowerShoot target;

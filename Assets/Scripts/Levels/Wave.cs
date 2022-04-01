@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
 [CreateAssetMenu(fileName = "WaveSO", menuName = "ScriptableObjects/WaveSO", order = 3)]
-public class WaveSO : ScriptableObject
+public class Wave
 {
-    public List<Enemy> enemiesInWave;
-    public int arcanumToGain;
+    public List<BargeSO> bargesInWave;
 }
