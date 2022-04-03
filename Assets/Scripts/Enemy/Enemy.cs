@@ -7,13 +7,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     
-    public static event Action<int> EnemyDeathEvent;
+    public static event Action<int> EnemyDeathGoldEvent;
+    public static event Action<int> EnemyDeathCristalEvent;
     [SerializeField] private AXD_EnemySO enemyStats;
 
     [SerializeField] private Animator animator;
     private Block initPos;
     private Block destination;
     private BargeSO bargeItComesFrom;
+    private int cristalStored;
 
 
     private AXD_TowerShoot target;
@@ -117,16 +119,22 @@ public class Enemy : MonoBehaviour
         animator.SetInteger("Speed", 1);
     }
 
-    public void OnSpawn(BargeSO _barge)
+    public void OnSpawn(BargeSO _barge, int troopListIndex)
     {
         bargeItComesFrom = _barge;
+        cristalStored = _barge.troops[troopListIndex].cristalToEarn;
     }
 
     public void Death()
     {
-        if (EnemyDeathEvent != null)
+        if (EnemyDeathGoldEvent != null)
         {
-            EnemyDeathEvent(enemyStats.goldToAddOnDeath);
+            EnemyDeathGoldEvent(enemyStats.goldToAddOnDeath);
+        }
+
+        if (EnemyDeathCristalEvent != null && cristalStored > 0)
+        {
+            EnemyDeathCristalEvent(cristalStored);
         }
         Pooler.instance.Depop("Enemy", this.gameObject);
     }
