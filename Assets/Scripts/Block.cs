@@ -7,6 +7,12 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
 
+    public enum Effect
+    {
+        Energy,Defense
+    }
+
+    public List<Effect> effects;
     public SpriteRenderer spriteRenderer;
     public List<Block> adjacentBlocks;
 
@@ -19,6 +25,10 @@ public class Block : MonoBehaviour
     public int energy = 2;
 
     public bool selected;
+
+    public delegate void ApplyEffect();
+    public ApplyEffect applyEffect;
+    
     
     #region Unity Methods
 
@@ -72,6 +82,21 @@ public class Block : MonoBehaviour
     {
         spriteRenderer.color = baseColor;
     }
-    
-    
+
+    void UpdateEffect()
+    {
+        applyEffect = null;
+        if (effects.Contains(Effect.Defense)) applyEffect += DefenseEffect;
+        if (effects.Contains(Effect.Energy)) applyEffect += EnergyEffect;
+    }
+
+    void EnergyEffect()
+    {
+        
+    }
+
+    void DefenseEffect()
+    {
+        
+    }
 }

@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 public class SupportTower : MonoBehaviour
 {
 
-    
+    [SerializeField] private Block.Effect effect;
     [SerializeField] private AXD_BuildingSO stats;
     [SerializeField] private int range;
     [SerializeField] private List<Block> inRangeBlock = new List<Block>();
@@ -12,6 +13,16 @@ public class SupportTower : MonoBehaviour
     void Start()
     {
         GetBlockInRange();
+        foreach (var block in inRangeBlock)
+        {
+            if (block.effects.Contains(effect)) continue;
+            block.effects.Add(effect);
+        }
+    }
+
+    private void OnDisable()
+    {
+        foreach (var block in inRangeBlock) block.effects.Remove(effect);
     }
 
 
