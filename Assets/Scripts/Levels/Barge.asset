@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Barge
   m_EditorClassIdentifier: 
   troops:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - enemy: {fileID: 0}
+    cristalToEarn: 0
+  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
   bargeSpeed: 10
   bargeHP: 100
   rewardModifier: 1

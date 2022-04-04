@@ -18,4 +18,5 @@ public class BargeSO : ScriptableObject
     public int bargeHP = 100;
     public float rewardModifier = 1f;
     public float waitingTime = 20f;
+  
 }
