@@ -130,12 +130,12 @@ public class Enemy : MonoBehaviour
     {
         if (EnemyDeathGoldEvent != null)
         {
-            EnemyDeathGoldEvent(enemyStats.goldToAddOnDeath);
+            EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
         }
 
         if (EnemyDeathCristalEvent != null && cristalStored > 0)
         {
-            EnemyDeathCristalEvent(cristalStored);
+            EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
         Pooler.instance.Depop("Enemy", this.gameObject);
     }
