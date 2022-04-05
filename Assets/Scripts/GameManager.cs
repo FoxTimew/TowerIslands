@@ -14,9 +14,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject blockGroup;
     public Camera cam;
-    
+
+    public CityCenter cityCenter;
     public IslandCreator islandCreator;
     public LevelManager levelManager;
+    
+    [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject welcomePage;
     
     [SerializeField] private Block[] baseBlock;
 
@@ -74,12 +78,13 @@ public class GameManager : MonoBehaviour
     {
         building = false;
     }
-    
 
+    public List<Enemy> enemies;
     private IEnumerator LevelCoroutine(LevelSO level)
     {
         var waveCount = level.waves.Count;
         Enemy enemy;
+        
         while (waveCount > 0)
         {
             while (building)
@@ -99,16 +104,21 @@ public class GameManager : MonoBehaviour
                         if(hit.collider != null)
                             if (blocks.ContainsKey(hit.transform.position))
                             {
-                                selectedBlock = blocks[hit.transform.position];
-                                selectedBlock.Select();
-                                levelManager.OpenBlockUI();
+                                if (blocks[hit.transform.position].selectable)
+                                {
+                                    selectedBlock = blocks[hit.transform.position];
+                                    selectedBlock.Select();
+                                    levelManager.OpenBlockUI();
+                                }
+                                
                             }
                     }
                 
                 }
                 yield return null;
             }
-            
+            levelManager.CloseBlockUI();
+            startButton.SetActive(false);
             foreach (var barge in level.waves[waveCount-1].bargesInWave)
             {
                 GameObject go = Pooler.instance.Pop("Barge");
@@ -117,6 +127,7 @@ public class GameManager : MonoBehaviour
                 go.transform.position = new Vector3(-4.5f, -2.5f, 0);
                 foreach (var pos in blocks.Keys)
                 {
+                    if (blocks[pos].tower is not null) continue;
                     if ((go.transform.position - (Vector3) des).magnitude > (go.transform.position - (Vector3) pos).magnitude) 
                         des = pos;
                 }
@@ -131,17 +142,22 @@ public class GameManager : MonoBehaviour
                      enemyGO.transform.position = go.transform.position;
                      enemy = enemyGO.GetComponent<Enemy>();
                      enemy.OnSpawn(barge,i);
-                     Pooler.instance.DelayedDepop(2f,"enemy",enemyGO);
-                     yield return new WaitForSeconds(0.2f);
+                     //Pooler.instance.DelayedDepop(2f,"enemy",enemyGO);
+                     yield return new WaitForSeconds(0.5f);
                 }
                 Pooler.instance.Depop("Barge",go);
             }
-
+            while (enemies.Count > 0) yield return null;
+            startButton.SetActive(true);
             building = true;
             waveCount--;
             yield return null;
+            
         }
-        
+        cityCenter.ResetHealth();
+        startButton.SetActive(false);
+        welcomePage.SetActive(true);
+
     }
 
 
@@ -150,7 +166,7 @@ public class GameManager : MonoBehaviour
     {
         if (selectedBlock.tower is not null)
         {
-            selectedBlock.SetEnergy(selectedBlock.tower.stats.energyRequired);
+            selectedBlock.SetEnergy(-selectedBlock.tower.stats.energyRequired);
             Pooler.instance.Depop("Tower",selectedBlock.tower.gameObject);
             selectedBlock.tower = null;
             levelManager.OpenBlockUI();

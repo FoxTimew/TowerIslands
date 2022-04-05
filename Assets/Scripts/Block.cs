@@ -9,7 +9,7 @@ public class Block : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
     public List<Block> adjacentBlocks;
-    
+    public bool selectable = true;
     
     public Dictionary<SupportEffect,int> supportEffects= new Dictionary<SupportEffect,int>();
     public delegate void ApplyEffect();
