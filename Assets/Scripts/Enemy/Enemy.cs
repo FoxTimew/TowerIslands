@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     private Block destination;
     private BargeSO bargeItComesFrom;
     private int cristalStored;
+    
 
 
     private AXD_TowerShoot target;
@@ -129,12 +130,12 @@ public class Enemy : MonoBehaviour
     {
         if (EnemyDeathGoldEvent != null)
         {
-            EnemyDeathGoldEvent((int)(enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
+            EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
         }
 
         if (EnemyDeathCristalEvent != null && cristalStored > 0)
         {
-            EnemyDeathCristalEvent((int)(cristalStored*bargeItComesFrom.rewardModifier));
+            EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
         Pooler.instance.Depop("Enemy", this.gameObject);
     }
