@@ -18,20 +18,16 @@ public class Trap : Building
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            routine = StartCoroutine(effect.ApplyEffect(other.GetComponent<Enemy>()));
-            enemies.Add(other,routine);
-        }
+        if (!other.CompareTag("Enemy")) return;
+        routine = StartCoroutine(effect.ApplyEffect(other.GetComponent<Enemy>()));
+        enemies.Add(other,routine);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (enemies.ContainsKey(other))
-        {
-            StopCoroutine(enemies[other]);
-            enemies.Remove(other);
-        }
+        if (!enemies.ContainsKey(other)) return;
+        StopCoroutine(enemies[other]);
+        enemies.Remove(other);
     }
 }
 

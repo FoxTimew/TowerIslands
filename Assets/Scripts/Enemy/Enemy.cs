@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour, IComparable
     private BargeSO bargeItComesFrom;
     private int cristalStored;
 
-
+    public float speed;
 
 
     private AXD_TowerShoot target;

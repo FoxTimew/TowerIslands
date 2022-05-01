@@ -22,7 +22,6 @@ public class Building : MonoBehaviour
     {
         hp -= dmg;
         Debug.Log(hp);
-        if (hp <= 0)
-            Pooler.instance.Depop(buildingSO.name,gameObject);
+        if (hp <= 0) Pooler.instance.Depop(buildingSO.name,gameObject);
     }
 }

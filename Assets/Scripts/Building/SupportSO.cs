@@ -1,12 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
 
+public enum AffectedType
+{
+    Block, Tower
+}
 
 [CreateAssetMenu(fileName = "SupportSO", menuName = "ScriptableObjects/SupportSO", order = 1)]
 public class SupportSO : ScriptableObject
 {
+    public AffectedType affectedType;
     public int range;
     
 
@@ -20,13 +27,16 @@ public class SupportSO : ScriptableObject
         
     }
 
-    public virtual bool Enter(Collider2D other, ref Dictionary<GameObject,float> dic)
+    public void Enter(Collider2D other, ref Dictionary<GameObject,float> dic)
     {
-        return default;
-    }
-    
-    public virtual bool Exit(Collider2D other, ref Dictionary<GameObject,float> dic)
-    {
-        return default;
+        switch (affectedType)
+        {
+            case AffectedType.Block :
+                if(other.transform.CompareTag("Block")) AddEffect(other.gameObject);
+                break;
+            case AffectedType.Tower :
+                if(other.transform.CompareTag("Tower")) AddEffect(other.gameObject);
+                break;
+        }
     }
 }

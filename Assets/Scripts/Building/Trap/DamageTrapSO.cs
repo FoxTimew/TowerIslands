@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "DamageTrapSO", menuName = "ScriptableObjects/Trap/DamageTrapSO", order = 1)]
 public class DamageTrapSO : TrapEffectSO
 {
     public float attackSpeed;
