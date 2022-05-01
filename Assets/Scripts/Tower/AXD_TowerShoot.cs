@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class AXD_TowerShoot : MonoBehaviour
+public class AXD_TowerShoot : Building
 {
     [SerializeField] 
     public AXD_TowerStatsSO stats;
@@ -17,7 +17,7 @@ public class AXD_TowerShoot : MonoBehaviour
     public ShootBullet shootBullet;
         
     
-    public int hp { get; private set; }
+   
     private bool shooting;
     
     // Start is called before the first frame update
@@ -44,13 +44,7 @@ public class AXD_TowerShoot : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int dmg)
-    {
-        hp -= dmg;
-        Debug.Log(hp);
-        if (hp <= 0)
-            Pooler.instance.Depop("Tower",gameObject);
-    }
+    
     
     public int GetDamage()
     {

@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
         blockInfogroup.SetActive(true);
         energy.text = $"Energy {GameManager.instance.selectedBlock.GetEnergy()}";
         blockEnergy.text = $"Max Energy {GameManager.instance.selectedBlock.GetMaxEnergy()}";
-        if (GameManager.instance.selectedBlock.tower is not null)
+        if (GameManager.instance.selectedBlock.building is not null)
             towerText.text = "Destroy Tower";
         else
             towerText.text = "Build Tower";

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,12 +7,67 @@ using UnityEngine;
 public class Drag : MonoBehaviour
 {
     [SerializeField] private Block[] blocks;
+    [SerializeField] private LayerMask layerMask;
     private void Start()
     {
     
-        StartCoroutine(WaitForRelease());
+        
     }
 
+    private Touch touch;
+    private Ray2D ray;
+    private Vector3 origin;
+    private Vector3 pos;
+    private RaycastHit2D hit2D;
+    private Color color;
+    void FixedUpdate()
+    {
+        if (Input.touchCount > 0)
+        {
+            touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Ended) return;
+            origin = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
+            origin.z = 0;
+            origin.y += 2.67f*2f;
+            if (touch.phase != TouchPhase.Moved) return;
+            hit2D = Physics2D.Raycast(origin, Vector2.zero,layerMask);
+            if (hit2D.collider != null)
+            {
+                if (hit2D.transform.CompareTag("GridElement"))
+                {
+                    pos = hit2D.transform.position;
+                    transform.position = pos;
+                    if (IsPlaceable())
+                    {
+                        foreach (var block in blocks)
+                        {
+                            color = block.spriteRenderer.color;
+                            color.a = 1f;
+                            block.spriteRenderer.color = color;
+                        }
+                    }
+                    else
+                    {
+                        foreach (var block in blocks)
+                        {
+                            color = block.spriteRenderer.color;
+                            color.a = 0.5f;
+                            block.spriteRenderer.color = color;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                transform.position = origin;
+            }
+            
+
+        }
+        
+    }
+    
     private IEnumerator WaitForRelease()
     {
         var place = false;
@@ -24,8 +80,6 @@ public class Drag : MonoBehaviour
             {
                 Touch touch = Input.GetTouch(0);
                 Vector3 pos = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
-                pos.y = RoundTo(pos.y, 0.25f);
-                pos.x = RoundTo(pos.x, 0.5f);
                 pos.z = 0;
                 transform.position = pos;
                 place = IsPlaceable();

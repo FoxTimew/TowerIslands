@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IComparable
 {
     
     public static event Action<int> EnemyDeathGoldEvent;
@@ -74,8 +74,8 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);
-            if (GameManager.instance.blocks[path[i].pos].tower is not null)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].tower));
+            if (GameManager.instance.blocks[path[i].pos].building is not null)
+                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].building));
             if (!GameManager.instance.blocks[path[i].pos].selectable)
                 yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].gameObject));
             transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed)
@@ -106,8 +106,9 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("Direction", dir);
     }
 
-    IEnumerator Attack(AXD_TowerShoot target)
-    {
+    IEnumerator Attack(Building target){
+        
+    
         var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
         transform.DOMove(pos, (pos - transform.position).magnitude / enemyStats.speed)
             .SetEase(Ease.Linear);
@@ -117,7 +118,7 @@ public class Enemy : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             yield return new WaitForSeconds(enemyStats.attackSpeed);
-            target.TakeDamage(enemyStats.damage);
+            target.takeDamage(enemyStats.damage);
         }
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
@@ -160,5 +161,17 @@ public class Enemy : MonoBehaviour
         }
         GameManager.instance.enemies.Remove(this);
         Pooler.instance.Depop("Enemy", this.gameObject);
+    }
+
+    public int CompareTo(Enemy other,Tower tower)
+    {
+        if ((transform.position-tower.transform.position).magnitude < (other.transform.position-tower.transform.position).magnitude) return 1;
+        if ((transform.position-tower.transform.position).magnitude > (other.transform.position-tower.transform.position).magnitude) return -1;
+        return 0;
+    }
+
+    public int CompareTo(object obj)
+    {
+        throw new NotImplementedException();
     }
 }

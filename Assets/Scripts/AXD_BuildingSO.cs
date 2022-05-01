@@ -12,6 +12,7 @@ public enum TargetPriority
 {
     FirstToCome = 0
 }
+
 public abstract class AXD_BuildingSO : ScriptableObject
 {
     public  int healthPoints;

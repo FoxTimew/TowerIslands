@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
                 go.transform.position = new Vector3(-4.5f, -2.5f, 0);
                 foreach (var pos in blocks.Keys)
                 {
-                    if (blocks[pos].tower is not null) continue;
+                    if (blocks[pos].building is not null) continue;
                     if ((go.transform.position - (Vector3) des).magnitude > (go.transform.position - (Vector3) pos).magnitude) 
                         des = pos;
                 }
@@ -164,11 +164,11 @@ public class GameManager : MonoBehaviour
 
     public void TowerButton()
     {
-        if (selectedBlock.tower is not null)
+        if (selectedBlock.building is not null)
         {
-            selectedBlock.SetEnergy(-selectedBlock.tower.stats.energyRequired);
-            Pooler.instance.Depop("Tower",selectedBlock.tower.gameObject);
-            selectedBlock.tower = null;
+            selectedBlock.SetEnergy(-selectedBlock.building.buildingSO.energyRequired);
+            Pooler.instance.Depop("Tower",selectedBlock.building.gameObject);
+            selectedBlock.building = null;
             levelManager.OpenBlockUI();
         }
         else
@@ -176,8 +176,8 @@ public class GameManager : MonoBehaviour
             GameObject go = Pooler.instance.Pop("Tower");
             go.transform.parent = selectedBlock.transform;
             go.transform.position = selectedBlock.transform.position;
-            selectedBlock.tower = go.GetComponent<AXD_TowerShoot>();
-            selectedBlock.SetEnergy(selectedBlock.tower.stats.energyRequired);
+            selectedBlock.building = go.GetComponent<AXD_TowerShoot>();
+            selectedBlock.SetEnergy(selectedBlock.building.buildingSO.energyRequired);
             levelManager.OpenBlockUI();
         }
     }

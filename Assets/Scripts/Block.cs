@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class Block : MonoBehaviour
 {
@@ -10,8 +12,7 @@ public class Block : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public List<Block> adjacentBlocks;
     public bool selectable = true;
-    
-    public Dictionary<SupportEffect,int> supportEffects= new Dictionary<SupportEffect,int>();
+    [SerializeField] private List<Sprite> sprites;
     public delegate void ApplyEffect();
     public ApplyEffect applyEffect;
 
@@ -20,7 +21,7 @@ public class Block : MonoBehaviour
     private Color baseColor;
     
     
-    public AXD_TowerShoot tower;
+    public Building building;
     
     private int energy = 2;
 
@@ -33,10 +34,7 @@ public class Block : MonoBehaviour
         UpdateAdjacents();
         baseColor = spriteRenderer.color;
         baseColor.a = 1;
-        foreach (SupportEffect effect in Enum.GetValues(typeof(SupportEffect)))
-        {
-            supportEffects.Add(effect,0);
-        }
+        spriteRenderer.sprite = sprites[Random.Range(0, 1)];
     }
 
     #endregion
@@ -46,10 +44,10 @@ public class Block : MonoBehaviour
         float posY = transform.position.y;
         return new[]
         {
-            new Vector2(posX+0.5f,posY+0.25f),
-            new Vector2(posX+0.5f,posY-0.25f),
-            new Vector2(posX-0.5f,posY+0.25f),
-            new Vector2(posX-0.5f,posY-0.25f),
+            new Vector2(posX+1.84f,posY+1.335f),
+            new Vector2(posX+1.72f,posY-1.335f),
+            new Vector2(posX-1.84f,posY-1.335f),
+            new Vector2(posX-1.72f,posY+1.335f),
         };
     }
     
@@ -105,20 +103,7 @@ public class Block : MonoBehaviour
     }
 
 
-
-    public void UpdateSupportEffect()
-    {
-        bonusEnergy = supportEffects[SupportEffect.Energy] > 0 ? 2 : 0;
-        if (supportEffects[SupportEffect.Defense] > 0)
-            applyEffect += DefenseSupportEffect;
-        else
-            applyEffect -= DefenseSupportEffect;
-    }
     
-    public void EnergySupportEffect()
-    {
-        
-    }
 
     public void DefenseSupportEffect()
     {
