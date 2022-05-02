@@ -7,12 +7,17 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     
-    public static event Action<int> EnemyDeathEvent;
+    public static event Action<int> EnemyDeathGoldEvent;
+    public static event Action<int> EnemyDeathCristalEvent;
     [SerializeField] private AXD_EnemySO enemyStats;
 
     [SerializeField] private Animator animator;
     private Block initPos;
     private Block destination;
+    private BargeSO bargeItComesFrom;
+    private int cristalStored;
+
+
 
 
     private AXD_TowerShoot target;
@@ -34,7 +39,7 @@ public class Enemy : MonoBehaviour
             Death(); 
             return true;
         }
-        Debug.Log(currentHP);
+        //Debug.Log(currentHP);
         return false;
     }
 
@@ -71,13 +76,15 @@ public class Enemy : MonoBehaviour
             CheckDirection(transform.position, path[i].pos);
             if (GameManager.instance.blocks[path[i].pos].tower is not null)
                 yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].tower));
-
+            if (!GameManager.instance.blocks[path[i].pos].selectable)
+                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].gameObject));
             transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed);
         }
-
+        
         animator.SetInteger("Speed", 0);
+        GameManager.instance.enemies.Remove(this);
     }
 
     void CheckDirection(Vector2 pos, Vector2 des)
@@ -116,12 +123,42 @@ public class Enemy : MonoBehaviour
         animator.SetInteger("Speed", 1);
     }
     
+    IEnumerator Attack(GameObject target)
+    {
+        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
+        transform.DOMove(pos, (pos - transform.position).magnitude / enemyStats.speed)
+            .SetEase(Ease.Linear);
+        yield return new WaitForSeconds((pos - transform.position).magnitude / enemyStats.speed);
+        animator.SetInteger("Speed", 0);
+        while (GameManager.instance.cityCenter.health > 0)
+        {
+            animator.SetTrigger("Attack");
+            yield return new WaitForSeconds(enemyStats.attackSpeed);
+            GameManager.instance.cityCenter.TakeDamage(enemyStats.damage);
+        }
+        animator.SetTrigger("AttackEnd");
+        animator.SetInteger("Speed", 1);
+    }
+
+    public void OnSpawn(BargeSO _barge, int troopListIndex)
+    {
+        bargeItComesFrom = _barge;
+        cristalStored = _barge.troops[troopListIndex].cristalToEarn;
+        GameManager.instance.enemies.Add(this);
+    }
+
     public void Death()
     {
-        if (EnemyDeathEvent != null)
+        if (EnemyDeathGoldEvent != null)
         {
-            EnemyDeathEvent(enemyStats.goldToAddOnDeath);
+            EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
         }
+
+        if (EnemyDeathCristalEvent != null && cristalStored > 0)
+        {
+            EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
+        }
+        GameManager.instance.enemies.Remove(this);
         Pooler.instance.Depop("Enemy", this.gameObject);
     }
 }

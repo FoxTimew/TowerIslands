@@ -19,7 +19,8 @@ public class EconomyManager : MonoBehaviour
             instance = this;
         }
 
-        Enemy.EnemyDeathEvent += Enemy_EnemyDeathEvent;
+        Enemy.EnemyDeathGoldEvent += Enemy_EnemyDeathGoldEvent;
+        Enemy.EnemyDeathCristalEvent += Enemy_EnemyDeathCristalEvent;
         UpdateUI();
     }
 
@@ -47,7 +48,7 @@ public class EconomyManager : MonoBehaviour
         return goldAmount;
     }
 
-    public void GainArcanum(int arcanumToAdd)
+    public void GainCristal(int arcanumToAdd)
     {
         arcanumAmount += arcanumToAdd;
         UpdateUI();
@@ -72,9 +73,14 @@ public class EconomyManager : MonoBehaviour
         arcanumyUI.text = arcanumAmount.ToString();
     }
 
-    public void Enemy_EnemyDeathEvent(int goldToAdd)
+    
+    public void Enemy_EnemyDeathGoldEvent(int goldToAdd)
     {
         GainGold(goldToAdd);
+    }
+    public void Enemy_EnemyDeathCristalEvent(int cristalToAdd)
+    {
+        GainCristal(cristalToAdd);
     }
     
 }

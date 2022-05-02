@@ -9,14 +9,20 @@ public class Block : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
     public List<Block> adjacentBlocks;
+    public bool selectable = true;
+    
+    public Dictionary<SupportEffect,int> supportEffects= new Dictionary<SupportEffect,int>();
+    public delegate void ApplyEffect();
+    public ApplyEffect applyEffect;
 
-
+    private int bonusEnergy = 1;
+    
     private Color baseColor;
     
     
     public AXD_TowerShoot tower;
     
-    public int energy = 2;
+    private int energy = 2;
 
     public bool selected;
     
@@ -27,6 +33,10 @@ public class Block : MonoBehaviour
         UpdateAdjacents();
         baseColor = spriteRenderer.color;
         baseColor.a = 1;
+        foreach (SupportEffect effect in Enum.GetValues(typeof(SupportEffect)))
+        {
+            supportEffects.Add(effect,0);
+        }
     }
 
     #endregion
@@ -53,12 +63,33 @@ public class Block : MonoBehaviour
         }
     }
 
+
+    public int GetEnergy()
+    {
+        return energy + bonusEnergy;
+    }
+    
+    public void SetEnergy(int value)
+    {
+        if (value <= bonusEnergy)
+        {
+            bonusEnergy -= 1;
+        }
+
+        if (value > bonusEnergy)
+        {
+            value -= bonusEnergy;
+            bonusEnergy = 0;
+            energy -= value;
+        }
+    }
     public int GetMaxEnergy()
     {
         int result = energy;
         foreach (var block in adjacentBlocks)
         {
-            result += block.energy;
+            result += block.GetEnergy();
+            result += bonusEnergy;
         }
         return result;
     }
@@ -72,6 +103,25 @@ public class Block : MonoBehaviour
     {
         spriteRenderer.color = baseColor;
     }
+
+
+
+    public void UpdateSupportEffect()
+    {
+        bonusEnergy = supportEffects[SupportEffect.Energy] > 0 ? 2 : 0;
+        if (supportEffects[SupportEffect.Defense] > 0)
+            applyEffect += DefenseSupportEffect;
+        else
+            applyEffect -= DefenseSupportEffect;
+    }
     
-    
+    public void EnergySupportEffect()
+    {
+        
+    }
+
+    public void DefenseSupportEffect()
+    {
+        
+    }
 }
