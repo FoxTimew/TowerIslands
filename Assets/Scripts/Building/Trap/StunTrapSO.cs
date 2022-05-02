@@ -12,10 +12,10 @@ public class StunTrapSO : TrapEffectSO
     {
         while (true)
         {
-            speedTemp = enemy.speed;
-            enemy.speed = 0;
+            speedTemp = enemy.speedRatio;
+            enemy.speedRatio = 0;
             yield return new WaitForSeconds(attackSpeed);
-            enemy.speed = speedTemp;
+            enemy.speedRatio = speedTemp;
             yield return null;
         }
     }

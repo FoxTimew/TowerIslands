@@ -41,5 +41,8 @@ public class Tower : MonoBehaviour
         yield return new WaitForSeconds(1/towerSO.attackSpeed);
         
         shooting = false;
+        
     }
+    
+    
 }

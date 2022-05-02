@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
     {
         if (selectedBlock.building is not null)
         {
-            selectedBlock.SetEnergy(-selectedBlock.building.buildingSO.energyRequired);
+            selectedBlock.DestroyBuilding();
             Pooler.instance.Depop("Tower",selectedBlock.building.gameObject);
             selectedBlock.building = null;
             levelManager.OpenBlockUI();
@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
             go.transform.parent = selectedBlock.transform;
             go.transform.position = selectedBlock.transform.position;
             selectedBlock.building = go.GetComponent<AXD_TowerShoot>();
-            selectedBlock.SetEnergy(selectedBlock.building.buildingSO.energyRequired);
+            selectedBlock.SpentEnergy(selectedBlock.building.buildingSO.energyRequired);
             levelManager.OpenBlockUI();
         }
     }

@@ -21,7 +21,6 @@ public class Building : MonoBehaviour
     public void BaseTakeDamage(int dmg)
     {
         hp -= dmg;
-        Debug.Log(hp);
         if (hp <= 0) Pooler.instance.Depop(buildingSO.name,gameObject);
     }
 }

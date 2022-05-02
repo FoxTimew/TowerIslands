@@ -13,7 +13,7 @@ public class Trap : Building
     private Coroutine routine;
     void Start()
     {
-        spriteRenderer.sprite = TrapEffectSO.sprite;
+        //spriteRenderer.sprite = TrapEffectSO.sprite;
     }
     
     private void OnTriggerEnter2D(Collider2D other)

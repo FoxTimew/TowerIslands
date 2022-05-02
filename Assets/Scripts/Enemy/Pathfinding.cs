@@ -84,10 +84,10 @@ public class Pathfinding
         List<Vector2> result = new List<Vector2>();
         Vector2[] neigbourPos = new[]
         {
-            current.pos + new Vector2(0.5f, 0.25f),
-            current.pos + new Vector2(0.5f, -0.25f),
-            current.pos + new Vector2(-0.5f, -0.25f),
-            current.pos + new Vector2(-0.5f, 0.25f),
+            current.pos + new Vector2(1.84f, 1.335f),
+            current.pos + new Vector2(1.72f, -1.335f),
+            current.pos + new Vector2(-1.84f, -1.335f),
+            current.pos + new Vector2(-1.72f, 1.335f),
             
             
         };

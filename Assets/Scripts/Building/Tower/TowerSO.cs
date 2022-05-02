@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "TowerSO", menuName = "ScriptableObjects/TowerSO", order = 1)]
-public class TowerSO : ScriptableObject
+public class TowerSO : BuildingSO
 {
     public int damage;
     public float attackSpeed;

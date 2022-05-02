@@ -7,8 +7,7 @@ public class SupportTower : Building
 {
     [SerializeField] private SupportSO supportSo;
     
-    private Dictionary<GameObject, float> elementsAffected = new Dictionary<GameObject, float>();
-
+    private Dictionary<GameObject, int> elementsAffected = new Dictionary<GameObject, int>();
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,12 +19,8 @@ public class SupportTower : Building
         supportSo.RemoveEffect(other.gameObject);
         elementsAffected.Remove(other.gameObject);
     }
-    
     private void OnDisable()
     {
         foreach (var go in elementsAffected.Keys) supportSo.RemoveEffect(go);
     }
-    
-    
-    
 }
