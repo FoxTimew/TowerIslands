@@ -147,12 +147,12 @@ public class CHM_PowerUpRay : MonoBehaviour
     
     private void MoveRay()
     {
-        Vector2 mousePos = new Vector2();
+        //Vector2 mousePos = new Vector2();
 
-        if (transform.position != Input.mousePosition.)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, Input.mousePosition, speed);
-        }
+        //if (transform.position != Input.mousePosition.)
+        //{
+        //    transform.position = Vector3.MoveTowards(transform.position, Input.mousePosition, speed);
+        //}
     }
     private void ReloadRay()
     {
