@@ -11,17 +11,20 @@ public class SupportSO : ScriptableObject
     public int range;
 
 
-    public virtual void AddEffect(GameObject go)
+    public virtual void AddEffect(Block block)
     {
         
     }
 
-    public virtual void RemoveEffect(GameObject go)
+    public virtual void RemoveEffect(Block blocko)
     {
         
     }
 
-    public virtual void Enter(Collider2D other, ref Dictionary<GameObject,int> dic)
+    public virtual void AddEffects(List<Block> blocks) 
+    {
+    }
+    public virtual void RemoveEffects(List<Block> blocks)
     {
     }
 }

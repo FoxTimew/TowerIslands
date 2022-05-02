@@ -29,7 +29,7 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
-        UpdateAdjacents();
+
         baseColor = spriteRenderer.color;
         baseColor.a = 1;
         spriteRenderer.sprite = sprites[Random.Range(0, 2)];
@@ -48,16 +48,27 @@ public class Block : MonoBehaviour
             new Vector2(posX-1.72f,posY+1.335f),
         };
     }
-    
-    public void UpdateAdjacents()
+
+
+    void Update()
     {
-        adjacentBlocks.Clear();
-        foreach (Vector2 adj in InitAdjacents())
+        if (Input.touchCount > 0)
         {
-            if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
-            adjacentBlocks.Add(GameManager.instance.blocks[adj],0);
+            UpdateAdjacents();
         }
     }
+    [ContextMenu("UpdateAdjacents")]
+    public void UpdateAdjacents()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (!GameManager.instance.blocks.ContainsKey(Utils.Round(InitAdjacents()[i]))) continue;
+            if (adjacentBlocks.ContainsKey(GameManager.instance.blocks[Utils.Round(InitAdjacents()[i])] ))continue;
+            adjacentBlocks.Add(GameManager.instance.blocks[Utils.Round(InitAdjacents()[i])],0);
+
+        }
+    }
+    
 
 
     
@@ -113,11 +124,6 @@ public class Block : MonoBehaviour
             }  
         }
     }
-
-    public void Select()
-    {
-        spriteRenderer.color = Color.green;
-    }
     
     public void DestroyBuilding()
     {
@@ -132,6 +138,12 @@ public class Block : MonoBehaviour
         if (buildingValue <= 0) return;
         energy += buildingValue;
     }
+    
+    public void Select()
+    {
+        spriteRenderer.color = Color.green;
+    }
+    
     public void Deselect()
     {
         spriteRenderer.color = baseColor;

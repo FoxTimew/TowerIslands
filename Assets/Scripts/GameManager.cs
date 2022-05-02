@@ -53,21 +53,22 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        DontDestroyOnLoad(gameObject);
         instance = this;
         cam.transparencySortMode = TransparencySortMode.CustomAxis;
         cam.transparencySortAxis = Vector3.up;
 
         foreach (var block in baseBlock)
-            blocks.Add(block.transform.position, block);
+            blocks.Add(Utils.Round(block.transform.position), block);
+        foreach (var block in baseBlock)
+            block.UpdateAdjacents();
     }
+    
 
     #endregion
 
 
     private bool building;
-
+    
     public void StartLevel(LevelSO level)
     {
         building = true;

@@ -6,25 +6,33 @@ using UnityEngine;
 public class EnergySupportSO : SupportSO
 {
     public int energyValue;
-
-    private Block block;
-    public override void AddEffect(GameObject go)
+    
+    public override void AddEffect(Block block)
     {
+        Debug.Log(block.energy);
         block.energy += energyValue;
+        Debug.Log(block.energy);
     }
 
-    public override void RemoveEffect(GameObject go)
+    public override void RemoveEffect(Block block)
     {
         block.energy -= energyValue;
         if(block.energy < 0) block.DestroyBuilding();
     }
     
-    public override void Enter(Collider2D other, ref Dictionary<GameObject,int> dic)
+    public override void AddEffects(List<Block> blocks)
     {
-        if (other.transform.CompareTag("Block"))
+        foreach (var block in blocks)
         {
-            block = other.gameObject.GetComponent<Block>();
-            AddEffect(other.gameObject);
+            AddEffect(block);
+        }
+    }
+    
+    public override void RemoveEffects(List<Block> blocks)
+    {
+        foreach (var block in blocks)
+        {
+            RemoveEffect(block);
         }
     }
     
