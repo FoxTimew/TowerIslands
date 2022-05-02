@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using DG.Tweening;
 
 public class UI_Manager : MonoBehaviour
 {
+    public static UI_Manager instance;
     [SerializeField] private RectTransform 
         mainMenu,
         creditsMenu,
@@ -17,6 +19,14 @@ public class UI_Manager : MonoBehaviour
         feedbackUI,
         defeatMenu,
         victoryMenu;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     public void OpenMainMenu()
     {
