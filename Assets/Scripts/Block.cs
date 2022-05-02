@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Block : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Block : MonoBehaviour
     public delegate void ApplyEffect();
     public ApplyEffect applyEffect;
 
+    public UnityEvent OnSelect, OnDeselect;
     private int bonusEnergy = 1;
     
     private Color baseColor;
@@ -62,8 +64,7 @@ public class Block : MonoBehaviour
             adjacentBlocks.Add(GameManager.instance.blocks[adj]);
         }
     }
-
-
+    
     public int GetEnergy()
     {
         return energy + bonusEnergy;
@@ -97,11 +98,13 @@ public class Block : MonoBehaviour
     public void Select()
     {
         spriteRenderer.color = Color.green;
+        OnSelect.Invoke();
     }
 
     public void Deselect()
     {
         spriteRenderer.color = baseColor;
+        OnDeselect.Invoke();
     }
 
 
