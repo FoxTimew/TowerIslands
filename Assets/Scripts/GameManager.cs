@@ -10,6 +10,7 @@ using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
+    public CameraZoom cameraZoom;
     public static GameManager instance;
 
     public GameObject blockGroup;

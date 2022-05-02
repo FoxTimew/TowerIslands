@@ -16,22 +16,7 @@ public class SupportTower : Building
         GetAffectedBlocks(supportSo.range,GameManager.instance.blocks[Utils.Round(transform.position)]);
         supportSo.AddEffects(affectedBlocks);
     }
-
-    private void OnEnable()
-    {
-        
-    }
-
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     supportSo.Enter(other, ref elementsAffected );
-    // }
-    // private void OnTriggerExit2D(Collider2D other)
-    // {
-    //     if (!elementsAffected.ContainsKey(other.gameObject)) return;
-    //     supportSo.RemoveEffect(other.gameObject);
-    //     elementsAffected.Remove(other.gameObject);
-    // }
+    
     private void OnDisable()
     {
         supportSo.RemoveEffects(affectedBlocks);

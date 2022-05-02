@@ -7,118 +7,54 @@ using UnityEngine;
 public class Drag : MonoBehaviour
 {
     [SerializeField] private Block[] blocks;
-    [SerializeField] private LayerMask layerMask;
-    private void Start()
-    {
-    
-        
-    }
-
+    private Vector3 touchStart;
     private Touch touch;
     private Ray2D ray;
     private Vector3 origin;
     private Vector3 pos;
     private RaycastHit2D hit2D;
     private Color color;
-    void FixedUpdate()
-    {
-        if (Input.touchCount > 0)
-        {
-            touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Ended) return;
-            origin = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
-            origin.z = 0;
-            origin.y += 2.67f*2f;
-            if (touch.phase != TouchPhase.Moved) return;
-            hit2D = Physics2D.Raycast(origin, Vector2.zero,layerMask);
-            if (hit2D.collider != null)
-            {
-                if (hit2D.transform.CompareTag("GridElement"))
-                {
-                    pos = hit2D.transform.position;
-                    transform.position = pos;
-                    if (IsPlaceable())
-                    {
-                        foreach (var block in blocks)
-                        {
-                            color = block.spriteRenderer.color;
-                            color.a = 1f;
-                            block.spriteRenderer.color = color;
-                        }
-                    }
-                    else
-                    {
-                        foreach (var block in blocks)
-                        {
-                            color = block.spriteRenderer.color;
-                            color.a = 0.5f;
-                            block.spriteRenderer.color = color;
-                        }
-                    }
-
-                }
-            }
-            else
-            {
-                transform.position = origin;
-            }
-            
-
-        }
-        
-    }
+    private Vector3 direction;
+    private bool isSnapped;
+    private Vector3 lastPosition;
     
-    private IEnumerator WaitForRelease()
+    public void FixedUpdate()
     {
-        var place = false;
-        Color color;
-        yield return new WaitForSeconds(0.1f);
-        while (Input.touchCount == 0) yield return null;
-        while (gameObject.activeSelf)
+        if (Input.touchCount <= 0) return;
+        GameManager.instance.cameraZoom.enabled = false;
+        touch = Input.GetTouch(0);
+
+        if (touch.phase == TouchPhase.Ended) return;
+        origin = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
+        origin.y += 2.67f * 2f;
+        origin.z = 0;
+        lastPosition = transform.GetChild(0).position;
+        foreach (var block in blocks)
         {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                Vector3 pos = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
-                pos.z = 0;
-                transform.position = pos;
-                place = IsPlaceable();
-                switch (touch.phase)
-                {
-                    case TouchPhase.Moved when place:
-                    {
-                        foreach (var block in blocks)
-                        {
-                            color = block.spriteRenderer.color;
-                            color.a = 1f;
-                            block.spriteRenderer.color = color;
-                        }
-                        break;
-                    }
-                    case TouchPhase.Moved:
-                    {
-                        foreach (var block in blocks)
-                        { 
-                            color = block.spriteRenderer.color; 
-                            color.a = 0.5f; 
-                            block.spriteRenderer.color = color;
-                        }
-                        break;
-                    }
-                    case TouchPhase.Ended when place:
-                    {
-                        PlaceBlock();
-                        yield break;
-                    }
-                }
-            }
-            yield return null;
+            color = block.spriteRenderer.color;
+            color.a = IsPlaceable()? 1 : 0.5f;
+            block.spriteRenderer.color = color;
         }
-
-        yield return null;
-
+        transform.position = origin;
+        if (isSnapped) transform.GetChild(0).position = lastPosition;
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.transform.CompareTag("GridElement")) return;
+        isSnapped = true;
+        transform.GetChild(0).position = other.transform.position;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.transform.CompareTag("GridElement")) return;
+        isSnapped = false;
+        transform.GetChild(0).localPosition = Vector3.zero;
+    }
+
+    
     private float RoundTo(float value, float step)
     {
         return Mathf.Round(value/step) * step;
@@ -130,11 +66,11 @@ public class Drag : MonoBehaviour
         bool result = false;
         foreach (var block in blocks)
         {
-            if (GameManager.instance.blocks.ContainsKey(block.transform.position))
+            if (GameManager.instance.blocks.ContainsKey(Utils.Round(block.transform.position)))
                 return false;
             foreach (var vec in block.InitAdjacents())
             {
-                if (GameManager.instance.blocks.ContainsKey(vec))
+                if (GameManager.instance.blocks.ContainsKey(Utils.Round(vec)))
                     result = true;
             }
         }

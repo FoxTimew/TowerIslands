@@ -19,6 +19,6 @@ public class IslandCreator : MonoBehaviour
         if(current != null) Pooler.instance.Depop(currentType,current);
         currentType = key;
         current = Pooler.instance.Pop(currentType);
-        current.transform.position = GameManager.instance.cam.ScreenToWorldPoint(Input.GetTouch(0).position);
+        current.transform.position = Vector3.zero;
     }
 }
