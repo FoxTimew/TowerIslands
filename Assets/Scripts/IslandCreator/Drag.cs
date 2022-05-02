@@ -20,23 +20,29 @@ public class Drag : MonoBehaviour
     
     public void FixedUpdate()
     {
-        if (Input.touchCount <= 0) return;
-        GameManager.instance.cameraZoom.enabled = false;
-        touch = Input.GetTouch(0);
-
-        if (touch.phase == TouchPhase.Ended) return;
-        origin = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
-        origin.y += 2.67f * 2f;
-        origin.z = 0;
-        lastPosition = transform.GetChild(0).position;
-        foreach (var block in blocks)
+        if (Input.touchCount > 0)
         {
-            color = block.spriteRenderer.color;
-            color.a = IsPlaceable()? 1 : 0.5f;
-            block.spriteRenderer.color = color;
+            GameManager.instance.cameraZoom.enabled = false;
+            touch = Input.GetTouch(0);
+        
+            origin = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
+            origin.y += 2.67f * 2f;
+            origin.z = 0;
+            lastPosition = transform.GetChild(0).position;
+            foreach (var block in blocks)
+            {
+                color = block.spriteRenderer.color;
+                color.a = IsPlaceable()? 1 : 0.5f;
+                block.spriteRenderer.color = color;
+            }
+            transform.position = origin;
+            if (isSnapped) transform.GetChild(0).position = lastPosition;
+            if (touch.phase != TouchPhase.Ended) return;
+            Debug.Log("place");
+            if (IsPlaceable()) {PlaceBlock();}
+            else GameManager.instance.islandCreator.Depop();
         }
-        transform.position = origin;
-        if (isSnapped) transform.GetChild(0).position = lastPosition;
+        
     }
 
 
@@ -83,7 +89,7 @@ public class Drag : MonoBehaviour
     {
         GameManager.instance.islandCreator.current = null;
         foreach (var block in blocks)
-         GameManager.instance.blocks.Add(block.transform.position,block);
+         GameManager.instance.blocks.Add(Utils.Round(block.transform.position),block);
         foreach (var block in  GameManager.instance.blocks.Values)
             block.UpdateAdjacents();
         transform.parent = GameManager.instance.blockGroup.transform;
