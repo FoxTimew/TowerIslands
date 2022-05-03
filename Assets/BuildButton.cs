@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BuildButton : MonoBehaviour
 {
+    public List<GameObject> gos;
     public TMP_Text text;
     public BuildingSO buildingSO;
     public void Build()
@@ -28,9 +29,21 @@ public class BuildButton : MonoBehaviour
     {
         if (GameManager.instance.selectedBlock is null) return;
         if (GameManager.instance.selectedBlock.building is not null)
+        {
+            foreach (var go in gos)
+            {
+                go.SetActive(false);
+            }
             text.text = $"Destroy : {GameManager.instance.selectedBlock.building.buildingSO.goldRequired}";
-        else
-            text.text = $"Create {buildingSO.name} : {buildingSO.goldRequired}";
+        }
 
+        else
+        {
+            foreach (var go in gos)
+            {
+                go.SetActive(true);
+            }
+            text.text = $"Create {buildingSO.name} : {buildingSO.goldRequired}";
+        }
     }
 }

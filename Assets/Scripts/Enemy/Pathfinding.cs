@@ -21,15 +21,19 @@ public class Pathfinding
     {
         public Vector2 pos;
 
+        public int x;
+        public int y;
         public float gCost;
         public float hCost;
         public float fCost;
 
         public Node cameFrom;
 
-        public Node(Vector2 pos)
+        public Node(Vector2 pos, int x, int y)
         {
             this.pos = pos;
+            this.x = x;
+            this.y = y;
         }
 
         public void CalculateFCost()
@@ -38,15 +42,16 @@ public class Pathfinding
         }
     }
 
-    public List<Node> FindPath(Vector2 start, Vector2 end, List<Vector2> map)
+    public List<Node> FindPath(Vector2 start, Vector2 end, Vector2[,] map, int[,] walkables)
     {
-        foreach (var pos in map)
+        for (int i = 0; i < map.GetLength(0); i++)
+        for (int j = 0; j < map.GetLength(1); j++)
         {
-            Node node = new Node(pos);
+            Node node = new Node(map[i,j],i,j);
             node.gCost = int.MaxValue;
             node.CalculateFCost();
             node.cameFrom = null;
-            grid.Add(pos,node);
+            grid.Add(new Vector2(i,j),node);
         }
         toCheckList.Add(grid[start]);
         grid[start].gCost = 0;
@@ -59,7 +64,7 @@ public class Pathfinding
                 return CalculatePath(grid[end]);
             toCheckList.Remove(currentNode);
             checkedList.Add(currentNode);
-            foreach (var neighbour in NeighbourList(currentNode))
+            foreach (var neighbour in NeighbourList(currentNode, map.GetLength(0)))
             {
                 if (checkedList.Contains(grid[neighbour])) continue;
                 float tentativeGCost = currentNode.gCost + CalculateDistance(currentNode, grid[neighbour]);
@@ -77,20 +82,19 @@ public class Pathfinding
         return null;
     }
 
-    private List<Vector2> NeighbourList(Node current)
+    private List<Vector2> NeighbourList(Node current,int lenght)
     {
         List<Vector2> result = new List<Vector2>();
         Vector2[] neigbourPos = new[]
         {
-            current.pos + new Vector2(1.84f, 1.335f),
-            current.pos + new Vector2(1.72f, -1.335f),
-            current.pos + new Vector2(-1.84f, -1.335f),
-            current.pos + new Vector2(-1.72f, 1.335f),
-            
-            
+            new Vector2(current.x + 1, current.y - 1),
+            new Vector2(current.x + 1, current.y + 1),
+            new Vector2(current.x - 1, current.y - 1),
+            new Vector2(current.x - 1, current.y + 1),
         };
         foreach (var pos in neigbourPos)
         {
+            if (pos.x < 0 || pos.x > lenght || pos.y < 0 || pos.y > lenght) continue;
             if (!grid.ContainsKey(pos)) continue;
             result.Add(pos);
         }

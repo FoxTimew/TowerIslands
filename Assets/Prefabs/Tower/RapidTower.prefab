@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c736c5b9d7fb984691e86b767766b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingSO: {fileID: 0}
+  buildingSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
   towerSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}
 --- !u!60 &975330135318492433
 PolygonCollider2D:
@@ -240,7 +240,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5140832759016273424}
   - component: {fileID: 5140832759016273439}
-  - component: {fileID: 4759817683278295708}
   m_Layer: 0
   m_Name: RapidTower
   m_TagString: Untagged
@@ -310,17 +309,3 @@ PolygonCollider2D:
       - {x: 0.40234375, y: 0.29296875}
       - {x: 0.29296875, y: 0.40234375}
       - {x: 0.15234375, y: 0.47265625}
---- !u!114 &4759817683278295708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140832759016273425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c736c5b9d7fb984691e86b767766b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
-  towerSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}

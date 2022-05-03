@@ -10,6 +10,7 @@ public class Tower : Building
     private bool shooting;
     private Enemy target;
     private List<Enemy> inRange;
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +22,7 @@ public class Tower : Building
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (!other.CompareTag("Enemy")) return;
         if (inRange.Contains(other.GetComponent<Enemy>()))
         {
             inRange.Remove(other.GetComponent<Enemy>());
@@ -39,9 +41,7 @@ public class Tower : Building
         Pooler.instance.DelayedDepop(2,"Bullet",go);
         //Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
         yield return new WaitForSeconds(1/towerSO.attackSpeed);
-        
         shooting = false;
-        
     }
     
     

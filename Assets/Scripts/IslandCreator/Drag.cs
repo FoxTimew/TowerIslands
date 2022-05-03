@@ -37,10 +37,16 @@ public class Drag : MonoBehaviour
             }
             transform.position = origin;
             if (isSnapped) transform.GetChild(0).position = lastPosition;
-            if (touch.phase != TouchPhase.Ended) return;
-            Debug.Log("place");
-            if (IsPlaceable()) {PlaceBlock();}
-            else GameManager.instance.islandCreator.Depop();
+            if (touch.phase == TouchPhase.Ended)
+            {
+                Debug.Log("place");
+                if (IsPlaceable())
+                {
+                    PlaceBlock();
+                }
+                else GameManager.instance.islandCreator.Depop();
+            }
+            
         }
         
     }

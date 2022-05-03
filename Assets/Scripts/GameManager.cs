@@ -1,14 +1,9 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
-using TMPro;
-using Unity.VisualScripting.Dependencies.NCalc;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject blockGroup;
     public Camera cam;
 
+
+
+    public Grid grid;
     public CityCenter cityCenter;
     public IslandCreator islandCreator;
     public LevelManager levelManager;
@@ -136,8 +134,8 @@ public class GameManager : MonoBehaviour
                     if ((go.transform.position - (Vector3) des).magnitude > (go.transform.position - (Vector3) pos).magnitude) 
                         des = pos;
                 }
-                go.transform.DOMove(des, ((Vector3) des - go.transform.position).magnitude / 1).SetEase(Ease.Linear);
-                yield return new WaitForSeconds(((Vector3) des - go.transform.position).magnitude /1 );
+                go.transform.DOMove(des, ((Vector3) des - go.transform.position).magnitude / 5).SetEase(Ease.Linear);
+                yield return new WaitForSeconds(((Vector3) des - go.transform.position).magnitude /5 );
                 
                 Debug.Log(barge.troops.Count);
                 for (int i = 0; i < barge.troops.Count ; i++)
@@ -157,7 +155,6 @@ public class GameManager : MonoBehaviour
             building = true;
             waveCount--;
             yield return null;
-            
         }
         cityCenter.ResetHealth();
         startButton.SetActive(false);

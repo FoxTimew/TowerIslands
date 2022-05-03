@@ -85,13 +85,18 @@ public class Block : MonoBehaviour
     public bool SpentEnergy(int value)
     {
         if (value > GetMaxEnergy()) return false;
-        if (value < energy) energy -= value;
+        if (value < energy)
+        {
+            energy -= value;
+            return true;
+        }
         else
         {
             energy = value - energy;
             SpentAdjacentEnergy(value - energy);
+            return true;
         }
-        return true;
+        return false;
     }
     private void SpentAdjacentEnergy(int value)
     {
@@ -130,6 +135,7 @@ public class Block : MonoBehaviour
         int buildingValue = building.buildingSO.energyRequired;
         foreach (var block in adjacentBlocks.Keys)
         {
+            if (adjacentBlocks[block] == 0) continue;
             buildingValue -= adjacentBlocks[block];
             block.energy += adjacentBlocks[block];
             adjacentBlocks[block] = 0;
@@ -137,8 +143,10 @@ public class Block : MonoBehaviour
 
         if (buildingValue <= 0) return;
         energy += buildingValue;
-        Pooler.instance.Depop(building.buildingSO.name,building.gameObject);
+        Pooler.instance.Depop(building.buildingSO.name,
+            building.buildingSO.type == BuildingType.Trap ? building.gameObject : building.transform.parent.gameObject);
         EconomyManager.instance.GainGold(building.buildingSO.goldRequired);
+        building = null;
     }
 
     private GameObject go;
@@ -149,7 +157,7 @@ public class Block : MonoBehaviour
         go.transform.parent = transform;
         go.transform.localPosition = Vector3.zero;
         EconomyManager.instance.RemoveGold(building.goldRequired);
-        this.building = go.GetComponent<Building>();
+        this.building = building.type == BuildingType.Trap ? go.GetComponent<Building>() : go.transform.parent.GetComponent<Building>();
     }
     
     public void Select()

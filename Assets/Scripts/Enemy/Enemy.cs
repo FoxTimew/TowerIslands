@@ -57,35 +57,23 @@ public class Enemy : MonoBehaviour
     IEnumerator MoveEnemy()
     {
         animator.SetInteger("Speed", 1);
-        destination = GameManager.instance.blocks[Utils.Round(new Vector2(1.78f, 0))];
-        var des = Vector2.one * int.MaxValue;
-        foreach (var pos in GameManager.instance.blocks.Values)
-        {
-            if ((transform.position - (Vector3) des).magnitude > (transform.position - pos.transform.position).magnitude)
-            {
-                des = pos.transform.position;
-            }
-        }
-
-        CheckDirection(transform.position, des);
-        transform.DOMove(des, ((Vector3) des - transform.position).magnitude / speed).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(((Vector3) des - transform.position).magnitude / speed);
-
-        initPos = GameManager.instance.blocks[Utils.Round(transform.position)];
+        destination = GameManager.instance.blocks[new Vector2(1.78f, 0)];
+        initPos = GameManager.instance.blocks[transform.position];
+        
         Pathfinding pf = new Pathfinding();
         List<Vector2> map = new List<Vector2>();
-        foreach (var block in GameManager.instance.blocks.Values)
+        foreach (var block in GameManager.instance.blocks.Keys)
         {
-            map.Add(block.transform.position);
+            map.Add(block);
         }
 
-        List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, map);
+        List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, GameManager.instance.grid.position,GameManager.instance.grid.walkable);
         Debug.Log(path);
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);
-            if (GameManager.instance.blocks[Utils.Round(path[i].pos)].building is not null && GameManager.instance.blocks[Utils.Round(path[i].pos)].building.buildingSO.type != BuildingType.Trap)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[Utils.Round(path[i].pos)].building));
+            if (GameManager.instance.blocks[path[i].pos].building is not null && GameManager.instance.blocks[path[i].pos].building.buildingSO.type != BuildingType.Trap)
+                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].building));
             transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / speed);
