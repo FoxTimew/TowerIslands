@@ -40,8 +40,6 @@ public class Pathfinding
 
     public List<Node> FindPath(Vector2 start, Vector2 end, List<Vector2> map)
     {
-        
-
         foreach (var pos in map)
         {
             Node node = new Node(pos);

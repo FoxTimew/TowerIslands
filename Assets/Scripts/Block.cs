@@ -137,6 +137,19 @@ public class Block : MonoBehaviour
 
         if (buildingValue <= 0) return;
         energy += buildingValue;
+        Pooler.instance.Depop(building.buildingSO.name,building.gameObject);
+        EconomyManager.instance.GainGold(building.buildingSO.goldRequired);
+    }
+
+    private GameObject go;
+    public void Build(BuildingSO building)
+    {
+        SpentEnergy(building.energyRequired);
+        go = Pooler.instance.Pop(building.name);
+        go.transform.parent = transform;
+        go.transform.localPosition = Vector3.zero;
+        EconomyManager.instance.RemoveGold(building.goldRequired);
+        this.building = go.GetComponent<Building>();
     }
     
     public void Select()

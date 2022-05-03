@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8ad02d1e2dbba46886fbc72a596f07, type: 3}
   m_Name: Minion
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 20
   maxHealthPoints: 100
   damage: 30
   attackSpeed: 1
   range: 1
+  goldToAddOnDeath: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3933395088630872559}
   - component: {fileID: 3933395088630872558}
   - component: {fileID: 3771247180759275104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Block
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -131,10 +131,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.022645414, y: 1.2401497}
-      - {x: -1.7434331, y: 0.017324269}
-      - {x: -1.7467166, y: -1.5002843}
-      - {x: -0.014832925, y: -2.4868665}
-      - {x: 1.0316787, y: -1.8171582}
-      - {x: 1.755978, y: -1.3536476}
-      - {x: 1.7401497, y: -0.012964487}
+    - - {x: 0, y: 1.35}
+      - {x: -1.75, y: 0}
+      - {x: -0.05, y: -1.32}
+      - {x: 1.8, y: 0}

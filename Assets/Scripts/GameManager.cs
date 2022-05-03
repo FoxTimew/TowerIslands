@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using TMPro;
 using Unity.VisualScripting.Dependencies.NCalc;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
     }
 
     public List<Enemy> enemies;
+    public LayerMask layerMask;
     private IEnumerator LevelCoroutine(LevelSO level)
     {
         var waveCount = level.waves.Count;
@@ -102,13 +105,13 @@ public class GameManager : MonoBehaviour
                             levelManager.CloseBlockUI();
                         }
                         Touch touch = Input.GetTouch(0);
-                        RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(touch.position), Vector3.forward);
+                        RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(touch.position), Vector3.forward,layerMask);
                         if(hit.collider != null)
-                            if (blocks.ContainsKey(hit.transform.position))
+                            if (hit.transform.CompareTag("Block"))
                             {
-                                if (blocks[hit.transform.position].selectable)
+                                if (hit.transform.GetComponent<Block>().selectable)
                                 {
-                                    selectedBlock = blocks[hit.transform.position];
+                                    selectedBlock = hit.transform.GetComponent<Block>();
                                     selectedBlock.Select();
                                     levelManager.OpenBlockUI();
                                 }
@@ -126,7 +129,7 @@ public class GameManager : MonoBehaviour
                 GameObject go = Pooler.instance.Pop("Barge");
                 var des = Vector2.one * int.MaxValue;
                 go.transform.parent = null;
-                go.transform.position = new Vector3(-4.5f, -2.5f, 0);
+                go.transform.position = new Vector3(-20.5f, -20.5f, 0);
                 foreach (var pos in blocks.Keys)
                 {
                     if (blocks[pos].building is not null) continue;
@@ -161,28 +164,8 @@ public class GameManager : MonoBehaviour
         welcomePage.SetActive(true);
 
     }
-
-
-
-    public void TowerButton()
-    {
-        if (selectedBlock.building is not null)
-        {
-            selectedBlock.DestroyBuilding();
-            Pooler.instance.Depop("Tower",selectedBlock.building.gameObject);
-            selectedBlock.building = null;
-            levelManager.OpenBlockUI();
-        }
-        else
-        {
-            GameObject go = Pooler.instance.Pop("Tower");
-            go.transform.parent = selectedBlock.transform;
-            go.transform.position = selectedBlock.transform.position;
-            selectedBlock.building = go.GetComponent<AXD_TowerShoot>();
-            selectedBlock.SpentEnergy(selectedBlock.building.buildingSO.energyRequired);
-            levelManager.OpenBlockUI();
-        }
-    }
+    
+  
     
     
     

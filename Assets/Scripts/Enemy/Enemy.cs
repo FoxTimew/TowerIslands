@@ -17,24 +17,28 @@ public class Enemy : MonoBehaviour
     private BargeSO bargeItComesFrom;
     private int cristalStored;
 
-    public float speedRatio;
 
-    private float speed
-    {
-        get
-        {
-            return speedRatio * enemyStats.speed;
-        }
-    }
+    private float speed;
 
     private AXD_TowerShoot target;
 
     private int currentHP { get; set; }
-
+    private Coroutine movement;
     private void Start()
     {
         currentHP = enemyStats.maxHealthPoints;
-        StartCoroutine(MoveEnemy());
+        speed = enemyStats.speed;
+        StartMovement();
+    }
+
+    public void StartMovement()
+    {
+        movement = StartCoroutine(MoveEnemy());
+    }
+
+    public void StopMovement()
+    {
+        StopCoroutine(movement);
     }
 
     public bool TakeDamage(DamageType damageType, int damageToTake)
@@ -53,13 +57,13 @@ public class Enemy : MonoBehaviour
     IEnumerator MoveEnemy()
     {
         animator.SetInteger("Speed", 1);
-        destination = GameManager.instance.blocks[new Vector2(0, -0.25f)];
+        destination = GameManager.instance.blocks[Utils.Round(new Vector2(1.78f, 0))];
         var des = Vector2.one * int.MaxValue;
-        foreach (var pos in GameManager.instance.blocks.Keys)
+        foreach (var pos in GameManager.instance.blocks.Values)
         {
-            if ((transform.position - (Vector3) des).magnitude > (transform.position - (Vector3) pos).magnitude)
+            if ((transform.position - (Vector3) des).magnitude > (transform.position - pos.transform.position).magnitude)
             {
-                des = pos;
+                des = pos.transform.position;
             }
         }
 
@@ -67,7 +71,7 @@ public class Enemy : MonoBehaviour
         transform.DOMove(des, ((Vector3) des - transform.position).magnitude / speed).SetEase(Ease.Linear);
         yield return new WaitForSeconds(((Vector3) des - transform.position).magnitude / speed);
 
-        initPos = GameManager.instance.blocks[transform.position];
+        initPos = GameManager.instance.blocks[Utils.Round(transform.position)];
         Pathfinding pf = new Pathfinding();
         List<Vector2> map = new List<Vector2>();
         foreach (var block in GameManager.instance.blocks.Values)
@@ -76,13 +80,12 @@ public class Enemy : MonoBehaviour
         }
 
         List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, map);
-
-
+        Debug.Log(path);
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);
-            if (GameManager.instance.blocks[path[i].pos].building is not null && GameManager.instance.blocks[path[i].pos].building.buildingSO.type != BuildingType.Trap)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].building));
+            if (GameManager.instance.blocks[Utils.Round(path[i].pos)].building is not null && GameManager.instance.blocks[Utils.Round(path[i].pos)].building.buildingSO.type != BuildingType.Trap)
+                yield return StartCoroutine(Attack(GameManager.instance.blocks[Utils.Round(path[i].pos)].building));
             transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / speed);
