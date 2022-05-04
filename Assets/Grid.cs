@@ -7,29 +7,33 @@ public class Grid : MonoBehaviour
 {
     [SerializeField] private List<GameObject> gridLines;
 
-    public int[,] walkable;
+    public bool[,] walkable;
     public Vector2[,] position;
     void Start()
     {
+        int temp = 0;
+        int temp1 = 0;
         position = new Vector2[10, 10];
-        walkable = new int[10, 10];
+        walkable = new bool[10, 10];
         for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < 10; j++)
             {
                 position[i,j] = (Vector2)Utils.Round(gridLines[i].transform.GetChild(j).transform.position);
-                if (GameManager.instance.blocks.ContainsKey(gridLines[i].transform.GetChild(j).transform
-                    .position))
+                if (GameManager.instance.blocks.ContainsKey(Utils.Round(gridLines[i].transform.GetChild(j).transform
+                    .position)))
                 {
-                    walkable[i, j] = 1;
+                    walkable[i, j] = true;
+                    temp1++;
                     gridLines[i].transform.GetChild(j).gameObject.SetActive(false);
                 }
                 else
                 {
-                    walkable[i, j] = 0;
+                    walkable[i, j] = false;
                     gridLines[i].transform.GetChild(j).gameObject.SetActive(true);
                 }
             }
         }
+        Debug.Log(temp1);
     }
 }

@@ -9,9 +9,7 @@ public class EnergySupportSO : SupportSO
     
     public override void AddEffect(Block block)
     {
-        Debug.Log(block.energy);
         block.energy += energyValue;
-        Debug.Log(block.energy);
     }
 
     public override void RemoveEffect(Block block)

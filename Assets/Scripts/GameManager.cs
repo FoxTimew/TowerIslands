@@ -137,7 +137,6 @@ public class GameManager : MonoBehaviour
                 go.transform.DOMove(des, ((Vector3) des - go.transform.position).magnitude / 5).SetEase(Ease.Linear);
                 yield return new WaitForSeconds(((Vector3) des - go.transform.position).magnitude /5 );
                 
-                Debug.Log(barge.troops.Count);
                 for (int i = 0; i < barge.troops.Count ; i++)
                 {
                      GameObject enemyGO = Pooler.instance.Pop("enemy");

@@ -42,16 +42,19 @@ public class Pathfinding
         }
     }
 
-    public List<Node> FindPath(Vector2 start, Vector2 end, Vector2[,] map, int[,] walkables)
+    public List<Node> FindPath(Vector2 start, Vector2 end, Vector2[,] map, bool[,] walkables)
     {
         for (int i = 0; i < map.GetLength(0); i++)
         for (int j = 0; j < map.GetLength(1); j++)
         {
+            if (!walkables[i, j]) continue;
             Node node = new Node(map[i,j],i,j);
             node.gCost = int.MaxValue;
             node.CalculateFCost();
             node.cameFrom = null;
-            grid.Add(new Vector2(i,j),node);
+            if (Utils.Round(start) == map[i, j]) start = new Vector2(i, j);
+            if (Utils.Round(end) == map[i, j]) end = new Vector2(i, j);
+            grid.Add(new Vector2(i, j),node);
         }
         toCheckList.Add(grid[start]);
         grid[start].gCost = 0;
@@ -70,7 +73,7 @@ public class Pathfinding
                 float tentativeGCost = currentNode.gCost + CalculateDistance(currentNode, grid[neighbour]);
                 if (tentativeGCost < grid[neighbour].gCost)
                 {
-                    grid[neighbour].cameFrom = grid[currentNode.pos];
+                    grid[neighbour].cameFrom = grid[new Vector2(currentNode.x,currentNode.y)];
                     grid[neighbour].gCost = tentativeGCost;
                     grid[neighbour].hCost = CalculateDistance(grid[neighbour], grid[end]);
                     grid[neighbour].CalculateFCost();
@@ -87,14 +90,14 @@ public class Pathfinding
         List<Vector2> result = new List<Vector2>();
         Vector2[] neigbourPos = new[]
         {
-            new Vector2(current.x + 1, current.y - 1),
-            new Vector2(current.x + 1, current.y + 1),
-            new Vector2(current.x - 1, current.y - 1),
-            new Vector2(current.x - 1, current.y + 1),
+            new Vector2(current.x + 1, current.y),
+            new Vector2(current.x - 1, current.y),
+            new Vector2(current.x , current.y - 1),
+            new Vector2(current.x , current.y + 1),
         };
         foreach (var pos in neigbourPos)
         {
-            if (pos.x < 0 || pos.x > lenght || pos.y < 0 || pos.y > lenght) continue;
+            if (pos.x < 0 || pos.x >= lenght || pos.y < 0 || pos.y >= lenght) continue;
             if (!grid.ContainsKey(pos)) continue;
             result.Add(pos);
         }
@@ -103,8 +106,8 @@ public class Pathfinding
 
     private float CalculateDistance(Node a, Node b)
     {
-        float xDistance = Mathf.Abs(a.pos.x - b.pos.x);
-        float yDistance = Mathf.Abs(a.pos.y - b.pos.y);
+        float xDistance = Mathf.Abs(a.x - b.x);
+        float yDistance = Mathf.Abs(a.y - b.y);
         float remaining = Mathf.Abs(xDistance - yDistance);
         return 14 * Mathf.Min(xDistance, yDistance) + 10 * remaining;
     }
