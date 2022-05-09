@@ -26,8 +26,9 @@ public class GameManager : MonoBehaviour
 
     public Block selectedBlock;
     public Dictionary<Vector2, Block> blocks = new Dictionary<Vector2, Block>();
-    
 
+
+    [Header("Test")] [SerializeField] private LevelSO level1Test;
     public static bool IsPointerOverUI()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -67,13 +68,17 @@ public class GameManager : MonoBehaviour
 
 
     private bool building;
-
+    
     public void StartLevel(LevelSO level)
     {
         building = true;
         StartCoroutine(LevelCoroutine(level));
     }
 
+    public void StartLevelTest()
+    {
+        StartLevel(level1Test);
+    }
     public void StartWave()
     {
         building = false;
