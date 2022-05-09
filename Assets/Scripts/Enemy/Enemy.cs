@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     public void StartMovement()
     {
-        movement = StartCoroutine(MoveEnemy());
+        //movement = StartCoroutine(MoveEnemy());
     }
 
     public void StopMovement()
@@ -50,37 +50,34 @@ public class Enemy : MonoBehaviour
             Death(); 
             return true;
         }
-        //Debug.Log(currentHP);
+
         return false;
     }
 
-    IEnumerator MoveEnemy()
+    public IEnumerator MoveEnemy(Block initPos)
     {
-        animator.SetInteger("Speed", 1);
-        destination = GameManager.instance.blocks[new Vector2(1.78f, 0)];
-        initPos = GameManager.instance.blocks[transform.position];
-        
         Pathfinding pf = new Pathfinding();
-        List<Vector2> map = new List<Vector2>();
-        foreach (var block in GameManager.instance.blocks.Keys)
-        {
-            map.Add(block);
-        }
-
-        List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, GameManager.instance.grid.position,GameManager.instance.grid.walkable);
-        Debug.Log(path);
+        
+        animator.SetInteger("Speed", 1);
+        
+        var dist =float.MaxValue; 
+        foreach (var i in GameManager.instance.grid.hdvIndex) 
+            if (((Vector3)GameManager.instance.grid.GridElements[i.x,i.y].position - transform.position).magnitude <= dist)
+                destination = GameManager.instance.grid.GridElements[i.x, i.y].block;
+        
+        List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, GameManager.instance.grid);
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);
-            if (GameManager.instance.blocks[path[i].pos].building is not null && GameManager.instance.blocks[path[i].pos].building.buildingSO.type != BuildingType.Trap)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].building));
+            
+            if (GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building is not null && GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building.buildingSO.type != BuildingType.Trap)
+                yield return StartCoroutine(Attack(GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building));
             transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / speed);
         }
         
         animator.SetInteger("Speed", 0);
-        GameManager.instance.enemies.Remove(this);
     }
 
     void CheckDirection(Vector2 pos, Vector2 des)
@@ -127,12 +124,12 @@ public class Enemy : MonoBehaviour
             .SetEase(Ease.Linear);
         yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
         animator.SetInteger("Speed", 0);
-        while (GameManager.instance.cityCenter.health > 0)
-        {
-            animator.SetTrigger("Attack");
-            yield return new WaitForSeconds(enemyStats.attackSpeed);
-            GameManager.instance.cityCenter.TakeDamage(enemyStats.damage);
-        }
+        // while (GameManager.instance.cityCenter.health > 0)
+        // {
+        //     animator.SetTrigger("Attack");
+        //     yield return new WaitForSeconds(enemyStats.attackSpeed);
+        //     GameManager.instance.cityCenter.TakeDamage(enemyStats.damage);
+        // }
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
     }
@@ -141,7 +138,7 @@ public class Enemy : MonoBehaviour
     {
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
-        GameManager.instance.enemies.Add(this);
+        //GameManager.instance.enemies.Add(this);
     }
 
     public void Death()
@@ -155,7 +152,7 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
-        GameManager.instance.enemies.Remove(this);
+        //GameManager.instance.enemies.Remove(this);
         Pooler.instance.Depop("Enemy", this.gameObject);
     }
     

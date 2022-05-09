@@ -15,14 +15,13 @@ public class Pathfinding
     private List<Node> toCheckList = new List<Node>();
     private List<Node> checkedList = new List<Node>();
 
-    private Dictionary<Vector2, Node> grid = new Dictionary<Vector2, Node>();
+    private Dictionary<Index, Node> grid = new Dictionary<Index, Node>();
     
     public class Node
     {
         public Vector2 pos;
 
-        public int x;
-        public int y;
+        public Index index;
         public float gCost;
         public float hCost;
         public float fCost;
@@ -32,8 +31,8 @@ public class Pathfinding
         public Node(Vector2 pos, int x, int y)
         {
             this.pos = pos;
-            this.x = x;
-            this.y = y;
+            index.x = x;
+            index.y = y;
         }
 
         public void CalculateFCost()
@@ -42,19 +41,24 @@ public class Pathfinding
         }
     }
 
-    public List<Node> FindPath(Vector2 start, Vector2 end, Vector2[,] map, bool[,] walkables)
+    public List<Node> FindPath(Vector2 startPos, Vector2 endPos, Grid _grid)
     {
-        for (int i = 0; i < map.GetLength(0); i++)
-        for (int j = 0; j < map.GetLength(1); j++)
+
+        Index start = new Index();
+        Index end = new Index();;
+
+        for (int i = 0; i < _grid.size; i++)
+        for (int j = 0; j < _grid.size; j++)
         {
-            if (!walkables[i, j]) continue;
-            Node node = new Node(map[i,j],i,j);
+            if (!_grid.GridElements[i, j].walkable) continue;
+            Node node = new Node(_grid.GridElements[i, j].position,i,j);
             node.gCost = int.MaxValue;
             node.CalculateFCost();
             node.cameFrom = null;
-            if (Utils.Round(start) == map[i, j]) start = new Vector2(i, j);
-            if (Utils.Round(end) == map[i, j]) end = new Vector2(i, j);
-            grid.Add(new Vector2(i, j),node);
+            if (Utils.Round(startPos) == _grid.GridElements[i, j].position) start = new Index(i, j);
+            if (Utils.Round(endPos) == _grid.GridElements[i, j].position) end = new Index(i, j);
+            grid.Add(new Index(i, j),node);
+            
         }
         toCheckList.Add(grid[start]);
         grid[start].gCost = 0;
@@ -67,13 +71,13 @@ public class Pathfinding
                 return CalculatePath(grid[end]);
             toCheckList.Remove(currentNode);
             checkedList.Add(currentNode);
-            foreach (var neighbour in NeighbourList(currentNode, map.GetLength(0)))
+            foreach (var neighbour in NeighbourList(currentNode, _grid.size))
             {
                 if (checkedList.Contains(grid[neighbour])) continue;
                 float tentativeGCost = currentNode.gCost + CalculateDistance(currentNode, grid[neighbour]);
                 if (tentativeGCost < grid[neighbour].gCost)
                 {
-                    grid[neighbour].cameFrom = grid[new Vector2(currentNode.x,currentNode.y)];
+                    grid[neighbour].cameFrom = grid[new Index(currentNode.index.x,currentNode.index.y)];
                     grid[neighbour].gCost = tentativeGCost;
                     grid[neighbour].hCost = CalculateDistance(grid[neighbour], grid[end]);
                     grid[neighbour].CalculateFCost();
@@ -85,29 +89,21 @@ public class Pathfinding
         return null;
     }
 
-    private List<Vector2> NeighbourList(Node current,int lenght)
+    private List<Index> NeighbourList(Node current,int lenght)
     {
-        List<Vector2> result = new List<Vector2>();
-        Vector2[] neigbourPos = new[]
+        List<Index> results = Utils.GetAdjacentsIndex(current.index);
+        foreach (var index in results)
         {
-            new Vector2(current.x + 1, current.y),
-            new Vector2(current.x - 1, current.y),
-            new Vector2(current.x , current.y - 1),
-            new Vector2(current.x , current.y + 1),
-        };
-        foreach (var pos in neigbourPos)
-        {
-            if (pos.x < 0 || pos.x >= lenght || pos.y < 0 || pos.y >= lenght) continue;
-            if (!grid.ContainsKey(pos)) continue;
-            result.Add(pos);
+            if (!grid.ContainsKey(index))
+                results.Remove(index);
         }
-        return result;
+        return results;
     }
 
     private float CalculateDistance(Node a, Node b)
     {
-        float xDistance = Mathf.Abs(a.x - b.x);
-        float yDistance = Mathf.Abs(a.y - b.y);
+        float xDistance = Mathf.Abs(a.index.x - b.index.x);
+        float yDistance = Mathf.Abs(a.index.y - b.index.y);
         float remaining = Mathf.Abs(xDistance - yDistance);
         return 14 * Mathf.Min(xDistance, yDistance) + 10 * remaining;
     }

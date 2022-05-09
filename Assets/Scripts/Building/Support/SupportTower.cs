@@ -13,7 +13,7 @@ public class SupportTower : Building
 
     void Start()
     {
-        GetAffectedBlocks(supportSo.range,GameManager.instance.blocks[Utils.Round(transform.position)]);
+        //GetAffectedBlocks(supportSo.range,GameManager.instance.blocks[Utils.Round(transform.position)]);
         supportSo.AddEffects(affectedBlocks);
     }
     

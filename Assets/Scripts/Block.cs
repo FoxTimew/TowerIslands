@@ -10,8 +10,10 @@ using Random = UnityEngine.Random;
 public class Block : MonoBehaviour
 {
 
+    public Index index;
     public SpriteRenderer spriteRenderer;
     public Dictionary<Block,int> adjacentBlocks = new Dictionary<Block, int>();
+    public List<Block> adjacents;
     public bool selectable = true;
     [SerializeField] private List<Sprite> sprites;
     
@@ -22,8 +24,7 @@ public class Block : MonoBehaviour
     public Building building;
     
     public int energy = 2;
-
-    public bool selected;
+    
     
     #region Unity Methods
 
@@ -36,42 +37,20 @@ public class Block : MonoBehaviour
     }
 
     #endregion
-    public Vector2[] InitAdjacents()
-    {
-        float posX = transform.position.x;
-        float posY = transform.position.y;
-        return new[]
-        {
-            new Vector2(posX+1.84f,posY+1.335f),
-            new Vector2(posX+1.72f,posY-1.335f),
-            new Vector2(posX-1.84f,posY-1.335f),
-            new Vector2(posX-1.72f,posY+1.335f),
-        };
-    }
 
-
-    void Update()
-    {
-        if (Input.touchCount > 0)
-        {
-            UpdateAdjacents();
-        }
-    }
     [ContextMenu("UpdateAdjacents")]
     public void UpdateAdjacents()
     {
-        for (int i = 0; i < 4; i++)
+        var temp = Utils.GetAdjacentsIndex(index);
+        Debug.Log(temp.Count);
+        for (int i = 0; i < temp.Count; i++)
         {
-            if (!GameManager.instance.blocks.ContainsKey(Utils.Round(InitAdjacents()[i]))) continue;
-            if (adjacentBlocks.ContainsKey(GameManager.instance.blocks[Utils.Round(InitAdjacents()[i])] ))continue;
-            adjacentBlocks.Add(GameManager.instance.blocks[Utils.Round(InitAdjacents()[i])],0);
-
+            adjacentBlocks.Add(GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block,0);
+            adjacents.Add(GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block);
+            Debug.Log($"{name} close to {GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block.name} : {temp[i].x}, {temp[i].y}");
         }
     }
-    
 
-
-    
     public int GetMaxEnergy()
     {
         int result = energy;

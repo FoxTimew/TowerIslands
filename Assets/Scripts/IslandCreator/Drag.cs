@@ -29,7 +29,7 @@ public class Drag : MonoBehaviour
             origin.y += 2.67f * 2f;
             origin.z = 0;
             lastPosition = transform.GetChild(0).position;
-            foreach (var block in blocks)
+            /*foreach (var block in blocks)
             {
                 color = block.spriteRenderer.color;
                 color.a = IsPlaceable()? 1 : 0.5f;
@@ -44,8 +44,8 @@ public class Drag : MonoBehaviour
                 {
                     PlaceBlock();
                 }
-                else GameManager.instance.islandCreator.Depop();
-            }
+                //else GameManager.instance.islandCreator.Depop();
+            }*/
             
         }
         
@@ -73,7 +73,7 @@ public class Drag : MonoBehaviour
     }
     
     
-    bool IsPlaceable()
+    /*bool IsPlaceable()
     {
         bool result = false;
         foreach (var block in blocks)
@@ -100,6 +100,6 @@ public class Drag : MonoBehaviour
             block.UpdateAdjacents();
         transform.parent = GameManager.instance.blockGroup.transform;
         enabled = false;
-    }
+    }*/
     
 }

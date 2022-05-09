@@ -9,13 +9,13 @@ public class BuildButton : MonoBehaviour
     public List<GameObject> gos;
     public TMP_Text text;
     public BuildingSO buildingSO;
-    public void Build()
+    /*public void Build()
     {
         if (GameManager.instance.selectedBlock.building is not null)
         {
             
             GameManager.instance.selectedBlock.DestroyBuilding();
-            GameManager.instance.levelManager.OpenBlockUI();
+
         }
         else
         {
@@ -45,5 +45,5 @@ public class BuildButton : MonoBehaviour
             }
             text.text = $"Create {buildingSO.name} : {buildingSO.goldRequired}";
         }
-    }
+    }*/
 }
