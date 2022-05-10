@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Test")] [SerializeField] private LevelSO level1Test;
+    [SerializeField] private Block blockToTest;
     public static bool IsPointerOverUI()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -59,7 +60,10 @@ public class GameManager : MonoBehaviour
         instance = this;
         cam.transparencySortMode = TransparencySortMode.CustomAxis;
         cam.transparencySortAxis = Vector3.up;
-
+        if (blockToTest != null)
+        {
+            blocks.Add(blockToTest.transform.position, blockToTest);
+        }
         foreach (var block in baseBlock)
             blocks.Add(block.transform.position, block);
     }
@@ -78,6 +82,7 @@ public class GameManager : MonoBehaviour
     public void StartLevelTest()
     {
         StartLevel(level1Test);
+        Debug.Log("Test initiated");
     }
     public void StartWave()
     {
@@ -92,31 +97,41 @@ public class GameManager : MonoBehaviour
         
         while (waveCount > 0)
         {
+            Debug.Log("Wave count > 0");
             while (building)
             {
+                Debug.Log("building");
                 if (Input.touchCount > 0)
                 {
+                    Debug.Log("touch count >0");
                     if (!IsPointerOverUI())
                     {
+                        Debug.Log("IsPointerOverUI");
                         if (selectedBlock is not null)
                         {
+                            Debug.Log("Selected block is not null");
                             selectedBlock.Deselect();
                             selectedBlock = null;
                             levelManager.CloseBlockUI();
                         }
                         Touch touch = Input.GetTouch(0);
                         RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(touch.position), Vector3.forward);
-                        if(hit.collider != null)
+                        if (hit.collider != null)
+                        {
+                            Debug.Log("Hit collider not null");
                             if (blocks.ContainsKey(hit.transform.position))
                             {
+                                Debug.Log("Block countained in collection");
                                 if (blocks[hit.transform.position].selectable)
                                 {
+                                    Debug.Log("Block is selectable");
                                     selectedBlock = blocks[hit.transform.position];
                                     selectedBlock.Select();
                                     levelManager.OpenBlockUI();
                                 }
-                                
+
                             }
+                        }
                     }
                 
                 }

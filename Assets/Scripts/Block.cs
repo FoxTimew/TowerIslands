@@ -100,12 +100,14 @@ public class Block : MonoBehaviour
     {
         spriteRenderer.color = Color.green;
         OnSelect.Invoke();
+        Debug.Log("Block selected : "+gameObject.name);
     }
 
     public void Deselect()
     {
         spriteRenderer.color = baseColor;
         OnDeselect.Invoke();
+        Debug.Log("Block deselected");
     }
 
 

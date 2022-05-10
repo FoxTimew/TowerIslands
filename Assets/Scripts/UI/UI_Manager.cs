@@ -17,7 +17,8 @@ public enum MenuEnum
     FeedbackUI = 9,
     TowerInfoUI = 10,
     DefeatMenu =11,
-    VictoryMenu = 12
+    VictoryMenu = 12,
+    BlockInfo = 13
 }
 
 public class UI_Manager : MonoBehaviour
@@ -25,9 +26,10 @@ public class UI_Manager : MonoBehaviour
     
     public static UI_Manager instance;
 
-    [Header("Menu References")] [SerializeField]
-    private RectTransform  mainMenu;
-    [SerializeField] private RectTransform 
+    [Header("Menu References")] 
+    [SerializeField] private GameObject  mainMenu;
+
+    [SerializeField] private GameObject
         creditsMenu,
         settingsMenu,
         islandMenu,
@@ -38,10 +40,14 @@ public class UI_Manager : MonoBehaviour
         feedbackUI,
         towerInfoUI,
         defeatMenu,
-        victoryMenu;
+        victoryMenu,
+        blockInfo,
+        islandEditorScroller,
+        levelSelectionScroller;
+        
 
     [Header("Transition Reference")]
-    [SerializeField] private Transform transitionClouds;
+    [SerializeField] private RectTransform transitionClouds;
     [SerializeField] private float transitionDuration;
     private Vector3 initialCloudPosition;
     
@@ -60,75 +66,150 @@ public class UI_Manager : MonoBehaviour
 
     public void OpenMenu(int menuEnumValue)
     {
-        switch ((MenuEnum)menuEnumValue)
+        if (menuEnumValue != (int)MenuEnum.BlockInfo && menuEnumValue != (int)MenuEnum.FeedbackUI)
         {
-            case (MenuEnum.MainMenu):
-                break;
-            case (MenuEnum.CreditsMenu):
-                break;
-            case (MenuEnum.SettingsMenu):
-                break;
-            case (MenuEnum.IslandMenu):
-                break;
-            case (MenuEnum.IslandEditorMenu):
-                break;
-            case (MenuEnum.LevelSelectionMenu):
-                break;
-            case (MenuEnum.LevelPreparationMenu):
-                break;
-            case (MenuEnum.PlayingLevelMenu):
-                break;
-            case (MenuEnum.FeedbackUI):
-                break;
-            case (MenuEnum.TowerInfoUI):
-                break;
-            case (MenuEnum.DefeatMenu):
-                break;
-            case (MenuEnum.VictoryMenu):
-                break;
+            StartCoroutine(OpenMenuWithTransition(menuEnumValue));
+        }
+        else
+        {
+            if (menuEnumValue == (int) MenuEnum.BlockInfo)
+            {
+                blockInfo.SetActive(true);
+            }else
+            {
+                feedbackUI.SetActive(true);
+            }
         }
     }
 
     public void CloseMenu(int menuEnumValue)
     {
-        switch ((MenuEnum)menuEnumValue)
+        if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
+        {
+            StartCoroutine(CloseMenuWithTransition(menuEnumValue));
+        }
+        else
+        {
+            if (menuEnumValue == (int) MenuEnum.BlockInfo)
+            {
+                blockInfo.SetActive(false);
+            }else
+            {
+                feedbackUI.SetActive(false);
+            }
+        }
+    }
+
+    public void DrawBlockInfo(Block block)
+    {
+        if (block.tower == null)
+        {
+            
+        }
+        else
+        {
+            
+        }
+    }
+
+    IEnumerator CloseMenuWithTransition(int menuID)
+    {
+        CloudTransition();
+        yield return new WaitForSeconds(transitionDuration / 2);
+        switch ((MenuEnum)menuID)
         {
             case (MenuEnum.MainMenu):
+                mainMenu.SetActive(false);
                 break;
             case (MenuEnum.CreditsMenu):
+                creditsMenu.SetActive(false);
                 break;
             case (MenuEnum.SettingsMenu):
+                settingsMenu.SetActive(false);
                 break;
             case (MenuEnum.IslandMenu):
+                islandMenu.SetActive(false);
                 break;
             case (MenuEnum.IslandEditorMenu):
+                islandEditorMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelSelectionMenu):
+                levelSelectionMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelPreparationMenu):
+                levelPreparationMenu.SetActive(false);
                 break;
             case (MenuEnum.PlayingLevelMenu):
+                playingLevelMenu.SetActive(false);
                 break;
             case (MenuEnum.FeedbackUI):
+                feedbackUI.SetActive(false);
                 break;
             case (MenuEnum.TowerInfoUI):
+                towerInfoUI.SetActive(false);
                 break;
             case (MenuEnum.DefeatMenu):
+                defeatMenu.SetActive(false);
                 break;
             case (MenuEnum.VictoryMenu):
+                victoryMenu.SetActive(false);
+                break;
+            case (MenuEnum.BlockInfo):
+                blockInfo.SetActive(false);
+                break;
+        }
+    }
+    IEnumerator OpenMenuWithTransition(int menuID)
+    {
+        yield return new WaitForSeconds(transitionDuration / 2);
+        switch ((MenuEnum)menuID)
+        {
+            case (MenuEnum.MainMenu):
+                mainMenu.SetActive(true);
+                break;
+            case (MenuEnum.CreditsMenu):
+                creditsMenu.SetActive(true);
+                break;
+            case (MenuEnum.SettingsMenu):
+                settingsMenu.SetActive(true);
+                break;
+            case (MenuEnum.IslandMenu):
+                islandMenu.SetActive(true);
+                break;
+            case (MenuEnum.IslandEditorMenu):
+                islandEditorMenu.SetActive(true);
+                break;
+            case (MenuEnum.LevelSelectionMenu):
+                levelSelectionMenu.SetActive(true);
+                break;
+            case (MenuEnum.LevelPreparationMenu):
+                levelPreparationMenu.SetActive(true);
+                break;
+            case (MenuEnum.PlayingLevelMenu):
+                playingLevelMenu.SetActive(true);
+                break;
+            case (MenuEnum.FeedbackUI):
+                feedbackUI.SetActive(true);
+                break;
+            case (MenuEnum.TowerInfoUI):
+                towerInfoUI.SetActive(true);
+                break;
+            case (MenuEnum.DefeatMenu):
+                defeatMenu.SetActive(true);
+                break;
+            case (MenuEnum.VictoryMenu):
+                victoryMenu.SetActive(true);
+                break;
+            case (MenuEnum.BlockInfo):
+                blockInfo.SetActive(true);
                 break;
         }
     }
 
-    public void TransitionMenu(int menuIDToClose, int menuIDToOpen)
-    {
-        
-    }
-
     public void CloudTransition()
     {
-        transitionClouds.DOMove(Vector3.zero, 
-                transitionDuration).OnComplete(() => { transitionClouds.position = -transitionClouds.position;
+        transitionClouds.DOMove(-transitionClouds.position/3, 
+                transitionDuration).OnComplete(() => { transitionClouds.position = initialCloudPosition;
             });
         
     }
