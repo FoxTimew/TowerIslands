@@ -13,12 +13,11 @@ public class Block : MonoBehaviour
     public Index index;
     public SpriteRenderer spriteRenderer;
     public Dictionary<Block,int> adjacentBlocks = new Dictionary<Block, int>();
-    public List<Block> adjacents;
     public bool selectable = true;
     [SerializeField] private List<Sprite> sprites;
-    
-    
-    private Color baseColor;
+
+    private Collider2D collider;
+    public bool placed;
     
     
     public Building building;
@@ -30,26 +29,12 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
-
-        baseColor = spriteRenderer.color;
-        baseColor.a = 1;
-        spriteRenderer.sprite = sprites[Random.Range(0, 2)];
+        spriteRenderer.sprite = sprites[Random.Range(0,2)];
     }
 
     #endregion
-
-    [ContextMenu("UpdateAdjacents")]
-    public void UpdateAdjacents()
-    {
-        var temp = Utils.GetAdjacentsIndex(index);
-        Debug.Log(temp.Count);
-        for (int i = 0; i < temp.Count; i++)
-        {
-            adjacentBlocks.Add(GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block,0);
-            adjacents.Add(GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block);
-            Debug.Log($"{name} close to {GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block.name} : {temp[i].x}, {temp[i].y}");
-        }
-    }
+    
+    #region Energy
 
     public int GetMaxEnergy()
     {
@@ -108,7 +93,12 @@ public class Block : MonoBehaviour
             }  
         }
     }
+
+
+    #endregion
     
+    #region Building
+
     public void DestroyBuilding()
     {
         int buildingValue = building.buildingSO.energyRequired;
@@ -122,7 +112,7 @@ public class Block : MonoBehaviour
 
         if (buildingValue <= 0) return;
         energy += buildingValue;
-        Pooler.instance.Depop(building.buildingSO.name,
+        Pooler.instance.Depop(building.buildingSO.bName,
             building.buildingSO.type == BuildingType.Trap ? building.gameObject : building.transform.parent.gameObject);
         EconomyManager.instance.GainGold(building.buildingSO.goldRequired);
         building = null;
@@ -132,22 +122,44 @@ public class Block : MonoBehaviour
     public void Build(BuildingSO building)
     {
         SpentEnergy(building.energyRequired);
-        go = Pooler.instance.Pop(building.name);
+        go = Pooler.instance.Pop(building.bName);
         go.transform.parent = transform;
         go.transform.localPosition = Vector3.zero;
         EconomyManager.instance.RemoveGold(building.goldRequired);
         this.building = building.type == BuildingType.Trap ? go.GetComponent<Building>() : go.transform.parent.GetComponent<Building>();
     }
-    
+
+    #endregion
+    public void UpdateAdjacents()
+    {
+        
+        var temp = Utils.GetAdjacentsIndex(index);
+        for (int i = 0; i < temp.Count; i++)
+        {
+            if (adjacentBlocks.ContainsKey(GameManager.instance.grid.GridElements[temp[i].x, temp[i].y].block))
+                continue;
+            adjacentBlocks.Add(GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block,0);
+            //Debug.Log($"{name} close to {GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block.name} : {temp[i].x}, {temp[i].y}");
+        }
+    }
     public void Select()
     {
+        GameManager.instance.selectedBlock = this;
         spriteRenderer.color = Color.green;
     }
-    
-    public void Deselect()
-    {
-        spriteRenderer.color = baseColor;
-    }
 
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.transform.CompareTag("GridElement")) return;
+        index = other.GetComponent<GridIndex>().index;
+        collider = other;
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.transform.CompareTag("GridElement")) return;
+        if (other != collider) return;
+        if (placed) return;
+        index = new Index(5,5);
+    }
 }

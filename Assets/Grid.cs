@@ -26,6 +26,7 @@ public class Grid
         public bool walkable;
         public Vector2 position;
         public Block block = null;
+        public GridIndex gridIndex;
 
         public GridElement(bool value, Vector2 pos)
         {
@@ -70,6 +71,16 @@ public class Grid
         GridElements = _grid.GridElements;
         hdvIndex = _grid.hdvIndex;
     }
-    
-    
+
+    public void AddBlock(Block block)
+    {
+        
+        GridElements[block.index.x, block.index.y].block = block;
+        GridElements[block.index.x, block.index.y].block.placed = true;
+        GridElements[block.index.x, block.index.y].gridIndex.gameObject.SetActive(false);
+        GridElements[block.index.x, block.index.y].walkable = true;
+        
+    }
+
+
 }

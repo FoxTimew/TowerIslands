@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3933395088630872559}
   - component: {fileID: 3933395088630872558}
   - component: {fileID: 3771247180759275104}
+  - component: {fileID: 8571589736037425363}
   m_Layer: 6
   m_Name: Block
   m_TagString: Block
@@ -98,14 +99,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0626deacb8d6f4eb8da998cd8f0ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index:
+    x: 0
+    y: 0
   spriteRenderer: {fileID: 3933395088630872559}
   selectable: 1
   sprites:
   - {fileID: 21300000, guid: 29919b7c603634341a0151b3eea95e8b, type: 3}
   - {fileID: 21300000, guid: 3ab1c64cce6bc4b44a368a457a015f6c, type: 3}
+  placed: 0
   building: {fileID: 0}
   energy: 2
-  selected: 0
 --- !u!60 &3771247180759275104
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +135,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1.35}
-      - {x: -1.75, y: 0}
-      - {x: -0.05, y: -1.32}
-      - {x: 1.8, y: 0}
+    - - {x: 0.0039791763, y: 1.3288164}
+      - {x: -1.7400112, y: 0.026102379}
+      - {x: -0.044535894, y: -1.3003013}
+      - {x: 1.7490015, y: 0.026844874}
+--- !u!50 &8571589736037425363
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933395088630872561}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
