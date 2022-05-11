@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     
     public static event Action<int> EnemyDeathGoldEvent;
     public static event Action<int> EnemyDeathCristalEvent;
-    [SerializeField] private AXD_EnemySO enemyStats;
+    public AXD_EnemySO enemyStats;
 
     [SerializeField] private Animator animator;
     private Block initPos;
@@ -18,73 +18,74 @@ public class Enemy : MonoBehaviour
     private int cristalStored;
 
 
-
+    private float speed;
 
     private AXD_TowerShoot target;
 
     private int currentHP { get; set; }
-
+    private Coroutine movement;
     private void Start()
     {
         currentHP = enemyStats.maxHealthPoints;
-        StartCoroutine(MoveEnemy());
+        speed = enemyStats.speed;
+        StartMovement();
+    }
+
+    public void StartMovement()
+    {
+        movement = StartCoroutine(MoveEnemy(GameManager.instance.grid.GetNearestBlock(transform.position)));
+    }
+
+    public void StopMovement()
+    {
+        StopCoroutine(movement);
     }
 
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
         currentHP -= damageToTake;
+        Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;
             Death(); 
             return true;
         }
-        //Debug.Log(currentHP);
+
         return false;
     }
 
-    IEnumerator MoveEnemy()
+    public IEnumerator MoveEnemy(Block initPos)
     {
-        animator.SetInteger("Speed", 1);
-        destination = GameManager.instance.blocks[new Vector2(0, -0.25f)];
-        var des = Vector2.one * int.MaxValue;
-        foreach (var pos in GameManager.instance.blocks.Keys)
-        {
-            if ((transform.position - (Vector3) des).magnitude > (transform.position - (Vector3) pos).magnitude)
-            {
-                des = pos;
-            }
-        }
-
-        CheckDirection(transform.position, des);
-        transform.DOMove(des, ((Vector3) des - transform.position).magnitude / enemyStats.speed).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(((Vector3) des - transform.position).magnitude / enemyStats.speed);
-
-        initPos = GameManager.instance.blocks[transform.position];
         Pathfinding pf = new Pathfinding();
-        List<Vector2> map = new List<Vector2>();
-        foreach (var block in GameManager.instance.blocks.Values)
-        {
-            map.Add(block.transform.position);
-        }
-
-        List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, map);
-
-
+        
+        animator.SetInteger("Speed", 1);
+        
+        var dist =float.MaxValue; 
+        foreach (var i in GameManager.instance.grid.hdvIndex) 
+            if (((Vector3)GameManager.instance.grid.GridElements[i.x,i.y].position - transform.position).magnitude <= dist)
+                destination = GameManager.instance.grid.GridElements[i.x, i.y].block;
+        
+        List<Pathfinding.Node> path = pf.FindPath(initPos, destination, GameManager.instance.grid);
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);
-            if (GameManager.instance.blocks[path[i].pos].tower is not null)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].tower));
-            if (!GameManager.instance.blocks[path[i].pos].selectable)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].gameObject));
-            transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed)
+
+            if (GameManager.instance.grid.GridElements[path[i].index.x, path[i].index.y].block.building is not null)
+            {
+                if( GameManager.instance.grid.GridElements[path[i].index.x, path[i].index.y].block.building.buildingSO.type != BuildingType.Trap)
+                {
+                    yield return StartCoroutine(Attack(GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building));
+                }
+                
+            }
+            
+            transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
-            yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed);
+            yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / speed);
         }
         
         animator.SetInteger("Speed", 0);
-        GameManager.instance.enemies.Remove(this);
     }
 
     void CheckDirection(Vector2 pos, Vector2 des)
@@ -106,45 +107,30 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("Direction", dir);
     }
 
-    IEnumerator Attack(AXD_TowerShoot target)
+    IEnumerator Attack(Building target)
     {
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
-        transform.DOMove(pos, (pos - transform.position).magnitude / enemyStats.speed)
+        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
+        transform.DOMove(pos, (pos - transform.position).magnitude / speed)
             .SetEase(Ease.Linear);
-        yield return new WaitForSeconds((pos - transform.position).magnitude / enemyStats.speed);
+        yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
         animator.SetInteger("Speed", 0);
         while (target.hp > 0)
         {
             animator.SetTrigger("Attack");
             yield return new WaitForSeconds(enemyStats.attackSpeed);
-            target.TakeDamage(enemyStats.damage);
+            target.takeDamage(enemyStats.damage);
         }
+        
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
     }
     
-    IEnumerator Attack(GameObject target)
-    {
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
-        transform.DOMove(pos, (pos - transform.position).magnitude / enemyStats.speed)
-            .SetEase(Ease.Linear);
-        yield return new WaitForSeconds((pos - transform.position).magnitude / enemyStats.speed);
-        animator.SetInteger("Speed", 0);
-        while (GameManager.instance.cityCenter.health > 0)
-        {
-            animator.SetTrigger("Attack");
-            yield return new WaitForSeconds(enemyStats.attackSpeed);
-            GameManager.instance.cityCenter.TakeDamage(enemyStats.damage);
-        }
-        animator.SetTrigger("AttackEnd");
-        animator.SetInteger("Speed", 1);
-    }
 
     public void OnSpawn(BargeSO _barge, int troopListIndex)
     {
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
-        GameManager.instance.enemies.Add(this);
+        //GameManager.instance.enemies.Add(this);
     }
 
     public void Death()
@@ -158,7 +144,8 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
-        GameManager.instance.enemies.Remove(this);
+        //GameManager.instance.enemies.Remove(this);
         Pooler.instance.Depop("Enemy", this.gameObject);
     }
+    
 }

@@ -7,19 +7,29 @@ public class LevelManager : MonoBehaviour
 {
     
     [SerializeField] private GameObject blockInfogroup;
+    [SerializeField] private GameObject buildGroup;
+    [SerializeField] private GameObject destroyGroup;
     [SerializeField] private TMP_Text energy;
     [SerializeField] private TMP_Text blockEnergy;
-    [SerializeField] private TMP_Text towerText;
+
     
     public void OpenBlockUI()
     {
         blockInfogroup.SetActive(true);
-        energy.text = $"Energy {GameManager.instance.selectedBlock.GetEnergy()}";
+        energy.text = $"Energy {GameManager.instance.selectedBlock.energy}";
         blockEnergy.text = $"Max Energy {GameManager.instance.selectedBlock.GetMaxEnergy()}";
-        if (GameManager.instance.selectedBlock.tower is not null)
-            towerText.text = "Destroy Tower";
+        if (GameManager.instance.selectedBlock.building is not null)
+        {
+            destroyGroup.SetActive(true);
+            buildGroup.SetActive(false);
+        }
         else
-            towerText.text = "Build Tower";
+        {
+            destroyGroup.SetActive(false);
+            buildGroup.SetActive(true);
+        }
+            
+        
     }
       
     public void CloseBlockUI()

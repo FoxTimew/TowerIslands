@@ -6,9 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BuildButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BuildButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Draft/Ogre.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Draft/Ogre.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tower/RapidTower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tower/RapidTower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trap/DamageTrap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trap/DamageTrap.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trap/StunTrap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trap/StunTrap.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Support/EnergySupportStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Support/EnergySupportStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Support/SupportTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Support/SupportTower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/RapidTower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/RapidTower.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/RapidTowerStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/RapidTowerStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/Tower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/TowerSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/TowerSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/DamageTrapStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/DamageTrapStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/StunTrapStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/StunTrapStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/AXD_Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/AXD_Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Minion.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Minion.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower/AXD_TowerShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower/AXD_TowerShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +50,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/CameraZoom.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -98,6 +126,9 @@
       <workItem from="1649050644408" duration="2736000" />
       <workItem from="1649110984779" duration="1268000" />
       <workItem from="1651306528567" duration="4116000" />
+      <workItem from="1652259607588" duration="4630000" />
+      <workItem from="1652265767151" duration="2616000" />
+      <workItem from="1652273637401" duration="7331000" />
     </task>
     <servers />
   </component>
@@ -117,6 +148,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
