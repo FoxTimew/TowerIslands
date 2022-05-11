@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour
                     enemy.transform.parent = enemyGroup;
                     yield return new WaitForSeconds(0.5f);
                 }
+                Pooler.instance.Depop("barge",go);
                 while (enemyGroup.childCount > 0) yield return null;
                 waveCount--;
                 currentWave++;

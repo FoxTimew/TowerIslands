@@ -47,11 +47,17 @@ public class Pathfinding
         Index start = startPos.index;
         Node s = new Node(_grid.GridElements[startPos.index.x, startPos.index.y].position, startPos.index.x,
             startPos.index.y);
+        s.gCost = int.MaxValue;
+        s.CalculateFCost();
+        s.cameFrom = null;
         grid.Add(start,s);
         
         Index end = endPos.index;
         Node e = new Node(_grid.GridElements[endPos.index.x, endPos.index.y].position, endPos.index.x,
             endPos.index.y);
+        e.gCost = int.MaxValue;
+        e.CalculateFCost();
+        e.cameFrom = null;
         grid.Add(end,e);
         
         Debug.Log(start.x + " " + start.y);
