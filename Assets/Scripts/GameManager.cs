@@ -56,10 +56,10 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         SelectBlock();
-        if (HDV.buildingSO.healthPoints <= 0)
+        /*if (HDV.buildingSO.healthPoints <= 0)
         {
             //Defeat
-        }
+        }*/
     }
 
     private void SelectBlock()
@@ -76,20 +76,20 @@ public class GameManager : MonoBehaviour
                 if (Utils.IsPointerOverUI()) return;
                 selectedBlock = hit2D.transform.GetComponent<Block>();
                 selectedSprite.transform.position = selectedBlock.transform.position;
-                levelManager.OpenBlockUI();
+                //levelManager.OpenBlockUI();
             }
             else
             {
                 if (Utils.IsPointerOverUI()) return;
                 selectedBlock = null;
-                levelManager.CloseBlockUI();
+                //levelManager.CloseBlockUI();
             }
         }
         else
         {
             if (Utils.IsPointerOverUI()) return;
             selectedBlock = null;
-            levelManager.CloseBlockUI();
+            //levelManager.CloseBlockUI();
         }
     }
 
@@ -150,14 +150,16 @@ public class GameManager : MonoBehaviour
     private GameObject enemy;
 
 
-    public void StartLevel(LevelSO level)
+    public void StartLevel()
     {
-        StartCoroutine(LevelCoroutine(level));
+        if (levelManager.selectedLevel != null)
+        {
+            StartCoroutine(LevelCoroutine(levelManager.selectedLevel));
+        }
     }
 
     public void StartLevelTest()
     {
-        StartLevel(level1Test);
         Debug.Log("Test initiated");
     }
     public void StartWave()

@@ -900,6 +900,11 @@ MonoBehaviour:
   levelSelectionScroller: {fileID: 3525872289604889410}
   transitionClouds: {fileID: 3691978964702618146}
   transitionDuration: 2
+  levelButtonPrefab: {fileID: 4818753743802074822, guid: 11fcf833a3c84714ab574c61202fd34a,
+    type: 3}
+  blockButtonPrefab: {fileID: 0}
+  tickImage: {fileID: 0}
+  redCrossImage: {fileID: 0}
 --- !u!1 &752146154205175222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,7 +4705,7 @@ MonoBehaviour:
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 25
-  m_Viewport: {fileID: 8823471640368733789}
+  m_Viewport: {fileID: 3772019709012396917}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 0
@@ -9106,7 +9111,7 @@ MonoBehaviour:
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 25
-  m_Viewport: {fileID: 3892182144327320444}
+  m_Viewport: {fileID: 4838542626650691725}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 0
@@ -11494,7 +11499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 700, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2334514809249212513
 MonoBehaviour:
