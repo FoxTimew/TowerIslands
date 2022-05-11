@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SupportTower : Building
 {
+    
     [SerializeField] private SupportSO supportSo;
 
     public List<Block> affectedBlocks;
@@ -13,7 +14,7 @@ public class SupportTower : Building
 
     void Start()
     {
-        //GetAffectedBlocks(supportSo.range,GameManager.instance.blocks[Utils.Round(transform.position)]);
+        GetAffectedBlocks(supportSo.range,GameManager.instance.grid.GridElements[index.x,index.y].block);
         supportSo.AddEffects(affectedBlocks);
     }
     

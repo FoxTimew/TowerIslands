@@ -127,6 +127,7 @@ public class Block : MonoBehaviour
         go.transform.localPosition = Vector3.zero;
         EconomyManager.instance.RemoveGold(building.goldRequired);
         this.building = building.type == BuildingType.Trap ? go.GetComponent<Building>() : go.transform.parent.GetComponent<Building>();
+        this.building.index = index;
     }
 
     #endregion

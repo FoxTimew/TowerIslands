@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
 {
     public CameraZoom cameraZoom;
     public static GameManager instance;
-
+    public LevelManager levelManager;
     public GameObject blockGroup;
     public Camera cam;
 
+    [SerializeField] private Building HDV;
+    
     public GridIndex gridElement;
     [SerializeField] private int gridSize = 10;
     [SerializeField] private Block blockPrefab;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public Block selectedBlock;
     private PolygonCollider2D pc;
+    
     //private bool isMoving;
 
     #region Unity Methods
@@ -42,23 +45,47 @@ public class GameManager : MonoBehaviour
         InitGrid();
     }
 
+    
     public GameObject selectedSprite;
     private RaycastHit2D hit2D;
     private void Update()
     {
+        SelectBlock();
+        if (HDV.buildingSO.healthPoints <= 0)
+        {
+            //Defeat
+        }
+    }
+
+    private void SelectBlock()
+    {
         selectedSprite.SetActive(selectedBlock is not null);
+        
         if (!Input.GetMouseButtonDown(0)) return;
         hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hit2D)
         {
-            if (hit2D.transform.GetComponent<Block>() || hit2D.transform.GetComponent<Block>().selectable == true) 
+            
+            if (hit2D.transform.GetComponent<Block>() && hit2D.transform.GetComponent<Block>().selectable == true)
             {
+                if (Utils.IsPointerOverUI()) return;
                 selectedBlock = hit2D.transform.GetComponent<Block>();
                 selectedSprite.transform.position = selectedBlock.transform.position;
+                levelManager.OpenBlockUI();
             }
-            else selectedBlock = null;
+            else
+            {
+                if (Utils.IsPointerOverUI()) return;
+                selectedBlock = null;
+                levelManager.CloseBlockUI();
+            }
         }
-        else selectedBlock = null;
+        else
+        {
+            if (Utils.IsPointerOverUI()) return;
+            selectedBlock = null;
+            levelManager.CloseBlockUI();
+        }
     }
 
     #endregion
@@ -75,6 +102,8 @@ public class GameManager : MonoBehaviour
             element.block = block;
             element.walkable = true;
             block.index = index;
+            block.selectable = false;
+            block.building = HDV;
             grid.GridElements[index.x, index.y] = element;
             //Debug.Log($"{grid.GridElements[index.x, index.y].walkable} {grid.GridElements[index.x, index.y].block.name}");
         }
@@ -96,7 +125,6 @@ public class GameManager : MonoBehaviour
             new Vector2( -0.12f + (-0.12f * (Mathf.Round(grid.size*0.5f)-1)),  -2.67f + (-2.67f * (Mathf.Round(grid.size*0.5f)-1))),
             new Vector2(3.56f + (3.56f * (Mathf.Round(grid.size*0.5f)-1)) , 0),
             new Vector2( 0.12f + (0.12f * (Mathf.Round(grid.size*0.5f)-1)),  2.67f + (2.67f * (Mathf.Round(grid.size*0.5f)-1))),
-            
         };
     }
 
@@ -145,6 +173,7 @@ public class GameManager : MonoBehaviour
                     enemy = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
                     enemy.transform.position = go.transform.position;
                     enemy.transform.parent = enemyGroup;
+                    enemy.GetComponent<Enemy>().OnSpawn(bargeSo,troop.cristalToEarn);
                     yield return new WaitForSeconds(0.5f);
                 }
                 Pooler.instance.Depop("barge",go);
@@ -157,8 +186,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SellBuilding()
+    {
+        selectedBlock.DestroyBuilding();
+    }
 
 
+    
 
 
 }

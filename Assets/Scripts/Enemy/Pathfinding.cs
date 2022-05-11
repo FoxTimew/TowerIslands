@@ -60,8 +60,8 @@ public class Pathfinding
         e.cameFrom = null;
         grid.Add(end,e);
         
-        Debug.Log(start.x + " " + start.y);
-        Debug.Log(end.x + " " + end.y);
+        //Debug.Log(start.x + " " + start.y);
+        //Debug.Log(end.x + " " + end.y);
         
         for (int i = 0; i < _grid.size; i++)
         for (int j = 0; j < _grid.size; j++)
@@ -83,7 +83,7 @@ public class Pathfinding
         while (toCheckList.Count > 0)
         {
             Node currentNode = GetLowestFCostNode(toCheckList);
-            Debug.Log("currentNode "+ currentNode.index.x + " " + currentNode.index.y);
+            //Debug.Log("currentNode "+ currentNode.index.x + " " + currentNode.index.y);
             if (currentNode == grid[end])
                 return CalculatePath(grid[end]);
             toCheckList.Remove(currentNode);
@@ -91,7 +91,7 @@ public class Pathfinding
             foreach (var neighbour in NeighbourList(currentNode, _grid.size))
             {
                 if (checkedList.Contains(grid[neighbour])) continue;
-                Debug.Log("neigbour "+ neighbour.x + " " + neighbour.y);
+                //Debug.Log("neigbour "+ neighbour.x + " " + neighbour.y);
                 float tentativeGCost = currentNode.gCost + CalculateDistance(currentNode, grid[neighbour]);
                 if (tentativeGCost < grid[neighbour].gCost)
                 {
@@ -115,7 +115,7 @@ public class Pathfinding
             if (!grid.ContainsKey(index))
                 results.Remove(index);
         }
-        Debug.Log(results.Count);
+        //Debug.Log(results.Count);
         return results;
     }
 

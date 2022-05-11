@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
         currentHP -= damageToTake;
+        Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;
@@ -69,9 +70,16 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);
+
+            if (GameManager.instance.grid.GridElements[path[i].index.x, path[i].index.y].block.building is not null)
+            {
+                if( GameManager.instance.grid.GridElements[path[i].index.x, path[i].index.y].block.building.buildingSO.type != BuildingType.Trap)
+                {
+                    yield return StartCoroutine(Attack(GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building));
+                }
+                
+            }
             
-            if (GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building is not null && GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building.buildingSO.type != BuildingType.Trap)
-                yield return StartCoroutine(Attack(GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building));
             transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / speed);
@@ -99,10 +107,9 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("Direction", dir);
     }
 
-    IEnumerator Attack(Building target){
-        
-    
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
+    IEnumerator Attack(Building target)
+    {
+        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
         transform.DOMove(pos, (pos - transform.position).magnitude / speed)
             .SetEase(Ease.Linear);
         yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
@@ -113,26 +120,11 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(enemyStats.attackSpeed);
             target.takeDamage(enemyStats.damage);
         }
+        
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
     }
     
-    IEnumerator Attack(GameObject target)
-    {
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
-        transform.DOMove(pos, (pos - transform.position).magnitude / speed)
-            .SetEase(Ease.Linear);
-        yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
-        animator.SetInteger("Speed", 0);
-        // while (GameManager.instance.cityCenter.health > 0)
-        // {
-        //     animator.SetTrigger("Attack");
-        //     yield return new WaitForSeconds(enemyStats.attackSpeed);
-        //     GameManager.instance.cityCenter.TakeDamage(enemyStats.damage);
-        // }
-        animator.SetTrigger("AttackEnd");
-        animator.SetInteger("Speed", 1);
-    }
 
     public void OnSpawn(BargeSO _barge, int troopListIndex)
     {

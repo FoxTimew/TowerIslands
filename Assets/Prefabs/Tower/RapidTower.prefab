@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8841848366423027258
 Transform:
   m_ObjectHideFlags: 0
@@ -183,6 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c736c5b9d7fb984691e86b767766b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index:
+    x: 0
+    y: 0
   buildingSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
   towerSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}
 --- !u!60 &975330135318492433

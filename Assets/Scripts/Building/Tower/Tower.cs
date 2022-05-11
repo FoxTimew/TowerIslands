@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Tower : Building
 {
-    [SerializeField] private TowerSO towerSO;
+    [SerializeField] public TowerSO towerSO;
 
     private bool shooting;
-    private Enemy target;
+    public Enemy target;
     private List<Enemy> inRange;
     
 
@@ -37,9 +37,9 @@ public class Tower : Building
         //Shoot
         GameObject go = Pooler.instance.Pop("Bullet");
         go.transform.position = transform.position + Vector3.up;
-        //go.GetComponent<AXD_Bullet>().Shoot(this, target, towerSO.bulletSpeed);
+        go.GetComponent<AXD_Bullet>().Shoot(this, target, towerSO.bulletSpeed);
         Pooler.instance.DelayedDepop(2,"Bullet",go);
-        //Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
+        Instantiate(towerSO.bulletPrefab, transform.position, Quaternion.identity).Shoot(this, target, towerSO.bulletSpeed);
         yield return new WaitForSeconds(1/towerSO.attackSpeed);
         shooting = false;
     }

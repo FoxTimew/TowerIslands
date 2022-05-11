@@ -7,7 +7,7 @@ public class Trap : Building
 {
     [SerializeField] private TrapEffectSO effect;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    private Dictionary<Collider2D, Coroutine> enemies;
+    private Dictionary<Collider2D, Coroutine> enemies = new Dictionary<Collider2D, Coroutine>();
 
     
     private Coroutine routine;

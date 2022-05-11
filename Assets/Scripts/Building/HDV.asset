@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c04a01a2693a506458d44e7fe5544eaa, type: 3}
-  m_Name: EnergySupportStats
+  m_Name: HDV
   m_EditorClassIdentifier: 
-  bName: EnergySupport
-  type: 1
-  healthPoints: 900
-  energyRequired: 2
-  goldRequired: 100
+  bName: HDV
+  type: 0
+  healthPoints: 1000
+  energyRequired: 0
+  goldRequired: 0

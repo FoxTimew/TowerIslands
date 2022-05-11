@@ -12,11 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f899f34b85484c646bd3a3932341acdf, type: 3}
   m_Name: RapidTower
   m_EditorClassIdentifier: 
-  name: RapidTower
-  type: 0
-  healthPoints: 900
-  energyRequired: 2
-  goldRequired: 12
   damage: 40
   attackSpeed: 1.5
   damageType: 0
@@ -24,3 +19,5 @@ MonoBehaviour:
   maxTargets: 1
   priority: 0
   bulletSpeed: 1
+  bulletPrefab: {fileID: 4980780579275434707, guid: 1d72c19154c1e754f954b7eaeeaa1df3,
+    type: 3}

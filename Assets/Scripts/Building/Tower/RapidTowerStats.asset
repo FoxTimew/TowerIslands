@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04a01a2693a506458d44e7fe5544eaa, type: 3}
   m_Name: RapidTowerStats
   m_EditorClassIdentifier: 
-  name: RapidTower
+  bName: RapidTower
   type: 0
   healthPoints: 900
   energyRequired: 2

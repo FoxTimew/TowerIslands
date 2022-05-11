@@ -22,7 +22,7 @@ public static class Utils
 
         var pe = new PointerEventData(EventSystem.current)
         {
-            position = Input.GetTouch(0).position
+            position = Input.mousePosition
         };
         var hits = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pe, hits);

@@ -18,4 +18,6 @@ public class TowerSO : ScriptableObject
     public TargetPriority priority;
 
     public float bulletSpeed;
+
+    public AXD_Bullet bulletPrefab;
 }

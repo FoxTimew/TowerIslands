@@ -103,15 +103,16 @@ public class AXD_TowerShoot : Building
 
     IEnumerator ShootCoroutine()
     {
-        shooting = true;
-        //Shoot
-        GameObject go = Pooler.instance.Pop("Bullet");
-        go.transform.position = transform.position + Vector3.up;
-        go.GetComponent<AXD_Bullet>().Shoot(this, targets[0], stats.bulletSpeed);
-        Pooler.instance.DelayedDepop(2,"Bullet",go);
-        //Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
-        yield return new WaitForSeconds(1/stats.attackSpeed);
-        
-        shooting = false;
+        // shooting = true;
+        // //Shoot
+        // GameObject go = Pooler.instance.Pop("Bullet");
+        // go.transform.position = transform.position + Vector3.up;
+        // go.GetComponent<AXD_Bullet>().Shoot(this, targets[0], stats.bulletSpeed);
+        // Pooler.instance.DelayedDepop(2,"Bullet",go);
+        // //Instantiate(bulletPrefab, transform.position, Quaternion.identity).Shoot(this, targets[0], stats.bulletSpeed);
+        // yield return new WaitForSeconds(1/stats.attackSpeed);
+        //
+        // shooting = false;
+        yield return null;
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    
+    public Index index;
     public BuildingSO buildingSO;
     public int hp { get; protected set; }
 
@@ -15,6 +17,7 @@ public class Building : MonoBehaviour
 
     private void Start()
     {
+        hp = buildingSO.healthPoints;
         takeDamage += BaseTakeDamage;
     }
 

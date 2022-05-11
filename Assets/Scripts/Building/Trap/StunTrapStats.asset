@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04a01a2693a506458d44e7fe5544eaa, type: 3}
   m_Name: StunTrapStats
   m_EditorClassIdentifier: 
-  name: StunTrap
+  bName: StunTrap
   type: 2
   healthPoints: 50
   energyRequired: 1

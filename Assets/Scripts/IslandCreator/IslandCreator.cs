@@ -20,6 +20,7 @@ public class IslandCreator : MonoBehaviour
 
     public void Depop()
     {
-        Pooler.instance.Depop(currentType,current);
+        if(currentType!=null)
+            Pooler.instance.Depop(currentType,current);
     }
 }
