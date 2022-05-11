@@ -202,6 +202,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.BlockInfo):
                 blockInfo.SetActive(true);
+                
                 break;
         }
     }
