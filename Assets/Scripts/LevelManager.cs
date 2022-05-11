@@ -11,7 +11,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject destroyGroup;
     [SerializeField] private TMP_Text energy;
     [SerializeField] private TMP_Text blockEnergy;
-
+    public LevelSO selectedLevel;
+    public List<LevelSO> levels;
     
     public void OpenBlockUI()
     {
@@ -31,7 +32,7 @@ public class LevelManager : MonoBehaviour
             
         
     }
-      
+    
     public void CloseBlockUI()
     { 
         blockInfogroup.SetActive(false);
