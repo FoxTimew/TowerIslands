@@ -5,14 +5,22 @@ using UnityEngine;
 public class IslandCreator : MonoBehaviour
 {
     public GameObject current;
-    private string currentType;
+    public string currentType;
+    Vector3 origin;
     
     public void PopBuild(string key)
     {
-        Debug.Log(key);
-        if(current != null) Pooler.instance.Depop(currentType,current);
+        if(current != null || currentType == key) Pooler.instance.Depop(currentType,current);
         currentType = key;
         current = Pooler.instance.Pop(currentType);
-        current.transform.position = Vector3.up;
+        origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
+        origin.z = 0;
+        current.transform.position = origin;
+    }
+
+    public void Depop()
+    {
+        if(currentType!=null)
+            Pooler.instance.Depop(currentType,current);
     }
 }
