@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
             
         
     }
-      
+    
     public void CloseBlockUI()
     { 
         blockInfogroup.SetActive(false);

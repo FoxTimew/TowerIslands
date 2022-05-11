@@ -15,6 +15,6 @@ public class CircleMenuAnimation : MonoBehaviour
     public void CloseContextMenu()
     {
         transform.DOScale(Vector3.zero, animationTime);
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

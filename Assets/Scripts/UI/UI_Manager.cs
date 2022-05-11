@@ -51,6 +51,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private float transitionDuration;
     private Vector3 initialCloudPosition;
     
+    
     private void Awake()
     {
         if (instance == null)
@@ -63,7 +64,14 @@ public class UI_Manager : MonoBehaviour
     {
         initialCloudPosition = transitionClouds.position;
     }
-
+    
+    public void CloudTransition()
+    {
+        transitionClouds.DOMove(-transitionClouds.position/3, 
+                transitionDuration).OnComplete(() => { transitionClouds.position = initialCloudPosition;
+            });
+        
+    }
     public void OpenMenu(int menuEnumValue)
     {
         if (menuEnumValue != (int)MenuEnum.BlockInfo && menuEnumValue != (int)MenuEnum.FeedbackUI)
@@ -97,18 +105,6 @@ public class UI_Manager : MonoBehaviour
             {
                 feedbackUI.SetActive(false);
             }
-        }
-    }
-
-    public void DrawBlockInfo(Block block)
-    {
-        if (block.tower == null)
-        {
-            
-        }
-        else
-        {
-            
         }
     }
 
@@ -155,6 +151,10 @@ public class UI_Manager : MonoBehaviour
                 victoryMenu.SetActive(false);
                 break;
             case (MenuEnum.BlockInfo):
+                for (int i = 0; i < blockInfo.transform.childCount; i++)
+                {
+                    blockInfo.transform.GetChild(i).GetComponent<CircleMenuAnimation>().CloseContextMenu();
+                }
                 blockInfo.SetActive(false);
                 break;
         }
@@ -202,16 +202,24 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.BlockInfo):
                 blockInfo.SetActive(true);
-                
+                if (GameManager.instance.selectedBlock.building == null)
+                {
+                    if (!transform.GetChild(0).gameObject.activeSelf)
+                    {
+                        transform.GetChild(0).gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        transform.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+                else
+                {
+                    transform.GetChild(2).gameObject.SetActive(true);
+                }
                 break;
         }
     }
 
-    public void CloudTransition()
-    {
-        transitionClouds.DOMove(-transitionClouds.position/3, 
-                transitionDuration).OnComplete(() => { transitionClouds.position = initialCloudPosition;
-            });
-        
-    }
+
 }

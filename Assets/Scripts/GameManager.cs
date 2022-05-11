@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
 
     public Block selectedBlock;
     private PolygonCollider2D pc;
+
+    [Header("TestUI")] [SerializeField] private LevelSO level1Test;
+    
+    
+    
     
     //private bool isMoving;
 
