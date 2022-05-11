@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [Serializable]
 public struct Index
@@ -80,6 +81,20 @@ public class Grid
         GridElements[block.index.x, block.index.y].gridIndex.gameObject.SetActive(false);
         GridElements[block.index.x, block.index.y].walkable = true;
         
+    }
+
+    public Block GetNearestBlock(Vector3 pos)
+    {
+        Block result = GridElements[hdvIndex[0].x,hdvIndex[0].y].block;
+        var dist = float.MaxValue;
+        foreach (var element in GridElements)
+        {
+            if (!element.walkable) continue;
+            if (!(((Vector3) element.position - pos).magnitude < dist)) continue;
+            dist = ((Vector3) element.position - pos).magnitude;
+            result = element.block;
+        }
+        return result;
     }
 
 

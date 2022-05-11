@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     
     public static event Action<int> EnemyDeathGoldEvent;
     public static event Action<int> EnemyDeathCristalEvent;
-    [SerializeField] private AXD_EnemySO enemyStats;
+    public AXD_EnemySO enemyStats;
 
     [SerializeField] private Animator animator;
     private Block initPos;
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
 
     public void StartMovement()
     {
-        //movement = StartCoroutine(MoveEnemy());
+        movement = StartCoroutine(MoveEnemy(GameManager.instance.grid.GetNearestBlock(transform.position)));
     }
 
     public void StopMovement()
@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
             if (((Vector3)GameManager.instance.grid.GridElements[i.x,i.y].position - transform.position).magnitude <= dist)
                 destination = GameManager.instance.grid.GridElements[i.x, i.y].block;
         
-        List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, GameManager.instance.grid);
+        List<Pathfinding.Node> path = pf.FindPath(initPos, destination, GameManager.instance.grid);
         for (int i = 0; i < path.Count; i++)
         {
             CheckDirection(transform.position, path[i].pos);

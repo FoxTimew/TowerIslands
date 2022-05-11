@@ -106,8 +106,55 @@ public class GameManager : MonoBehaviour
             if(element.walkable)
                 element.block.UpdateAdjacents();
     }
-    
 
+
+
+
+    [SerializeField] private Vector3 bargeSpawn;
+    [SerializeField] private Transform enemyGroup;
+    private bool waitStartWave = true;
+    private GameObject go;
+    private GameObject enemy;
+
+
+    public void StartLevel(LevelSO level)
+    {
+        StartCoroutine(LevelCoroutine(level));
+    }
+
+    public void StartWave()
+    {
+        waitStartWave = false;
+    }
+    public IEnumerator LevelCoroutine(LevelSO level)
+    {
+        var waveCount = level.waves.Count;
+        var currentWave = 0;
+        while (waveCount > 0)
+        {
+            while (waitStartWave) yield return null;
+            foreach (var bargeSo in level.waves[currentWave].bargesInWave)
+            {
+                go = Pooler.instance.Pop("barge");
+                go.transform.position = bargeSpawn;
+                go.transform.DOMove(grid.GetNearestBlock(bargeSpawn).transform.position, (grid.GetNearestBlock(bargeSpawn).transform.position - bargeSpawn).magnitude / bargeSo.bargeSpeed);
+                yield return new WaitForSeconds(
+                    (grid.GetNearestBlock(bargeSpawn).transform.position - bargeSpawn).magnitude / bargeSo.bargeSpeed);
+                foreach (var troop in bargeSo.troops)
+                {
+                    enemy = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
+                    enemy.transform.position = go.transform.position;
+                    enemy.transform.parent = enemyGroup;
+                    yield return new WaitForSeconds(0.5f);
+                }
+                while (enemyGroup.childCount > 0) yield return null;
+                waveCount--;
+                currentWave++;
+                waitStartWave = true;
+            }
+            yield return null;
+        }
+    }
 
 
 

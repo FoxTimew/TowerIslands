@@ -41,22 +41,28 @@ public class Pathfinding
         }
     }
 
-    public List<Node> FindPath(Vector2 startPos, Vector2 endPos, Grid _grid)
+    public List<Node> FindPath(Block startPos, Block endPos, Grid _grid)
     {
-
-        Index start = new Index();
-        Index end = new Index();;
-
+        
+        Index start = startPos.index;
+        Node s = new Node(_grid.GridElements[startPos.index.x, startPos.index.y].position, startPos.index.x,
+            startPos.index.y);
+        grid.Add(start,s);
+        
+        Index end = endPos.index;
+        Node e = new Node(_grid.GridElements[endPos.index.x, endPos.index.y].position, endPos.index.x,
+            endPos.index.y);
+        grid.Add(end,e);
         for (int i = 0; i < _grid.size; i++)
         for (int j = 0; j < _grid.size; j++)
         {
             if (!_grid.GridElements[i, j].walkable) continue;
+            if (i == start.x && j == start.y) continue;
+            if (i == end.x && j == end.y) continue;
             Node node = new Node(_grid.GridElements[i, j].position,i,j);
             node.gCost = int.MaxValue;
             node.CalculateFCost();
             node.cameFrom = null;
-            if (Utils.Round(startPos) == _grid.GridElements[i, j].position) start = new Index(i, j);
-            if (Utils.Round(endPos) == _grid.GridElements[i, j].position) end = new Index(i, j);
             grid.Add(new Index(i, j),node);
             
         }
