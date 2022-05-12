@@ -65,6 +65,7 @@ public class Pooler : MonoBehaviour
     {
         objectInstance = Instantiate(pool.prefab, transform);
         objectInstance.SetActive(false);
+        objectInstance.name = objectInstance.name.Replace("(Clone)","");
         pool.queue.Enqueue(objectInstance);
     }
 

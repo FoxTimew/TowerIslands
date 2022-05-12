@@ -9,8 +9,23 @@ public class Tower : Building
 
     private bool shooting;
     public Enemy target;
-    private List<Enemy> inRange;
-    
+    private List<Enemy> inRange = new List<Enemy>();
+
+
+    void Update()
+    {
+        if (destroyed) return;
+        if (target is null)
+        {
+            if (inRange.Count > 0)
+                target = inRange[0];
+        }
+        else return;
+        if (inRange.Count > 0 && !shooting)
+        {
+            StartCoroutine(ShootCoroutine());
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -34,12 +49,10 @@ public class Tower : Building
     IEnumerator ShootCoroutine()
     {
         shooting = true;
-        //Shoot
-        GameObject go = Pooler.instance.Pop("Bullet");
+        GameObject go = Pooler.instance.Pop(towerSO.bulletPrefab.name);
         go.transform.position = transform.position + Vector3.up;
-        go.GetComponent<AXD_Bullet>().Shoot(this, target, towerSO.bulletSpeed);
-        Pooler.instance.DelayedDepop(2,"Bullet",go);
-        Instantiate(towerSO.bulletPrefab, transform.position, Quaternion.identity).Shoot(this, target, towerSO.bulletSpeed);
+        Pooler.instance.DelayedDepop(3,towerSO.bulletPrefab.name,go);
+        go.GetComponent<Bullet>().Shoot(this, target, towerSO.bulletSpeed);
         yield return new WaitForSeconds(1/towerSO.attackSpeed);
         shooting = false;
     }

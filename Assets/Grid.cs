@@ -17,6 +17,12 @@ public struct Index
         x = (int)_x;
         y = (int)_y;
     }
+
+    public bool Equals(Index index)
+    {
+        if (index.x == x && index.y == y) return true;
+        return false;
+    }
 }
 public class Grid
 {
@@ -91,6 +97,7 @@ public class Grid
         foreach (var element in GridElements)
         {
             if (!element.walkable) continue;
+            foreach (var index in hdvIndex) if (element.block.index.Equals(index)) continue;
             if (!(((Vector3) element.position - pos).magnitude < dist)) continue;
             dist = ((Vector3) element.position - pos).magnitude;
             result = element.block;

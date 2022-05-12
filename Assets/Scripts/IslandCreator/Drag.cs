@@ -16,7 +16,10 @@ public class Drag : MonoBehaviour
     [SerializeField] private DragPointer dragPointer;
 
 
-
+    void Start()
+    {
+        OnMouseDrag();
+    }
 
     void Update()
     {
@@ -38,7 +41,7 @@ public class Drag : MonoBehaviour
         origin.y += 2 * 2.67f;
         transform.parent.position = origin;
         ChangeSprite(IsPlaceable());
-        Debug.Log(IsPlaceable());
+        //Debug.Log(IsPlaceable());
     }
     
     private void OnMouseUp()
