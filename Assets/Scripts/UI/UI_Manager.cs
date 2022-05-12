@@ -241,7 +241,7 @@ public class UI_Manager : MonoBehaviour
 
     public void DrawBlockButtons()
     {
-        foreach (KeyValuePair<Drag, int> block in GameManager.instance.islandCreator.blocksCount)
+        foreach (KeyValuePair<GameObject, int> block in GameManager.instance.islandCreator.blocksCount)
         {
             tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
@@ -252,6 +252,7 @@ public class UI_Manager : MonoBehaviour
                 GetCurrentBlockName(block.Key);
             });
             tmpEventTrigger.triggers.Add(entry);
+            tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
         }
     }
 
@@ -296,7 +297,7 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    private void GetCurrentBlockName(Drag blockDrag)
+    private void GetCurrentBlockName(GameObject blockDrag)
     {
         GameManager.instance.islandCreator.PopBuild(blockDrag.name);
     } 
