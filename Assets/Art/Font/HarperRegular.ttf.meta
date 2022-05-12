@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 16d32c3cb50d6734884af8b990b09b9f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Harper
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3130279f339b30a4a98580a218238d0d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
