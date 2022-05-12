@@ -74,8 +74,7 @@ public class GameManager : MonoBehaviour
             {
                 if (Utils.IsPointerOverUI()) return;
                 selectedBlock = hit2D.transform.GetComponent<Block>();
-                selectedSprite.transform.position = selectedBlock.transform.position;
-                levelManager.OpenBlockUI();
+                //levelManager.OpenBlockUI();
             }
             else
             {
