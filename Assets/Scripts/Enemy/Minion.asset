@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Minion
   m_EditorClassIdentifier: 
   eName: minion
-  speed: 10
+  speed: 3
   maxHealthPoints: 100
   damage: 30
   attackSpeed: 1

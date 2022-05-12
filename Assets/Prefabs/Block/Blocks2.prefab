@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4384419487531342648}
   - component: {fileID: 8365342794334906129}
-  - component: {fileID: 7338424041911811733}
   - component: {fileID: 8250464589415529815}
+  - component: {fileID: 6353609980638673934}
   m_Layer: 0
   m_Name: DragMove
   m_TagString: Untagged
@@ -54,44 +54,6 @@ MonoBehaviour:
   - {fileID: 9025710083753673695}
   - {fileID: 6801483896287014040}
   dragPointer: {fileID: 7249216694818452154}
-  snapPosition: {x: 0, y: 0, z: 0}
---- !u!60 &7338424041911811733
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80850348524312840}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.7874728, y: -0.056094587}
-      - {x: 3.601458, y: 1.3456664}
-      - {x: 1.8500273, y: 2.6565604}
-      - {x: 0.06106311, y: 1.3573906}
-      - {x: -1.7333093, y: 2.6953344}
-      - {x: -3.5191076, y: 1.3392994}
-      - {x: -1.7853825, y: 0.01881659}
-      - {x: -3.6010315, y: -1.3160292}
-      - {x: -1.8332283, y: -2.5864944}
-      - {x: -0.030527174, y: -1.3660591}
-      - {x: 1.7123119, y: -2.6590443}
-      - {x: 3.478218, y: -1.3112683}
 --- !u!50 &8250464589415529815
 Rigidbody2D:
   serializedVersion: 4
@@ -113,6 +75,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &6353609980638673934
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80850348524312840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
 --- !u!1 &1211986816860430671
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8024916135172266061}
   m_Layer: 0
-  m_Name: TetrisBlock1
+  m_Name: Blocks2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4179234675314205378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -233,6 +211,7 @@ MonoBehaviour:
   index:
     x: 0
     y: 0
+  snapPosition: {x: 0, y: 0, z: 0}
 --- !u!60 &4059668949075510118
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -445,12 +424,12 @@ PrefabInstance:
     - target: {fileID: 3933395088630872560, guid: 34e17f3294d3fcb4eb4cdb11e6140431,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.72
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 3933395088630872560, guid: 34e17f3294d3fcb4eb4cdb11e6140431,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.335
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 3933395088630872560, guid: 34e17f3294d3fcb4eb4cdb11e6140431,
         type: 3}
@@ -679,12 +658,12 @@ PrefabInstance:
     - target: {fileID: 3933395088630872560, guid: 34e17f3294d3fcb4eb4cdb11e6140431,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.84
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 3933395088630872560, guid: 34e17f3294d3fcb4eb4cdb11e6140431,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.335
+      value: -4.005
       objectReference: {fileID: 0}
     - target: {fileID: 3933395088630872560, guid: 34e17f3294d3fcb4eb4cdb11e6140431,
         type: 3}

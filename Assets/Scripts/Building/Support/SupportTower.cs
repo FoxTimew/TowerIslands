@@ -27,9 +27,7 @@ public class SupportTower : Building
     
     private void GetAffectedBlocks(int range,Block b)
     {
-        Debug.Log(range);
         if (range == 0) return;
-        Debug.Log(b.adjacentBlocks.Keys.Count);
         foreach (var block in b.adjacentBlocks.Keys)
         {
             if (!affectedBlocks.Contains(block))
