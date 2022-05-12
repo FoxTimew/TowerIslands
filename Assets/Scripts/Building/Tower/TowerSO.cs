@@ -19,5 +19,5 @@ public class TowerSO : ScriptableObject
 
     public float bulletSpeed;
 
-    public AXD_Bullet bulletPrefab;
+    public Bullet bulletPrefab;
 }

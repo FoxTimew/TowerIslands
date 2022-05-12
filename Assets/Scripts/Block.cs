@@ -49,14 +49,14 @@ public class Block : MonoBehaviour
     public bool SpentEnergy(int value)
     {
         if (value > GetMaxEnergy()) return false;
-        if (value < energy)
+        if (value <= energy)
         {
             energy -= value;
             return true;
         }
         else
         {
-            energy = value - energy;
+            energy = 0;
             SpentAdjacentEnergy(value - energy);
             return true;
         }
@@ -126,7 +126,7 @@ public class Block : MonoBehaviour
         go.transform.parent = transform;
         go.transform.localPosition = Vector3.zero;
         EconomyManager.instance.RemoveGold(building.goldRequired);
-        this.building = building.type == BuildingType.Trap ? go.GetComponent<Building>() : go.transform.parent.GetComponent<Building>();
+        this.building = building.type == BuildingType.Trap ? go.GetComponent<Building>() : go.transform.GetChild(0).GetComponent<Building>();
         this.building.index = index;
     }
 

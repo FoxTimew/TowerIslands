@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     }
 
     
-    public GameObject selectedSprite;
     private RaycastHit2D hit2D;
     private void Update()
     {
@@ -57,12 +56,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [SerializeField] private LayerMask layerMask;
     private void SelectBlock()
     {
-        selectedSprite.SetActive(selectedBlock is not null);
         
         if (!Input.GetMouseButtonDown(0)) return;
-        hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,layerMask);
         if (hit2D)
         {
             
@@ -70,7 +69,6 @@ public class GameManager : MonoBehaviour
             {
                 if (Utils.IsPointerOverUI()) return;
                 selectedBlock = hit2D.transform.GetComponent<Block>();
-                selectedSprite.transform.position = selectedBlock.transform.position;
                 levelManager.OpenBlockUI();
             }
             else
