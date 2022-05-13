@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Barge
   m_EditorClassIdentifier: 
   troops:
-  - enemy: {fileID: 0}
+  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
     cristalToEarn: 0
   - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
     cristalToEarn: 0

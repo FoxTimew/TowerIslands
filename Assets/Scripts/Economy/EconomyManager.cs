@@ -8,10 +8,14 @@ public class EconomyManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text goldUI;
     [SerializeField] private TMP_Text arcanumyUI;
-    public EconomyManager instance;
-    [SerializeField] private int goldAmount = 0;
+    public static EconomyManager instance;
+    [SerializeField] private int goldAmount = 200;
     [SerializeField] private int arcanumAmount = 0;
 
+    void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         if (instance == null)
@@ -69,8 +73,8 @@ public class EconomyManager : MonoBehaviour
     
     public void UpdateUI()
     {
-        goldUI.text = goldAmount.ToString();
-        arcanumyUI.text = arcanumAmount.ToString();
+        goldUI.text = $"Gold : {goldAmount.ToString()}";
+        arcanumyUI.text = $"Arcanum : {arcanumAmount.ToString()}";
     }
 
     

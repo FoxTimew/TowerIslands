@@ -7,7 +7,7 @@ using UnityEngine;
 public class AXD_Bullet : MonoBehaviour
 {
     private Enemy target;
-    private AXD_TowerShoot originTower;
+    private Tower originTower;
 
     [SerializeField]
     private float speed { get; set; }
@@ -20,7 +20,7 @@ public class AXD_Bullet : MonoBehaviour
         }
     }
 
-    public void Shoot(AXD_TowerShoot origin, Enemy targetToSet, float speedToSet)
+    public void Shoot(Tower origin, Enemy targetToSet, float speedToSet)
     {
         originTower = origin;
         SetTarget(targetToSet);
@@ -33,17 +33,13 @@ public class AXD_Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Bonk");
         if (collider.gameObject.CompareTag("Enemy"))
         {
             Pooler.instance.Depop("Bullet", gameObject);
             Enemy tmpEnemy = collider.gameObject.GetComponent<Enemy>();
-            if (tmpEnemy.TakeDamage(originTower.GetDamageType(),originTower.GetDamage()))
+            if (tmpEnemy.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage))
             {
-                //Si l'enemy est détruit par le coup
-                originTower.RemoveTargetFromTargets(tmpEnemy);
-                originTower.RemoveTargetFromEnemiesWithinRange(tmpEnemy);
-                //Pooler.instance.Depop("Enemy", tmpEnemy.gameObject);
+                originTower.target = null;
             }
         }
     }
