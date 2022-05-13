@@ -10,7 +10,6 @@ public class SupportSO : ScriptableObject
 {
     public int range;
 
-
     public virtual void AddEffect(Block block)
     {
         

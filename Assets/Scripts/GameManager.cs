@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject blockGroup;
     public Camera cam;
 
-    [SerializeField] private Building HDV;
+    [SerializeField] public Building HDV;
     
     public GridIndex gridElement;
     [SerializeField] private int gridSize = 10;

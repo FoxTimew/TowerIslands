@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class Tower : Building
 {
-    [SerializeField] public TowerSO towerSO;
+    public TowerSO towerSO;
 
     private bool shooting;
     public Enemy target;
     private List<Enemy> inRange = new List<Enemy>();
 
-
+    void Start()
+    {
+        towerSO = (TowerSO) buildingSO;
+    }
     void Update()
     {
         if (destroyed) return;
