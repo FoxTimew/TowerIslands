@@ -32,6 +32,13 @@ public class Block : MonoBehaviour
         spriteRenderer.sprite = sprites[Random.Range(0,2)];
     }
 
+    private void OnMouseDown()
+    {
+        if (!selectable) return;
+        GameManager.instance.selectedBlock = this;
+        GameManager.instance.levelManager.OpenBlockUI();
+    }
+
     #endregion
     
     #region Energy
@@ -143,13 +150,7 @@ public class Block : MonoBehaviour
             //Debug.Log($"{name} close to {GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block.name} : {temp[i].x}, {temp[i].y}");
         }
     }
-    public void Select()
-    {
-        GameManager.instance.selectedBlock = this;
-        spriteRenderer.color = Color.green;
-    }
-
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.transform.CompareTag("GridElement")) return;

@@ -28,12 +28,13 @@ public class Enemy : MonoBehaviour
     {
         currentHP = enemyStats.maxHealthPoints;
         speed = enemyStats.speed;
+        FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
         StartMovement();
     }
 
     public void StartMovement()
     {
-        movement = StartCoroutine(MoveEnemy(GameManager.instance.grid.GetNearestBlock(transform.position)));
+        movement = StartCoroutine(MoveEnemy());
     }
 
     public void StopMovement()
@@ -55,34 +56,45 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
-    public IEnumerator MoveEnemy(Block initPos)
+
+    private Queue<Block> path;
+    void FindPath(Block initPos)
     {
         Pathfinding pf = new Pathfinding();
-        
-        animator.SetInteger("Speed", 1);
-        
         var dist =float.MaxValue; 
         foreach (var i in GameManager.instance.grid.hdvIndex) 
             if (((Vector3)GameManager.instance.grid.GridElements[i.x,i.y].position - transform.position).magnitude <= dist)
                 destination = GameManager.instance.grid.GridElements[i.x, i.y].block;
         
-        List<Pathfinding.Node> path = pf.FindPath(initPos, destination, GameManager.instance.grid);
-        for (int i = 0; i < path.Count; i++)
+        List<Pathfinding.Node> pathfinding = pf.FindPath(initPos, destination, GameManager.instance.grid);
+        for (int i = 0; i < pathfinding.Count; i++)
         {
-            CheckDirection(transform.position, path[i].pos);
+            path.Enqueue(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].block);
+        }
+    }
 
-            if (GameManager.instance.grid.GridElements[path[i].index.x, path[i].index.y].block.building is not null)
-            {
-                if( GameManager.instance.grid.GridElements[path[i].index.x, path[i].index.y].block.building.buildingSO.type != BuildingType.Trap)
-                {
-                    yield return StartCoroutine(Attack(GameManager.instance.grid.GridElements[path[i].index.x,path[i].index.y].block.building));
-                }
-                
-            }
+    private Block block;
+    public IEnumerator MoveEnemy()
+    {
+        Pathfinding pf = new Pathfinding();
+        
+        animator.SetInteger("Speed", 1);
+        
+        while (path.Count > 0)
+        {
             
-            transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / speed)
+            block = path.Dequeue();
+            CheckDirection(transform.position,block.transform.position);
+            if (block.building is not null)
+            {
+                if( block.building.buildingSO.type != BuildingType.Trap)
+                {
+                    yield return StartCoroutine(Attack(block.building));
+                }
+            }
+            transform.DOMove(block.transform.position, (block.transform.position - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
-            yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / speed);
+            yield return new WaitForSeconds((block.transform.position - transform.position).magnitude / speed);
         }
         
         animator.SetInteger("Speed", 0);
