@@ -13,6 +13,7 @@ public class StunTrapSO : TrapEffectSO
         while (true)
         {
             enemy.StopMovement();
+            Debug.Log("Stunned");
             yield return new WaitForSeconds(attackSpeed);
             enemy.StartMovement();
             yield return null;
