@@ -38,8 +38,8 @@ public class UI_Manager : MonoBehaviour
         islandMenu,
         islandEditorMenu,
         levelSelectionMenu,
-        playingLevelMenu,
         levelPreparationMenu,
+        playingLevelMenu,
         feedbackUI,
         towerInfoUI,
         defeatMenu,
@@ -174,6 +174,7 @@ public class UI_Manager : MonoBehaviour
                 blockInfo.SetActive(false);
                 break;
         }
+        Debug.Log($"Menu {(MenuEnum)menuID} closed");
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
@@ -213,9 +214,11 @@ public class UI_Manager : MonoBehaviour
                 towerInfoUI.SetActive(true);
                 break;
             case (MenuEnum.DefeatMenu):
+                //Appeler menu de défaite
                 defeatMenu.SetActive(true);
                 break;
             case (MenuEnum.VictoryMenu):
+                //Apeler menu de victoire
                 victoryMenu.SetActive(true);
                 break;
             case (MenuEnum.BlockInfo):
@@ -237,6 +240,7 @@ public class UI_Manager : MonoBehaviour
                 }
                 break;
         }
+        Debug.Log($"Menu {(MenuEnum)menuID} opened");
     }
 
     public void DrawBlockButtons()
@@ -262,7 +266,6 @@ public class UI_Manager : MonoBehaviour
         foreach (LevelSO level in GameManager.instance.levelManager.levels)
         {
             tmpButton = Instantiate(levelButtonPrefab, levelSelectionScroller.transform.GetChild(0));
-            Debug.Log("Button name : "+tmpButton.name);
             tmpPrepareButton = levelSelectionMenu.transform.GetChild(1).GetComponent<Button>();
             tmpPrepareButton.interactable = false;
             
