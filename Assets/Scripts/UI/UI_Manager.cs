@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public enum MenuEnum
@@ -54,7 +55,8 @@ public class UI_Manager : MonoBehaviour
     private Vector3 initialCloudPosition;
 
     [Header("DynamicButtonsReferences")] 
-    [SerializeField] private GameObject levelButtonPrefab, blockButtonPrefab;
+    [SerializeField] private GameObject levelButtonPrefab;
+    [SerializeField] private GameObject blockButtonPrefab;
 
     [SerializeField] private Sprite tickImage;
     [SerializeField] private Sprite redCrossImage;
@@ -62,6 +64,7 @@ public class UI_Manager : MonoBehaviour
     private TMP_Text tmpButtonText;
     private Image tmpButtonImage;
     private Button tmpPrepareButton;
+    private EventTrigger tmpEventTrigger;
     
     private void Awake()
     {
@@ -138,9 +141,11 @@ public class UI_Manager : MonoBehaviour
                 islandMenu.SetActive(false);
                 break;
             case (MenuEnum.IslandEditorMenu):
+                //Détruire tous les boutons générés lors de l'ouverture du menu.
                 islandEditorMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelSelectionMenu):
+                //Détruire tous les boutons générés lors de l'ouverture du menu.
                 levelSelectionMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelPreparationMenu):
@@ -189,6 +194,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandEditorMenu):
                 islandEditorMenu.SetActive(true);
+                DrawBlockButtons();
                 break;
             case (MenuEnum.LevelSelectionMenu):
                 levelSelectionMenu.SetActive(true);
@@ -235,7 +241,18 @@ public class UI_Manager : MonoBehaviour
 
     public void DrawBlockButtons()
     {
-        
+        foreach (KeyValuePair<Drag, int> block in GameManager.instance.islandCreator.blocksCount)
+        {
+            tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
+            tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
+            EventTrigger.Entry entry = new EventTrigger.Entry();
+            entry.eventID = EventTriggerType.PointerDown;
+            entry.callback.AddListener((data) =>
+            {
+                GetCurrentBlockName(block.Key);
+            });
+            tmpEventTrigger.triggers.Add(entry);
+        }
     }
 
     public void DrawLevelSelectionButton()
@@ -265,7 +282,7 @@ public class UI_Manager : MonoBehaviour
             }
         }
     }
-
+    
     private void OnClickListener()
     {
         GameManager.instance.levelManager.selectedLevel = tmpButton.GetComponent<LevelButton>().levelContained;
@@ -278,5 +295,10 @@ public class UI_Manager : MonoBehaviour
         tmpPrepareButton.interactable = true;
 
     }
+
+    private void GetCurrentBlockName(Drag blockDrag)
+    {
+        GameManager.instance.islandCreator.PopBuild(blockDrag.name);
+    } 
 
 }
