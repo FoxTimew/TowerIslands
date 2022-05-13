@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class Building : MonoBehaviour
 {
-    
     public Index index;
     public BuildingSO buildingSO;
     public int hp { get; protected set; }
@@ -16,7 +15,7 @@ public class Building : MonoBehaviour
     public TakeDamage takeDamage;
 
     protected bool destroyed;
-    [SerializeField] private Sprite[] ruins;
+    [SerializeField] private Sprite[] sprites;
     [SerializeField] private SpriteRenderer sr;
 
     private void Start()
@@ -24,19 +23,34 @@ public class Building : MonoBehaviour
         hp = buildingSO.healthPoints;
         takeDamage += BaseTakeDamage;
     }
-
+    
     public void BaseTakeDamage(int dmg)
     {
-        if(destroyed) return;
+        if (destroyed) return;
         hp -= dmg;
-        if (hp <= 0) Ruins();
+        if (hp > 0) return;
+        if (GameManager.instance.HDV == this)
+        {
+            //Defeat    
+        }
+        else
+        {
+            Ruins();
+        }
     }
 
     public void Ruins()
     {
-        sr.sprite = ruins[Random.Range(0, 2)];
+        sr.sprite = sprites[Random.Range(1, 3)];
         destroyed = true;
         sr.sortingLayerName = "Shadows";
         sr.sortingOrder = 0;
+    }
+
+    public void Repair()
+    {
+        destroyed = false;
+        sr.sortingLayerName = "Characters";
+        sr.sprite = sprites[0];
     }
 }
