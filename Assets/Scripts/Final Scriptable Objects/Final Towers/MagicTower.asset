@@ -9,17 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11048ce94f2c48d47a186f5ddfcf1538, type: 3}
-  m_Name: FastAttackTower
+  m_Script: {fileID: 11500000, guid: f899f34b85484c646bd3a3932341acdf, type: 3}
+  m_Name: MagicTower
   m_EditorClassIdentifier: 
-  healthPoints: 900
-  level: 1
-  energyRequired: 2
-  goldToUpgrade: 0
-  damage: 40
-  attackSpeed: 1.5
-  damageType: 0
+  bName: Magic Tower
+  type: 0
+  healthPoints: 1200
+  energyRequired: 6
+  goldRequired: 20
+  damage: 120
+  attackSpeed: 1
+  damageType: 1
   range: 3
   maxTargets: 1
   priority: 0
   bulletSpeed: 5
+  bulletPrefab: {fileID: 0}
