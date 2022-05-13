@@ -7,8 +7,8 @@ public class IslandCreator : MonoBehaviour
     public GameObject current;
     public string currentType;
     Vector3 origin;
-    [SerializeField] private List<Drag> blocks;
-    public Dictionary<Drag, int> blocksCount = new Dictionary<Drag, int>();
+    [SerializeField] private List<GameObject> blocks;
+    public Dictionary<GameObject, int> blocksCount = new Dictionary<GameObject, int>();
 
 
     void Start()
