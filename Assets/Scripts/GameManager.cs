@@ -69,25 +69,16 @@ public class GameManager : MonoBehaviour
         hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,layerMask);
         if (hit2D)
         {
-            
-            if (hit2D.transform.GetComponent<Block>() && hit2D.transform.GetComponent<Block>().selectable == true)
-            {
-                if (Utils.IsPointerOverUI()) return;
-                selectedBlock = hit2D.transform.GetComponent<Block>();
-                //levelManager.OpenBlockUI();
-            }
-            else
-            {
-                if (Utils.IsPointerOverUI()) return;
-                selectedBlock = null;
-                //levelManager.CloseBlockUI();
-            }
+            if (hit2D.transform.CompareTag("Block")) return;
+            if (Utils.IsPointerOverUI()) return;
+            selectedBlock = null;
+            levelManager.CloseBlockUI();
         }
         else
         {
             if (Utils.IsPointerOverUI()) return;
             selectedBlock = null;
-            //levelManager.CloseBlockUI();
+            levelManager.CloseBlockUI();
         }
     }
 
@@ -150,6 +141,7 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel()
     {
+        Debug.Log("levelStarted");
         if (levelManager.selectedLevel != null)
         {
             StartCoroutine(LevelCoroutine(levelManager.selectedLevel));
@@ -163,14 +155,17 @@ public class GameManager : MonoBehaviour
     public void StartWave()
     {
         waitStartWave = false;
+        
     }
     public IEnumerator LevelCoroutine(LevelSO level)
     {
         var waveCount = level.waves.Count;
+        Debug.Log(waveCount);
         var currentWave = 0;
         while (waveCount > 0)
         {
             while (waitStartWave) yield return null;
+            Debug.Log("StartWave");
             foreach (var bargeSo in level.waves[currentWave].bargesInWave)
             {
                 go = Pooler.instance.Pop("barge");
