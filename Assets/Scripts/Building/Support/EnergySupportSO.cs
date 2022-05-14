@@ -15,7 +15,7 @@ public class EnergySupportSO : SupportSO
     public override void RemoveEffect(Block block)
     {
         block.energy -= energyValue;
-        if(block.energy < 0) block.DestroyBuilding();
+        if(block.energy < 0) block.SellBuilding();
     }
     
     public override void AddEffects(List<Block> blocks)
