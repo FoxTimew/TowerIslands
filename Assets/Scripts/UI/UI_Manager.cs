@@ -142,10 +142,18 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandEditorMenu):
                 //Détruire tous les boutons générés lors de l'ouverture du menu.
+                foreach (Transform child in islandEditorScroller.transform.GetChild(0).transform)
+                {
+                    Destroy(child.gameObject);
+                }
                 islandEditorMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelSelectionMenu):
                 //Détruire tous les boutons générés lors de l'ouverture du menu.
+                foreach (Transform child in levelSelectionScroller.transform.GetChild(0).transform)
+                {
+                    Destroy(child.gameObject);
+                }
                 levelSelectionMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelPreparationMenu):
