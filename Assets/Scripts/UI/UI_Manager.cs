@@ -97,6 +97,24 @@ public class UI_Manager : MonoBehaviour
             if (menuEnumValue == (int) MenuEnum.BlockInfo)
             {
                 blockInfo.SetActive(true);
+                if (GameManager.instance.selectedBlock.building == null)
+                {
+                    if (!blockInfo.transform.GetChild(0).gameObject.activeSelf)
+                    {
+                        blockInfo.transform.GetChild(0).gameObject.SetActive(true);
+                        blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
+                    }
+                    /*else
+                    {
+                        // A Ajouter pour activer le menu sur 2 niveaux
+                        blockInfo.transform.GetChild(1).gameObject.SetActive(true);
+                    }*/
+                }
+                else
+                {
+                    blockInfo.transform.GetChild(2).gameObject.SetActive(true);
+                    blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
+                }
             }else
             {
                 feedbackUI.SetActive(true);
@@ -114,6 +132,13 @@ public class UI_Manager : MonoBehaviour
         {
             if (menuEnumValue == (int) MenuEnum.BlockInfo)
             {
+                for (int i = 0; i < blockInfo.transform.childCount; i++)
+                {
+                    if (blockInfo.activeSelf)
+                    {
+                        blockInfo.transform.GetChild(i)?.GetComponent<CircleMenuAnimation>()?.CloseContextMenu();
+                    }
+                }
                 blockInfo.SetActive(false);
             }else
             {
@@ -174,15 +199,8 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.VictoryMenu):
                 victoryMenu.SetActive(false);
                 break;
-            case (MenuEnum.BlockInfo):
-                for (int i = 0; i < blockInfo.transform.childCount; i++)
-                {
-                    blockInfo.transform.GetChild(i).GetComponent<CircleMenuAnimation>().CloseContextMenu();
-                }
-                blockInfo.SetActive(false);
-                break;
+
         }
-        Debug.Log($"Menu {(MenuEnum)menuID} closed");
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
@@ -229,26 +247,7 @@ public class UI_Manager : MonoBehaviour
                 //Apeler menu de victoire
                 victoryMenu.SetActive(true);
                 break;
-            case (MenuEnum.BlockInfo):
-                blockInfo.SetActive(true);
-                if (GameManager.instance.selectedBlock.building == null)
-                {
-                    if (!transform.GetChild(0).gameObject.activeSelf)
-                    {
-                        transform.GetChild(0).gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        transform.GetChild(1).gameObject.SetActive(true);
-                    }
-                }
-                else
-                {
-                    transform.GetChild(2).gameObject.SetActive(true);
-                }
-                break;
         }
-        Debug.Log($"Menu {(MenuEnum)menuID} opened");
     }
 
     public void DrawBlockButtons()
@@ -294,7 +293,41 @@ public class UI_Manager : MonoBehaviour
             }
         }
     }
-    
+
+    public bool isMenuOpen(MenuEnum menu)
+    {
+        switch (menu)
+        {
+            case (MenuEnum.MainMenu):
+                return mainMenu.gameObject.activeSelf;
+            case (MenuEnum.CreditsMenu):
+                return creditsMenu.gameObject.activeSelf;
+            case (MenuEnum.SettingsMenu):
+                return settingsMenu.gameObject.activeSelf;
+            case (MenuEnum.IslandMenu):
+                return islandMenu.gameObject.activeSelf;
+            case (MenuEnum.IslandEditorMenu):
+                return islandEditorMenu.gameObject.activeSelf;
+            case (MenuEnum.LevelSelectionMenu):
+                return levelSelectionMenu.gameObject.activeSelf;
+            case (MenuEnum.LevelPreparationMenu):
+                return levelPreparationMenu.gameObject.activeSelf;
+            case (MenuEnum.PlayingLevelMenu):
+                return playingLevelMenu.gameObject.activeSelf;
+            case (MenuEnum.FeedbackUI):
+                return feedbackUI.gameObject.activeSelf;
+            case (MenuEnum.TowerInfoUI):
+                return towerInfoUI.gameObject.activeSelf;
+            case (MenuEnum.DefeatMenu):
+                return defeatMenu.gameObject.activeSelf;
+            case (MenuEnum.VictoryMenu):
+                return victoryMenu.gameObject.activeSelf;
+            case(MenuEnum.BlockInfo):
+                return blockInfo.gameObject.activeSelf;
+            default:
+                return false;
+        }
+    }
     private void OnClickListener()
     {
         GameManager.instance.levelManager.selectedLevel = tmpButton.GetComponent<LevelButton>().levelContained;
