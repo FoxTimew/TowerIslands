@@ -50,6 +50,7 @@ public class Building : MonoBehaviour
     public void Repair()
     {
         destroyed = false;
+        hp = buildingSO.healthPoints;
         sr.sortingLayerName = "Characters";
         sr.sprite = sprites[0];
     }

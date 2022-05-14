@@ -2537,7 +2537,7 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: 42bbd87aa899a9649b2f11a1019c00f7, type: 2}
-  ruins: []
+  sprites: []
   sr: {fileID: 0}
 --- !u!212 &874716579
 SpriteRenderer:
@@ -6246,7 +6246,7 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
-  ruins: []
+  sprites: []
   sr: {fileID: 0}
   towerSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}
   target: {fileID: 0}
@@ -7207,7 +7207,7 @@ PrefabInstance:
     - target: {fileID: 749991751910442007, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 755714263039224004, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
