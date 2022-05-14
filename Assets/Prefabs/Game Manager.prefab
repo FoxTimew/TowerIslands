@@ -57,6 +57,12 @@ MonoBehaviour:
   islandCreator: {fileID: 4414033128125538236}
   selectedBlock: {fileID: 0}
   level1Test: {fileID: 0}
+  rapidTowerSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
+  mortarTowerSO: {fileID: 11400000, guid: 27fba3f43f2b5624987dc79e80eb4541, type: 2}
+  stunTrapSO: {fileID: 11400000, guid: 9770f1f2bcf4df24a86b3934a73e061a, type: 2}
+  damageTrapSO: {fileID: 11400000, guid: 9ee88a045c609964f9ab2f36fb11e76b, type: 2}
+  defenseSupportSO: {fileID: 11400000, guid: 9090473de08815e4884f9088d38cdff5, type: 2}
+  energySupportSO: {fileID: 11400000, guid: d803339cf488ce44281dca7580f79450, type: 2}
   layerMask:
     serializedVersion: 2
     m_Bits: 0
