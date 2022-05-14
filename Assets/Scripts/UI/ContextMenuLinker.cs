@@ -22,11 +22,15 @@ public class ContextMenuLinker : MonoBehaviour
         cma = GetComponent<CircleMenuAnimation>();
         UIManagerCanvasRect = UI_Manager.instance.GetComponent<RectTransform>();
         contextMenuRectTransform = GetComponent<RectTransform>();
+        blockToHover = GameManager.instance.selectedBlock;
     }
 
     private void Update()
     {
-        UpdateUIPosition();
+        if (gameObject.activeSelf)
+        {
+            UpdateUIPosition();
+        }
     }
 
     public void LinkListeners(Block block)
@@ -49,10 +53,18 @@ public class ContextMenuLinker : MonoBehaviour
 
                     break;
                 case (ContextMenuType.BlockEmptyTowerChoice):
-
+                    for (int i = 1; i < transform.childCount; i++)
+                    {
+                        transform.GetChild(i).GetComponent<Button>().onClick.AddListener(MenuCloserListener);
+                    }
                     break;
                 case (ContextMenuType.BlockBuilt):
-
+                    Debug.Log("Block Built");
+                    transform.GetChild(2).GetComponent<Button>().onClick.AddListener(SellBuildingLinstener);
+                    for (int i = 1; i < transform.childCount; i++)
+                    {
+                        transform.GetChild(i).GetComponent<Button>().onClick.AddListener(MenuCloserListener);
+                    }
                     break;
             }
         }
@@ -72,6 +84,10 @@ public class ContextMenuLinker : MonoBehaviour
         GameManager.instance.selectedBlock.Build(GameManager.instance.stunTrapSO);
     }
 
+    private void SellBuildingLinstener()
+    {
+        GameManager.instance.selectedBlock.SellBuilding();
+    }
     private void MenuCloserListener()
     {
         cma.CloseContextMenu();
@@ -84,9 +100,7 @@ public class ContextMenuLinker : MonoBehaviour
         Vector2 WorldObject_ScreenPosition=new Vector2(
             ((ViewportPosition.x*sizeDelta.x)-(sizeDelta.x*0.5f)),
             ((ViewportPosition.y*sizeDelta.y)-(sizeDelta.y*0.5f)));
- 
-        //now you can set the position of the ui element
-        
+
         contextMenuRectTransform.anchoredPosition=WorldObject_ScreenPosition;
     }
 }

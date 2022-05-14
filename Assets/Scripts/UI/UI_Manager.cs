@@ -104,14 +104,16 @@ public class UI_Manager : MonoBehaviour
                         blockInfo.transform.GetChild(0).gameObject.SetActive(true);
                         blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
                     }
-                    else
+                    /*else
                     {
+                        // A Ajouter pour activer le menu sur 2 niveaux
                         blockInfo.transform.GetChild(1).gameObject.SetActive(true);
-                    }
+                    }*/
                 }
                 else
                 {
                     blockInfo.transform.GetChild(2).gameObject.SetActive(true);
+                    blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
                 }
             }else
             {

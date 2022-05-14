@@ -110,7 +110,7 @@ public class Block : MonoBehaviour
     
     #region Building
 
-    public void DestroyBuilding()
+    public void SellBuilding()
     {
         int buildingValue = building.buildingSO.energyRequired;
         foreach (var block in adjacentBlocks.Keys)
@@ -120,7 +120,6 @@ public class Block : MonoBehaviour
             block.energy += adjacentBlocks[block];
             adjacentBlocks[block] = 0;
         }
-
         if (buildingValue <= 0) return;
         energy += buildingValue;
         Pooler.instance.Depop(building.buildingSO.bName,
