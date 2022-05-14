@@ -38,8 +38,8 @@ public class UI_Manager : MonoBehaviour
         islandMenu,
         islandEditorMenu,
         levelSelectionMenu,
-        playingLevelMenu,
         levelPreparationMenu,
+        playingLevelMenu,
         feedbackUI,
         towerInfoUI,
         defeatMenu,
@@ -142,10 +142,18 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandEditorMenu):
                 //Détruire tous les boutons générés lors de l'ouverture du menu.
+                foreach (Transform child in islandEditorScroller.transform.GetChild(0).transform)
+                {
+                    Destroy(child.gameObject);
+                }
                 islandEditorMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelSelectionMenu):
                 //Détruire tous les boutons générés lors de l'ouverture du menu.
+                foreach (Transform child in levelSelectionScroller.transform.GetChild(0).transform)
+                {
+                    Destroy(child.gameObject);
+                }
                 levelSelectionMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelPreparationMenu):
@@ -174,6 +182,7 @@ public class UI_Manager : MonoBehaviour
                 blockInfo.SetActive(false);
                 break;
         }
+        Debug.Log($"Menu {(MenuEnum)menuID} closed");
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
@@ -213,9 +222,11 @@ public class UI_Manager : MonoBehaviour
                 towerInfoUI.SetActive(true);
                 break;
             case (MenuEnum.DefeatMenu):
+                //Appeler menu de défaite
                 defeatMenu.SetActive(true);
                 break;
             case (MenuEnum.VictoryMenu):
+                //Apeler menu de victoire
                 victoryMenu.SetActive(true);
                 break;
             case (MenuEnum.BlockInfo):
@@ -237,11 +248,12 @@ public class UI_Manager : MonoBehaviour
                 }
                 break;
         }
+        Debug.Log($"Menu {(MenuEnum)menuID} opened");
     }
 
     public void DrawBlockButtons()
     {
-        foreach (KeyValuePair<Drag, int> block in GameManager.instance.islandCreator.blocksCount)
+        foreach (KeyValuePair<GameObject, int> block in GameManager.instance.islandCreator.blocksCount)
         {
             tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
@@ -252,6 +264,7 @@ public class UI_Manager : MonoBehaviour
                 GetCurrentBlockName(block.Key);
             });
             tmpEventTrigger.triggers.Add(entry);
+            tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
         }
     }
 
@@ -261,7 +274,6 @@ public class UI_Manager : MonoBehaviour
         foreach (LevelSO level in GameManager.instance.levelManager.levels)
         {
             tmpButton = Instantiate(levelButtonPrefab, levelSelectionScroller.transform.GetChild(0));
-            Debug.Log("Button name : "+tmpButton.name);
             tmpPrepareButton = levelSelectionMenu.transform.GetChild(1).GetComponent<Button>();
             tmpPrepareButton.interactable = false;
             
@@ -296,7 +308,7 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    private void GetCurrentBlockName(Drag blockDrag)
+    private void GetCurrentBlockName(GameObject blockDrag)
     {
         GameManager.instance.islandCreator.PopBuild(blockDrag.name);
     } 
