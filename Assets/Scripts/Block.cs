@@ -36,7 +36,11 @@ public class Block : MonoBehaviour
     {
         if (!selectable) return;
         GameManager.instance.selectedBlock = this;
-        GameManager.instance.levelManager.OpenBlockUI();
+        if (UI_Manager.instance.isMenuOpen(MenuEnum.LevelPreparationMenu) || UI_Manager.instance.isMenuOpen(MenuEnum.PlayingLevelMenu))
+        {
+            UI_Manager.instance.OpenMenu((int)MenuEnum.BlockInfo);
+        }
+        Debug.Log($"Block selected : {gameObject.name}");
     }
 
     #endregion
