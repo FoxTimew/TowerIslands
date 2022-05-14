@@ -148,6 +148,11 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: d803339cf488ce44281dca7580f79450, type: 2}
+  sprites:
+  - {fileID: 21300000, guid: 16fcf0cf257b09244ac8e684acfed4ec, type: 3}
+  - {fileID: 21300000, guid: 6c1f8c3f16533e44c9ba7063ccb361a6, type: 3}
+  - {fileID: 21300000, guid: 82545950fe122c843ad77fb02c7e1052, type: 3}
+  sr: {fileID: 3314126449326028525}
   supportSo: {fileID: 11400000, guid: 55d708ddf7c36984b9b9537a1b82be05, type: 2}
   affectedBlocks: []
 --- !u!1 &6277881778099919281

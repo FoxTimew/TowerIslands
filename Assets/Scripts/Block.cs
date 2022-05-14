@@ -34,6 +34,7 @@ public class Block : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!GameManager.instance.selectableBlock) return;
         if (!selectable) return;
         GameManager.instance.selectedBlock = this;
         GameManager.instance.levelManager.OpenBlockUI();

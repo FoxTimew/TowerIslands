@@ -186,8 +186,9 @@ MonoBehaviour:
   index:
     x: 0
     y: 0
-  buildingSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}
-  ruins:
+  buildingSO: {fileID: 11400000, guid: bf6c47753cf025d448c68bbe3e263c01, type: 2}
+  sprites:
+  - {fileID: 21300000, guid: a86ab865a247352419dfdd1742dfca1f, type: 3}
   - {fileID: 21300000, guid: 6c1f8c3f16533e44c9ba7063ccb361a6, type: 3}
   - {fileID: 21300000, guid: 82545950fe122c843ad77fb02c7e1052, type: 3}
   sr: {fileID: 4980515512291654111}
@@ -248,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5140832759016273424}
   m_Layer: 0
-  m_Name: RapidTower
+  m_Name: Fast Attack Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

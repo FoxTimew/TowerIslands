@@ -253,15 +253,16 @@ public class UI_Manager : MonoBehaviour
 
     public void DrawBlockButtons()
     {
-        foreach (KeyValuePair<GameObject, int> block in GameManager.instance.islandCreator.blocksCount)
+        foreach (KeyValuePair<string, int> block in GameManager.instance.islandCreator.blocksCount)
         {
             tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
+            tmpButton.name = block.Key;
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>
             {
-                GetCurrentBlockName(block.Key);
+                GameManager.instance.islandCreator.PopBuild(block.Key);
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
@@ -274,7 +275,7 @@ public class UI_Manager : MonoBehaviour
         foreach (LevelSO level in GameManager.instance.levelManager.levels)
         {
             tmpButton = Instantiate(levelButtonPrefab, levelSelectionScroller.transform.GetChild(0));
-            tmpPrepareButton = levelSelectionMenu.transform.GetChild(1).GetComponent<Button>();
+            tmpPrepareButton = levelSelectionMenu.transform.GetChild(2).GetComponent<Button>();
             tmpPrepareButton.interactable = false;
             
             tmpButton.GetComponent<Button>().onClick.AddListener(EnablePrepareButtonListener);
