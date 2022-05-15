@@ -8,4 +8,5 @@ public class LevelSO : ScriptableObject
     public int levelNumber;
     public bool isCompleted = false;
     public List<Wave> waves;
+    public GameObject block;
 }
