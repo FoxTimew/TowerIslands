@@ -15,8 +15,13 @@ public class Drag : MonoBehaviour
     
     [SerializeField] private DragPointer dragPointer;
 
+
     
 
+    void Start()
+    {
+        transform.position = blocksGo.transform.position;
+    }
     void Update()
     {
         blocksGo.transform.position = dragPointer.isSnapped ? dragPointer.snapPosition : transform.position;

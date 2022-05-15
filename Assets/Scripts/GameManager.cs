@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
+        waveText.text = currentWave.ToString();
         if (!selectableBlock) return;
         UnSelectBlock();
     }
@@ -100,10 +102,11 @@ public class GameManager : MonoBehaviour
         for(int i = 0;i<gridSize;i++)
         for(int j = 0;j<gridSize;j++)
         {
-            if (grid.GridElements[i,j].block is not null) continue;
+            
             GridIndex index = Instantiate(gridElement,grid.GridElements[i,j].position,Quaternion.identity,gridGroup.transform);
             grid.GridElements[i, j].gridIndex = index;
             index.index = new Index(i, j);
+            if (grid.GridElements[i,j].block is not null) grid.GridElements[i, j].gridIndex.Disable();
         }
         
         pc = gridGroup.GetComponent<PolygonCollider2D>();
@@ -183,6 +186,9 @@ public class GameManager : MonoBehaviour
         waveCount = 0;
         currentWave = 0;
     }
+
+
+    [SerializeField] private TMP_Text waveText;
     
     public IEnumerator LevelCoroutine(LevelSO level)
     {
@@ -226,6 +232,8 @@ public class GameManager : MonoBehaviour
         }
 
         levelManager.selectedLevel.isCompleted = true;
+        islandCreator.blocksCount[levelManager.selectedLevel.block.name]++;
+        levelManager.selectedLevel = null;
         HDV.Repair();
         UI_Manager.instance.CloseMenu(8);
         UI_Manager.instance.OpenMenu(12);

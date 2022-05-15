@@ -24,14 +24,21 @@ public class Enemy : MonoBehaviour
 
     private int currentHP { get; set; }
     private Coroutine movement;
-    private void Start()
+    
+    
+    private void OnEnable()
     {
         currentHP = enemyStats.maxHealthPoints;
         speed = enemyStats.speed;
+        
+    }
+
+    void Start()
+    {
         FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
         StartMovement();
     }
-
+    
     public void StartMovement()
     {
         movement = StartCoroutine(MoveEnemy());
@@ -42,6 +49,10 @@ public class Enemy : MonoBehaviour
         StopCoroutine(movement);
     }
 
+    void Update()
+    {
+        if(currentHP<=0) Death();
+    }
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
         currentHP -= damageToTake;

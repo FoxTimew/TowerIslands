@@ -17,14 +17,18 @@ public class IslandCreator : MonoBehaviour
             blocksCount.Add(drag.name,1);
     }
     
-    public void PopBuild(string key)
+    public void PopBuild(string key,RectTransform rTransform)
     {
         if(current != null || currentType == key) Pooler.instance.Depop(currentType,current);
         currentType = key;
         current = Pooler.instance.Pop(currentType);
-        origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
+        // origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
+        // origin.z = 0;
+        // origin.y += 2 * 2.67f;
+        
+        origin = new Vector3(0,GameManager.instance.grid.size * 1.335f,0);
+        //origin.x -= 150;
         origin.z = 0;
-        origin.y += 2 * 2.67f;
         current.transform.position = origin;
 
     }

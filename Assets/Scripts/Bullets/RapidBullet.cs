@@ -13,14 +13,14 @@ public class RapidBullet : Bullet
         if (target != null)
         {
             transform.DOMove(target.transform.position,
-                (target.transform.position - transform.position).magnitude / speed, false).SetEase(Ease.Linear);
+                (target.transform.position - transform.position).magnitude / speed, false).SetEase(Ease.Linear).OnComplete(() =>Pooler.instance.Depop("RapidBullet", gameObject));
         }
     }
 
     protected override void OnTriggerEnter2D(Collider2D collider)
     {
         if (!collider.gameObject.CompareTag("Enemy")) return;
-        Pooler.instance.Depop("RapidBullet", gameObject);
+        ;
         Enemy tmpEnemy = collider.gameObject.GetComponent<Enemy>();
         if (tmpEnemy.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage))
         {

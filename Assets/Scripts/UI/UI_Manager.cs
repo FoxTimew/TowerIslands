@@ -263,7 +263,7 @@ public class UI_Manager : MonoBehaviour
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>
             {
-                GameManager.instance.islandCreator.PopBuild(block.Key);
+                GameManager.instance.islandCreator.PopBuild(block.Key,tmpButton.GetComponent<RectTransform>());
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
@@ -343,10 +343,6 @@ public class UI_Manager : MonoBehaviour
         tmpPrepareButton.interactable = true;
 
     }
-
-    private void GetCurrentBlockName(GameObject blockDrag)
-    {
-        GameManager.instance.islandCreator.PopBuild(blockDrag.name);
-    } 
+    
 
 }

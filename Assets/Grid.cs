@@ -102,7 +102,7 @@ public class Grid
         GridElements[block.index.x, block.index.y].block = block;
         GridElements[block.index.x, block.index.y].block.placed = true;
         GridElements[block.index.x, block.index.y].block.selectable = true;
-        GridElements[block.index.x, block.index.y].gridIndex.gameObject.SetActive(false);
+        GridElements[block.index.x, block.index.y].gridIndex.Disable();
         GridElements[block.index.x, block.index.y].walkable = true;
         
     }
