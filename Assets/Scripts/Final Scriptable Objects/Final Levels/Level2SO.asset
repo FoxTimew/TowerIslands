@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440e63bda142de0438b47e1bf03f6c4b, type: 3}
   m_Name: Level2SO
   m_EditorClassIdentifier: 
+  levelNumber: 2
+  isCompleted: 0
   waves:
   - bargesInWave:
     - {fileID: 11400000, guid: 874c7ab07f04ecf429e2b36d82bbcb4e, type: 2}
