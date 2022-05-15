@@ -99,6 +99,7 @@ public class UI_Manager : MonoBehaviour
                 blockInfo.SetActive(true);
                 if (GameManager.instance.selectedBlock.building == null)
                 {
+                    blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().cma.PlayAnimation();
                     if (!blockInfo.transform.GetChild(0).gameObject.activeSelf)
                     {
                         blockInfo.transform.GetChild(0).gameObject.SetActive(true);
@@ -112,6 +113,7 @@ public class UI_Manager : MonoBehaviour
                 }
                 else
                 {
+                    blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().cma.PlayAnimation();
                     blockInfo.transform.GetChild(2).gameObject.SetActive(true);
                     blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
                 }
@@ -139,7 +141,7 @@ public class UI_Manager : MonoBehaviour
                         blockInfo.transform.GetChild(i)?.GetComponent<CircleMenuAnimation>()?.CloseContextMenu();
                     }
                 }
-                blockInfo.SetActive(false);
+                //blockInfo.SetActive(false);
             }else
             {
                 feedbackUI.SetActive(false);

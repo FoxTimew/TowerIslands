@@ -13,24 +13,31 @@ public enum ContextMenuType
 public class ContextMenuLinker : MonoBehaviour
 {
     public ContextMenuType type;
-    private CircleMenuAnimation cma;
-    private Block blockToHover;
+    public CircleMenuAnimation cma;
+    public Block blockToHover;
     private RectTransform UIManagerCanvasRect;
     private RectTransform contextMenuRectTransform;
-    private void Start()
+    public Button[] buttons;
+    
+    
+    private void Awake()
     {
         cma = GetComponent<CircleMenuAnimation>();
         UIManagerCanvasRect = UI_Manager.instance.GetComponent<RectTransform>();
         contextMenuRectTransform = GetComponent<RectTransform>();
-        blockToHover = GameManager.instance.selectedBlock;
+        
     }
 
     private void Update()
     {
-        if (gameObject.activeSelf)
-        {
-            UpdateUIPosition();
-        }
+        if (!gameObject.activeSelf) return;
+        if (GameManager.instance.selectedBlock is null) return;
+        UpdateUIPosition();
+        if (type != ContextMenuType.BlockEmpty) return;
+        buttons[0].gameObject.SetActive(GameManager.instance.rapidTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount());
+        buttons[1].gameObject.SetActive(GameManager.instance.energySupportSO.goldRequired <= EconomyManager.instance.GetGoldAmount());
+        buttons[2].gameObject.SetActive(GameManager.instance.stunTrapSO.goldRequired <= EconomyManager.instance.GetGoldAmount());
+
     }
 
     public void LinkListeners(Block block)
@@ -42,13 +49,14 @@ public class ContextMenuLinker : MonoBehaviour
             switch (type)
             {
                 case (ContextMenuType.BlockEmpty):
-
-                    transform.GetChild(1).GetComponent<Button>().onClick.AddListener(RapidTowerBuilder);
-                    transform.GetChild(2).GetComponent<Button>().onClick.AddListener(DefenseSupportTowerBuilder);
-                    transform.GetChild(3).GetComponent<Button>().onClick.AddListener(StunTrapTowerBuilder);
-                    for (int i = 1; i < transform.childCount; i++)
+                    
+                    foreach (var button in buttons) button.onClick.RemoveAllListeners();
+                    buttons[0].onClick.AddListener(RapidTowerBuilder);
+                    buttons[1].onClick.AddListener(EnergySupportTowerBuilder);
+                    buttons[2].onClick.AddListener(StunTrapTowerBuilder);
+                    for (int i = 0; i < transform.childCount-1; i++)
                     {
-                        transform.GetChild(i).GetComponent<Button>().onClick.AddListener(MenuCloserListener);
+                        buttons[i].onClick.AddListener(MenuCloserListener);
                     }
 
                     break;
@@ -60,6 +68,7 @@ public class ContextMenuLinker : MonoBehaviour
                     break;
                 case (ContextMenuType.BlockBuilt):
                     Debug.Log("Block Built");
+                    transform.GetChild(2).GetComponent<Button>().onClick.RemoveAllListeners();
                     transform.GetChild(2).GetComponent<Button>().onClick.AddListener(SellBuildingLinstener);
                     for (int i = 1; i < transform.childCount; i++)
                     {
@@ -75,27 +84,31 @@ public class ContextMenuLinker : MonoBehaviour
         GameManager.instance.selectedBlock.Build(GameManager.instance.rapidTowerSO);
     }
 
-    private void DefenseSupportTowerBuilder()
+    private void EnergySupportTowerBuilder()
     {
-        GameManager.instance.selectedBlock.Build(GameManager.instance.defenseSupportSO);
+        GameManager.instance.selectedBlock.Build(GameManager.instance.energySupportSO);
     }
     private void StunTrapTowerBuilder()
     {
         GameManager.instance.selectedBlock.Build(GameManager.instance.stunTrapSO);
+        
     }
 
     private void SellBuildingLinstener()
     {
         GameManager.instance.selectedBlock.SellBuilding();
+        
+        
     }
     private void MenuCloserListener()
     {
         cma.CloseContextMenu();
     }
+    
 
     public void UpdateUIPosition()
     {
-        Vector2 ViewportPosition=GameManager.instance.cam.WorldToViewportPoint(blockToHover.transform.position);
+        Vector2 ViewportPosition=GameManager.instance.cam.WorldToViewportPoint(GameManager.instance.selectedBlock.transform.position);
         var sizeDelta = UIManagerCanvasRect.sizeDelta;
         Vector2 WorldObject_ScreenPosition=new Vector2(
             ((ViewportPosition.x*sizeDelta.x)-(sizeDelta.x*0.5f)),

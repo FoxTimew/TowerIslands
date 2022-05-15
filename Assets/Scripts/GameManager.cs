@@ -64,35 +64,7 @@ public class GameManager : MonoBehaviour
         if (!selectableBlock) return;
         UnSelectBlock();
     }
-
-    [SerializeField] private LayerMask layerMask;
-    private void SelectBlock()
-    {
-        
-        if (!Input.GetMouseButtonDown(0)) return;
-        hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,layerMask);
-        if (hit2D)
-        {
-            
-            if (hit2D.transform.CompareTag("Block")) return;
-            if (Utils.IsPointerOverUI()) return;
-            selectedBlock = null;
-            if (UI_Manager.instance.isMenuOpen(MenuEnum.BlockInfo))
-            {
-                UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
-            }
-        }
-        else
-        {
-            if (Utils.IsPointerOverUI()) return;
-            selectedBlock = null;
-            if (UI_Manager.instance.isMenuOpen(MenuEnum.BlockInfo))
-            {
-                UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
-            }
-        }
-    }
-
+    
     #endregion
     
     
@@ -181,9 +153,9 @@ public class GameManager : MonoBehaviour
             levelRoutine = StartCoroutine(LevelCoroutine(levelManager.selectedLevel));
         }
     }
-    public void StartPreparation()
+    public void SetBlockSelectable(bool value)
     {
-        selectableBlock = true;
+        selectableBlock = value;
     }
     public void StartLevelTest()
     {
@@ -251,6 +223,8 @@ public class GameManager : MonoBehaviour
             }
             yield return null;
         }
+
+        levelManager.selectedLevel.isCompleted = true;
         HDV.Repair();
         UI_Manager.instance.CloseMenu(8);
         UI_Manager.instance.OpenMenu(12);
@@ -269,16 +243,17 @@ public class GameManager : MonoBehaviour
         hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,layerMask);
         if (hit2D)
         {
+            
             if (hit2D.transform.CompareTag("Block")) return;
             if (Utils.IsPointerOverUI()) return;
             selectedBlock = null;
-            levelManager.CloseBlockUI();
+            UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
         }
         else
         {
             if (Utils.IsPointerOverUI()) return;
             selectedBlock = null;
-            levelManager.CloseBlockUI();
+            UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
         }
     }
     public void SellBuilding()

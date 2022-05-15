@@ -6,28 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BlockButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BlockButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Draft/Ogre.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Draft/Ogre.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RapidBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RapidBullet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tower/RapidTower.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tower/RapidTower.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Font/HarperRegular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Font/HarperRegular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Building.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/Tower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/RapidBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/RapidBullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Final Scriptable Objects/Final Towers/FastAttackTower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Final Scriptable Objects/Final Towers/FastAttackTower.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/Drag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/Drag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CircleMenuAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CircleMenuAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ContextMenuLinker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ContextMenuLinker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI_Manager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +45,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -81,10 +70,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="28680">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="28680" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -130,6 +119,7 @@
       <workItem from="1652449317404" duration="6000" />
       <workItem from="1652449576362" duration="834000" />
       <workItem from="1652535136503" duration="14567000" />
+      <workItem from="1652618992612" duration="8385000" />
     </task>
     <servers />
   </component>
