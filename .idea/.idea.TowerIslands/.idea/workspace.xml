@@ -5,32 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Art/GridElement.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/GridElement.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/GridElementTest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/GridElementTest.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Font/HarperRegular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Font/HarperRegular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Grid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GridIndex.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GridIndex.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/Blocks4.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Draft/GridBlock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Draft/GridBlock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trap/DamageTrap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trap/DamageTrap.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trap/StunTrap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trap/StunTrap.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/RapidBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/RapidBullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Final Scriptable Objects/Final Enemies/Minion.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Final Scriptable Objects/Final Enemies/Minion.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/Drag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/Drag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI_Manager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +112,7 @@
       <workItem from="1652449317404" duration="6000" />
       <workItem from="1652449576362" duration="834000" />
       <workItem from="1652535136503" duration="14567000" />
-      <workItem from="1652618992612" duration="15853000" />
+      <workItem from="1652618992612" duration="17182000" />
     </task>
     <servers />
   </component>

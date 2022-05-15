@@ -25,22 +25,20 @@ public class Enemy : MonoBehaviour
     private int currentHP { get; set; }
     private Coroutine movement;
     
-    
-    private void OnEnable()
+
+    private void Init()
     {
         currentHP = enemyStats.maxHealthPoints;
         speed = enemyStats.speed;
-        
-    }
-
-    void Start()
-    {
+        path.Clear();
         FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
         StartMovement();
     }
-    
+
+
     public void StartMovement()
     {
+        
         movement = StartCoroutine(MoveEnemy());
     }
 
@@ -150,6 +148,7 @@ public class Enemy : MonoBehaviour
 
     public void OnSpawn(BargeSO _barge, int troopListIndex)
     {
+        Init();
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
         //GameManager.instance.enemies.Add(this);
