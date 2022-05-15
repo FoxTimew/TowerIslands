@@ -24,16 +24,21 @@ public class Enemy : MonoBehaviour
 
     private int currentHP { get; set; }
     private Coroutine movement;
-    private void Start()
+    
+
+    private void Init()
     {
         currentHP = enemyStats.maxHealthPoints;
         speed = enemyStats.speed;
+        path.Clear();
         FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
         StartMovement();
     }
 
+
     public void StartMovement()
     {
+        
         movement = StartCoroutine(MoveEnemy());
     }
 
@@ -42,10 +47,13 @@ public class Enemy : MonoBehaviour
         StopCoroutine(movement);
     }
 
+    void Update()
+    {
+        if(currentHP<=0) Death();
+    }
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
         currentHP -= damageToTake;
-        Debug.Log(currentHP);
         if (currentHP <= 0)
         {
             currentHP = 0;
@@ -57,7 +65,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private Queue<Block> path;
+    private Queue<Block> path = new Queue<Block>();
     void FindPath(Block initPos)
     {
         Pathfinding pf = new Pathfinding();
@@ -140,6 +148,7 @@ public class Enemy : MonoBehaviour
 
     public void OnSpawn(BargeSO _barge, int troopListIndex)
     {
+        Init();
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
         //GameManager.instance.enemies.Add(this);
@@ -157,7 +166,7 @@ public class Enemy : MonoBehaviour
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
         //GameManager.instance.enemies.Remove(this);
-        Pooler.instance.Depop("Enemy", this.gameObject);
+        Pooler.instance.Depop(enemyStats.eName, this.gameObject);
     }
     
 }

@@ -33,14 +33,7 @@ public class EconomyManager : MonoBehaviour
 
     public void RemoveGold(int goldToRemove)
     {
-        if (goldAmount > goldToRemove)
-        {
-            goldAmount -= goldToRemove;
-        }
-        else
-        {
-            goldAmount = 0;
-        }
+        goldAmount -= goldToRemove;
         UpdateUI();
     }
 

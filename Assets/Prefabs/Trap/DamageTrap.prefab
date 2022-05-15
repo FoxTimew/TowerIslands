@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1039195777
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 29919b7c603634341a0151b3eea95e8b, type: 3}
   m_Color: {r: 0.061807394, g: 1, b: 0, a: 0.9019608}
   m_FlipX: 0
@@ -102,6 +102,8 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: 9ee88a045c609964f9ab2f36fb11e76b, type: 2}
+  sprites: []
+  sr: {fileID: 0}
   effect: {fileID: 11400000, guid: ae485a3f176cb9249a94e1f53e5b9a8e, type: 2}
   spriteRenderer: {fileID: 4646001389382630034}
 --- !u!61 &8728997527719404077
