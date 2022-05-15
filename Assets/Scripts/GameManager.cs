@@ -220,6 +220,7 @@ public class GameManager : MonoBehaviour
             {
                 selectableBlock = true;
                 yield return preparationTime;
+                UI_Manager.instance.CloseMenu(13);
             }
             yield return null;
         }
