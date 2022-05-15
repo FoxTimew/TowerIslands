@@ -7,10 +7,8 @@ using UnityEngine;
 public class EconomyManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text goldUI;
-    [SerializeField] private TMP_Text arcanumyUI;
     public static EconomyManager instance;
     [SerializeField] private int goldAmount = 200;
-    [SerializeField] private int arcanumAmount = 0;
 
     void Awake()
     {
@@ -24,7 +22,6 @@ public class EconomyManager : MonoBehaviour
         }
 
         Enemy.EnemyDeathGoldEvent += Enemy_EnemyDeathGoldEvent;
-        Enemy.EnemyDeathCristalEvent += Enemy_EnemyDeathCristalEvent;
         UpdateUI();
     }
 
@@ -51,30 +48,14 @@ public class EconomyManager : MonoBehaviour
     {
         return goldAmount;
     }
-
-    public void GainCristal(int arcanumToAdd)
-    {
-        arcanumAmount += arcanumToAdd;
-        UpdateUI();
-    }
     
-    public void RemoveArcanum(int goldToRemove)
-    {
-        if (arcanumAmount > goldToRemove)
-        {
-            arcanumAmount -= goldToRemove;
-        }
-        else
-        {
-            arcanumAmount = 0;
-        }
-        UpdateUI();
-    }
     
     public void UpdateUI()
     {
-        goldUI.text = $"Gold : {goldAmount.ToString()}";
-        arcanumyUI.text = $"Arcanum : {arcanumAmount.ToString()}";
+        if (goldUI != null)
+        {
+            goldUI.text = $"Gold : {goldAmount.ToString()}";
+        }
     }
 
     
@@ -82,9 +63,5 @@ public class EconomyManager : MonoBehaviour
     {
         GainGold(goldToAdd);
     }
-    public void Enemy_EnemyDeathCristalEvent(int cristalToAdd)
-    {
-        GainCristal(cristalToAdd);
-    }
-    
+
 }

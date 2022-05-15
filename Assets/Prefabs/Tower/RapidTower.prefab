@@ -186,7 +186,7 @@ MonoBehaviour:
   index:
     x: 0
     y: 0
-  buildingSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
+  buildingSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}
   ruins:
   - {fileID: 21300000, guid: 6c1f8c3f16533e44c9ba7063ccb361a6, type: 3}
   - {fileID: 21300000, guid: 82545950fe122c843ad77fb02c7e1052, type: 3}

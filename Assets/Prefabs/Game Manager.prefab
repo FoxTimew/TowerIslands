@@ -46,20 +46,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8fc260ffbc9e984a95860a9c3a99a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraZoom: {fileID: 0}
+  levelManager: {fileID: 4414033128125538235}
   blockGroup: {fileID: 0}
   cam: {fileID: 0}
-  cityCenter: {fileID: 0}
+  HDV: {fileID: 0}
+  gridElement: {fileID: 0}
+  gridSize: 10
+  blockPrefab: {fileID: 0}
   islandCreator: {fileID: 4414033128125538236}
-  levelManager: {fileID: 4414033128125538235}
-  startButton: {fileID: 0}
-  welcomePage: {fileID: 0}
-  baseBlock:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   selectedBlock: {fileID: 0}
-  enemies: []
+  level1Test: {fileID: 0}
+  rapidTowerSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
+  mortarTowerSO: {fileID: 11400000, guid: 27fba3f43f2b5624987dc79e80eb4541, type: 2}
+  stunTrapSO: {fileID: 11400000, guid: 9770f1f2bcf4df24a86b3934a73e061a, type: 2}
+  damageTrapSO: {fileID: 11400000, guid: 9ee88a045c609964f9ab2f36fb11e76b, type: 2}
+  defenseSupportSO: {fileID: 11400000, guid: 9090473de08815e4884f9088d38cdff5, type: 2}
+  energySupportSO: {fileID: 11400000, guid: d803339cf488ce44281dca7580f79450, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  gridGroup: {fileID: 0}
+  bargeSpawn: {x: 0, y: 0, z: 0}
+  enemyGroup: {fileID: 0}
 --- !u!114 &4414033128125538236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +82,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 0}
+  currentType: 
+  blocks:
+  - {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2, type: 3}
+  - {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
+  - {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
+  - {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
 --- !u!114 &4414033128125538235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockInfogroup: {fileID: 0}
+  buildGroup: {fileID: 0}
+  destroyGroup: {fileID: 0}
   energy: {fileID: 0}
   blockEnergy: {fileID: 0}
-  towerText: {fileID: 0}
+  selectedLevel: {fileID: 0}
+  levels: []

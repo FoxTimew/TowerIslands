@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject blockGroup;
     public Camera cam;
 
-    [SerializeField] private Building HDV;
+    [SerializeField] public Building HDV;
     
     public GridIndex gridElement;
     [SerializeField] private int gridSize = 10;
@@ -28,9 +28,15 @@ public class GameManager : MonoBehaviour
     private PolygonCollider2D pc;
 
     [Header("TestUI")] [SerializeField] private LevelSO level1Test;
-    
-    
-    
+
+
+    [Header("Base Building Prefabs")] 
+    public BuildingSO rapidTowerSO;
+    public BuildingSO mortarTowerSO;
+    public BuildingSO stunTrapSO;
+    public BuildingSO damageTrapSO;
+    public BuildingSO defenseSupportSO;
+    public BuildingSO energySupportSO;
     
     //private bool isMoving;
 
@@ -69,16 +75,23 @@ public class GameManager : MonoBehaviour
         hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,layerMask);
         if (hit2D)
         {
+            
             if (hit2D.transform.CompareTag("Block")) return;
             if (Utils.IsPointerOverUI()) return;
             selectedBlock = null;
-            levelManager.CloseBlockUI();
+            if (UI_Manager.instance.isMenuOpen(MenuEnum.BlockInfo))
+            {
+                UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
+            }
         }
         else
         {
             if (Utils.IsPointerOverUI()) return;
             selectedBlock = null;
-            levelManager.CloseBlockUI();
+            if (UI_Manager.instance.isMenuOpen(MenuEnum.BlockInfo))
+            {
+                UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
+            }
         }
     }
 
@@ -193,7 +206,7 @@ public class GameManager : MonoBehaviour
 
     public void SellBuilding()
     {
-        selectedBlock.DestroyBuilding();
+        selectedBlock.SellBuilding();
     }
 
 

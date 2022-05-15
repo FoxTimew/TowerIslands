@@ -16,26 +16,55 @@ public class LevelManager : MonoBehaviour
     
     public void OpenBlockUI()
     {
-        blockInfogroup.SetActive(true);
-        energy.text = $"Energy {GameManager.instance.selectedBlock.energy}";
-        blockEnergy.text = $"Max Energy {GameManager.instance.selectedBlock.GetMaxEnergy()}";
+        if (blockInfogroup != null)
+        {
+            blockInfogroup.SetActive(true);
+        }
+
+        if (energy != null)
+        {
+            energy.text = $"Energy {GameManager.instance.selectedBlock.energy}";
+        }
+
+        if (blockEnergy != null)
+        {
+            blockEnergy.text = $"Max Energy {GameManager.instance.selectedBlock.GetMaxEnergy()}";
+        }
+
         if (GameManager.instance.selectedBlock.building is not null)
         {
-            destroyGroup.SetActive(true);
-            buildGroup.SetActive(false);
+            if (destroyGroup !!= null)
+            {
+                destroyGroup.SetActive(true);
+            }
+
+            if( buildGroup != null){
+                buildGroup.SetActive(false);
+            }
         }
         else
         {
-            destroyGroup.SetActive(false);
-            buildGroup.SetActive(true);
+            if (destroyGroup !!= null)
+            {
+                destroyGroup.SetActive(false);
+            }
+
+            if( buildGroup != null){
+                buildGroup.SetActive(true);
+            }
         }
             
         
     }
     
     public void CloseBlockUI()
-    { 
-        blockInfogroup.SetActive(false);
+    {
+        if (blockInfogroup != null)
+        {
+            blockInfogroup.SetActive(false);
+        }
+
+        
     }  
 
 }
