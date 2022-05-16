@@ -126,10 +126,16 @@ public class UI_Manager : MonoBehaviour
 
     public void CloseMenu(int menuEnumValue)
     {
-        if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
+
+        if (menuEnumValue == (int) MenuEnum.DefeatMenu)
+        {
+            defeatMenu.GetComponent<DefeatMenu>().Close();
+        }
+        else if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
         {
             StartCoroutine(CloseMenuWithTransition(menuEnumValue));
         }
+        
         else
         {
             if (menuEnumValue == (int) MenuEnum.BlockInfo)

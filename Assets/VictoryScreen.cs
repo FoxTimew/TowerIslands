@@ -37,7 +37,6 @@ public class VictoryScreen : MonoBehaviour
 
     void OpenClose()
     {
-        
         UI_Manager.instance.CloseMenu(12);
         UI_Manager.instance.OpenMenu(4);
     }
