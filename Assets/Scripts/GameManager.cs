@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds preparationTime;
     public bool selectableBlock = false;
 
-    private int currentWave;
+    public int currentWave;
     private int waveCount;
     [SerializeField] private Vector3[] bargeSpawn;
 
@@ -166,13 +166,12 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
-        waveCount--;
-        currentWave++;
+        StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
     public void Retry()
     {
-        StopCoroutine(GameManager.instance.levelRoutine);
+        StopCoroutine(levelRoutine);
         for(int i = enemyGroup.childCount-1;i>-1;i--)
             Pooler.instance.Depop(enemyGroup.GetChild(0).name,enemyGroup.GetChild(0).gameObject);
         HDV.Repair();
@@ -192,34 +191,15 @@ public class GameManager : MonoBehaviour
     
     public IEnumerator LevelCoroutine(LevelSO level)
     {
+        UI_Manager.instance.CloseMenu(13);
         waveCount = level.waves.Count;
-        currentWave = -1;
+        currentWave = 0;
         Debug.Log(waveCount);
         while (waveCount > 0)
         {
-            StartWave();
-            Debug.Log(waveCount);
-            selectableBlock = false;
-            selectedBlock = null;
-            Debug.Log("StartWave");
-            foreach (var bargeSo in level.waves[currentWave].bargesInWave)
-            {
-                spawnPoint = bargeSpawn[Random.Range(0,4)];
-                bargeGO = Pooler.instance.Pop("barge");
-                bargeGO.transform.position = spawnPoint;
-                bargeGO.transform.DOMove(grid.GetNearestBlock(spawnPoint).transform.position, (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed);
-                yield return new WaitForSeconds(
-                    (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed);
-                foreach (var troop in bargeSo.troops)
-                {
-                    enemyGO = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
-                    enemyGO.transform.position = bargeGO.transform.position;
-                    enemyGO.transform.parent = enemyGroup;
-                    enemyGO.GetComponent<Enemy>().OnSpawn(bargeSo,troop.cristalToEarn);
-                    yield return new WaitForSeconds(0.5f);
-                }
-                Pooler.instance.Depop("barge",bargeGO);
-            }
+
+            StartCoroutine(SpawnWave(level.waves[currentWave]));
+            
             while (enemyGroup.childCount > 0) yield return null;
             
             if (waveCount > 0)
@@ -240,9 +220,40 @@ public class GameManager : MonoBehaviour
         ResetLevel();
 
     }
-
-    #endregion
     
+    IEnumerator SpawnWave(Wave wave)
+    {
+        var bargeGO = new GameObject();
+        var enemyGO = new GameObject();
+        waveCount--;
+        currentWave++;
+        selectableBlock = false;
+        selectedBlock = null;
+        foreach (var bargeSo in wave.bargesInWave)
+        {
+            spawnPoint = bargeSpawn[Random.Range(0,4)];
+            bargeGO = Pooler.instance.Pop("barge");
+            bargeGO.transform.position = spawnPoint;
+            bargeGO.transform.parent = enemyGroup;
+            bargeGO.transform.DOMove(grid.GetNearestBlock(spawnPoint).transform.position, (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed);
+            yield return new WaitForSeconds(
+                (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed);
+            foreach (var troop in bargeSo.troops)
+            {
+                enemyGO = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
+                enemyGO.transform.position = bargeGO.transform.position;
+                enemyGO.transform.parent = enemyGroup;
+                enemyGO.GetComponent<Enemy>().OnSpawn(bargeSo,troop.cristalToEarn);
+                yield return new WaitForSeconds(0.5f);
+            }
+            Pooler.instance.Depop("barge",bargeGO);
+        }
+        
+    }
+    #endregion
+
+
+
     
     [SerializeField] private LayerMask layerMask;
     private void UnSelectBlock()
