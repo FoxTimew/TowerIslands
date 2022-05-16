@@ -78,15 +78,19 @@ public class Grid
         {
             new Index(hdvIndex[0].x+1, hdvIndex[0].y),
             new Index(hdvIndex[0].x, hdvIndex[0].y+1),
+            new Index(hdvIndex[0].x+1, hdvIndex[0].y+1),
             
             new Index(hdvIndex[1].x, hdvIndex[1].y+1),
             new Index(hdvIndex[1].x-1, hdvIndex[1].y),
+            new Index(hdvIndex[1].x-1, hdvIndex[1].y+1),
             
             new Index(hdvIndex[2].x-1, hdvIndex[2].y),
             new Index(hdvIndex[2].x, hdvIndex[2].y-1),
+            new Index(hdvIndex[2].x-1, hdvIndex[2].y-1),
             
             new Index(hdvIndex[3].x, hdvIndex[3].y-1),
             new Index(hdvIndex[3].x+1, hdvIndex[3].y),
+            new Index(hdvIndex[3].x+1, hdvIndex[3].y-1),
         };
     }
 

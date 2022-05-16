@@ -65,6 +65,8 @@ public class UI_Manager : MonoBehaviour
     private Image tmpButtonImage;
     private Button tmpPrepareButton;
     private EventTrigger tmpEventTrigger;
+
+    private WaitForSeconds closeMenuTransitionDuration;
     
     private void Awake()
     {
@@ -77,6 +79,7 @@ public class UI_Manager : MonoBehaviour
     private void Start()
     {
         initialCloudPosition = transitionClouds.position;
+        closeMenuTransitionDuration = new WaitForSeconds(transitionDuration * .5f);
     }
     
     public void CloudTransition()
@@ -113,9 +116,10 @@ public class UI_Manager : MonoBehaviour
                 }
                 else
                 {
-                    blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().cma.PlayAnimation();
-                    blockInfo.transform.GetChild(2).gameObject.SetActive(true);
-                    blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
+                    ContextMenuLinker linker = blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>();
+                    linker.cma.PlayAnimation();
+                    linker.gameObject.SetActive(true);
+                    linker.LinkListeners(GameManager.instance.selectedBlock);
                 }
             }else
             {
@@ -126,10 +130,16 @@ public class UI_Manager : MonoBehaviour
 
     public void CloseMenu(int menuEnumValue)
     {
-        if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
+
+        if (menuEnumValue == (int) MenuEnum.DefeatMenu)
+        {
+            defeatMenu.GetComponent<DefeatMenu>().Close();
+        }
+        else if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
         {
             StartCoroutine(CloseMenuWithTransition(menuEnumValue));
         }
+        
         else
         {
             if (menuEnumValue == (int) MenuEnum.BlockInfo)
@@ -152,7 +162,7 @@ public class UI_Manager : MonoBehaviour
     IEnumerator CloseMenuWithTransition(int menuID)
     {
         CloudTransition();
-        yield return new WaitForSeconds(transitionDuration / 2);
+        yield return closeMenuTransitionDuration;
         switch ((MenuEnum)menuID)
         {
             case (MenuEnum.MainMenu):

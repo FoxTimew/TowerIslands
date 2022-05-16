@@ -14,7 +14,7 @@ public class IslandCreator : MonoBehaviour
     void Start()
     {
         foreach(var drag in blocks)
-            blocksCount.Add(drag.name,1);
+            blocksCount.Add(drag.name,0);
     }
     
     public void PopBuild(string key,RectTransform rTransform)
@@ -36,8 +36,9 @@ public class IslandCreator : MonoBehaviour
     
     public void Depop()
     {
-        if(currentType!=null)
-            Pooler.instance.Depop(currentType,current);
+        if (currentType is null) return;
+        if (!blocksCount.ContainsKey(currentType)) return;
+        Pooler.instance.Depop(currentType,current);
     }
     
 }
