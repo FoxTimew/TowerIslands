@@ -16,11 +16,12 @@ public class Drag : MonoBehaviour
     [SerializeField] private DragPointer dragPointer;
 
 
+    
+
     void Start()
     {
-        OnMouseDrag();
+        transform.position = blocksGo.transform.position;
     }
-
     void Update()
     {
         blocksGo.transform.position = dragPointer.isSnapped ? dragPointer.snapPosition : transform.position;
@@ -28,14 +29,13 @@ public class Drag : MonoBehaviour
 
     private void OnMouseDown()
     {
+        GameManager.instance.cameraZoom.enabled = false;
         blocksGo.transform.parent = null;
     }
     
 
     private void OnMouseDrag()
     {
-        
-        GameManager.instance.cameraZoom.enabled = false;
         origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
         origin.z = 0;
         origin.y += 2 * 2.67f;
@@ -46,6 +46,7 @@ public class Drag : MonoBehaviour
     
     private void OnMouseUp()
     {
+        transform.position = blocksGo.transform.position;
         blocksGo.transform.parent = transform.parent;
         GameManager.instance.cameraZoom.enabled = true;
         ChangeSprite(IsPlaceable());
@@ -85,6 +86,7 @@ public class Drag : MonoBehaviour
     {
         GameManager.instance.islandCreator.current = null;
         GameManager.instance.islandCreator.currentType = null;
+        GameManager.instance.islandCreator.blocksCount[transform.parent.gameObject.name]--;
         foreach (var block in blocks)
             GameManager.instance.grid.AddBlock(block);
         GameManager.instance.UpdateBlocks();

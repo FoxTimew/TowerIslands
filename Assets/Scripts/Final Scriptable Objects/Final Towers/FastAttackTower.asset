@@ -24,4 +24,5 @@ MonoBehaviour:
   maxTargets: 1
   priority: 0
   bulletSpeed: 6
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 2761374500971916386, guid: 32be0a0b41d61d74cb15736e888906b4,
+    type: 3}

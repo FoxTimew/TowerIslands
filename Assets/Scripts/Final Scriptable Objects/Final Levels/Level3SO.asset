@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440e63bda142de0438b47e1bf03f6c4b, type: 3}
+  m_Name: Level3SO
+  m_EditorClassIdentifier: 
+  levelNumber: 3
+  isCompleted: 0
+  waves:
+  - bargesInWave:
+    - {fileID: 11400000, guid: 711cabf7817f63f43996136d0eef8a24, type: 2}
+    - {fileID: 11400000, guid: 7a747d62a97116a42b7124930de09088, type: 2}
+  - bargesInWave:
+    - {fileID: 11400000, guid: 874c7ab07f04ecf429e2b36d82bbcb4e, type: 2}
+    - {fileID: 11400000, guid: ab68531978efd544f97863f728aca368, type: 2}
+    - {fileID: 11400000, guid: 00bfa2e6ecd59a34f838ee765b491013, type: 2}
+  - bargesInWave:
+    - {fileID: 11400000, guid: 73a046637e59f9e48948989227bd8a17, type: 2}
+    - {fileID: 11400000, guid: 874c7ab07f04ecf429e2b36d82bbcb4e, type: 2}
+    - {fileID: 11400000, guid: 3bbde7306345ed146a0021ed517d2d95, type: 2}
+    - {fileID: 11400000, guid: ab68531978efd544f97863f728aca368, type: 2}
+  block: {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}

@@ -9,14 +9,20 @@ public class CircleMenuAnimation : MonoBehaviour
     [SerializeField] private static float animationTime = 0.25f;
     private void Start()
     {
-        transform.DOScale(Vector3.one, animationTime);
+        PlayAnimation();
+
     }
 
     public void CloseContextMenu()
     {
-        transform.DOScale(Vector3.zero, animationTime);
-        gameObject.SetActive(false);
+        transform.DOScale(Vector3.zero, animationTime).OnComplete(
+            ()=>gameObject.SetActive(false));
     }
-    
-    
+
+
+
+    public void PlayAnimation()
+    {
+        transform.DOScale(Vector3.one, animationTime);
+    }
 }
