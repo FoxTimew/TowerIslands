@@ -112,7 +112,6 @@ public class Block : MonoBehaviour
     private int buildingValue;
     public void SellBuilding()
     {
-        Debug.Log(building);
         buildingValue = building.buildingSO.energyRequired;
         foreach (var block in adjacentBlocks.Keys)
         {
@@ -126,6 +125,7 @@ public class Block : MonoBehaviour
         Pooler.instance.Depop(building.buildingSO.bName,
             building.buildingSO.type == BuildingType.Trap ? building.gameObject : building.transform.parent.gameObject);
         EconomyManager.instance.GainGold(building.buildingSO.goldRequired);
+        GameManager.instance.buildings.Remove(building);
         building = null;
     }
 
@@ -139,6 +139,7 @@ public class Block : MonoBehaviour
         EconomyManager.instance.RemoveGold(building.goldRequired);
         this.building = building.type == BuildingType.Trap ? go.GetComponent<Building>() : go.transform.GetChild(0).GetComponent<Building>();
         this.building.index = index;
+        GameManager.instance.buildings.Add(this.building);
     }
 
     #endregion
