@@ -99,6 +99,7 @@ public class UI_Manager : MonoBehaviour
                 blockInfo.SetActive(true);
                 if (GameManager.instance.selectedBlock.building == null)
                 {
+                    blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().cma.PlayAnimation();
                     if (!blockInfo.transform.GetChild(0).gameObject.activeSelf)
                     {
                         blockInfo.transform.GetChild(0).gameObject.SetActive(true);
@@ -112,6 +113,7 @@ public class UI_Manager : MonoBehaviour
                 }
                 else
                 {
+                    blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().cma.PlayAnimation();
                     blockInfo.transform.GetChild(2).gameObject.SetActive(true);
                     blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
                 }
@@ -139,7 +141,7 @@ public class UI_Manager : MonoBehaviour
                         blockInfo.transform.GetChild(i)?.GetComponent<CircleMenuAnimation>()?.CloseContextMenu();
                     }
                 }
-                blockInfo.SetActive(false);
+                //blockInfo.SetActive(false);
             }else
             {
                 feedbackUI.SetActive(false);
@@ -252,15 +254,16 @@ public class UI_Manager : MonoBehaviour
 
     public void DrawBlockButtons()
     {
-        foreach (KeyValuePair<GameObject, int> block in GameManager.instance.islandCreator.blocksCount)
+        foreach (KeyValuePair<string, int> block in GameManager.instance.islandCreator.blocksCount)
         {
             tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
+            tmpButton.name = block.Key;
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>
             {
-                GetCurrentBlockName(block.Key);
+                GameManager.instance.islandCreator.PopBuild(block.Key,tmpButton.GetComponent<RectTransform>());
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
@@ -273,7 +276,7 @@ public class UI_Manager : MonoBehaviour
         foreach (LevelSO level in GameManager.instance.levelManager.levels)
         {
             tmpButton = Instantiate(levelButtonPrefab, levelSelectionScroller.transform.GetChild(0));
-            tmpPrepareButton = levelSelectionMenu.transform.GetChild(1).GetComponent<Button>();
+            tmpPrepareButton = levelSelectionMenu.transform.GetChild(2).GetComponent<Button>();
             tmpPrepareButton.interactable = false;
             
             tmpButton.GetComponent<Button>().onClick.AddListener(EnablePrepareButtonListener);
@@ -340,10 +343,6 @@ public class UI_Manager : MonoBehaviour
         tmpPrepareButton.interactable = true;
 
     }
-
-    private void GetCurrentBlockName(GameObject blockDrag)
-    {
-        GameManager.instance.islandCreator.PopBuild(blockDrag.name);
-    } 
+    
 
 }

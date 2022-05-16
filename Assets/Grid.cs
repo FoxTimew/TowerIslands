@@ -48,6 +48,8 @@ public class Grid
     private Vector2 zeroPos;
 
     public Index[] hdvIndex;
+
+    public Index[] baseBlocks;
     
     public Grid(int s)
     {
@@ -68,8 +70,27 @@ public class Grid
         {
             new Index(Mathf.Round(size * 0.5f), Mathf.Round(size * 0.5f)),
             new Index(Mathf.Round(size * 0.5f)-1, Mathf.Round(size * 0.5f)),
-            new Index(Mathf.Round(size * 0.5f), Mathf.Round(size * 0.5f)-1),
-            new Index(Mathf.Round(size * 0.5f)-1, Mathf.Round(size * 0.5f)-1)
+            new Index(Mathf.Round(size * 0.5f)-1, Mathf.Round(size * 0.5f)-1),
+            new Index(Mathf.Round(size * 0.5f), Mathf.Round(size * 0.5f)-1)
+        };
+
+        baseBlocks = new[]
+        {
+            new Index(hdvIndex[0].x+1, hdvIndex[0].y),
+            new Index(hdvIndex[0].x, hdvIndex[0].y+1),
+            new Index(hdvIndex[0].x+1, hdvIndex[0].y+1),
+            
+            new Index(hdvIndex[1].x, hdvIndex[1].y+1),
+            new Index(hdvIndex[1].x-1, hdvIndex[1].y),
+            new Index(hdvIndex[1].x-1, hdvIndex[1].y+1),
+            
+            new Index(hdvIndex[2].x-1, hdvIndex[2].y),
+            new Index(hdvIndex[2].x, hdvIndex[2].y-1),
+            new Index(hdvIndex[2].x-1, hdvIndex[2].y-1),
+            
+            new Index(hdvIndex[3].x, hdvIndex[3].y-1),
+            new Index(hdvIndex[3].x+1, hdvIndex[3].y),
+            new Index(hdvIndex[3].x+1, hdvIndex[3].y-1),
         };
     }
 
@@ -85,7 +106,7 @@ public class Grid
         GridElements[block.index.x, block.index.y].block = block;
         GridElements[block.index.x, block.index.y].block.placed = true;
         GridElements[block.index.x, block.index.y].block.selectable = true;
-        GridElements[block.index.x, block.index.y].gridIndex.gameObject.SetActive(false);
+        GridElements[block.index.x, block.index.y].gridIndex.Disable();
         GridElements[block.index.x, block.index.y].walkable = true;
         
     }

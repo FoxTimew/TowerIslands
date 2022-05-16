@@ -14,20 +14,17 @@ public class Tower : Building
     void Start()
     {
         towerSO = (TowerSO) buildingSO;
+        attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
     }
     void Update()
     {
         if (destroyed) return;
-        if (target is null)
-        {
-            if (inRange.Count > 0)
-                target = inRange[0];
-        }
-        else return;
-        if (inRange.Count > 0 && !shooting)
-        {
-            StartCoroutine(ShootCoroutine());
-        }
+        if (inRange.Count > 0 && target is null)
+            target = inRange[0];
+        if (shooting) return;
+        if (target is null) return;
+        if (!target.gameObject.activeSelf) return;
+        StartCoroutine(ShootCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,7 +45,8 @@ public class Tower : Building
             target = inRange[0];
         }
     }
-    
+
+    private WaitForSeconds attackSpeed;
     IEnumerator ShootCoroutine()
     {
         shooting = true;
@@ -56,7 +54,7 @@ public class Tower : Building
         go.transform.position = transform.position + Vector3.up;
         Pooler.instance.DelayedDepop(3,towerSO.bulletPrefab.name,go);
         go.GetComponent<Bullet>().Shoot(this, target, towerSO.bulletSpeed);
-        yield return new WaitForSeconds(1/towerSO.attackSpeed);
+        yield return attackSpeed;
         shooting = false;
     }
     

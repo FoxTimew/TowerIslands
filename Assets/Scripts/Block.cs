@@ -34,12 +34,11 @@ public class Block : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!GameManager.instance.selectableBlock) return;
         if (!selectable) return;
+        if (Utils.IsPointerOverUI()) return;
         GameManager.instance.selectedBlock = this;
-        if (UI_Manager.instance.isMenuOpen(MenuEnum.LevelPreparationMenu) || UI_Manager.instance.isMenuOpen(MenuEnum.PlayingLevelMenu))
-        {
-            UI_Manager.instance.OpenMenu((int)MenuEnum.BlockInfo);
-        }
+        UI_Manager.instance.OpenMenu((int)MenuEnum.BlockInfo);
         Debug.Log($"Block selected : {gameObject.name}");
     }
 
@@ -110,9 +109,11 @@ public class Block : MonoBehaviour
     
     #region Building
 
+    private int buildingValue;
     public void SellBuilding()
     {
-        int buildingValue = building.buildingSO.energyRequired;
+        Debug.Log(building);
+        buildingValue = building.buildingSO.energyRequired;
         foreach (var block in adjacentBlocks.Keys)
         {
             if (adjacentBlocks[block] == 0) continue;
