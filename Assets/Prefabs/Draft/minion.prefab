@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3899570175725506603}
   - component: {fileID: 2029992141}
   m_Layer: 0
-  m_Name: minion
+  m_Name: Minion
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
