@@ -14,6 +14,7 @@ public class VictoryScreen : MonoBehaviour
 
     private void OnEnable()
     {
+        UI_Manager.instance.CloseMenu(9);
         sun.DOScale(Vector3.one*0.5f, 0.25f).SetEase(Ease.OutSine);
         victory.DOScale(Vector3.one * 0.5f, 0.25f).SetEase(Ease.OutSine)
             .OnComplete(StartReset);
@@ -39,6 +40,7 @@ public class VictoryScreen : MonoBehaviour
     {
         UI_Manager.instance.CloseMenu(12);
         UI_Manager.instance.OpenMenu(4);
+        
     }
 
     private void OnDisable()

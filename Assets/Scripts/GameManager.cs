@@ -236,7 +236,6 @@ public class GameManager : MonoBehaviour
     {
         var bargeGO = new GameObject();
         
-        waveCount--;
         currentWave++;
         selectableBlock = false;
         selectedBlock = null;
@@ -265,6 +264,7 @@ public class GameManager : MonoBehaviour
             enemyGO.GetComponent<Enemy>().OnSpawn(barge,troop.cristalToEarn);
             yield return new WaitForSeconds(0.5f);
         }
+        waveCount--;
         bargeGO.transform.DOMove(spawn - transform.position, (spawn - transform.position).magnitude / barge.bargeSpeed).OnComplete(() =>
             Pooler.instance.Depop("barge",bargeGO));
     }
