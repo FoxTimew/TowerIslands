@@ -154,6 +154,7 @@ public class GameManager : MonoBehaviour
 
         if (levelManager.selectedLevel != null)
         {
+            key = levelManager.selectedLevel.block.name;
             levelRoutine = StartCoroutine(LevelCoroutine(levelManager.selectedLevel));
         }
     }
@@ -190,6 +191,7 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField] private TMP_Text waveText;
+    private string key;
     
     public IEnumerator LevelCoroutine(LevelSO level)
     {
@@ -214,7 +216,8 @@ public class GameManager : MonoBehaviour
         }
         ClearBuildings();
         levelManager.selectedLevel.isCompleted = true;
-        islandCreator.blocksCount[levelManager.selectedLevel.block.name]++;
+        Debug.Log(key);
+        islandCreator.blocksCount[levelManager.selectedLevel.block.index]++;
         levelManager.selectedLevel = null;
         HDV.Repair();
         UI_Manager.instance.CloseMenuWithoutTransition(8);

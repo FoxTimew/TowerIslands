@@ -7773,6 +7773,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6823177744949319021, guid: 707d224df9b5948498f0f10c6b5796e5,
         type: 3}
+      propertyPath: levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 41520a42c7ce38844bada83ff6b606c6,
+        type: 2}
+    - target: {fileID: 6823177744949319021, guid: 707d224df9b5948498f0f10c6b5796e5,
+        type: 3}
       propertyPath: levels.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: af745bca7c73f3242865a49ea7f1ee34,

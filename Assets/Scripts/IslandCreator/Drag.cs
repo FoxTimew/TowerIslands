@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
+    public int index;
     [SerializeField] private GameObject blocksGo;
     [SerializeField] private List<Block> blocks;
     
@@ -78,7 +79,7 @@ public class Drag : MonoBehaviour
         blocksGo.transform.parent = transform.parent;
         GameManager.instance.islandCreator.current = null;
         GameManager.instance.islandCreator.currentType = null;
-        GameManager.instance.islandCreator.blocksCount[transform.parent.gameObject.name]--;
+        GameManager.instance.islandCreator.blocksCount[index]--;
         foreach (var block in blocks)
             GameManager.instance.grid.AddBlock(block);
         GameManager.instance.UpdateBlocks();
