@@ -19,6 +19,8 @@ public class Tower : Building
         towerSO = (TowerSO) buildingSO;
         attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
     }
+
+    
     void Update()
     {
         if (destroyed) return;

@@ -20,8 +20,9 @@ public class Building : MonoBehaviour
 
     private void OnEnable()
     {
-        hp = buildingSO.healthPoints;
+        Repair();
         takeDamage += BaseTakeDamage;
+        
     }
     
     public void BaseTakeDamage(int dmg)
