@@ -6,38 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Barge.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Barge.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BlockButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BlockButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BuildButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BuildButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraZoom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CameraZoom.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityCenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CityCenter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DefeatMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DefeatMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragPointer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DragPointer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Grid.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GridIndex.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GridIndex.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NextWaveButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NextWaveButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tower/Fast Attack Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tower/Fast Attack Tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/Tower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/TowerSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Tower/TowerSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CircleMenuAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CircleMenuAnimation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SelectionSprite.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SelectionSprite.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VictoryScreen.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VictoryScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI_Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI_Manager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +114,7 @@
       <workItem from="1652535136503" duration="14567000" />
       <workItem from="1652618992612" duration="17182000" />
       <workItem from="1652688455382" duration="10329000" />
-      <workItem from="1652775004635" duration="10584000" />
+      <workItem from="1652775004635" duration="13884000" />
     </task>
     <servers />
   </component>

@@ -7,6 +7,8 @@ using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
+
 public enum MenuEnum
 {
     MainMenu = 1,
@@ -50,6 +52,8 @@ public class UI_Manager : MonoBehaviour
         
 
     [Header("Transition Reference")]
+    [SerializeField] private RectTransform  LeftTransition;
+    [SerializeField] private RectTransform  RightTransition;
     [SerializeField] private RectTransform transitionClouds;
     [SerializeField] private float transitionDuration;
     private Vector3 initialCloudPosition;
@@ -84,10 +88,14 @@ public class UI_Manager : MonoBehaviour
     
     public void CloudTransition()
     {
-        transitionClouds.DOMove(-transitionClouds.position/3, 
-                transitionDuration).OnComplete(() => { transitionClouds.position = initialCloudPosition;
-            });
-        
+        //transitionClouds.DOMove(-transitionClouds.position/3, 
+        //        transitionDuration).OnComplete(() => { transitionClouds.position = initialCloudPosition;
+        //    });
+
+        LeftTransition.DOLocalMoveX(-50, transitionDuration*0.5f).SetEase(Ease.Unset)
+            .OnComplete(() => LeftTransition.DOLocalMoveX(-800, transitionDuration*0.5f).SetEase(Ease.Unset));
+        RightTransition.DOLocalMoveX(50, transitionDuration*0.5f).SetEase(Ease.Unset)
+            .OnComplete(() => RightTransition.DOLocalMoveX(800, transitionDuration*0.5f).SetEase(Ease.Unset));
     }
     public void OpenMenu(int menuEnumValue)
     {

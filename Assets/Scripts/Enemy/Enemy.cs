@@ -42,13 +42,21 @@ public class Enemy : MonoBehaviour
         movement = StartCoroutine(MoveEnemy());
     }
 
-    public void StopMovement()
+    
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (movement is null) return;
-        StopCoroutine(movement);
-        animator.SetInteger("Speed", 0);
+        if (!other.transform.CompareTag("Block")) return;
+        if (other.GetComponent<Block>().building is null) return;
+        if (other.GetComponent<Block>().building.buildingSO.type == BuildingType.Trap) return;
+        StartCoroutine(Attack(other.GetComponent<Block>().building));
+
     }
 
+    
+    public void StopMovement()
+    {
+        StopCoroutine(movement);
+    }
     public void StopMovement(WaitForSeconds stunDuration)
     {
         if (movement is null) return;
@@ -87,7 +95,7 @@ public class Enemy : MonoBehaviour
 
 
     private Queue<Block> path = new Queue<Block>();
-    //private List<Vector3> points;
+    private List<Vector3> points;
     void FindPath(Block initPos)
     {
         Pathfinding pf = new Pathfinding();
@@ -100,7 +108,7 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < pathfinding.Count; i++)
         {
             path.Enqueue(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].block);
-            //points.Add(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].position);
+            points.Add(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].position);
         }
     }
 
@@ -114,14 +122,8 @@ public class Enemy : MonoBehaviour
         {
             block = path.Dequeue();
             CheckDirection(transform.position,block.transform.position);
-            if (block.building is not null)
-            {
-                if( block.building.buildingSO.type != BuildingType.Trap)
-                {
-                    yield return StartCoroutine(Attack(block.building));
-                }
-            }
-            tween = transform.DOMove(block.transform.position, (block.transform.position - transform.position).magnitude / speed)
+            tween = transform.DOMove(block.transform.position,
+                    (block.transform.position - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds((block.transform.position - transform.position).magnitude / speed);
         }
@@ -150,10 +152,12 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Attack(Building target)
     {
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
-        transform.DOMove(pos, (pos - transform.position).magnitude / speed)
-            .SetEase(Ease.Linear);
-        yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
+        // var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
+        // transform.DOMove(pos, (pos - transform.position).magnitude / speed)
+        //     .SetEase(Ease.Linear);
+        // yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
+        StopMovement();
+        tween.Pause();
         animator.SetInteger("Speed", 0);
         while (target.hp > 0)
         {
@@ -161,9 +165,10 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(enemyStats.attackSpeed);
             target.takeDamage(enemyStats.damage);
         }
-        
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
+        tween.Play().OnComplete(StartMovement);
+        
     }
     
 
