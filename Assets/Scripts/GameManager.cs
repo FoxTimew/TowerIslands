@@ -252,6 +252,7 @@ public class GameManager : MonoBehaviour
 
         yield return null;
     }
+    
     private IEnumerator SpawnEnemies(BargeSO barge,GameObject go,Vector3 spawn)
     {
         var bargeGO = go;

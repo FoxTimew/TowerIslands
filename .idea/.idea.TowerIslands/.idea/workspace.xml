@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DefeatMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DefeatMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Economy/EconomyManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VictoryScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VictoryScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +114,7 @@
       <workItem from="1652535136503" duration="14567000" />
       <workItem from="1652618992612" duration="17182000" />
       <workItem from="1652688455382" duration="10329000" />
-      <workItem from="1652775004635" duration="834000" />
+      <workItem from="1652775004635" duration="1463000" />
     </task>
     <servers />
   </component>
