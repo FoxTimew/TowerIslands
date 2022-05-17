@@ -268,7 +268,7 @@ public class GameManager : MonoBehaviour
         }
         waveCount--;
         bargeGO.transform.DOMove(spawn - transform.position, (spawn - transform.position).magnitude / barge.bargeSpeed).OnComplete(() =>
-            Pooler.instance.Depop("barge",bargeGO));
+            Pooler.instance.Depop("Barge",bargeGO));
     }
     #endregion
 
