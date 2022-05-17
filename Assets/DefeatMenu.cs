@@ -28,6 +28,7 @@ public class DefeatMenu : MonoBehaviour
 
     private void OnDisable()
     {
+        GameManager.instance.ClearBuildings();
         tween.Kill();
         background.rotation= Quaternion.Euler(Vector3.zero);
     }
