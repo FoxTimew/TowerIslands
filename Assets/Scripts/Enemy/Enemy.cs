@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
 
 
     private Queue<Block> path = new Queue<Block>();
-    private List<Vector3> points;
+    //private List<Vector3> points;
     void FindPath(Block initPos)
     {
         Pathfinding pf = new Pathfinding();
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < pathfinding.Count; i++)
         {
             path.Enqueue(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].block);
-            points.Add(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].position);
+            //points.Add(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].position);
         }
     }
 
