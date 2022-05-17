@@ -3918,7 +3918,7 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[2].key
-      value: barge
+      value: Barge
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}

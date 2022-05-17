@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private BargeSO bargeItComesFrom;
     private int cristalStored;
 
+    private bool stunned;
 
     private float speed;
 
@@ -38,13 +39,33 @@ public class Enemy : MonoBehaviour
 
     public void StartMovement()
     {
-        
         movement = StartCoroutine(MoveEnemy());
     }
 
     public void StopMovement()
     {
+        if (movement is null) return;
         StopCoroutine(movement);
+        animator.SetInteger("Speed", 0);
+    }
+
+    public void StopMovement(WaitForSeconds stunDuration)
+    {
+        if (movement is null) return;
+        if (stunned) return;
+        StartCoroutine(StopMovementDelayed(stunDuration));
+    }
+
+    private IEnumerator StopMovementDelayed(WaitForSeconds stunDuration)
+    {
+        StopCoroutine(movement);
+        tween.Pause();
+        animator.SetInteger("Speed", 0);
+        stunned = true;
+        yield return stunDuration;
+        tween.Play().OnComplete(StartMovement);
+        yield return stunDuration;
+        stunned = false;
     }
 
     void Update()
@@ -66,6 +87,7 @@ public class Enemy : MonoBehaviour
 
 
     private Queue<Block> path = new Queue<Block>();
+    //private List<Vector3> points;
     void FindPath(Block initPos)
     {
         Pathfinding pf = new Pathfinding();
@@ -78,19 +100,18 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < pathfinding.Count; i++)
         {
             path.Enqueue(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].block);
+            //points.Add(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].position);
         }
     }
 
     private Block block;
+    private Tween tween;
     public IEnumerator MoveEnemy()
     {
-        Pathfinding pf = new Pathfinding();
-        
         animator.SetInteger("Speed", 1);
         
         while (path.Count > 0)
         {
-            
             block = path.Dequeue();
             CheckDirection(transform.position,block.transform.position);
             if (block.building is not null)
@@ -100,7 +121,7 @@ public class Enemy : MonoBehaviour
                     yield return StartCoroutine(Attack(block.building));
                 }
             }
-            transform.DOMove(block.transform.position, (block.transform.position - transform.position).magnitude / speed)
+            tween = transform.DOMove(block.transform.position, (block.transform.position - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds((block.transform.position - transform.position).magnitude / speed);
         }

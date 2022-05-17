@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
         foreach (var bargeSo in wave.bargesInWave)
         {
             spawnPoint = bargeSpawn[Random.Range(0,4)];
-            bargeGO = Pooler.instance.Pop("barge");
+            bargeGO = Pooler.instance.Pop("Barge");
             bargeGO.transform.position = spawnPoint;
             bargeGO.transform.parent = enemyGroup;
             tween = bargeGO.transform.DOMove(grid.GetNearestBlock(spawnPoint).transform.position, (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed)
