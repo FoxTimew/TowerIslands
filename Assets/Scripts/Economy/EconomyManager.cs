@@ -31,6 +31,12 @@ public class EconomyManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void SetGold(int gold)
+    {
+        goldAmount = gold;
+        UpdateUI();
+    }
+
     public void RemoveGold(int goldToRemove)
     {
         goldAmount -= goldToRemove;
