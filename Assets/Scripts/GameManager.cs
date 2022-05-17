@@ -161,6 +161,7 @@ public class GameManager : MonoBehaviour
     {
         selectableBlock = value;
     }
+    
     public void StartLevelTest()
     {
         Debug.Log("Test initiated");
