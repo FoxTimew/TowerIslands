@@ -272,8 +272,9 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: 9770f1f2bcf4df24a86b3934a73e061a, type: 2}
-  sprites: []
-  sr: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 4bc816cb5f445954c8ee73b81a4d0770, type: 3}
+  sr: {fileID: 6093415403763890944}
   effect: {fileID: 11400000, guid: 153200573df967f4888e3a3ff9132c6b, type: 2}
   spriteRenderer: {fileID: 6093415403763890944}
 --- !u!58 &5947574857683207795

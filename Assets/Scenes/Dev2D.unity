@@ -3015,7 +3015,8 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: 42bbd87aa899a9649b2f11a1019c00f7, type: 2}
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 9aa6fc402c834204cb9494e59dd33853, type: 3}
   sr: {fileID: 874716579}
 --- !u!212 &874716579
 SpriteRenderer:
@@ -3940,7 +3941,7 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.size
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
@@ -3970,37 +3971,37 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[5].key
-      value: DamageTrap
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[6].key
       value: StunTrap
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
-      propertyPath: poolKeys.Array.data[7].key
+      propertyPath: poolKeys.Array.data[6].key
       value: Blocks1
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
-      propertyPath: poolKeys.Array.data[8].key
+      propertyPath: poolKeys.Array.data[7].key
       value: Blocks2
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
-      propertyPath: poolKeys.Array.data[9].key
+      propertyPath: poolKeys.Array.data[8].key
       value: Blocks3
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
-      propertyPath: poolKeys.Array.data[10].key
+      propertyPath: poolKeys.Array.data[9].key
       value: Blocks4
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
-      propertyPath: poolKeys.Array.data[11].key
+      propertyPath: poolKeys.Array.data[10].key
       value: Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
+        type: 3}
+      propertyPath: poolKeys.Array.data[11].key
+      value: Berzerk
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
@@ -4041,43 +4042,43 @@ PrefabInstance:
         type: 3}
       propertyPath: poolKeys.Array.data[5].pool.prefab
       value: 
-      objectReference: {fileID: 4646001389382630044, guid: 73196949b6df6ba4f92d3bad2e581f0b,
+      objectReference: {fileID: 7189452039542709175, guid: 88b98bc8147b7a24bafd05dc4d8449bd,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[6].pool.prefab
       value: 
-      objectReference: {fileID: 7189452039542709175, guid: 88b98bc8147b7a24bafd05dc4d8449bd,
+      objectReference: {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[7].pool.prefab
       value: 
-      objectReference: {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2,
+      objectReference: {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[8].pool.prefab
       value: 
-      objectReference: {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e,
+      objectReference: {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[9].pool.prefab
       value: 
-      objectReference: {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f,
+      objectReference: {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[10].pool.prefab
       value: 
-      objectReference: {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23,
+      objectReference: {fileID: 1691961859449996100, guid: 39fcb4abb52e31149ac6d613b1da7049,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[11].pool.prefab
       value: 
-      objectReference: {fileID: 1691961859449996100, guid: 39fcb4abb52e31149ac6d613b1da7049,
+      objectReference: {fileID: 1691961859449996100, guid: 65a5acb26393d8f409f3ca0209af38a5,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
@@ -4118,7 +4119,7 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[6].pool.baseCount
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
@@ -4138,7 +4139,7 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[10].pool.baseCount
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}

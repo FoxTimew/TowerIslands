@@ -217,8 +217,8 @@ public class GameManager : MonoBehaviour
         islandCreator.blocksCount[levelManager.selectedLevel.block.name]++;
         levelManager.selectedLevel = null;
         HDV.Repair();
-        UI_Manager.instance.CloseMenu(8);
-        UI_Manager.instance.OpenMenu(12);
+        UI_Manager.instance.CloseMenuWithoutTransition(8);
+        UI_Manager.instance.OpenMenuWithoutTransition(12);
         ResetLevel();
 
     }
@@ -268,7 +268,7 @@ public class GameManager : MonoBehaviour
         }
         waveCount--;
         bargeGO.transform.DOMove(spawn - transform.position, (spawn - transform.position).magnitude / barge.bargeSpeed).OnComplete(() =>
-            Pooler.instance.Depop("barge",bargeGO));
+            Pooler.instance.Depop("Barge",bargeGO));
     }
     #endregion
 

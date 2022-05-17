@@ -13,6 +13,8 @@ public class DefeatMenu : MonoBehaviour
     
     private void OnEnable()
     {
+        background.transform.localScale = Vector3.zero;
+        defeat.transform.localScale = Vector3.zero;
         UI_Manager.instance.CloseMenu(9);
         background.DOScale(Vector3.one*0.5f, 0.25f).SetEase(Ease.OutSine);
         defeat.DOScale(Vector3.one * 0.5f, 0.25f).SetEase(Ease.OutSine);
