@@ -2961,7 +2961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &874716578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6665,6 +6665,7 @@ MonoBehaviour:
   sr: {fileID: 0}
   towerSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}
   target: {fileID: 0}
+  pc: {fileID: 0}
 --- !u!212 &1819306093
 SpriteRenderer:
   m_ObjectHideFlags: 0
