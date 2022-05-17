@@ -47,7 +47,7 @@ public class EconomyManager : MonoBehaviour
     {
         if (goldUI != null)
         {
-            goldUI.text = $"Gold : {goldAmount.ToString()}";
+            goldUI.text = $"{goldAmount}";
         }
     }
 

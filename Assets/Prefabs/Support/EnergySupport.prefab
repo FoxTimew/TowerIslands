@@ -149,7 +149,7 @@ MonoBehaviour:
     y: 0
   buildingSO: {fileID: 11400000, guid: d803339cf488ce44281dca7580f79450, type: 2}
   sprites:
-  - {fileID: 21300000, guid: 16fcf0cf257b09244ac8e684acfed4ec, type: 3}
+  - {fileID: 21300000, guid: db5dc7612ceaf4245956e9d9fc792e12, type: 3}
   - {fileID: 21300000, guid: 6c1f8c3f16533e44c9ba7063ccb361a6, type: 3}
   - {fileID: 21300000, guid: 82545950fe122c843ad77fb02c7e1052, type: 3}
   sr: {fileID: 3314126449326028525}
@@ -228,12 +228,12 @@ SpriteRenderer:
   m_SortingLayerID: -1039195777
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 16fcf0cf257b09244ac8e684acfed4ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db5dc7612ceaf4245956e9d9fc792e12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.78, y: 3.99}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

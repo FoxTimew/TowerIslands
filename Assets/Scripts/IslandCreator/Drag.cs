@@ -14,16 +14,15 @@ public class Drag : MonoBehaviour
     private Vector3 origin;
     
     [SerializeField] private DragPointer dragPointer;
-
-
     
-
     void Start()
     {
         transform.position = blocksGo.transform.position;
     }
     void Update()
     {
+        dragPointer.enabled = GameManager.instance.editorActivated;
+        enabled= GameManager.instance.editorActivated;;
         blocksGo.transform.position = dragPointer.isSnapped ? dragPointer.snapPosition : transform.position;
     }
 
@@ -41,7 +40,6 @@ public class Drag : MonoBehaviour
         origin.y += 2 * 2.67f;
         transform.parent.position = origin;
         ChangeSprite(IsPlaceable());
-        //Debug.Log(IsPlaceable());
     }
     
     private void OnMouseUp()
@@ -52,13 +50,6 @@ public class Drag : MonoBehaviour
         ChangeSprite(IsPlaceable());
         if(IsPlaceable()) PlaceBlock();   
     }
-
-    
-    private float RoundTo(float value, float step)
-    {
-        return Mathf.Round(value/step) * step;
-    }
-    
     
     bool IsPlaceable()
     {
@@ -84,6 +75,7 @@ public class Drag : MonoBehaviour
 
     void PlaceBlock()
     {
+        blocksGo.transform.parent = transform.parent;
         GameManager.instance.islandCreator.current = null;
         GameManager.instance.islandCreator.currentType = null;
         GameManager.instance.islandCreator.blocksCount[transform.parent.gameObject.name]--;
@@ -91,8 +83,6 @@ public class Drag : MonoBehaviour
             GameManager.instance.grid.AddBlock(block);
         GameManager.instance.UpdateBlocks();
         blocksGo.transform.parent = GameManager.instance.blockGroup.transform;
-        dragPointer.enabled = false;
-        enabled = false;
         transform.parent.gameObject.SetActive(false);
     }
     
