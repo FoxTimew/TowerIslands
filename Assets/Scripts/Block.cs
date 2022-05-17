@@ -122,8 +122,7 @@ public class Block : MonoBehaviour
         }
         if (buildingValue <= 0) return;
         energy += buildingValue;
-        Pooler.instance.Depop(building.buildingSO.bName,
-            building.buildingSO.type == BuildingType.Trap ? building.gameObject : building.transform.parent.gameObject);
+        Pooler.instance.Depop(building.buildingSO.bName, building.gameObject);
         EconomyManager.instance.GainGold(building.buildingSO.goldRequired);
         GameManager.instance.buildings.Remove(building);
         building = null;
@@ -137,7 +136,7 @@ public class Block : MonoBehaviour
         go.transform.parent = transform;
         go.transform.localPosition = Vector3.zero;
         EconomyManager.instance.RemoveGold(building.goldRequired);
-        this.building = building.type == BuildingType.Trap ? go.GetComponent<Building>() : go.transform.GetChild(0).GetComponent<Building>();
+        this.building = go.GetComponent<Building>();
         this.building.index = index;
         GameManager.instance.buildings.Add(this.building);
     }

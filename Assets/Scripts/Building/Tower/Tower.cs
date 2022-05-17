@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PolygonCollider2D))]
 public class Tower : Building
 {
     public TowerSO towerSO;
@@ -10,9 +11,11 @@ public class Tower : Building
     private bool shooting;
     public Enemy target;
     private List<Enemy> inRange = new List<Enemy>();
+    [SerializeField] private PolygonCollider2D pc;
 
     void Start()
     {
+        pc.points = Utils.UpdatePoints(towerSO.range);
         towerSO = (TowerSO) buildingSO;
         attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
     }
