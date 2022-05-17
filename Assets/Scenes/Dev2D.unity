@@ -2299,6 +2299,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 226197499654800748, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: LeftTransition
+      value: 
+      objectReference: {fileID: 693626562}
+    - target: {fileID: 226197499654800748, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: RightTransition
+      value: 
+      objectReference: {fileID: 693626563}
     - target: {fileID: 749991751910442007, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
       propertyPath: m_Name
@@ -2353,6 +2363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738788118150809591, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2778079318900359394, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
@@ -2654,6 +2669,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8399276921020318879, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903485997341038360, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 9190658434969355828, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2721,6 +2746,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518dd676735ca804d962327ccbeb5318, type: 3}
+--- !u!224 &693626562 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4967961390702617182, guid: 518dd676735ca804d962327ccbeb5318,
+    type: 3}
+  m_PrefabInstance: {fileID: 693626561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &693626563 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8903485997341038360, guid: 518dd676735ca804d962327ccbeb5318,
+    type: 3}
+  m_PrefabInstance: {fileID: 693626561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697269547
 GameObject:
   m_ObjectHideFlags: 0
