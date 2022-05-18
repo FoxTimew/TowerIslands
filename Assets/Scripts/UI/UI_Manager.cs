@@ -453,7 +453,7 @@ public class UI_Manager : MonoBehaviour
     }
     private void OnClickListener()
     {
-        GameManager.instance.levelManager.selectedLevel = tmpButton.GetComponent<LevelButton>().levelContained;
+        //GameManager.instance.levelManager.selectedLevel = tmpButton.GetComponent<LevelButton>().levelContained;
         EconomyManager.instance.SetGold(GameManager.instance.levelManager.selectedLevel.startGold);
     }
 

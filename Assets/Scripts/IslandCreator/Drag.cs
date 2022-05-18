@@ -22,8 +22,8 @@ public class Drag : MonoBehaviour
     }
     void Update()
     {
-        dragPointer.enabled = GameManager.instance.editorActivated;
-        enabled= GameManager.instance.editorActivated;;
+        //dragPointer.enabled = GameManager.instance.editorActivated;
+        //enabled= GameManager.instance.editorActivated;;
         blocksGo.transform.position = dragPointer.isSnapped ? dragPointer.snapPosition : transform.position;
     }
 
@@ -39,15 +39,15 @@ public class Drag : MonoBehaviour
         origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
         origin.z = 0;
         origin.y += 2 * 2.67f;
-        transform.parent.position = origin;
+        transform.position = origin;
         ChangeSprite(IsPlaceable());
     }
     
     private void OnMouseUp()
     {
+        GameManager.instance.cameraZoom.enabled = true;
         transform.position = blocksGo.transform.position;
         blocksGo.transform.parent = transform.parent;
-        GameManager.instance.cameraZoom.enabled = true;
         ChangeSprite(IsPlaceable());
         if(IsPlaceable()) PlaceBlock();   
     }
@@ -76,15 +76,15 @@ public class Drag : MonoBehaviour
 
     void PlaceBlock()
     {
-        blocksGo.transform.parent = transform.parent;
+        blocksGo.transform.parent = transform;
         GameManager.instance.islandCreator.current = null;
         GameManager.instance.islandCreator.currentType = null;
         GameManager.instance.islandCreator.blocksCount[index]--;
         foreach (var block in blocks)
             GameManager.instance.grid.AddBlock(block);
         GameManager.instance.UpdateBlocks();
-        blocksGo.transform.parent = GameManager.instance.blockGroup.transform;
-        transform.parent.gameObject.SetActive(false);
+        transform.parent = GameManager.instance.blockGroup.transform;
+        this.enabled = false;
     }
     
     

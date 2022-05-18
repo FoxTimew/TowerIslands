@@ -5,4 +5,9 @@ using UnityEngine;
 public class LevelButton : MonoBehaviour
 {
     public LevelSO levelContained;
+
+    public void SetLevel()
+    {
+        GameManager.instance.levelManager.selectedLevel = levelContained;
+    }
 }
