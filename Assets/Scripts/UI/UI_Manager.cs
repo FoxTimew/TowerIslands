@@ -373,16 +373,17 @@ public class UI_Manager : MonoBehaviour
 
     public void DrawBlockButtons()
     {
-        foreach (KeyValuePair<string, int> block in GameManager.instance.islandCreator.blocksCount)
+        foreach (KeyValuePair<int, int> block in GameManager.instance.islandCreator.blocksCount)
         {
             tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
-            tmpButton.name = block.Key;
+            tmpButton.name = $"Blocks{block.Key}";
+            tmpButton.GetComponent<BlockButton>().index = block.Key;
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>
             {
-                GameManager.instance.islandCreator.PopBuild(block.Key,tmpButton.GetComponent<RectTransform>());
+                GameManager.instance.islandCreator.PopBuild($"Blocks{block.Key}",tmpButton.GetComponent<RectTransform>());
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
@@ -452,7 +453,7 @@ public class UI_Manager : MonoBehaviour
     }
     private void OnClickListener()
     {
-        GameManager.instance.levelManager.selectedLevel = tmpButton.GetComponent<LevelButton>().levelContained;
+        //GameManager.instance.levelManager.selectedLevel = tmpButton.GetComponent<LevelButton>().levelContained;
         EconomyManager.instance.SetGold(GameManager.instance.levelManager.selectedLevel.startGold);
     }
 

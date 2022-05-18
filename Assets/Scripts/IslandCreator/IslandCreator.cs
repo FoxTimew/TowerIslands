@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class IslandCreator : MonoBehaviour
@@ -7,14 +8,14 @@ public class IslandCreator : MonoBehaviour
     public GameObject current;
     public string currentType;
     Vector3 origin;
-    [SerializeField] private List<GameObject> blocks;
-    public Dictionary<string, int> blocksCount = new Dictionary<string, int>();
+    [SerializeField] private List<Drag> blocks;
+    public Dictionary<int, int> blocksCount = new Dictionary<int, int>();
 
 
     void Start()
     {
         foreach(var drag in blocks)
-            blocksCount.Add(drag.name,0);
+            blocksCount.Add(drag.index,0);
     }
     
     public void PopBuild(string key,RectTransform rTransform)
@@ -37,7 +38,7 @@ public class IslandCreator : MonoBehaviour
     public void Depop()
     {
         if (currentType is null) return;
-        if (!blocksCount.ContainsKey(currentType)) return;
+        if (!blocksCount.ContainsKey(int.Parse(currentType[^1..]))) return;
         Pooler.instance.Depop(currentType,current);
     }
     
