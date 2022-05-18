@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private BargeSO bargeItComesFrom;
     private int cristalStored;
 
+    private bool stunned;
 
     private float speed;
 
@@ -38,13 +39,41 @@ public class Enemy : MonoBehaviour
 
     public void StartMovement()
     {
-        
         movement = StartCoroutine(MoveEnemy());
     }
 
+    
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.transform.CompareTag("Block")) return;
+        if (other.GetComponent<Block>().building is null) return;
+        if (other.GetComponent<Block>().building.buildingSO.type == BuildingType.Trap) return;
+        StartCoroutine(Attack(other.GetComponent<Block>().building));
+
+    }
+
+    
     public void StopMovement()
     {
         StopCoroutine(movement);
+    }
+    public void StopMovement(WaitForSeconds stunDuration)
+    {
+        if (movement is null) return;
+        if (stunned) return;
+        StartCoroutine(StopMovementDelayed(stunDuration));
+    }
+
+    private IEnumerator StopMovementDelayed(WaitForSeconds stunDuration)
+    {
+        StopCoroutine(movement);
+        tween.Pause();
+        animator.SetInteger("Speed", 0);
+        stunned = true;
+        yield return stunDuration;
+        tween.Play().OnComplete(StartMovement);
+        yield return stunDuration;
+        stunned = false;
     }
 
     void Update()
@@ -66,6 +95,7 @@ public class Enemy : MonoBehaviour
 
 
     private Queue<Block> path = new Queue<Block>();
+    //private List<Vector3> points;
     void FindPath(Block initPos)
     {
         Pathfinding pf = new Pathfinding();
@@ -78,29 +108,22 @@ public class Enemy : MonoBehaviour
         for (int i = 0; i < pathfinding.Count; i++)
         {
             path.Enqueue(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].block);
+            //points.Add(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].position);
         }
     }
 
     private Block block;
+    private Tween tween;
     public IEnumerator MoveEnemy()
     {
-        Pathfinding pf = new Pathfinding();
-        
         animator.SetInteger("Speed", 1);
         
         while (path.Count > 0)
         {
-            
             block = path.Dequeue();
             CheckDirection(transform.position,block.transform.position);
-            if (block.building is not null)
-            {
-                if( block.building.buildingSO.type != BuildingType.Trap)
-                {
-                    yield return StartCoroutine(Attack(block.building));
-                }
-            }
-            transform.DOMove(block.transform.position, (block.transform.position - transform.position).magnitude / speed)
+            tween = transform.DOMove(block.transform.position,
+                    (block.transform.position - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
             yield return new WaitForSeconds((block.transform.position - transform.position).magnitude / speed);
         }
@@ -129,10 +152,12 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Attack(Building target)
     {
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
-        transform.DOMove(pos, (pos - transform.position).magnitude / speed)
-            .SetEase(Ease.Linear);
-        yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
+        // var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
+        // transform.DOMove(pos, (pos - transform.position).magnitude / speed)
+        //     .SetEase(Ease.Linear);
+        // yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
+        StopMovement();
+        tween.Pause();
         animator.SetInteger("Speed", 0);
         while (target.hp > 0)
         {
@@ -140,9 +165,10 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(enemyStats.attackSpeed);
             target.takeDamage(enemyStats.damage);
         }
-        
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
+        tween.Play().OnComplete(StartMovement);
+        
     }
     
 

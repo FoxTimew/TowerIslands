@@ -22,6 +22,7 @@ public class Building : MonoBehaviour
     {
         hp = buildingSO.healthPoints;
         takeDamage += BaseTakeDamage;
+        Repair();
     }
     
     public void BaseTakeDamage(int dmg)
@@ -31,8 +32,8 @@ public class Building : MonoBehaviour
         if (hp > 0) return;
         if (GameManager.instance.HDV == this)
         {
-            UI_Manager.instance.OpenMenu(11); 
-            UI_Manager.instance.CloseMenu(8);
+            UI_Manager.instance.OpenMenuWithoutTransition(11); 
+            UI_Manager.instance.CloseMenuWithoutTransition(8);
         }
         else
         {
@@ -52,7 +53,6 @@ public class Building : MonoBehaviour
     {
         destroyed = false;
         hp = buildingSO.healthPoints;
-        if (GameManager.instance.HDV == this) return;
         sr.sortingLayerName = "Characters";
         sr.sprite = sprites[0];
     }

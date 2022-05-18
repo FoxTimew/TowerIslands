@@ -39,7 +39,7 @@ public class CameraZoom : MonoBehaviour
 
             difference = currentMagnitude - prevMagnitude;
 
-            zoom(difference * 0.01f);
+            zoom(difference * 0.02f);
         }else if(Input.GetMouseButton(0)){
             direction = touchStart - camera.ScreenToWorldPoint(Input.mousePosition);
             camera.transform.position += direction;

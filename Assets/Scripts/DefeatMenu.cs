@@ -13,6 +13,9 @@ public class DefeatMenu : MonoBehaviour
     
     private void OnEnable()
     {
+        background.transform.localScale = Vector3.zero;
+        defeat.transform.localScale = Vector3.zero;
+        UI_Manager.instance.CloseMenu(9);
         background.DOScale(Vector3.one*0.5f, 0.25f).SetEase(Ease.OutSine);
         defeat.DOScale(Vector3.one * 0.5f, 0.25f).SetEase(Ease.OutSine);
         tween = background.DORotate(new Vector3(0, 0, 10), 0.5f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
@@ -27,6 +30,7 @@ public class DefeatMenu : MonoBehaviour
 
     private void OnDisable()
     {
+        GameManager.instance.ClearBuildings();
         tween.Kill();
         background.rotation= Quaternion.Euler(Vector3.zero);
     }

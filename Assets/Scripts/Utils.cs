@@ -49,4 +49,49 @@ public static class Utils
 
         return result;
     }
+    
+    public static Vector2[] UpdatePoints(int range)
+    {
+        int i = 0;
+        Vector2[] points = new Vector2[range*4];
+        List<Vector2> finalPoints = new List<Vector2>();
+        Vector2 zeroPoint = new Vector2(-1.84f * range, -1.335f * range);
+        points[0] = zeroPoint;
+        finalPoints.Add(zeroPoint + new Vector2(-3.56f * 0.5f, 0));
+        finalPoints.Add(zeroPoint + new Vector2(0, -1.335f));
+        for (i = 1; i < range+1; i++)
+        {
+            points[i] = points[i - 1] + new Vector2(3.56f, 0);
+            finalPoints.Add(points[i] + new Vector2(-3.56f * 0.5f, 0));
+            finalPoints.Add(points[i] + new Vector2(0, -1.335f));
+        }
+        finalPoints.Add(points[i-1] + new Vector2(3.56f * 0.5f, 0));
+        finalPoints.Add(points[i-1] + new Vector2(0, 1.335f));
+        for (i = range+1; i < range*2+1; i++)
+        {
+            
+            points[i] = points[i - 1] + new Vector2(0.12f, 2.67f);
+            finalPoints.Add(points[i] + new Vector2(3.56f * 0.5f, 0));
+            finalPoints.Add(points[i] + new Vector2(0, 1.335f));
+            
+        }
+        finalPoints.Add(points[i-1] + new Vector2(0, 1.335f));
+        finalPoints.Add(points[i-1] + new Vector2(-3.56f * 0.5f, 0));
+        for (i = range*2+1; i < range*3+1; i++)
+        {
+            points[i] = points[i - 1] + new Vector2(-3.56f, 0);
+            finalPoints.Add(points[i] + new Vector2(0, 1.335f));
+            finalPoints.Add(points[i] + new Vector2(-3.56f * 0.5f, 0));
+            
+        }
+        finalPoints.Add(points[i-1] + new Vector2(-3.56f * 0.5f, 0));
+        finalPoints.Add(points[i-1] + new Vector2(0, -1.335f));
+        for (i = range*3+1; i < range*4; i++)
+        {
+            points[i] = points[i - 1] + new Vector2(-0.12f, -2.67f);
+            finalPoints.Add(points[i] + new Vector2(-3.56f * 0.5f, 0));
+            finalPoints.Add(points[i] + new Vector2(0, -1.335f));
+        }
+        return finalPoints.ToArray();
+    }
 }

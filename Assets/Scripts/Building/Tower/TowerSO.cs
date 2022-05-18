@@ -11,7 +11,7 @@ public class TowerSO : BuildingSO
 
     public DamageType damageType;
     
-    public float range;
+    public int range;
 
     public int maxTargets;
 

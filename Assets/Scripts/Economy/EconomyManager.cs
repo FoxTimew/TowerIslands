@@ -31,6 +31,12 @@ public class EconomyManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void SetGold(int gold)
+    {
+        goldAmount = gold;
+        UpdateUI();
+    }
+
     public void RemoveGold(int goldToRemove)
     {
         goldAmount -= goldToRemove;
@@ -47,7 +53,7 @@ public class EconomyManager : MonoBehaviour
     {
         if (goldUI != null)
         {
-            goldUI.text = $"Gold : {goldAmount.ToString()}";
+            goldUI.text = $"{goldAmount}";
         }
     }
 
