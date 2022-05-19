@@ -311,6 +311,14 @@ public class GameManager : MonoBehaviour
         editorActivated = value;
     }
 
+    public void Upgrade()
+    {
+        if (selectedBlock.building.buildingSO.type != BuildingType.Tower) return;
+        Tower to = (Tower) selectedBlock.building;
+        to.Upgrade();
+
+    }
+
 
 
 

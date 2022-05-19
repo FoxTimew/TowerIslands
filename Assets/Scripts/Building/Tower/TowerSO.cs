@@ -6,6 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TowerSO", menuName = "ScriptableObjects/TowerSO", order = 1)]
 public class TowerSO : BuildingSO
 {
+
+    public int level;
+    public TowerSO nextLevel;
+    public int upgradeCost;
+        
     public int damage;
     public float attackSpeed;
 

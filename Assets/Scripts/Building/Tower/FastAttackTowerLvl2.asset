@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f899f34b85484c646bd3a3932341acdf, type: 3}
-  m_Name: FastAttackTower
+  m_Name: FastAttackTowerLvl2
   m_EditorClassIdentifier: 
   bName: Fast Attack Tower
   type: 0
   healthPoints: 900
   energyRequired: 2
   goldRequired: 12
-  level: 1
-  nextLevel: {fileID: 11400000, guid: e91e5022c67493945aca70eaad01553a, type: 2}
-  upgradeCost: 10
+  level: 2
+  nextLevel: {fileID: 0}
+  upgradeCost: 0
   damage: 40
   attackSpeed: 1.5
   damageType: 0
