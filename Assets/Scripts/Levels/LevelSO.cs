@@ -9,6 +9,6 @@ public class LevelSO : ScriptableObject
     public bool isCompleted = false;
     public List<Wave> waves;
     public int startGold;
-    public GameObject block;
+    public Drag block;
     
 }

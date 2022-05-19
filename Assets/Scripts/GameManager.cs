@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
+        //wtf faut bouger ça sur l'update de wave
         waveText.text = currentWave.ToString();
         if (!selectableBlock) return;
         UnSelectBlock();
@@ -153,6 +154,7 @@ public class GameManager : MonoBehaviour
 
         if (levelManager.selectedLevel != null)
         {
+            key = levelManager.selectedLevel.block.name;
             levelRoutine = StartCoroutine(LevelCoroutine(levelManager.selectedLevel));
         }
     }
@@ -160,6 +162,7 @@ public class GameManager : MonoBehaviour
     {
         selectableBlock = value;
     }
+    
     public void StartLevelTest()
     {
         Debug.Log("Test initiated");
@@ -188,6 +191,7 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField] private TMP_Text waveText;
+    private string key;
     
     public IEnumerator LevelCoroutine(LevelSO level)
     {
@@ -210,49 +214,68 @@ public class GameManager : MonoBehaviour
             }
             yield return null;
         }
-
+        ClearBuildings();
         levelManager.selectedLevel.isCompleted = true;
-        islandCreator.blocksCount[levelManager.selectedLevel.block.name]++;
+        Debug.Log(key);
+        islandCreator.blocksCount[levelManager.selectedLevel.block.index]++;
         levelManager.selectedLevel = null;
         HDV.Repair();
-        UI_Manager.instance.CloseMenu(8);
-        UI_Manager.instance.OpenMenu(12);
+        UI_Manager.instance.CloseMenuWithoutTransition(8);
+        UI_Manager.instance.OpenMenuWithoutTransition(12);
         ResetLevel();
 
     }
-    
+    public List<Building> buildings = new List<Building>();
+
+    public void ClearBuildings()
+    {
+        UI_Manager.instance.CloseMenu(13);
+        selectedBlock = null;
+        for (int i = buildings.Count - 1; i > -1; i--)
+            grid.GridElements[buildings[i].index.x,buildings[i].index.y].block.SellBuilding();
+    }
+
+    private Tween tween;
     IEnumerator SpawnWave(Wave wave)
     {
         var bargeGO = new GameObject();
-        var enemyGO = new GameObject();
-        waveCount--;
+        
         currentWave++;
         selectableBlock = false;
         selectedBlock = null;
         foreach (var bargeSo in wave.bargesInWave)
         {
             spawnPoint = bargeSpawn[Random.Range(0,4)];
-            bargeGO = Pooler.instance.Pop("barge");
+            bargeGO = Pooler.instance.Pop("Barge");
             bargeGO.transform.position = spawnPoint;
             bargeGO.transform.parent = enemyGroup;
-            bargeGO.transform.DOMove(grid.GetNearestBlock(spawnPoint).transform.position, (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed);
-            yield return new WaitForSeconds(
-                (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed);
-            foreach (var troop in bargeSo.troops)
-            {
-                enemyGO = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
-                enemyGO.transform.position = bargeGO.transform.position;
-                enemyGO.transform.parent = enemyGroup;
-                enemyGO.GetComponent<Enemy>().OnSpawn(bargeSo,troop.cristalToEarn);
-                yield return new WaitForSeconds(0.5f);
-            }
-            Pooler.instance.Depop("barge",bargeGO);
+            tween = bargeGO.transform.DOMove(grid.GetNearestBlock(spawnPoint).transform.position, (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed)
+                .OnComplete(() => StartCoroutine(SpawnEnemies(bargeSo,bargeGO,spawnPoint)));
+            while (tween.IsPlaying()) yield return null;
         }
-        
+
+        yield return null;
+    }
+    
+    private IEnumerator SpawnEnemies(BargeSO barge,GameObject go,Vector3 spawn)
+    {
+        var bargeGO = go;
+        var enemyGO = new GameObject();
+        foreach (var troop in barge.troops)
+        {
+            enemyGO = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
+            enemyGO.transform.position = bargeGO.transform.position;
+            enemyGO.transform.parent = enemyGroup;
+            enemyGO.GetComponent<Enemy>().OnSpawn(barge,troop.cristalToEarn);
+            yield return new WaitForSeconds(0.5f);
+        }
+        waveCount--;
+        bargeGO.transform.DOMove(spawn - transform.position, (spawn - transform.position).magnitude / barge.bargeSpeed).OnComplete(() =>
+            Pooler.instance.Depop("Barge",bargeGO));
     }
     #endregion
 
-
+    
 
     
     [SerializeField] private LayerMask layerMask;
@@ -281,8 +304,15 @@ public class GameManager : MonoBehaviour
         selectedBlock.SellBuilding();
     }
 
+    public bool editorActivated = false;
 
-    
+    public void SetEditor(bool value)
+    {
+        editorActivated = value;
+    }
+
+
+
 
 
 }
