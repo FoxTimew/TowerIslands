@@ -32,6 +32,7 @@ public class Tower : Building
 
     private void OnDisable()
     {
+        Debug.Log("Reset");
         Reset();
     }
 
@@ -82,16 +83,20 @@ public class Tower : Building
         {
             case 1 :
                 level1.SetActive(true);
+                level2.SetActive(false);
+                
                 break;
             case 2 :
                 level2.SetActive(true);
+                level1.SetActive(false);
                 break;
         }
     }
 
-    private void Reset()
+    public override void Reset()
     {
         towerSO = level1SO;
+        Debug.Log(towerSO.level);
         Repair();
     }
 
@@ -107,7 +112,7 @@ public class Tower : Building
     IEnumerator ShootCoroutine()
     {
         shooting = true;
-        GameObject go = Pooler.instance.Pop(towerSO.bulletPrefab.name);
+        GameObject go = Pooler.instance.Pop(towerSO.bulletPrefab.gameObject.name);
         go.transform.position = transform.position + Vector3.up;
         Pooler.instance.DelayedDepop(3,towerSO.bulletPrefab.name,go);
         go.GetComponent<Bullet>().Shoot(this, target, towerSO.bulletSpeed);

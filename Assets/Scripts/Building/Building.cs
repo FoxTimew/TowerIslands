@@ -45,6 +45,10 @@ public class Building : MonoBehaviour
         }
     }
 
+    public virtual void Reset()
+    {
+        return;
+    }
     public virtual void Ruins()
     {
         sr.sprite = sprites[Random.Range(1, 3)];
