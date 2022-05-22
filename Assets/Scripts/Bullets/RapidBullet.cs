@@ -13,7 +13,7 @@ public class RapidBullet : Bullet
         if (target != null)
         {
             transform.DOMove(target.transform.position,
-                (target.transform.position - transform.position).magnitude / speed, false).SetEase(Ease.Linear).OnComplete(() =>Pooler.instance.Depop("RapidBullet", gameObject));
+                (target.transform.position - transform.position).magnitude / speed, false).SetEase(Ease.Linear).OnComplete(() =>Pooler.instance.Depop("Arrow", gameObject));
         }
     }
 

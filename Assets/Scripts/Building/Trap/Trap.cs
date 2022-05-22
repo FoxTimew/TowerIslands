@@ -7,6 +7,7 @@ public class Trap : Building
 {
     [SerializeField] private TrapEffectSO effect;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private ParticleSystem ps;
     private Dictionary<Collider2D, Coroutine> enemies = new Dictionary<Collider2D, Coroutine>();
 
     
@@ -19,7 +20,7 @@ public class Trap : Building
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;
-        routine = StartCoroutine(effect.ApplyEffect(other.GetComponent<Enemy>()));
+        routine = StartCoroutine(effect.ApplyEffect(other.GetComponent<Enemy>(),ps));
         enemies.Add(other,routine);
     }
 

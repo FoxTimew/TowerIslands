@@ -9,6 +9,7 @@ public class Building : MonoBehaviour
 {
     public Index index;
     public BuildingSO buildingSO;
+    [SerializeField] private ParticleSystem destruction;
     public int hp { get; protected set; }
 
     public delegate void TakeDamage(int dmg);
@@ -48,6 +49,7 @@ public class Building : MonoBehaviour
     {
         sr.sprite = sprites[Random.Range(1, 3)];
         destroyed = true;
+        destruction.Play();
         sr.sortingLayerName = "Shadows";
         sr.sortingOrder = 0;
     }

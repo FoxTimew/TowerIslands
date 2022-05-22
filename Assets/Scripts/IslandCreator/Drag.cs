@@ -81,7 +81,10 @@ public class Drag : MonoBehaviour
         GameManager.instance.islandCreator.currentType = null;
         GameManager.instance.islandCreator.blocksCount[index]--;
         foreach (var block in blocks)
+        {
             GameManager.instance.grid.AddBlock(block);
+            block.PlaceBlock();
+        }
         GameManager.instance.UpdateBlocks();
         transform.parent = GameManager.instance.blockGroup.transform;
         this.enabled = false;
