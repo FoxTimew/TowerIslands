@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06614418, g: 0.13222927, b: 0.40567666, a: 1}
+  m_IndirectSpecularColor: {r: 0.065883584, g: 0.13222869, b: 0.40686285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3986,7 +3986,7 @@ PrefabInstance:
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: poolKeys.Array.data[1].key
-      value: RapidBullet
+      value: Arrow
       objectReference: {fileID: 0}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
@@ -4053,7 +4053,7 @@ PrefabInstance:
         type: 3}
       propertyPath: poolKeys.Array.data[1].pool.prefab
       value: 
-      objectReference: {fileID: 8121574140305436561, guid: 32be0a0b41d61d74cb15736e888906b4,
+      objectReference: {fileID: 6267466515642993544, guid: e59b06886211ec04db313bc40d11dd88,
         type: 3}
     - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
