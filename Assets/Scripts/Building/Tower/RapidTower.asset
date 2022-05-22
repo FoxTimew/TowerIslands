@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f899f34b85484c646bd3a3932341acdf, type: 3}
+  m_Name: RapidTower
+  m_EditorClassIdentifier: 
+  damage: 40
+  attackSpeed: 1.5
+  damageType: 0
+  range: 3
+  maxTargets: 1
+  priority: 0
+  bulletSpeed: 5
+  bulletPrefab: {fileID: 2761374500971916386, guid: 32be0a0b41d61d74cb15736e888906b4,
+    type: 3}

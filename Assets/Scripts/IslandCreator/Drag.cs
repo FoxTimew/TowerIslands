@@ -1,103 +1,91 @@
 
+using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
-    [SerializeField] private Block[] blocks;
-    private void Start()
-    {
+    public int index;
+    [SerializeField] private GameObject blocksGo;
+    [SerializeField] private List<Block> blocks;
     
-        StartCoroutine(WaitForRelease());
+    private Vector3 origin;
+    
+    [SerializeField] private DragPointer dragPointer;
+    
+    void Start()
+    {
+        transform.position = blocksGo.transform.position;
+    }
+    void Update()
+    {
+        //dragPointer.enabled = GameManager.instance.editorActivated;
+        //enabled= GameManager.instance.editorActivated;;
+        blocksGo.transform.position = dragPointer.isSnapped ? dragPointer.snapPosition : transform.position;
     }
 
-    private IEnumerator WaitForRelease()
+    private void OnMouseDown()
     {
-        var place = false;
-        Color color;
-        yield return new WaitForSeconds(0.1f);
-        while (Input.touchCount == 0) yield return null;
-        while (gameObject.activeSelf)
-        {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                Vector3 pos = GameManager.instance.cam.ScreenToWorldPoint(touch.position);
-                pos.y = RoundTo(pos.y, 0.25f);
-                pos.x = RoundTo(pos.x, 0.5f);
-                pos.z = 0;
-                transform.position = pos;
-                place = IsPlaceable();
-                switch (touch.phase)
-                {
-                    case TouchPhase.Moved when place:
-                    {
-                        foreach (var block in blocks)
-                        {
-                            color = block.spriteRenderer.color;
-                            color.a = 1f;
-                            block.spriteRenderer.color = color;
-                        }
-                        break;
-                    }
-                    case TouchPhase.Moved:
-                    {
-                        foreach (var block in blocks)
-                        { 
-                            color = block.spriteRenderer.color; 
-                            color.a = 0.5f; 
-                            block.spriteRenderer.color = color;
-                        }
-                        break;
-                    }
-                    case TouchPhase.Ended when place:
-                    {
-                        PlaceBlock();
-                        yield break;
-                    }
-                }
-            }
-            yield return null;
-        }
-
-        yield return null;
-
-    }
-
-    private float RoundTo(float value, float step)
-    {
-        return Mathf.Round(value/step) * step;
+        GameManager.instance.cameraZoom.enabled = false;
+        blocksGo.transform.parent = null;
     }
     
+
+    private void OnMouseDrag()
+    {
+        origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
+        origin.z = 0;
+        origin.y += 2 * 2.67f;
+        transform.position = origin;
+        ChangeSprite(IsPlaceable());
+    }
+    
+    private void OnMouseUp()
+    {
+        GameManager.instance.cameraZoom.enabled = true;
+        transform.position = blocksGo.transform.position;
+        blocksGo.transform.parent = transform.parent;
+        ChangeSprite(IsPlaceable());
+        if(IsPlaceable()) PlaceBlock();   
+    }
     
     bool IsPlaceable()
     {
         bool result = false;
         foreach (var block in blocks)
         {
-            if (GameManager.instance.blocks.ContainsKey(block.transform.position))
-                return false;
-            foreach (var vec in block.InitAdjacents())
-            {
-                if (GameManager.instance.blocks.ContainsKey(vec))
-                    result = true;
-            }
+            if (GameManager.instance.grid.hdvIndex.Contains(block.index)) return false;
+            if (Utils.GetAdjacentsIndex(block.index).Count>0) 
+                result = true;
         }
         return result;
     }
 
 
+    void ChangeSprite(bool value)
+    {
+        var alpha = value ? 1f : 0.5f;
+        var color = blocks[0].spriteRenderer.color;
+        color.a = alpha;
+        foreach (var b in blocks) b.spriteRenderer.color = color;
+    }
+
 
     void PlaceBlock()
     {
+        blocksGo.transform.parent = transform;
         GameManager.instance.islandCreator.current = null;
+        GameManager.instance.islandCreator.currentType = null;
+        GameManager.instance.islandCreator.blocksCount[index]--;
         foreach (var block in blocks)
-         GameManager.instance.blocks.Add(block.transform.position,block);
-        foreach (var block in  GameManager.instance.blocks.Values)
-            block.UpdateAdjacents();
+            GameManager.instance.grid.AddBlock(block);
+        GameManager.instance.UpdateBlocks();
         transform.parent = GameManager.instance.blockGroup.transform;
-        enabled = false;
+        this.enabled = false;
     }
+    
     
 }

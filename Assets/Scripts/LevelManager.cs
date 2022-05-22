@@ -7,24 +7,64 @@ public class LevelManager : MonoBehaviour
 {
     
     [SerializeField] private GameObject blockInfogroup;
+    [SerializeField] private GameObject buildGroup;
+    [SerializeField] private GameObject destroyGroup;
     [SerializeField] private TMP_Text energy;
     [SerializeField] private TMP_Text blockEnergy;
-    [SerializeField] private TMP_Text towerText;
+    public LevelSO selectedLevel;
+    public List<LevelSO> levels;
     
     public void OpenBlockUI()
     {
-        blockInfogroup.SetActive(true);
-        energy.text = $"Energy {GameManager.instance.selectedBlock.GetEnergy()}";
-        blockEnergy.text = $"Max Energy {GameManager.instance.selectedBlock.GetMaxEnergy()}";
-        if (GameManager.instance.selectedBlock.tower is not null)
-            towerText.text = "Destroy Tower";
+        if (blockInfogroup != null)
+        {
+            blockInfogroup.SetActive(true);
+        }
+
+        if (energy != null)
+        {
+            energy.text = $"Energy {GameManager.instance.selectedBlock.energy}";
+        }
+
+        if (blockEnergy != null)
+        {
+            blockEnergy.text = $"Max Energy {GameManager.instance.selectedBlock.GetMaxEnergy()}";
+        }
+
+        if (GameManager.instance.selectedBlock.building is not null)
+        {
+            if (destroyGroup !!= null)
+            {
+                destroyGroup.SetActive(true);
+            }
+
+            if( buildGroup != null){
+                buildGroup.SetActive(false);
+            }
+        }
         else
-            towerText.text = "Build Tower";
+        {
+            if (destroyGroup !!= null)
+            {
+                destroyGroup.SetActive(false);
+            }
+
+            if( buildGroup != null){
+                buildGroup.SetActive(true);
+            }
+        }
+            
+        
     }
-      
+    
     public void CloseBlockUI()
-    { 
-        blockInfogroup.SetActive(false);
+    {
+        if (blockInfogroup != null)
+        {
+            blockInfogroup.SetActive(false);
+        }
+
+        
     }  
 
 }

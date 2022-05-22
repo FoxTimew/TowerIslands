@@ -228,6 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93775198c9d53a24a94150c2e20e4ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 81f3fea1e85b49b4786d2fdb90ed31a2, type: 2}
+  stats: {fileID: 11400000, guid: 2b54aa306d3525843a97857e1c1b2836, type: 2}
   targets: []
   enemiesWithinRange: []

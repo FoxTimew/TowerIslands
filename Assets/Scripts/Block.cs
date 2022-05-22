@@ -2,126 +2,170 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class Block : MonoBehaviour
 {
 
+    public Index index;
     public SpriteRenderer spriteRenderer;
-    public List<Block> adjacentBlocks;
+    public Dictionary<Block,int> adjacentBlocks = new Dictionary<Block, int>();
     public bool selectable = true;
-    
-    public Dictionary<SupportEffect,int> supportEffects= new Dictionary<SupportEffect,int>();
-    public delegate void ApplyEffect();
-    public ApplyEffect applyEffect;
+    [SerializeField] private List<Sprite> sprites;
 
-    private int bonusEnergy = 1;
+    private Collider2D collider;
+    public bool placed;
     
-    private Color baseColor;
     
+    public Building building;
     
-    public AXD_TowerShoot tower;
+    public int energy = 2;
     
-    private int energy = 2;
-
-    public bool selected;
     
     #region Unity Methods
 
     private void Start()
     {
-        UpdateAdjacents();
-        baseColor = spriteRenderer.color;
-        baseColor.a = 1;
-        foreach (SupportEffect effect in Enum.GetValues(typeof(SupportEffect)))
-        {
-            supportEffects.Add(effect,0);
-        }
+        spriteRenderer.sprite = sprites[Random.Range(0,2)];
+    }
+
+    private void OnMouseDown()
+    {
+        if (!GameManager.instance.selectableBlock) return;
+        if (!selectable) return;
+        if (Utils.IsPointerOverUI()) return;
+        GameManager.instance.selectedBlock = this;
+        UI_Manager.instance.OpenMenu((int)MenuEnum.BlockInfo);
+        Debug.Log($"Block selected : {gameObject.name}");
     }
 
     #endregion
-    public Vector2[] InitAdjacents()
-    {
-        float posX = transform.position.x;
-        float posY = transform.position.y;
-        return new[]
-        {
-            new Vector2(posX+0.5f,posY+0.25f),
-            new Vector2(posX+0.5f,posY-0.25f),
-            new Vector2(posX-0.5f,posY+0.25f),
-            new Vector2(posX-0.5f,posY-0.25f),
-        };
-    }
     
-    public void UpdateAdjacents()
-    {
-        adjacentBlocks.Clear();
-        foreach (Vector2 adj in InitAdjacents())
-        {
-            if (!GameManager.instance.blocks.ContainsKey(adj)) continue;
-            adjacentBlocks.Add(GameManager.instance.blocks[adj]);
-        }
-    }
+    #region Energy
 
-
-    public int GetEnergy()
-    {
-        return energy + bonusEnergy;
-    }
-    
-    public void SetEnergy(int value)
-    {
-        if (value <= bonusEnergy)
-        {
-            bonusEnergy -= 1;
-        }
-
-        if (value > bonusEnergy)
-        {
-            value -= bonusEnergy;
-            bonusEnergy = 0;
-            energy -= value;
-        }
-    }
     public int GetMaxEnergy()
     {
         int result = energy;
-        foreach (var block in adjacentBlocks)
+        foreach (var block in adjacentBlocks.Keys)
         {
-            result += block.GetEnergy();
-            result += bonusEnergy;
+            result += block.energy;
         }
         return result;
     }
 
-    public void Select()
+    public bool SpentEnergy(int value)
     {
-        spriteRenderer.color = Color.green;
-    }
-
-    public void Deselect()
-    {
-        spriteRenderer.color = baseColor;
-    }
-
-
-
-    public void UpdateSupportEffect()
-    {
-        bonusEnergy = supportEffects[SupportEffect.Energy] > 0 ? 2 : 0;
-        if (supportEffects[SupportEffect.Defense] > 0)
-            applyEffect += DefenseSupportEffect;
+        if (value > GetMaxEnergy()) return false;
+        if (value <= energy)
+        {
+            energy -= value;
+            return true;
+        }
         else
-            applyEffect -= DefenseSupportEffect;
+        {
+            energy = 0;
+            SpentAdjacentEnergy(value - energy);
+            return true;
+        }
+        return false;
+    }
+    private void SpentAdjacentEnergy(int value)
+    {
+        int temp = value;
+        foreach (var block in adjacentBlocks.Keys)
+        {
+            if (block.energy <= value) continue;
+            adjacentBlocks[block] = value;
+            block.energy -= value;
+            temp -= value;
+        }
+
+        if (temp <= 0) return;
+        while (temp > 0)
+        {
+            foreach (var block in adjacentBlocks.Keys)
+            {
+                if (temp - block.energy < 0)
+                {
+                    block.energy -= temp;
+                    temp = 0;
+                    adjacentBlocks[block] = temp;
+                }
+                else
+                {
+                    temp -= block.energy;
+                    adjacentBlocks[block] = block.energy;
+                    block.energy = 0;
+                }
+            }  
+        }
+    }
+
+
+    #endregion
+    
+    #region Building
+
+    private int buildingValue;
+    public void SellBuilding()
+    {
+        buildingValue = building.buildingSO.energyRequired;
+        foreach (var block in adjacentBlocks.Keys)
+        {
+            if (adjacentBlocks[block] == 0) continue;
+            buildingValue -= adjacentBlocks[block];
+            block.energy += adjacentBlocks[block];
+            adjacentBlocks[block] = 0;
+        }
+        if (buildingValue <= 0) return;
+        energy += buildingValue;
+        Pooler.instance.Depop(building.buildingSO.bName, building.gameObject);
+        EconomyManager.instance.GainGold(building.buildingSO.goldRequired);
+        GameManager.instance.buildings.Remove(building);
+        building = null;
+    }
+
+    private GameObject go;
+    public void Build(BuildingSO building)
+    {
+        SpentEnergy(building.energyRequired);
+        go = Pooler.instance.Pop(building.bName);
+        go.transform.parent = transform;
+        go.transform.localPosition = Vector3.zero;
+        EconomyManager.instance.RemoveGold(building.goldRequired);
+        this.building = go.GetComponent<Building>();
+        this.building.index = index;
+        GameManager.instance.buildings.Add(this.building);
+    }
+
+    #endregion
+    public void UpdateAdjacents()
+    {
+        
+        var temp = Utils.GetAdjacentsIndex(index);
+        for (int i = 0; i < temp.Count; i++)
+        {
+            if (adjacentBlocks.ContainsKey(GameManager.instance.grid.GridElements[temp[i].x, temp[i].y].block))
+                continue;
+            adjacentBlocks.Add(GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block,0);
+            //Debug.Log($"{name} close to {GameManager.instance.grid.GridElements[temp[i].x,temp[i].y].block.name} : {temp[i].x}, {temp[i].y}");
+        }
     }
     
-    public void EnergySupportEffect()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (!other.transform.CompareTag("GridElement")) return;
+        index = other.GetComponent<GridIndex>().index;
+        collider = other;
     }
-
-    public void DefenseSupportEffect()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        
+        if (!other.transform.CompareTag("GridElement")) return;
+        if (other != collider) return;
+        if (placed) return;
+        index = new Index(5,5);
     }
 }

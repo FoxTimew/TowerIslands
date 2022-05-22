@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440e63bda142de0438b47e1bf03f6c4b, type: 3}
+  m_Name: Level2SO
+  m_EditorClassIdentifier: 
+  levelNumber: 2
+  isCompleted: 0
+  waves:
+  - bargesInWave:
+    - {fileID: 11400000, guid: 874c7ab07f04ecf429e2b36d82bbcb4e, type: 2}
+  - bargesInWave:
+    - {fileID: 11400000, guid: a9149a5b9d1d2314a9a10d0b71ec3296, type: 2}
+  - bargesInWave:
+    - {fileID: 11400000, guid: 73a046637e59f9e48948989227bd8a17, type: 2}
+    - {fileID: 11400000, guid: e4fbdeb7ca4fdcb4dac1b649482194f6, type: 2}
+    - {fileID: 11400000, guid: 00bfa2e6ecd59a34f838ee765b491013, type: 2}
+  startGold: 32
+  block: {fileID: 3794926003884879259, guid: 42002107bfd228b40a39d103a7150c23, type: 3}

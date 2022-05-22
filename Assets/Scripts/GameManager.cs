@@ -1,48 +1,45 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
-using Unity.VisualScripting.Dependencies.NCalc;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
+    public CameraZoom cameraZoom;
     public static GameManager instance;
-
+    public LevelManager levelManager;
     public GameObject blockGroup;
     public Camera cam;
 
-    public CityCenter cityCenter;
+    [SerializeField] public Building HDV;
+    
+    public GridIndex gridElement;
+    [SerializeField] private int gridSize = 10;
+    [SerializeField] private Block blockPrefab;
+    
     public IslandCreator islandCreator;
-    public LevelManager levelManager;
     
-    [SerializeField] private GameObject startButton;
-    [SerializeField] private GameObject welcomePage;
-    
-    [SerializeField] private Block[] baseBlock;
+    public Grid grid;
 
     public Block selectedBlock;
-    public Dictionary<Vector2, Block> blocks = new Dictionary<Vector2, Block>();
+    private PolygonCollider2D pc;
+
+    [Header("TestUI")] [SerializeField] private LevelSO level1Test;
+
+
+    [Header("Base Building Prefabs")] 
+    public BuildingSO rapidTowerSO;
+    public BuildingSO mortarTowerSO;
+    public BuildingSO stunTrapSO;
+    public BuildingSO damageTrapSO;
+    public BuildingSO defenseSupportSO;
+    public BuildingSO energySupportSO;
     
-
-    public static bool IsPointerOverUI()
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return true;
-        }
-
-        var pe = new PointerEventData(EventSystem.current)
-        {
-            position = Input.GetTouch(0).position
-        };
-        var hits = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(pe, hits);
-        return hits.Count > 0;
-    }
 
     #region Unity Methods
 
@@ -53,136 +50,269 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        DontDestroyOnLoad(gameObject);
         instance = this;
         cam.transparencySortMode = TransparencySortMode.CustomAxis;
         cam.transparencySortAxis = Vector3.up;
-
-        foreach (var block in baseBlock)
-            blocks.Add(block.transform.position, block);
+        
+        InitGrid();
+        preparationTime = new WaitForSeconds(timeBetweenWaves);
     }
+
+    
+    private RaycastHit2D hit2D;
+    private void Update()
+    {
+        //wtf faut bouger ça sur l'update de wave
+        waveText.text = currentWave.ToString();
+        if (!selectableBlock) return;
+        UnSelectBlock();
+    }
+    
+    #endregion
+    
+    
+    #region Grid
+
+    public GameObject gridGroup;
+    private Grid.GridElement element;
+    private Block block;
+    private void InitGrid()
+    {
+        grid = new Grid(gridSize);
+        foreach (var index in grid.hdvIndex)
+        {
+            element = grid.GridElements[index.x, index.y];
+            block = Instantiate(blockPrefab,element.position,Quaternion.identity,blockGroup.transform);
+            element.block = block;
+            element.walkable = true;
+            block.index = index;
+            block.selectable = false;
+            block.building = HDV;
+            grid.GridElements[index.x, index.y] = element;
+        }
+        foreach (var index in grid.baseBlocks)
+        {
+            element = grid.GridElements[index.x, index.y];
+            block = Instantiate(blockPrefab,element.position,Quaternion.identity,blockGroup.transform);
+            element.block = block;
+            element.walkable = true;
+            block.index = index;
+            block.selectable = true;
+            grid.GridElements[index.x, index.y] = element;
+        }
+        for(int i = 0;i<gridSize;i++)
+        for(int j = 0;j<gridSize;j++)
+        {
+            
+            GridIndex index = Instantiate(gridElement,grid.GridElements[i,j].position,Quaternion.identity,gridGroup.transform);
+            grid.GridElements[i, j].gridIndex = index;
+            index.index = new Index(i, j);
+            if (grid.GridElements[i,j].block is not null) grid.GridElements[i, j].gridIndex.Disable();
+        }
+        
+        pc = gridGroup.GetComponent<PolygonCollider2D>();
+        
+        pc.points=new []
+        {
+            new Vector2(-3.56f + (-3.56f * (Mathf.Round(grid.size*0.5f)-1)) , 0),
+            new Vector2( -0.12f + (-0.12f * (Mathf.Round(grid.size*0.5f)-1)),  -2.67f + (-2.67f * (Mathf.Round(grid.size*0.5f)-1))),
+            new Vector2(3.56f + (3.56f * (Mathf.Round(grid.size*0.5f)-1)) , 0),
+            new Vector2( 0.12f + (0.12f * (Mathf.Round(grid.size*0.5f)-1)),  2.67f + (2.67f * (Mathf.Round(grid.size*0.5f)-1))),
+        };
+    }
+
+    public void UpdateBlocks()
+    {
+        foreach (var element in grid.GridElements)
+            if(element.walkable)
+                element.block.UpdateAdjacents();
+    }
+
 
     #endregion
 
+    
+    #region Level
 
-    private bool building;
+    public Coroutine levelRoutine;
+    [SerializeField] private float timeBetweenWaves = 10;
+    private WaitForSeconds preparationTime;
+    public bool selectableBlock = false;
 
-    public void StartLevel(LevelSO level)
+    public int currentWave;
+    private int waveCount;
+    [SerializeField] private Vector3[] bargeSpawn;
+
+    private Vector3 spawnPoint;
+    [SerializeField] private Transform enemyGroup;
+    private GameObject bargeGO;
+    private GameObject enemyGO;
+
+
+    public void StartLevel()
     {
-        building = true;
-        StartCoroutine(LevelCoroutine(level));
-    }
 
+        if (levelManager.selectedLevel != null)
+        {
+            key = levelManager.selectedLevel.block.name;
+            levelRoutine = StartCoroutine(LevelCoroutine(levelManager.selectedLevel));
+        }
+    }
+    public void SetBlockSelectable(bool value)
+    {
+        selectableBlock = value;
+    }
+    
+    public void StartLevelTest()
+    {
+        Debug.Log("Test initiated");
+    }
     public void StartWave()
     {
-        building = false;
+        StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
-    public List<Enemy> enemies;
-    private IEnumerator LevelCoroutine(LevelSO level)
+    public void Retry()
     {
-        var waveCount = level.waves.Count;
-        Enemy enemy;
-        
+        StopCoroutine(levelRoutine);
+        for(int i = enemyGroup.childCount-1;i>-1;i--)
+            Pooler.instance.Depop(enemyGroup.GetChild(0).name,enemyGroup.GetChild(0).gameObject);
+        HDV.Repair();
+        ResetLevel();
+        selectableBlock = true;
+
+    }
+
+    private void ResetLevel()
+    {
+        waveCount = 0;
+        currentWave = 0;
+    }
+
+
+    [SerializeField] private TMP_Text waveText;
+    private string key;
+    
+    public IEnumerator LevelCoroutine(LevelSO level)
+    {
+        UI_Manager.instance.CloseMenu(13);
+        waveCount = level.waves.Count;
+        currentWave = 0;
+        Debug.Log(waveCount);
         while (waveCount > 0)
         {
-            while (building)
-            {
-                if (Input.touchCount > 0)
-                {
-                    if (!IsPointerOverUI())
-                    {
-                        if (selectedBlock is not null)
-                        {
-                            selectedBlock.Deselect();
-                            selectedBlock = null;
-                            levelManager.CloseBlockUI();
-                        }
-                        Touch touch = Input.GetTouch(0);
-                        RaycastHit2D hit = Physics2D.Raycast(cam.ScreenToWorldPoint(touch.position), Vector3.forward);
-                        if(hit.collider != null)
-                            if (blocks.ContainsKey(hit.transform.position))
-                            {
-                                if (blocks[hit.transform.position].selectable)
-                                {
-                                    selectedBlock = blocks[hit.transform.position];
-                                    selectedBlock.Select();
-                                    levelManager.OpenBlockUI();
-                                }
-                                
-                            }
-                    }
-                
-                }
-                yield return null;
-            }
-            levelManager.CloseBlockUI();
-            startButton.SetActive(false);
-            foreach (var barge in level.waves[waveCount-1].bargesInWave)
-            {
-                GameObject go = Pooler.instance.Pop("Barge");
-                var des = Vector2.one * int.MaxValue;
-                go.transform.parent = null;
-                go.transform.position = new Vector3(-4.5f, -2.5f, 0);
-                foreach (var pos in blocks.Keys)
-                {
-                    if (blocks[pos].tower is not null) continue;
-                    if ((go.transform.position - (Vector3) des).magnitude > (go.transform.position - (Vector3) pos).magnitude) 
-                        des = pos;
-                }
-                go.transform.DOMove(des, ((Vector3) des - go.transform.position).magnitude / 1).SetEase(Ease.Linear);
-                yield return new WaitForSeconds(((Vector3) des - go.transform.position).magnitude /1 );
-                
-                Debug.Log(barge.troops.Count);
-                for (int i = 0; i < barge.troops.Count ; i++)
-                {
-                     GameObject enemyGO = Pooler.instance.Pop("enemy");
-                     enemyGO.transform.parent = null; 
-                     enemyGO.transform.position = go.transform.position;
-                     enemy = enemyGO.GetComponent<Enemy>();
-                     enemy.OnSpawn(barge,i);
-                     //Pooler.instance.DelayedDepop(2f,"enemy",enemyGO);
-                     yield return new WaitForSeconds(0.5f);
-                }
-                Pooler.instance.Depop("Barge",go);
-            }
-            while (enemies.Count > 0) yield return null;
-            startButton.SetActive(true);
-            building = true;
-            waveCount--;
-            yield return null;
+
+            StartCoroutine(SpawnWave(level.waves[currentWave]));
             
+            while (enemyGroup.childCount > 0) yield return null;
+            
+            if (waveCount > 0)
+            {
+                selectableBlock = true;
+                yield return preparationTime;
+                UI_Manager.instance.CloseMenu(13);
+            }
+            yield return null;
         }
-        cityCenter.ResetHealth();
-        startButton.SetActive(false);
-        welcomePage.SetActive(true);
+        ClearBuildings();
+        levelManager.selectedLevel.isCompleted = true;
+        Debug.Log(key);
+        islandCreator.blocksCount[levelManager.selectedLevel.block.index]++;
+        levelManager.selectedLevel = null;
+        HDV.Repair();
+        UI_Manager.instance.CloseMenuWithoutTransition(8);
+        UI_Manager.instance.OpenMenuWithoutTransition(12);
+        ResetLevel();
 
     }
+    public List<Building> buildings = new List<Building>();
 
-
-
-    public void TowerButton()
+    public void ClearBuildings()
     {
-        if (selectedBlock.tower is not null)
+        UI_Manager.instance.CloseMenu(13);
+        selectedBlock = null;
+        for (int i = buildings.Count - 1; i > -1; i--)
+            grid.GridElements[buildings[i].index.x,buildings[i].index.y].block.SellBuilding();
+    }
+
+    private Tween tween;
+    IEnumerator SpawnWave(Wave wave)
+    {
+        var bargeGO = new GameObject();
+        
+        currentWave++;
+        selectableBlock = false;
+        selectedBlock = null;
+        foreach (var bargeSo in wave.bargesInWave)
         {
-            selectedBlock.SetEnergy(-selectedBlock.tower.stats.energyRequired);
-            Pooler.instance.Depop("Tower",selectedBlock.tower.gameObject);
-            selectedBlock.tower = null;
-            levelManager.OpenBlockUI();
+            spawnPoint = bargeSpawn[Random.Range(0,4)];
+            bargeGO = Pooler.instance.Pop("Barge");
+            bargeGO.transform.position = spawnPoint;
+            bargeGO.transform.parent = enemyGroup;
+            tween = bargeGO.transform.DOMove(grid.GetNearestBlock(spawnPoint).transform.position, (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed)
+                .OnComplete(() => StartCoroutine(SpawnEnemies(bargeSo,bargeGO,spawnPoint)));
+            while (tween.IsPlaying()) yield return null;
+        }
+
+        yield return null;
+    }
+    
+    private IEnumerator SpawnEnemies(BargeSO barge,GameObject go,Vector3 spawn)
+    {
+        var bargeGO = go;
+        var enemyGO = new GameObject();
+        foreach (var troop in barge.troops)
+        {
+            enemyGO = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
+            enemyGO.transform.position = bargeGO.transform.position;
+            enemyGO.transform.parent = enemyGroup;
+            enemyGO.GetComponent<Enemy>().OnSpawn(barge,troop.cristalToEarn);
+            yield return new WaitForSeconds(0.5f);
+        }
+        waveCount--;
+        bargeGO.transform.DOMove(spawn - transform.position, (spawn - transform.position).magnitude / barge.bargeSpeed).OnComplete(() =>
+            Pooler.instance.Depop("Barge",bargeGO));
+    }
+    #endregion
+
+    
+
+    
+    [SerializeField] private LayerMask layerMask;
+    private void UnSelectBlock()
+    {
+        
+        if (!Input.GetMouseButtonDown(0)) return;
+        hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,layerMask);
+        if (hit2D)
+        {
+            
+            if (hit2D.transform.CompareTag("Block")) return;
+            if (Utils.IsPointerOverUI()) return;
+            selectedBlock = null;
+            UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
         }
         else
         {
-            GameObject go = Pooler.instance.Pop("Tower");
-            go.transform.parent = selectedBlock.transform;
-            go.transform.position = selectedBlock.transform.position;
-            selectedBlock.tower = go.GetComponent<AXD_TowerShoot>();
-            selectedBlock.SetEnergy(selectedBlock.tower.stats.energyRequired);
-            levelManager.OpenBlockUI();
+            if (Utils.IsPointerOverUI()) return;
+            selectedBlock = null;
+            UI_Manager.instance.CloseMenu((int) MenuEnum.BlockInfo);
         }
     }
-    
-    
-    
-    
+    public void SellBuilding()
+    {
+        selectedBlock.SellBuilding();
+    }
+
+    public bool editorActivated = false;
+
+    public void SetEditor(bool value)
+    {
+        editorActivated = value;
+    }
+
+
+
+
+
 }

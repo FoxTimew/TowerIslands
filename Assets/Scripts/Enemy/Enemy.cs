@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     
     public static event Action<int> EnemyDeathGoldEvent;
     public static event Action<int> EnemyDeathCristalEvent;
-    [SerializeField] private AXD_EnemySO enemyStats;
+    public AXD_EnemySO enemyStats;
 
     [SerializeField] private Animator animator;
     private Block initPos;
@@ -17,19 +17,69 @@ public class Enemy : MonoBehaviour
     private BargeSO bargeItComesFrom;
     private int cristalStored;
 
+    private bool stunned;
 
-
+    private float speed;
 
     private AXD_TowerShoot target;
 
     private int currentHP { get; set; }
+    private Coroutine movement;
+    
 
-    private void Start()
+    private void Init()
     {
         currentHP = enemyStats.maxHealthPoints;
-        StartCoroutine(MoveEnemy());
+        speed = enemyStats.speed;
+        path.Clear();
+        FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
+        StartMovement();
     }
 
+
+    public void StartMovement()
+    {
+        movement = StartCoroutine(MoveEnemy());
+    }
+
+    
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.transform.CompareTag("Block")) return;
+        if (other.GetComponent<Block>().building is null) return;
+        if (other.GetComponent<Block>().building.buildingSO.type == BuildingType.Trap) return;
+        StartCoroutine(Attack(other.GetComponent<Block>().building));
+
+    }
+
+    
+    public void StopMovement()
+    {
+        StopCoroutine(movement);
+    }
+    public void StopMovement(WaitForSeconds stunDuration)
+    {
+        if (movement is null) return;
+        if (stunned) return;
+        StartCoroutine(StopMovementDelayed(stunDuration));
+    }
+
+    private IEnumerator StopMovementDelayed(WaitForSeconds stunDuration)
+    {
+        StopCoroutine(movement);
+        tween.Pause();
+        animator.SetInteger("Speed", 0);
+        stunned = true;
+        yield return stunDuration;
+        tween.Play().OnComplete(StartMovement);
+        yield return stunDuration;
+        stunned = false;
+    }
+
+    void Update()
+    {
+        if(currentHP<=0) Death();
+    }
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
         currentHP -= damageToTake;
@@ -39,52 +89,46 @@ public class Enemy : MonoBehaviour
             Death(); 
             return true;
         }
-        //Debug.Log(currentHP);
+
         return false;
     }
 
-    IEnumerator MoveEnemy()
+
+    private Queue<Block> path = new Queue<Block>();
+    //private List<Vector3> points;
+    void FindPath(Block initPos)
+    {
+        Pathfinding pf = new Pathfinding();
+        var dist =float.MaxValue; 
+        foreach (var i in GameManager.instance.grid.hdvIndex) 
+            if (((Vector3)GameManager.instance.grid.GridElements[i.x,i.y].position - transform.position).magnitude <= dist)
+                destination = GameManager.instance.grid.GridElements[i.x, i.y].block;
+        
+        List<Pathfinding.Node> pathfinding = pf.FindPath(initPos, destination, GameManager.instance.grid);
+        for (int i = 0; i < pathfinding.Count; i++)
+        {
+            path.Enqueue(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].block);
+            //points.Add(GameManager.instance.grid.GridElements[pathfinding[i].index.x, pathfinding[i].index.y].position);
+        }
+    }
+
+    private Block block;
+    private Tween tween;
+    public IEnumerator MoveEnemy()
     {
         animator.SetInteger("Speed", 1);
-        destination = GameManager.instance.blocks[new Vector2(0, -0.25f)];
-        var des = Vector2.one * int.MaxValue;
-        foreach (var pos in GameManager.instance.blocks.Keys)
+        
+        while (path.Count > 0)
         {
-            if ((transform.position - (Vector3) des).magnitude > (transform.position - (Vector3) pos).magnitude)
-            {
-                des = pos;
-            }
-        }
-
-        CheckDirection(transform.position, des);
-        transform.DOMove(des, ((Vector3) des - transform.position).magnitude / enemyStats.speed).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(((Vector3) des - transform.position).magnitude / enemyStats.speed);
-
-        initPos = GameManager.instance.blocks[transform.position];
-        Pathfinding pf = new Pathfinding();
-        List<Vector2> map = new List<Vector2>();
-        foreach (var block in GameManager.instance.blocks.Values)
-        {
-            map.Add(block.transform.position);
-        }
-
-        List<Pathfinding.Node> path = pf.FindPath(initPos.transform.position, destination.transform.position, map);
-
-
-        for (int i = 0; i < path.Count; i++)
-        {
-            CheckDirection(transform.position, path[i].pos);
-            if (GameManager.instance.blocks[path[i].pos].tower is not null)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].tower));
-            if (!GameManager.instance.blocks[path[i].pos].selectable)
-                yield return StartCoroutine(Attack(GameManager.instance.blocks[path[i].pos].gameObject));
-            transform.DOMove(path[i].pos, ((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed)
+            block = path.Dequeue();
+            CheckDirection(transform.position,block.transform.position);
+            tween = transform.DOMove(block.transform.position,
+                    (block.transform.position - transform.position).magnitude / speed)
                 .SetEase(Ease.Linear);
-            yield return new WaitForSeconds(((Vector3) path[i].pos - transform.position).magnitude / enemyStats.speed);
+            yield return new WaitForSeconds((block.transform.position - transform.position).magnitude / speed);
         }
         
         animator.SetInteger("Speed", 0);
-        GameManager.instance.enemies.Remove(this);
     }
 
     void CheckDirection(Vector2 pos, Vector2 des)
@@ -106,45 +150,34 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("Direction", dir);
     }
 
-    IEnumerator Attack(AXD_TowerShoot target)
+    IEnumerator Attack(Building target)
     {
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
-        transform.DOMove(pos, (pos - transform.position).magnitude / enemyStats.speed)
-            .SetEase(Ease.Linear);
-        yield return new WaitForSeconds((pos - transform.position).magnitude / enemyStats.speed);
+        // var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
+        // transform.DOMove(pos, (pos - transform.position).magnitude / speed)
+        //     .SetEase(Ease.Linear);
+        // yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
+        StopMovement();
+        tween.Pause();
         animator.SetInteger("Speed", 0);
         while (target.hp > 0)
         {
             animator.SetTrigger("Attack");
             yield return new WaitForSeconds(enemyStats.attackSpeed);
-            target.TakeDamage(enemyStats.damage);
+            target.takeDamage(enemyStats.damage);
         }
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
+        tween.Play().OnComplete(StartMovement);
+        
     }
     
-    IEnumerator Attack(GameObject target)
-    {
-        var pos = target.transform.position - (target.transform.position - transform.position).normalized * 0.25f;
-        transform.DOMove(pos, (pos - transform.position).magnitude / enemyStats.speed)
-            .SetEase(Ease.Linear);
-        yield return new WaitForSeconds((pos - transform.position).magnitude / enemyStats.speed);
-        animator.SetInteger("Speed", 0);
-        while (GameManager.instance.cityCenter.health > 0)
-        {
-            animator.SetTrigger("Attack");
-            yield return new WaitForSeconds(enemyStats.attackSpeed);
-            GameManager.instance.cityCenter.TakeDamage(enemyStats.damage);
-        }
-        animator.SetTrigger("AttackEnd");
-        animator.SetInteger("Speed", 1);
-    }
 
     public void OnSpawn(BargeSO _barge, int troopListIndex)
     {
+        Init();
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
-        GameManager.instance.enemies.Add(this);
+        //GameManager.instance.enemies.Add(this);
     }
 
     public void Death()
@@ -158,7 +191,8 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
-        GameManager.instance.enemies.Remove(this);
-        Pooler.instance.Depop("Enemy", this.gameObject);
+        //GameManager.instance.enemies.Remove(this);
+        Pooler.instance.Depop(enemyStats.eName, this.gameObject);
     }
+    
 }
