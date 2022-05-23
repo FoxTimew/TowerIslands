@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class EconomyManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text goldUI;
     public static EconomyManager instance;
     [SerializeField] private int goldAmount = 200;
 
@@ -22,40 +21,38 @@ public class EconomyManager : MonoBehaviour
         }
 
         Enemy.EnemyDeathGoldEvent += Enemy_EnemyDeathGoldEvent;
-        UpdateUI();
+        UpdateEconomyUI();
     }
 
     public void GainGold(int goldToGain)
     {
         goldAmount += goldToGain;
-        UpdateUI();
+        UpdateEconomyUI();
     }
 
     public void SetGold(int gold)
     {
         goldAmount = gold;
-        UpdateUI();
+        UpdateEconomyUI();
     }
 
     public void RemoveGold(int goldToRemove)
     {
         goldAmount -= goldToRemove;
-        UpdateUI();
+        UpdateEconomyUI();
     }
 
     public int GetGoldAmount()
     {
         return goldAmount;
     }
-    
-    
-    public void UpdateUI()
+
+    private void UpdateEconomyUI()
     {
-        if (goldUI != null)
-        {
-            goldUI.text = $"{goldAmount}";
-        }
+        UI_Manager.instance.UpdateGoldUI(goldAmount);
+        UI_Manager.instance.UpdateWaveUI();
     }
+    
 
     
     public void Enemy_EnemyDeathGoldEvent(int goldToAdd)
