@@ -65,6 +65,12 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField] private Sprite tickImage;
     [SerializeField] private Sprite redCrossImage;
+
+    [Header("Button Sprites")] public Sprite lockedButtonSprite;
+    public Sprite towerButtonSprite;
+    public Sprite supportButtonSprite;
+    public Sprite trapButtonSprite;
+    
     private GameObject tmpButton;
     private TMP_Text tmpButtonText;
     private Image tmpButtonImage;
@@ -72,6 +78,7 @@ public class UI_Manager : MonoBehaviour
     private EventTrigger tmpEventTrigger;
 
     private WaitForSeconds closeMenuTransitionDuration;
+    private GameObject tmpChild;
     
     private void Awake()
     {
@@ -108,13 +115,15 @@ public class UI_Manager : MonoBehaviour
             if (menuEnumValue == (int) MenuEnum.BlockInfo)
             {
                 blockInfo.SetActive(true);
+                ContextMenuLinker linker = blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>();
                 if (GameManager.instance.selectedBlock.building == null)
                 {
-                    blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().cma.PlayAnimation();
-                    if (!blockInfo.transform.GetChild(0).gameObject.activeSelf)
+                    tmpChild = blockInfo.transform.GetChild(0).gameObject;
+                    linker = tmpChild.GetComponent<ContextMenuLinker>();
+                    if (!tmpChild.activeSelf)
                     {
-                        blockInfo.transform.GetChild(0).gameObject.SetActive(true);
-                        blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
+                        tmpChild.SetActive(true);
+                        linker.LinkListeners(GameManager.instance.selectedBlock);
                     }
                     /*else
                     {
@@ -124,10 +133,12 @@ public class UI_Manager : MonoBehaviour
                 }
                 else
                 {
-                    ContextMenuLinker linker = blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>();
                     linker.cma.PlayAnimation();
                     linker.gameObject.SetActive(true);
-                    linker.LinkListeners(GameManager.instance.selectedBlock);
+                    if (GameManager.instance.selectedBlock != null)
+                    {
+                        linker.LinkListeners(GameManager.instance.selectedBlock);
+                    }
                 }
             }else
             {
@@ -417,7 +428,7 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    public bool isMenuOpen(MenuEnum menu)
+    public bool IsMenuOpen(MenuEnum menu)
     {
         switch (menu)
         {
