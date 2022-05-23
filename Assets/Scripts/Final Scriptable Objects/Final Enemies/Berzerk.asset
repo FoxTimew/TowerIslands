@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Berzerk
   m_EditorClassIdentifier: 
   eName: Berzerk
-  speed: 12
+  speed: 4
   maxHealthPoints: 250
   damage: 40
   attackSpeed: 1.2
