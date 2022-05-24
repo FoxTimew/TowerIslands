@@ -62,8 +62,6 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
-        //wtf faut bouger ça sur l'update de wave
-        waveText.text = currentWave.ToString();
         if (!selectableBlock) return;
         UnSelectBlock();
     }

@@ -49,8 +49,9 @@ public class UI_Manager : MonoBehaviour
         blockInfo,
         islandEditorScroller,
         levelSelectionScroller;
-        
 
+    [SerializeField] private TMP_Text goldUIText;
+    [SerializeField] private TMP_Text waveUIText;
     [Header("Transition Reference")]
     [SerializeField] private RectTransform  LeftTransition;
     [SerializeField] private RectTransform  RightTransition;
@@ -82,7 +83,6 @@ public class UI_Manager : MonoBehaviour
 
     private void Start()
     {
-        initialCloudPosition = transitionClouds.position;
         closeMenuTransitionDuration = new WaitForSeconds(transitionDuration * .5f);
     }
     
@@ -464,6 +464,21 @@ public class UI_Manager : MonoBehaviour
         tmpPrepareButton.interactable = true;
 
     }
-    
+
+    public void UpdateWaveUI()
+    {
+        if (waveUIText.IsActive())
+        {
+            waveUIText.text = $"{GameManager.instance.currentWave}/{GameManager.instance.levelManager.selectedLevel.waves.Count}";
+        }
+    }
+    public void UpdateGoldUI(int goldAmount)
+    {
+        if (goldUIText.IsActive())
+        {
+            goldUIText.text = $"{goldAmount}";
+        }
+    }
+
 
 }

@@ -59,3 +59,38 @@ MonoBehaviour:
       baseCount: 1
       baseRefreshSpeed: 5
       refreshSpeed: 0
+  - key: DefenseSupport
+    pool:
+      prefab: {fileID: 1930188891554707149, guid: 7ce0b9d993e8cdb4c9ad1ad7a320ba48,
+        type: 3}
+      baseCount: 1
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: EnergySupport
+    pool:
+      prefab: {fileID: 8175417795234099611, guid: be04b73018bfda8478dd8a234ebad850,
+        type: 3}
+      baseCount: 1
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: DamageTrap
+    pool:
+      prefab: {fileID: 4646001389382630044, guid: 73196949b6df6ba4f92d3bad2e581f0b,
+        type: 3}
+      baseCount: 1
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: StunTrap
+    pool:
+      prefab: {fileID: 8175417795234099611, guid: be04b73018bfda8478dd8a234ebad850,
+        type: 3}
+      baseCount: 1
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: RapidTower
+    pool:
+      prefab: {fileID: 5140832759016273425, guid: bf1646a145647ee45b9d386fc79f0d33,
+        type: 3}
+      baseCount: 1
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
