@@ -16,6 +16,8 @@ public class Block : MonoBehaviour
     public bool selectable = true;
     [SerializeField] private List<Sprite> sprites;
 
+    [SerializeField] private ParticleSystem construction;
+
     private Collider2D collider;
     public bool placed;
     
@@ -167,5 +169,10 @@ public class Block : MonoBehaviour
         if (other != collider) return;
         if (placed) return;
         index = new Index(5,5);
+    }
+
+    public void PlaceBlock()
+    {
+        construction.Play();
     }
 }
