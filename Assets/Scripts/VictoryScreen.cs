@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class VictoryScreen : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem particleSystem;
     public Transform victory;
     public Transform sun;
 
@@ -14,6 +15,7 @@ public class VictoryScreen : MonoBehaviour
 
     private void OnEnable()
     {
+        particleSystem.Play();
         UI_Manager.instance.CloseMenu(9);
         sun.DOScale(Vector3.one*0.5f, 0.25f).SetEase(Ease.OutSine);
         victory.DOScale(Vector3.one * 0.5f, 0.25f).SetEase(Ease.OutSine)
@@ -45,6 +47,7 @@ public class VictoryScreen : MonoBehaviour
 
     private void OnDisable()
     {
+        particleSystem.Stop();
         tween.Kill();
         sun.rotation= Quaternion.Euler(Vector3.zero);
     }

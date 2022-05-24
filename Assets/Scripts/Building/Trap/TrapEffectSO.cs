@@ -6,7 +6,7 @@ public class TrapEffectSO : ScriptableObject
 {
     public static Sprite sprite;
     
-    public virtual IEnumerator ApplyEffect(Enemy enemy)
+    public virtual IEnumerator ApplyEffect(Enemy enemy,ParticleSystem ps)
     {
         yield return null;
     }

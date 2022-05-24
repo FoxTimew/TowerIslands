@@ -10,7 +10,7 @@ public class DamageTrapSO : TrapEffectSO
     public DamageType damageType;
         
     
-    public override IEnumerator ApplyEffect(Enemy enemy)
+    public override IEnumerator ApplyEffect(Enemy enemy,ParticleSystem ps)
     {
         while (true)
         {

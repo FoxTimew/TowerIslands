@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class IslandCreator : MonoBehaviour
@@ -33,12 +34,14 @@ public class IslandCreator : MonoBehaviour
         current.transform.position = origin;
 
     }
-    
-    
+
+    private int test;
     public void Depop()
     {
         if (currentType is null) return;
-        if (!blocksCount.ContainsKey(int.Parse(currentType[^1..]))) return;
+        if (currentType.Length < 3 ) return;
+        if(!int.TryParse(currentType[^1..], out int test)) return;
+        if (!blocksCount.ContainsKey(test)) return;
         Pooler.instance.Depop(currentType,current);
     }
     
