@@ -102,11 +102,12 @@ public class ContextMenuLinker : MonoBehaviour
                 case (ContextMenuType.BlockBuilt):
                     Debug.Log("Block Built");
                     //Upgrade button
-                    if(GameManager.instance.selectedBlock.building)
+                    //Si l'upgrade est dispo + on a assez d'argent
                     tmpButton = transform.GetChild(2).GetComponent<Button>();
                     tmpButton.onClick.RemoveAllListeners();
                     tmpButton.onClick.AddListener(SellBuildingListener);
                     //Repair button
+                    //Si le repair est dispo + on a assez d'argent
                     tmpButton = transform.GetChild(3).GetComponent<Button>();
                     tmpButton.onClick.RemoveAllListeners();
                     tmpButton.onClick.AddListener(RepairBuildingListener);
