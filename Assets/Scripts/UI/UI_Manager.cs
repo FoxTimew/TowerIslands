@@ -70,6 +70,7 @@ public class UI_Manager : MonoBehaviour
     public Sprite towerButtonSprite;
     public Sprite supportButtonSprite;
     public Sprite trapButtonSprite;
+    public Sprite mortarButtonSprite;
     
     private GameObject tmpButton;
     private TMP_Text tmpButtonText;
@@ -125,11 +126,6 @@ public class UI_Manager : MonoBehaviour
                         tmpChild.SetActive(true);
                         linker.LinkListeners(GameManager.instance.selectedBlock);
                     }
-                    /*else
-                    {
-                        // A Ajouter pour activer le menu sur 2 niveaux
-                        blockInfo.transform.GetChild(1).gameObject.SetActive(true);
-                    }*/
                 }
                 else
                 {
