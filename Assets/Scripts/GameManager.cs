@@ -197,14 +197,14 @@ public class GameManager : MonoBehaviour
         waveCount = level.waves.Count;
         currentWave = 0;
         Debug.Log(waveCount);
-        while (waveCount > 0)
+        while (waveCount > -1)
         {
 
             StartCoroutine(SpawnWave(level.waves[currentWave]));
             
             while (enemyGroup.childCount > 0) yield return null;
             
-            if (waveCount > 0)
+            if (waveCount > -1)
             {
                 selectableBlock = true;
                 yield return preparationTime;
@@ -307,6 +307,14 @@ public class GameManager : MonoBehaviour
     public void SetEditor(bool value)
     {
         editorActivated = value;
+    }
+
+    public void Upgrade()
+    {
+        if (selectedBlock.building.buildingSO.type != BuildingType.Tower) return;
+        Tower to = (Tower) selectedBlock.building;
+        to.Upgrade();
+
     }
 
 
