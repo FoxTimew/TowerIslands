@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 0
+    x: 1578
     y: 0
     width: 1920
     height: 1040
@@ -215,7 +215,7 @@ MonoBehaviour:
   - {fileID: 24}
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &7
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,9 +260,9 @@ MonoBehaviour:
   - {fileID: 9}
   m_Position:
     serializedVersion: 2
-    x: 0
-    y: 30
-    width: 1920
+    x: 1231
+    y: 0
+    width: 347
     height: 947
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
@@ -300,7 +300,7 @@ MonoBehaviour:
 >>>>>>> main
   m_Selected: 0
   m_LastSelected: 0
---- !u!114 &12
+--- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -784,18 +784,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000d8340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Level2SO
+      m_OriginalName: Level2SO
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 28612
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
@@ -888,18 +888,18 @@ MonoBehaviour:
       m_ExpandedIDs: c2f9f7ff86faf7ff3c01f8ff842bf8ffb238f8ffba38f8ff486dfafffc8afaffdcadfaff00aefaff24aefaff48aefaff6caefaff90aefaffb4aefaffbebafaffc2bafaffcabafafff80bfbff3c0cfbff1610fbff7a19fbff701ffbff2223fbff3abdfbff7625fcffd860fcff5c68fcffae6bfcff1271fcff3c9dfcff72fdfcff5803fdffdc2cfdff70c2fdff3ef9fdffb021feff4447fefff23affff163bffffdeb2ffffc0b9ffff18ccffffb2d6ffffc4d6ffff54f9ffff6ad600005eee0000d41c010072490100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Block (8)
+        m_OriginalName: Block (8)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -32878
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -1013,7 +1013,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 26}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -1539,11 +1539,11 @@ MonoBehaviour:
   m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 275, y: 100}
+  m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
+    m_Text: Console
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_Pos:
