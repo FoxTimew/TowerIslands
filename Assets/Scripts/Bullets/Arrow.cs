@@ -7,9 +7,10 @@ public class Arrow : Bullet
 {
     public override void Shoot(Tower origin, Enemy targetToSet, float speedToSet)
     {
-        transform.LookAt(targetToSet.transform);
+        
         originTower = origin;
         SetTarget(targetToSet);
+        transform.right = (target.transform.position - transform.position);
         speed = speedToSet;
         if (target != null)
         {

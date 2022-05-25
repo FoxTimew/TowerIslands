@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
 
     public void StartMovement()
     {
-        movement = StartCoroutine(MoveEnemy());
+        if(gameObject.activeSelf) movement = StartCoroutine(MoveEnemy());
     }
 
     
@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
     
     public void StopMovement()
     {
+        if (movement is null) return;
         StopCoroutine(movement);
     }
     public void StopMovement(WaitForSeconds stunDuration)
@@ -63,6 +64,7 @@ public class Enemy : MonoBehaviour
         if (stunned) return;
         StartCoroutine(StopMovementDelayed(stunDuration));
     }
+    
 
     private IEnumerator StopMovementDelayed(WaitForSeconds stunDuration)
     {
@@ -145,17 +147,12 @@ public class Enemy : MonoBehaviour
         if (signX > 0 && signY > 0) dir = 1;
         if (signX > 0 && signY < 0) dir = 2;
         if (signX < 0 && signY < 0) dir = 3;
-
-        //animator.SetInteger("Direction", dir);
+        
         animator.SetFloat("Direction", dir);
     }
 
     IEnumerator Attack(Building target)
     {
-        // var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
-        // transform.DOMove(pos, (pos - transform.position).magnitude / speed)
-        //     .SetEase(Ease.Linear);
-        // yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
         StopMovement();
         tween.Pause();
         animator.SetInteger("Speed", 0);
@@ -191,7 +188,6 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
-        //GameManager.instance.enemies.Remove(this);
         Pooler.instance.Depop(enemyStats.eName, this.gameObject);
     }
     

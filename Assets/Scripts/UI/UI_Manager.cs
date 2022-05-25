@@ -124,7 +124,7 @@ public class UI_Manager : MonoBehaviour
                 }
                 else
                 {
-                    ContextMenuLinker linker = blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>();
+                    ContextMenuLinker linker = blockInfo.transform.GetChild(1).GetComponent<ContextMenuLinker>();
                     linker.cma.PlayAnimation();
                     linker.gameObject.SetActive(true);
                     linker.LinkListeners(GameManager.instance.selectedBlock);

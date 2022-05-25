@@ -9,13 +9,14 @@ using UnityEngine;
 public class Drag : MonoBehaviour
 {
     public int index;
-    [SerializeField] private GameObject blocksGo;
-    [SerializeField] private List<Block> blocks;
+    [SerializeField] public GameObject blocksGo;
+    [SerializeField] public List<Block> blocks;
+    [SerializeField] public GameObject canvas;
     
     private Vector3 origin;
     
     
-    [SerializeField] private DragPointer dragPointer;
+    [SerializeField] public DragPointer dragPointer;
     
     void Start()
     {
@@ -31,7 +32,6 @@ public class Drag : MonoBehaviour
     private void OnMouseDown()
     {
         GameManager.instance.cameraZoom.enabled = false;
-        blocksGo.transform.parent = null;
     }
     
 
@@ -48,12 +48,12 @@ public class Drag : MonoBehaviour
     {
         GameManager.instance.cameraZoom.enabled = true;
         transform.position = blocksGo.transform.position;
-        blocksGo.transform.parent = transform.parent;
+        //blocksGo.transform.parent = transform.parent;
         ChangeSprite(IsPlaceable());
-        if(IsPlaceable()) PlaceBlock();   
     }
-    
-    bool IsPlaceable()
+
+
+    public bool IsPlaceable()
     {
         bool result = false;
         foreach (var block in blocks)
@@ -75,21 +75,7 @@ public class Drag : MonoBehaviour
     }
 
 
-    void PlaceBlock()
-    {
-        blocksGo.transform.parent = transform;
-        GameManager.instance.islandCreator.current = null;
-        GameManager.instance.islandCreator.currentType = null;
-        GameManager.instance.islandCreator.blocksCount[index]--;
-        foreach (var block in blocks)
-        {
-            GameManager.instance.grid.AddBlock(block);
-            block.PlaceBlock();
-        }
-        GameManager.instance.UpdateBlocks();
-        transform.parent = GameManager.instance.blockGroup.transform;
-        this.enabled = false;
-    }
+    
     
     
 }
