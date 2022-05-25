@@ -23,6 +23,11 @@ public class CircleMenuAnimation : MonoBehaviour
 
     public void PlayAnimation()
     {
-        transform.DOScale(Vector3.one*2, animationTime);
+        transform.DOScale(Vector3.one, animationTime);
+    }
+
+    public void ReOpenContextMenu(Vector2 position)
+    {
+        
     }
 }
