@@ -135,7 +135,7 @@ public class ContextMenuLinker : MonoBehaviour
                     if (GameManager.instance.selectedBlock.building.isBuildingDestroyed() &&
                         EconomyManager.instance.GetGoldAmount() >
                         GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
-                        GameManager.instance.selectedBlock.building.hp*100/GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                        (GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)*100/GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
                     {
                         tmpButton = transform.GetChild(3).GetComponent<Button>();
                         tmpButton.GetComponent<Image>().sprite = UI_Manager.instance.repairSprite;
