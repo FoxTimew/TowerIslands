@@ -64,5 +64,11 @@ public class Building : MonoBehaviour
         hp = buildingSO.healthPoints;
         sr.sortingLayerName = "Characters";
         sr.sprite = sprites[0];
+        EconomyManager.instance.RemoveGold(buildingSO.goldRequired * hp*100/buildingSO.healthPoints);
+    }
+
+    public bool isBuildingDestroyed()
+    {
+        return destroyed;
     }
 }

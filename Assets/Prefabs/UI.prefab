@@ -6357,7 +6357,6 @@ MonoBehaviour:
   - {fileID: 5775260474159868511}
   - {fileID: 8885660730034329561}
   - {fileID: 2096778743638618015}
-  tmpChild: {fileID: 0}
 --- !u!1 &5144372817172149240
 GameObject:
   m_ObjectHideFlags: 0
@@ -8129,11 +8128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e93ba2e91c9884492e7d2ce876255e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 1
   cma: {fileID: 7363626808803304071}
   blockToHover: {fileID: 0}
   buttons: []
-  tmpChild: {fileID: 0}
 --- !u!1 &6415017474506102475
 GameObject:
   m_ObjectHideFlags: 0
@@ -9664,6 +9662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89218517d3d6e549a22ad55d7d67019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
   victory: {fileID: 5233422698891775835}
   sun: {fileID: 8136892738238761362}
 --- !u!1 &7604309070757762288
