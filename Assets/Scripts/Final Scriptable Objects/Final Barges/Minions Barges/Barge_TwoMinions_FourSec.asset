@@ -20,4 +20,4 @@ MonoBehaviour:
   bargeSpeed: 10
   bargeHP: 300
   rewardModifier: 1
-  waitingTime: 20
+  waitingTime: 4
