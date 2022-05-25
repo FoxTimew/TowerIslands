@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 828235399517442071}
-  - component: {fileID: 2440245241212543953}
   - component: {fileID: 2375004557264797407}
   - component: {fileID: 5874932224865233597}
+  - component: {fileID: 915918965541052202}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -35,22 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &2440245241212543953
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238814771564932069}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1
 --- !u!114 &2375004557264797407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +58,19 @@ SortingGroup:
   m_SortingLayerID: -1039195777
   m_SortingLayer: 3
   m_SortingOrder: 1
+--- !u!65 &915918965541052202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238814771564932069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.146298, y: 0.15983167, z: 1}
+  m_Center: {x: 0.027169645, y: 0.0020899624, z: 0}
 --- !u!1 &8302567124177822938
 GameObject:
   m_ObjectHideFlags: 0

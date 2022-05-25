@@ -67,7 +67,7 @@ public class CameraZoom : MonoBehaviour
     private WaitForSeconds dezoomTime = new WaitForSeconds(0.01f);
     IEnumerator DeZoom(float t,float step)
     {
-        if (t <= 0) yield break;
+        if (t < 0) yield break;
         camera.orthographicSize += step;
         t -= 0.01f;
         yield return dezoomTime;
