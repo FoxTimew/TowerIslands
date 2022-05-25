@@ -72,7 +72,6 @@ public class Block : MonoBehaviour
             SpentAdjacentEnergy(value - energy);
             return true;
         }
-        return false;
     }
     private void SpentAdjacentEnergy(int value)
     {

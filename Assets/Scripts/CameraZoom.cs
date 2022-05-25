@@ -24,7 +24,9 @@ public class CameraZoom : MonoBehaviour
 	
     // Update is called once per frame
     void Update () {
-        if(Input.GetMouseButtonDown(0)){
+        if (Utils.IsPointerOverUI()) return;
+        if(Input.GetMouseButtonDown(0))
+        {
             touchStart = camera.ScreenToWorldPoint(Input.mousePosition);
         }
         if(Input.touchCount == 2){
