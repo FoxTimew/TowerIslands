@@ -20,4 +20,4 @@ MonoBehaviour:
   range: 2
   goldToAddOnDeath: 10
   dieSoundIndex: 08000000090000000a000000
-  spawnSoundIndex: 0
+  spawnSoundIndex: 8

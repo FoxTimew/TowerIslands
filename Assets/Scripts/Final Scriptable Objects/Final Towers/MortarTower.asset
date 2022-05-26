@@ -29,3 +29,4 @@ MonoBehaviour:
   bulletSpeed: 3
   bulletPrefab: {fileID: -6909482101512744307, guid: 32be0a0b41d61d74cb15736e888906b4,
     type: 3}
+  soundIndex: 13

@@ -177,7 +177,7 @@ public class Enemy : MonoBehaviour
         Init();
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
-       // /*Sound*/ AudioManager.instance.Play(enemyStats.spawnSoundIndex, false, true);
+        /*Sound*/ AudioManager.instance.Play(enemyStats.spawnSoundIndex, false, true);
         //GameManager.instance.enemies.Add(this);
     }
 
