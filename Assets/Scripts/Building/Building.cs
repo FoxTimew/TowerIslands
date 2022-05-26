@@ -63,12 +63,13 @@ public class Building : MonoBehaviour
     {
         destroyed = false;
         hp = buildingSO.healthPoints;
+        if (GameManager.instance.HDV == this) return;
         sr.sortingLayerName = "Characters";
         sr.sprite = sprites[0];
         EconomyManager.instance.RemoveGold(buildingSO.goldRequired * (buildingSO.healthPoints-hp)*100/buildingSO.healthPoints);
     }
 
-    public void SetBuilding()
+    public virtual void SetBuilding()
     {
         destroyed = false;
         hp = buildingSO.healthPoints;

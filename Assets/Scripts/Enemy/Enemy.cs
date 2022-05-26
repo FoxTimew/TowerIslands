@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -81,11 +82,7 @@ public class Enemy : MonoBehaviour
         yield return stunDuration;
         stunned = false;
     }
-
-    void Update()
-    {
-        if(currentHP<=0) Death();
-    }
+    
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
         sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
@@ -180,14 +177,15 @@ public class Enemy : MonoBehaviour
         Init();
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
-        /*Sound*/ AudioManager.instance.Play(enemyStats.spawnSoundIndex, false, true);
+       // /*Sound*/ AudioManager.instance.Play(enemyStats.spawnSoundIndex, false, true);
         //GameManager.instance.enemies.Add(this);
     }
 
     [SerializeField] private SpriteRenderer sr;
     public void Death()
     {
-        /*SOund*/ AudioManager.instance.Play(UnityEngine.Random.Range(enemyStats.dieSoundIndex[0], enemyStats.dieSoundIndex[enemyStats.dieSoundIndex.Length]), false, true);
+        int rand = Random.Range(0, 3);
+        /*SOund*/ AudioManager.instance.Play(enemyStats.dieSoundIndex[rand], false, true);
         if (EnemyDeathGoldEvent != null)
         {
             EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));

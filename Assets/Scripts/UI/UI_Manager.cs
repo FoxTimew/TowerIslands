@@ -486,6 +486,7 @@ public class UI_Manager : MonoBehaviour
     {
         if (waveUIText.IsActive())
         {
+            if (GameManager.instance.levelManager.selectedLevel is null) return;
             waveUIText.text = $"{GameManager.instance.currentWave}/{GameManager.instance.levelManager.selectedLevel.waves.Count}";
         }
     }
