@@ -23,13 +23,17 @@ public class Enemy : MonoBehaviour
 
     private AXD_TowerShoot target;
 
+    private int currentDamage { get; set; }
     private int currentHP { get; set; }
     private Coroutine movement;
-    
+
+
 
     private void Init()
     {
+        sr.color = Color.white;
         currentHP = enemyStats.maxHealthPoints;
+        currentDamage = enemyStats.damage;
         speed = enemyStats.speed;
         path.Clear();
         FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
@@ -156,12 +160,15 @@ public class Enemy : MonoBehaviour
         StopMovement();
         tween.Pause();
         animator.SetInteger("Speed", 0);
+        animator.speed = enemyStats.attackSpeed;
         while (target.hp > 0)
         {
             animator.SetTrigger("Attack");
+            
             yield return new WaitForSeconds(enemyStats.attackSpeed);
-            target.takeDamage(enemyStats.damage);
+            target.takeDamage(currentDamage);
         }
+        animator.speed = 1;
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
         tween.Play().OnComplete(StartMovement);
@@ -177,6 +184,7 @@ public class Enemy : MonoBehaviour
         //GameManager.instance.enemies.Add(this);
     }
 
+    [SerializeField] private SpriteRenderer sr;
     public void Death()
     {
         if (EnemyDeathGoldEvent != null)
@@ -188,7 +196,8 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
-        Pooler.instance.Depop(enemyStats.eName, this.gameObject);
+        animator.SetTrigger("Death");
+        sr.DOFade(0, 2f).OnComplete(() => Pooler.instance.Depop(enemyStats.eName, this.gameObject));
     }
     
 }
