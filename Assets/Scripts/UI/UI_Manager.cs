@@ -299,6 +299,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandMenu):
                 islandMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.IslandEditorMenu):
                 islandEditorMenu.SetActive(true);
@@ -310,9 +311,11 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(2, true);
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.FeedbackUI):
                 feedbackUI.SetActive(true);
@@ -323,15 +326,20 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.DefeatMenu):
                 //Appeler menu de défaite
                 defeatMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(19, false, true);
                 break;
             case (MenuEnum.VictoryMenu):
                 //Apeler menu de victoire
                 victoryMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(18, false, true);
                 break;
         }
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
+        /*Sound*/ AudioManager.instance.Play(20, false);
         yield return new WaitForSeconds(transitionDuration / 2);
         switch ((MenuEnum)menuID)
         {
@@ -346,6 +354,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandMenu):
                 islandMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.IslandEditorMenu):
                 islandEditorMenu.SetActive(true);
@@ -354,9 +363,11 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.LevelSelectionMenu):
                 levelSelectionMenu.SetActive(true);
                 DrawLevelSelectionButton();
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
+                /*Sound*/AudioManager.instance.Play(2, true);
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
@@ -370,10 +381,14 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.DefeatMenu):
                 //Appeler menu de défaite
                 defeatMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(19, false, true);
                 break;
             case (MenuEnum.VictoryMenu):
                 //Apeler menu de victoire
                 victoryMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(18, false, true);
                 break;
         }
     }
@@ -407,7 +422,7 @@ public class UI_Manager : MonoBehaviour
             tmpPrepareButton.interactable = false;
             
             tmpButton.GetComponent<Button>().onClick.AddListener(EnablePrepareButtonListener);
-            
+
             tmpButtonText = tmpButton.transform.GetChild(0).GetComponent<TMP_Text>();
             tmpButtonImage = tmpButton.transform.GetChild(1).GetComponent<Image>();
             tmpButton.GetComponent<LevelButton>().levelContained = level;

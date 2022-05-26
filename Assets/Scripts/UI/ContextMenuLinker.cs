@@ -122,6 +122,7 @@ public class ContextMenuLinker : MonoBehaviour
 
     private void RapidTowerBuilder()
     {
+        /*Sound*/ AudioManager.instance.Play(11, false);
         Debug.Log("Build Rapid Tower");
         GameManager.instance.selectedBlock.Build(GameManager.instance.rapidTowerSO);
     }
@@ -133,17 +134,20 @@ public class ContextMenuLinker : MonoBehaviour
 
     private void MortarTowerBuilder()
     {
+        /*Sound*/ AudioManager.instance.Play(11, false);
         Debug.Log("Build Mortar Tower");
         GameManager.instance.selectedBlock.Build(GameManager.instance.mortarTowerSO);
     }
 
     private void EnergySupportTowerBuilder()
     {
+        /*Sound*/ AudioManager.instance.Play(11, false);
         Debug.Log("Build Energy Support");
         GameManager.instance.selectedBlock.Build(GameManager.instance.energySupportSO);
     }
     private void StunTrapTowerBuilder()
     {
+        /*Sound*/ AudioManager.instance.Play(11, false);
         Debug.Log("Build Stun Trap");
         GameManager.instance.selectedBlock.Build(GameManager.instance.stunTrapSO);
         
@@ -152,12 +156,13 @@ public class ContextMenuLinker : MonoBehaviour
     private void RepairBuildingListener()
     {
         Debug.Log("Build Stun Trap");
-        
+        /*Sound*/AudioManager.instance.Play(24);
         
     }
     private void SellBuildingListener()
     {
         GameManager.instance.selectedBlock.SellBuilding();
+        /*Sound*/AudioManager.instance.Play(22);
     }
     private void MenuCloserListener()
     {

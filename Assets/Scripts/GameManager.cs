@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         preparationTime = new WaitForSeconds(timeBetweenWaves);
     }
 
-    
+
     private RaycastHit2D hit2D;
     private void Update()
     {
@@ -152,6 +152,7 @@ public class GameManager : MonoBehaviour
         if (buildings.Count <= 0) return;
         if (levelManager.selectedLevel != null)
         {
+            /*Sound*/ AudioManager.instance.Play(2, true);
             key = levelManager.selectedLevel.block.name;
             levelRoutine = StartCoroutine(LevelCoroutine(levelManager.selectedLevel));
         }
@@ -179,7 +180,6 @@ public class GameManager : MonoBehaviour
         HDV.Repair();
         ResetLevel();
         selectableBlock = true;
-
     }
 
     private void ResetLevel()
@@ -211,6 +211,8 @@ public class GameManager : MonoBehaviour
                 yield return preparationTime;
                 UI_Manager.instance.CloseMenu(13);
             }
+            /*Sound*/ AudioManager.instance.StopMusic();
+            AudioManager.instance.Play(2, true);
             yield return null;
         }
         ClearBuildings();
@@ -237,6 +239,7 @@ public class GameManager : MonoBehaviour
     private Tween tween;
     IEnumerator SpawnWave(Wave wave)
     {
+        /*Sound*/ AudioManager.instance.Play(1, true);
         var bargeGO = new GameObject();
         
         
@@ -310,9 +313,9 @@ public class GameManager : MonoBehaviour
     public void Upgrade()
     {
         if (selectedBlock.building.buildingSO.type != BuildingType.Tower) return;
+        /*Sound*/AudioManager.instance.Play(23);
         Tower to = (Tower) selectedBlock.building;
         to.Upgrade();
-
     }
 
     public void Repair()

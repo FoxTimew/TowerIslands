@@ -42,6 +42,7 @@ public class Building : MonoBehaviour
         else
         {
             Ruins();
+            /*Sound*/ AudioManager.instance.Play(12);
         }
     }
 
