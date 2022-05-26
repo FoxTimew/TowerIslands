@@ -9,5 +9,6 @@ public class LevelButton : MonoBehaviour
     public void SetLevel()
     {
         GameManager.instance.levelManager.selectedLevel = levelContained;
+        /*Sound*/ AudioManager.instance.Play(21);
     }
 }

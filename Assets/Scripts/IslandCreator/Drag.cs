@@ -40,6 +40,7 @@ public class Drag : MonoBehaviour
         origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
         origin.z = 0;
         origin.y += 2 * 2.67f;
+        /*Sound*/ if (transform.position != origin) AudioManager.instance.Play(26, false, true);
         transform.position = origin;
         ChangeSprite(IsPlaceable());
     }
@@ -50,7 +51,8 @@ public class Drag : MonoBehaviour
         transform.position = blocksGo.transform.position;
         blocksGo.transform.parent = transform.parent;
         ChangeSprite(IsPlaceable());
-        if(IsPlaceable()) PlaceBlock();   
+        if(IsPlaceable()) PlaceBlock();
+        /*Sound*/AudioManager.instance.Play(4, false, true);
     }
     
     bool IsPlaceable()

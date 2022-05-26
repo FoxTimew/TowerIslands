@@ -162,6 +162,7 @@ public class Enemy : MonoBehaviour
         while (target.hp > 0)
         {
             animator.SetTrigger("Attack");
+            /*Sound*/ AudioManager.instance.Play(UnityEngine.Random.Range(5, 8), false, true);
             yield return new WaitForSeconds(enemyStats.attackSpeed);
             target.takeDamage(enemyStats.damage);
         }
@@ -177,11 +178,13 @@ public class Enemy : MonoBehaviour
         Init();
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
+        /*Sound*/ AudioManager.instance.Play(enemyStats.spawnSoundIndex, false, true);
         //GameManager.instance.enemies.Add(this);
     }
 
     public void Death()
     {
+        /*SOund*/ AudioManager.instance.Play(UnityEngine.Random.Range(enemyStats.dieSoundIndex[0], enemyStats.dieSoundIndex[enemyStats.dieSoundIndex.Length]), false, true);
         if (EnemyDeathGoldEvent != null)
         {
             EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
