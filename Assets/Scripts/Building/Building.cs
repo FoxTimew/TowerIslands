@@ -24,7 +24,7 @@ public class Building : MonoBehaviour
     {
         hp = buildingSO.healthPoints;
         takeDamage += BaseTakeDamage;
-        Repair();
+        SetBuilding();
     }
     
     public void BaseTakeDamage(int dmg)
@@ -67,6 +67,13 @@ public class Building : MonoBehaviour
         EconomyManager.instance.RemoveGold(buildingSO.goldRequired * (buildingSO.healthPoints-hp)*100/buildingSO.healthPoints);
     }
 
+    public void SetBuilding()
+    {
+        destroyed = false;
+        hp = buildingSO.healthPoints;
+        sr.sortingLayerName = "Characters";
+        sr.sprite = sprites[0];
+    }
     public bool isBuildingDestroyed()
     {
         return destroyed;

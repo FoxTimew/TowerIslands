@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -81,13 +82,12 @@ public class UI_Manager : MonoBehaviour
 
     private WaitForSeconds closeMenuTransitionDuration;
     private GameObject tmpChild;
+    private ContextMenuLinker linker;
     
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        Debug.Log("instance");
+        instance = this;
     }
 
     private void Start()
@@ -113,7 +113,7 @@ public class UI_Manager : MonoBehaviour
             if (menuEnumValue == (int) MenuEnum.BlockInfo)
             {
                 blockInfo.SetActive(true);
-                ContextMenuLinker linker = blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>();
+                linker = blockInfo.transform.GetChild(1).GetComponent<ContextMenuLinker>();
                 if (GameManager.instance.selectedBlock.building == null)
                 {
                     tmpChild = blockInfo.transform.GetChild(0).gameObject;

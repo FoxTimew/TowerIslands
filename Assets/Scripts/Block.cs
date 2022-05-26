@@ -136,6 +136,7 @@ public class Block : MonoBehaviour
         go = Pooler.instance.Pop(building.bName);
         go.transform.parent = transform;
         go.transform.localPosition = Vector3.zero;
+        Debug.Log("Block Build UI Update");
         EconomyManager.instance.RemoveGold(building.goldRequired);
         this.building = go.GetComponent<Building>();
         this.building.index = index;
