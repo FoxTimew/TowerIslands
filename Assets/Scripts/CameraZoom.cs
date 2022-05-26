@@ -61,7 +61,7 @@ public class CameraZoom : MonoBehaviour
     public void DeZoomAnim()
     {
         float difference = 15 - camera.orthographicSize;
-        float timeStep = 1 / 0.01f;
+        float timeStep = 0.5f / 0.01f;
         float step = difference / timeStep;
         StartCoroutine(DeZoom(0.5f,step));
     }

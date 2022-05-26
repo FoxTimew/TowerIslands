@@ -125,7 +125,12 @@ public class ContextMenuLinker : MonoBehaviour
         Debug.Log("Build Rapid Tower");
         GameManager.instance.selectedBlock.Build(GameManager.instance.rapidTowerSO);
     }
-    
+
+    private void OnEnable()
+    {
+        cma.PlayAnimation();
+    }
+
     private void MortarTowerBuilder()
     {
         Debug.Log("Build Mortar Tower");

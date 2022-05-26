@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public static event Action<int> EnemyDeathCristalEvent;
     public AXD_EnemySO enemyStats;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
     private Block initPos;
     private Block destination;
     private BargeSO bargeItComesFrom;
@@ -23,8 +23,8 @@ public class Enemy : MonoBehaviour
 
     private AXD_TowerShoot target;
 
-    private int currentDamage { get; set; }
-    private int currentHP { get; set; }
+    public int currentDamage { get; set; }
+    public int currentHP { get; private set; }
     private Coroutine movement;
 
 
@@ -88,6 +88,7 @@ public class Enemy : MonoBehaviour
     }
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
+        sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         currentHP -= damageToTake;
         if (currentHP <= 0)
         {
@@ -160,7 +161,6 @@ public class Enemy : MonoBehaviour
         StopMovement();
         tween.Pause();
         animator.SetInteger("Speed", 0);
-        animator.speed = enemyStats.attackSpeed;
         while (target.hp > 0)
         {
             animator.SetTrigger("Attack");
@@ -168,7 +168,6 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(enemyStats.attackSpeed);
             target.takeDamage(currentDamage);
         }
-        animator.speed = 1;
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
         tween.Play().OnComplete(StartMovement);
@@ -196,8 +195,10 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
+        animator.SetTrigger("AttackEnd");
+        animator.SetInteger("Speed", 0);
         animator.SetTrigger("Death");
-        sr.DOFade(0, 2f).OnComplete(() => Pooler.instance.Depop(enemyStats.eName, this.gameObject));
+        sr.DOFade(1, 0.5f).OnComplete(() => Pooler.instance.Depop(enemyStats.eName, this.gameObject));
     }
     
 }

@@ -111,6 +111,7 @@ public class Tower : Building
     private WaitForSeconds attackSpeed;
     IEnumerator ShootCoroutine()
     {
+        
         shooting = true;
         GameObject go = Pooler.instance.Pop(towerSO.bulletPrefab.gameObject.name);
         go.transform.position = transform.position + Vector3.up;
