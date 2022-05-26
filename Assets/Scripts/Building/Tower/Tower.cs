@@ -72,12 +72,14 @@ public class Tower : Building
         level1.SetActive(false);
         level2.SetActive(false);
         destroyed = true;
+        /*Sound*/ AudioManager.instance.Play(12, false);
     }
 
     public override void Repair()
     {
         destroyed = false;
         hp = buildingSO.healthPoints;
+        /*Sound*/
         foreach (var go in ruins) go.SetActive(false);
         switch (towerSO.level)
         {
@@ -111,10 +113,12 @@ public class Tower : Building
     private WaitForSeconds attackSpeed;
     IEnumerator ShootCoroutine()
     {
+        
         shooting = true;
         GameObject go = Pooler.instance.Pop(towerSO.bulletPrefab.gameObject.name);
         go.transform.position = transform.position + Vector3.up;
         Pooler.instance.DelayedDepop(3,towerSO.bulletPrefab.name,go);
+        /*Sound*/ AudioManager.instance.Play(towerSO.soundIndex, false);
         go.GetComponent<Bullet>().Shoot(this, target, towerSO.bulletSpeed);
         yield return attackSpeed;
         shooting = false;

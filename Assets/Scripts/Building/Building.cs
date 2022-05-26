@@ -32,7 +32,7 @@ public class Building : MonoBehaviour
         if (destroyed) return;
         hp -= dmg;
         sr.DOComplete();
-        sr.DOColor(Color.red, .1f).SetLoops(6,LoopType.Yoyo);
+        sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         if (hp > 0) return;
         if (GameManager.instance.HDV == this)
         {
@@ -42,6 +42,7 @@ public class Building : MonoBehaviour
         else
         {
             Ruins();
+            /*Sound*/ AudioManager.instance.Play(12);
         }
     }
 

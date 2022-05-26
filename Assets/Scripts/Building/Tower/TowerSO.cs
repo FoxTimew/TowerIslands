@@ -25,4 +25,6 @@ public class TowerSO : BuildingSO
     public float bulletSpeed;
 
     public Bullet bulletPrefab;
+
+    public int soundIndex;
 }

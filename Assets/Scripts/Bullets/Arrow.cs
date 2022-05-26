@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -5,27 +6,32 @@ using UnityEngine;
 
 public class Arrow : Bullet
 {
+    private Vector3 pos;
     public override void Shoot(Tower origin, Enemy targetToSet, float speedToSet)
     {
-        transform.LookAt(targetToSet.transform);
+        
         originTower = origin;
         SetTarget(targetToSet);
+        pos = target.transform.position;
+        pos.y += 1f;
+        
+        transform.right = (pos - transform.position);
+        pos -= (pos - transform.position) * 0.2f;
+        
         speed = speedToSet;
         if (target != null)
         {
-            transform.DOMove(target.transform.position,
-                (target.transform.position - transform.position).magnitude / speed, false).SetEase(Ease.Linear).OnComplete(() =>Pooler.instance.Depop("Arrow", gameObject));
+            transform.DOMove(pos,
+                (pos - transform.position).magnitude / speed, false).SetEase(Ease.Linear)
+                .OnComplete(Damaged);
         }
     }
+    
 
-    protected override void OnTriggerEnter2D(Collider2D collider)
+    private void Damaged()
     {
-        if (!collider.gameObject.CompareTag("Enemy")) return;
-        ;
-        Enemy tmpEnemy = collider.gameObject.GetComponent<Enemy>();
-        if (tmpEnemy.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage))
-        {
-            originTower.target = null;
-        }
+        Pooler.instance.Depop("Arrow",gameObject);
+        if (!target.isActiveAndEnabled) return;
+        if (target.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage)) originTower.target = null;
     }
 }

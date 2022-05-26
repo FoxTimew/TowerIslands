@@ -19,4 +19,8 @@ public class AXD_EnemySO : ScriptableObject
     public float range;
     
     public int goldToAddOnDeath;
+
+    public int[] dieSoundIndex;
+
+    public int spawnSoundIndex;
 }

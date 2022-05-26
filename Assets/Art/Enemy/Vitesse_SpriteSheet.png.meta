@@ -1,0 +1,7334 @@
+fileFormatVersion: 2
+guid: 0d24664195b24bc4490368a4f391aaea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4779385895417902276
+    second: Vitesse_SpriteSheet_0
+  - first:
+      213: -5302098866527555452
+    second: Vitesse_SpriteSheet_1
+  - first:
+      213: -3377231711547568959
+    second: Vitesse_SpriteSheet_2
+  - first:
+      213: -8976130109068421757
+    second: Vitesse_SpriteSheet_3
+  - first:
+      213: -5677512089616108727
+    second: Vitesse_SpriteSheet_4
+  - first:
+      213: -8872985081936923568
+    second: Vitesse_SpriteSheet_5
+  - first:
+      213: 8932743362093186993
+    second: Vitesse_SpriteSheet_6
+  - first:
+      213: 1821181905964381177
+    second: Vitesse_SpriteSheet_7
+  - first:
+      213: -8007173549387712077
+    second: Vitesse_SpriteSheet_8
+  - first:
+      213: -6029712308051730705
+    second: Vitesse_SpriteSheet_9
+  - first:
+      213: -8818146979212854869
+    second: Vitesse_SpriteSheet_10
+  - first:
+      213: -1824973459475481506
+    second: Vitesse_SpriteSheet_11
+  - first:
+      213: 1889333199848456009
+    second: Vitesse_SpriteSheet_12
+  - first:
+      213: 6819635700172447762
+    second: Vitesse_SpriteSheet_13
+  - first:
+      213: 7686867121981959209
+    second: Vitesse_SpriteSheet_14
+  - first:
+      213: 8256982735197811396
+    second: Vitesse_SpriteSheet_15
+  - first:
+      213: -352109170148093326
+    second: Vitesse_SpriteSheet_16
+  - first:
+      213: -666492721611563045
+    second: Vitesse_SpriteSheet_17
+  - first:
+      213: -1746069779865952029
+    second: Vitesse_SpriteSheet_18
+  - first:
+      213: 3741092280613452803
+    second: Vitesse_SpriteSheet_19
+  - first:
+      213: 5586848611383857744
+    second: Vitesse_SpriteSheet_20
+  - first:
+      213: 1713587378389388925
+    second: Vitesse_SpriteSheet_21
+  - first:
+      213: 3176132378931600196
+    second: Vitesse_SpriteSheet_22
+  - first:
+      213: -3508793655068814068
+    second: Vitesse_SpriteSheet_23
+  - first:
+      213: -2130181626236063754
+    second: Vitesse_SpriteSheet_24
+  - first:
+      213: -1352271045952519135
+    second: Vitesse_SpriteSheet_25
+  - first:
+      213: 443816549865128914
+    second: Vitesse_SpriteSheet_26
+  - first:
+      213: 4221746824729263030
+    second: Vitesse_SpriteSheet_27
+  - first:
+      213: -1839954224426755507
+    second: Vitesse_SpriteSheet_28
+  - first:
+      213: -5328499966340001455
+    second: Vitesse_SpriteSheet_29
+  - first:
+      213: 8205657510173639327
+    second: Vitesse_SpriteSheet_30
+  - first:
+      213: -4171074357729228365
+    second: Vitesse_SpriteSheet_31
+  - first:
+      213: -1860852362691748452
+    second: Vitesse_SpriteSheet_32
+  - first:
+      213: 4771363190166059277
+    second: Vitesse_SpriteSheet_33
+  - first:
+      213: -2066900234696554779
+    second: Vitesse_SpriteSheet_34
+  - first:
+      213: -8357946226744672827
+    second: Vitesse_SpriteSheet_35
+  - first:
+      213: 1073503405741114785
+    second: Vitesse_SpriteSheet_36
+  - first:
+      213: -6250277201200788229
+    second: Vitesse_SpriteSheet_37
+  - first:
+      213: -8527410778142292320
+    second: Vitesse_SpriteSheet_38
+  - first:
+      213: 6411500920984542179
+    second: Vitesse_SpriteSheet_39
+  - first:
+      213: -205350817236233201
+    second: Vitesse_SpriteSheet_40
+  - first:
+      213: -4068500824623544267
+    second: Vitesse_SpriteSheet_41
+  - first:
+      213: 8878043608185682396
+    second: Vitesse_SpriteSheet_42
+  - first:
+      213: 178013293182613904
+    second: Vitesse_SpriteSheet_43
+  - first:
+      213: 3836277288127431019
+    second: Vitesse_SpriteSheet_44
+  - first:
+      213: -8701398021289181793
+    second: Vitesse_SpriteSheet_45
+  - first:
+      213: -2977629406849685486
+    second: Vitesse_SpriteSheet_46
+  - first:
+      213: 160418845591886905
+    second: Vitesse_SpriteSheet_47
+  - first:
+      213: -7332016111358010438
+    second: Vitesse_SpriteSheet_48
+  - first:
+      213: -6469437121119339765
+    second: Vitesse_SpriteSheet_49
+  - first:
+      213: 5501162420709848656
+    second: Vitesse_SpriteSheet_50
+  - first:
+      213: -653662512338275877
+    second: Vitesse_SpriteSheet_51
+  - first:
+      213: -9041426260593922618
+    second: Vitesse_SpriteSheet_52
+  - first:
+      213: -2583044208774197103
+    second: Vitesse_SpriteSheet_53
+  - first:
+      213: -1020096773851569893
+    second: Vitesse_SpriteSheet_54
+  - first:
+      213: 3971561763409378949
+    second: Vitesse_SpriteSheet_55
+  - first:
+      213: 8429492546231752470
+    second: Vitesse_SpriteSheet_56
+  - first:
+      213: -3395557414627528328
+    second: Vitesse_SpriteSheet_57
+  - first:
+      213: -6686650262570968516
+    second: Vitesse_SpriteSheet_58
+  - first:
+      213: 5876694030425223020
+    second: Vitesse_SpriteSheet_59
+  - first:
+      213: 4971691684150914257
+    second: Vitesse_SpriteSheet_60
+  - first:
+      213: 7957698254833067607
+    second: Vitesse_SpriteSheet_61
+  - first:
+      213: -4656287351541049292
+    second: Vitesse_SpriteSheet_62
+  - first:
+      213: -5358676240046915055
+    second: Vitesse_SpriteSheet_63
+  - first:
+      213: -904018398791707651
+    second: Vitesse_SpriteSheet_64
+  - first:
+      213: -4693941246273580309
+    second: Vitesse_SpriteSheet_65
+  - first:
+      213: -3943125864274430376
+    second: Vitesse_SpriteSheet_66
+  - first:
+      213: -4421717671408971116
+    second: Vitesse_SpriteSheet_67
+  - first:
+      213: 6465084516279102467
+    second: Vitesse_SpriteSheet_68
+  - first:
+      213: 6576433653713849795
+    second: Vitesse_SpriteSheet_69
+  - first:
+      213: -6984231173180461972
+    second: Vitesse_SpriteSheet_70
+  - first:
+      213: 370819203122302713
+    second: Vitesse_SpriteSheet_71
+  - first:
+      213: 8685501380348271545
+    second: Vitesse_SpriteSheet_72
+  - first:
+      213: -3516523317314693661
+    second: Vitesse_SpriteSheet_73
+  - first:
+      213: -899070867355706638
+    second: Vitesse_SpriteSheet_74
+  - first:
+      213: -1084426514017068478
+    second: Vitesse_SpriteSheet_75
+  - first:
+      213: -90517652685050152
+    second: Vitesse_SpriteSheet_76
+  - first:
+      213: 3123734016340014306
+    second: Vitesse_SpriteSheet_77
+  - first:
+      213: -9049453376178308151
+    second: Vitesse_SpriteSheet_78
+  - first:
+      213: 8014180622936137248
+    second: Vitesse_SpriteSheet_79
+  - first:
+      213: 1607188926382458939
+    second: Vitesse_SpriteSheet_80
+  - first:
+      213: 5214768336892609875
+    second: Vitesse_SpriteSheet_81
+  - first:
+      213: -909756525221831487
+    second: Vitesse_SpriteSheet_82
+  - first:
+      213: -4626998957287761936
+    second: Vitesse_SpriteSheet_83
+  - first:
+      213: -1503573015842933589
+    second: Vitesse_SpriteSheet_84
+  - first:
+      213: 501639536283018432
+    second: Vitesse_SpriteSheet_85
+  - first:
+      213: -1549519745250204673
+    second: Vitesse_SpriteSheet_86
+  - first:
+      213: -4090885963132384192
+    second: Vitesse_SpriteSheet_87
+  - first:
+      213: -7089017709936246183
+    second: Vitesse_SpriteSheet_88
+  - first:
+      213: -1364874618571731926
+    second: Vitesse_SpriteSheet_89
+  - first:
+      213: 8307250341430676807
+    second: Vitesse_SpriteSheet_90
+  - first:
+      213: 525848785934454606
+    second: Vitesse_SpriteSheet_91
+  - first:
+      213: 2811128508141698973
+    second: Vitesse_SpriteSheet_92
+  - first:
+      213: 6041161704652888715
+    second: Vitesse_SpriteSheet_93
+  - first:
+      213: 4110732007582764446
+    second: Vitesse_SpriteSheet_94
+  - first:
+      213: 6834100830481237524
+    second: Vitesse_SpriteSheet_95
+  - first:
+      213: 6275349425645611828
+    second: Vitesse_SpriteSheet_96
+  - first:
+      213: 476003885235520368
+    second: Vitesse_SpriteSheet_97
+  - first:
+      213: -8823258274730153461
+    second: Vitesse_SpriteSheet_98
+  - first:
+      213: -9044038856070693064
+    second: Vitesse_SpriteSheet_99
+  - first:
+      213: -7121706779146560025
+    second: Vitesse_SpriteSheet_100
+  - first:
+      213: 4661849310718262419
+    second: Vitesse_SpriteSheet_101
+  - first:
+      213: -3407586693254589569
+    second: Vitesse_SpriteSheet_102
+  - first:
+      213: -642098040907005248
+    second: Vitesse_SpriteSheet_103
+  - first:
+      213: 8370023640109440708
+    second: Vitesse_SpriteSheet_104
+  - first:
+      213: -4452618873348072749
+    second: Vitesse_SpriteSheet_105
+  - first:
+      213: 7043253441833733788
+    second: Vitesse_SpriteSheet_106
+  - first:
+      213: -1079635090146158205
+    second: Vitesse_SpriteSheet_107
+  - first:
+      213: 8754120502096710920
+    second: Vitesse_SpriteSheet_108
+  - first:
+      213: -1284441064503874492
+    second: Vitesse_SpriteSheet_109
+  - first:
+      213: 7153243194475337768
+    second: Vitesse_SpriteSheet_110
+  - first:
+      213: -2285755449173032454
+    second: Vitesse_SpriteSheet_111
+  - first:
+      213: 2043518021465898223
+    second: Vitesse_SpriteSheet_112
+  - first:
+      213: -1070514621260600656
+    second: Vitesse_SpriteSheet_113
+  - first:
+      213: -3403248920865916375
+    second: Vitesse_SpriteSheet_114
+  - first:
+      213: 271256545353650920
+    second: Vitesse_SpriteSheet_115
+  - first:
+      213: 6136049196394850409
+    second: Vitesse_SpriteSheet_116
+  - first:
+      213: -6900406500474420471
+    second: Vitesse_SpriteSheet_117
+  - first:
+      213: -2954970315613564085
+    second: Vitesse_SpriteSheet_118
+  - first:
+      213: 7130410527581532449
+    second: Vitesse_SpriteSheet_119
+  - first:
+      213: -4013848443380513392
+    second: Vitesse_SpriteSheet_120
+  - first:
+      213: -132865238833435906
+    second: Vitesse_SpriteSheet_121
+  - first:
+      213: 584040989095476227
+    second: Vitesse_SpriteSheet_122
+  - first:
+      213: 5879055577051196977
+    second: Vitesse_SpriteSheet_123
+  - first:
+      213: 861416748130303090
+    second: Vitesse_SpriteSheet_124
+  - first:
+      213: -2701793236569872305
+    second: Vitesse_SpriteSheet_125
+  - first:
+      213: 4137906080949196155
+    second: Vitesse_SpriteSheet_126
+  - first:
+      213: -5139432605075879421
+    second: Vitesse_SpriteSheet_127
+  - first:
+      213: -3616259482783791074
+    second: Vitesse_SpriteSheet_128
+  - first:
+      213: -2144482725468841863
+    second: Vitesse_SpriteSheet_129
+  - first:
+      213: -8352907456472745769
+    second: Vitesse_SpriteSheet_130
+  - first:
+      213: -1759014482338172817
+    second: Vitesse_SpriteSheet_131
+  - first:
+      213: 3053866855955866113
+    second: Vitesse_SpriteSheet_132
+  - first:
+      213: -1127060766956384597
+    second: Vitesse_SpriteSheet_133
+  - first:
+      213: 8804033980363205545
+    second: Vitesse_SpriteSheet_134
+  - first:
+      213: 1385287091864312861
+    second: Vitesse_SpriteSheet_135
+  - first:
+      213: 7563494733215780092
+    second: Vitesse_SpriteSheet_136
+  - first:
+      213: -5106610344420630141
+    second: Vitesse_SpriteSheet_137
+  - first:
+      213: -6449333666370120298
+    second: Vitesse_SpriteSheet_138
+  - first:
+      213: 8391832421480968597
+    second: Vitesse_SpriteSheet_139
+  - first:
+      213: -481576975272695679
+    second: Vitesse_SpriteSheet_140
+  - first:
+      213: -7113254501287743987
+    second: Vitesse_SpriteSheet_141
+  - first:
+      213: -5212746827682281772
+    second: Vitesse_SpriteSheet_142
+  - first:
+      213: 5661193299858405650
+    second: Vitesse_SpriteSheet_143
+  - first:
+      213: -85244194577836093
+    second: Vitesse_SpriteSheet_144
+  - first:
+      213: -1143933474803202611
+    second: Vitesse_SpriteSheet_145
+  - first:
+      213: 4742080687346368119
+    second: Vitesse_SpriteSheet_146
+  - first:
+      213: 5491798301307408662
+    second: Vitesse_SpriteSheet_147
+  - first:
+      213: 3530156362028906278
+    second: Vitesse_SpriteSheet_148
+  - first:
+      213: -1394207803561401517
+    second: Vitesse_SpriteSheet_149
+  - first:
+      213: 9064812893622954762
+    second: Vitesse_SpriteSheet_150
+  - first:
+      213: 1070970791079217833
+    second: Vitesse_SpriteSheet_151
+  - first:
+      213: 2018338950493243576
+    second: Vitesse_SpriteSheet_152
+  - first:
+      213: 4745016757608881589
+    second: Vitesse_SpriteSheet_153
+  - first:
+      213: -5268184033710988287
+    second: Vitesse_SpriteSheet_154
+  - first:
+      213: 3584149103131841604
+    second: Vitesse_SpriteSheet_155
+  - first:
+      213: 3738221108212749230
+    second: Vitesse_SpriteSheet_156
+  - first:
+      213: 7812996049365512137
+    second: Vitesse_SpriteSheet_157
+  - first:
+      213: 1230632094195237929
+    second: Vitesse_SpriteSheet_158
+  - first:
+      213: -2860778341934264364
+    second: Vitesse_SpriteSheet_159
+  - first:
+      213: -3826455543964328733
+    second: Vitesse_SpriteSheet_160
+  - first:
+      213: -631789316873244743
+    second: Vitesse_SpriteSheet_161
+  - first:
+      213: 6308740511868816093
+    second: Vitesse_SpriteSheet_162
+  - first:
+      213: 881082869728177982
+    second: Vitesse_SpriteSheet_163
+  - first:
+      213: -5875610829654891692
+    second: Vitesse_SpriteSheet_164
+  - first:
+      213: -3881400249841803710
+    second: Vitesse_SpriteSheet_165
+  - first:
+      213: -481193149913534885
+    second: Vitesse_SpriteSheet_166
+  - first:
+      213: 7324280746935861375
+    second: Vitesse_SpriteSheet_167
+  - first:
+      213: -4481826070203539230
+    second: Vitesse_SpriteSheet_168
+  - first:
+      213: 5261475192713574586
+    second: Vitesse_SpriteSheet_169
+  - first:
+      213: -2586522082688768431
+    second: Vitesse_SpriteSheet_170
+  - first:
+      213: 1084853918595197748
+    second: Vitesse_SpriteSheet_171
+  - first:
+      213: -2195618181273959924
+    second: Vitesse_SpriteSheet_172
+  - first:
+      213: -4140892234496121740
+    second: Vitesse_SpriteSheet_173
+  - first:
+      213: -9060014752760153342
+    second: Vitesse_SpriteSheet_174
+  - first:
+      213: 3443662312683012912
+    second: Vitesse_SpriteSheet_175
+  - first:
+      213: -6153169271724606851
+    second: Vitesse_SpriteSheet_176
+  - first:
+      213: 7343066155409333290
+    second: Vitesse_SpriteSheet_177
+  - first:
+      213: 333863120461453994
+    second: Vitesse_SpriteSheet_178
+  - first:
+      213: 8311271241156961717
+    second: Vitesse_SpriteSheet_179
+  - first:
+      213: 9009556090159050101
+    second: Vitesse_SpriteSheet_180
+  - first:
+      213: -4643666801452682006
+    second: Vitesse_SpriteSheet_181
+  - first:
+      213: -334750285214048773
+    second: Vitesse_SpriteSheet_182
+  - first:
+      213: -8849456016354200122
+    second: Vitesse_SpriteSheet_183
+  - first:
+      213: -4577472977898938130
+    second: Vitesse_SpriteSheet_184
+  - first:
+      213: 7833787147806290871
+    second: Vitesse_SpriteSheet_185
+  - first:
+      213: 4574967283082275265
+    second: Vitesse_SpriteSheet_186
+  - first:
+      213: 8234352923979728335
+    second: Vitesse_SpriteSheet_187
+  - first:
+      213: 7261441819603451343
+    second: Vitesse_SpriteSheet_188
+  - first:
+      213: 7618784927295924454
+    second: Vitesse_SpriteSheet_189
+  - first:
+      213: -3901947440646539992
+    second: Vitesse_SpriteSheet_190
+  - first:
+      213: 3362688636746632870
+    second: Vitesse_SpriteSheet_191
+  - first:
+      213: -2769982304301267678
+    second: Vitesse_SpriteSheet_192
+  - first:
+      213: 8530403425157418968
+    second: Vitesse_SpriteSheet_193
+  - first:
+      213: 8518142402043987018
+    second: Vitesse_SpriteSheet_194
+  - first:
+      213: 3864919179484731216
+    second: Vitesse_SpriteSheet_195
+  - first:
+      213: 2834581524345807084
+    second: Vitesse_SpriteSheet_196
+  - first:
+      213: 8580642558021356345
+    second: Vitesse_SpriteSheet_197
+  - first:
+      213: -2491654947755290403
+    second: Vitesse_SpriteSheet_198
+  - first:
+      213: -864467611998393311
+    second: Vitesse_SpriteSheet_199
+  - first:
+      213: 8753210758819112474
+    second: Vitesse_SpriteSheet_200
+  - first:
+      213: -587834962127988872
+    second: Vitesse_SpriteSheet_201
+  - first:
+      213: -1531201067039750995
+    second: Vitesse_SpriteSheet_202
+  - first:
+      213: -9003238195183533222
+    second: Vitesse_SpriteSheet_203
+  - first:
+      213: -7003782472790257656
+    second: Vitesse_SpriteSheet_204
+  - first:
+      213: 4464653801108066954
+    second: Vitesse_SpriteSheet_205
+  - first:
+      213: -3277118187804441749
+    second: Vitesse_SpriteSheet_206
+  - first:
+      213: -8622034843635758659
+    second: Vitesse_SpriteSheet_207
+  - first:
+      213: -7881525771770961361
+    second: Vitesse_SpriteSheet_208
+  - first:
+      213: 4873837211863898952
+    second: Vitesse_SpriteSheet_209
+  - first:
+      213: -4371113298628251132
+    second: Vitesse_SpriteSheet_210
+  - first:
+      213: -7666580955208773026
+    second: Vitesse_SpriteSheet_211
+  - first:
+      213: -3571405869732711161
+    second: Vitesse_SpriteSheet_212
+  - first:
+      213: 6283178727430065391
+    second: Vitesse_SpriteSheet_213
+  - first:
+      213: -6101065514352339276
+    second: Vitesse_SpriteSheet_214
+  - first:
+      213: 5083483556698024438
+    second: Vitesse_SpriteSheet_215
+  - first:
+      213: -5704065116685408738
+    second: Vitesse_SpriteSheet_216
+  - first:
+      213: -5275041664950931858
+    second: Vitesse_SpriteSheet_217
+  - first:
+      213: 6387715606814388680
+    second: Vitesse_SpriteSheet_218
+  - first:
+      213: -5388945941800216945
+    second: Vitesse_SpriteSheet_219
+  - first:
+      213: -6618867917348166193
+    second: Vitesse_SpriteSheet_220
+  - first:
+      213: 1506996618251540820
+    second: Vitesse_SpriteSheet_221
+  - first:
+      213: 4277943157623372828
+    second: Vitesse_SpriteSheet_222
+  - first:
+      213: -5770852356081495885
+    second: Vitesse_SpriteSheet_223
+  - first:
+      213: 5784240410148285964
+    second: Vitesse_SpriteSheet_224
+  - first:
+      213: 3362404460324240018
+    second: Vitesse_SpriteSheet_225
+  - first:
+      213: 6995196472509924233
+    second: Vitesse_SpriteSheet_226
+  - first:
+      213: 6257625822983898245
+    second: Vitesse_SpriteSheet_227
+  - first:
+      213: 2468991086395735615
+    second: Vitesse_SpriteSheet_228
+  - first:
+      213: -5749167307184106219
+    second: Vitesse_SpriteSheet_229
+  - first:
+      213: 264557854098997465
+    second: Vitesse_SpriteSheet_230
+  - first:
+      213: 7916277951664814014
+    second: Vitesse_SpriteSheet_231
+  - first:
+      213: -6778352769022259698
+    second: Vitesse_SpriteSheet_232
+  - first:
+      213: -7649536429218454808
+    second: Vitesse_SpriteSheet_233
+  - first:
+      213: -4244426282090185214
+    second: Vitesse_SpriteSheet_234
+  - first:
+      213: 676290925661533601
+    second: Vitesse_SpriteSheet_235
+  - first:
+      213: -382183468251743752
+    second: Vitesse_SpriteSheet_236
+  - first:
+      213: 3044833245492184239
+    second: Vitesse_SpriteSheet_237
+  - first:
+      213: -1071415609034798702
+    second: Vitesse_SpriteSheet_238
+  - first:
+      213: 8372007363630957090
+    second: Vitesse_SpriteSheet_239
+  - first:
+      213: 7561900220560440196
+    second: Vitesse_SpriteSheet_240
+  - first:
+      213: 6130574670285214773
+    second: Vitesse_SpriteSheet_241
+  - first:
+      213: -3818064994523911591
+    second: Vitesse_SpriteSheet_242
+  - first:
+      213: 1138941003359082250
+    second: Vitesse_SpriteSheet_243
+  - first:
+      213: -1960304968918829608
+    second: Vitesse_SpriteSheet_244
+  - first:
+      213: -1031285428553110518
+    second: Vitesse_SpriteSheet_245
+  - first:
+      213: -3442245749971368377
+    second: Vitesse_SpriteSheet_246
+  - first:
+      213: -4615895169956257506
+    second: Vitesse_SpriteSheet_247
+  - first:
+      213: 7210646223463015765
+    second: Vitesse_SpriteSheet_248
+  - first:
+      213: -2266800943820844812
+    second: Vitesse_SpriteSheet_249
+  - first:
+      213: -4044959782174078968
+    second: Vitesse_SpriteSheet_250
+  - first:
+      213: -8169286094100730569
+    second: Vitesse_SpriteSheet_251
+  - first:
+      213: -1230645110213413955
+    second: Vitesse_SpriteSheet_252
+  - first:
+      213: -636005792661525702
+    second: Vitesse_SpriteSheet_253
+  - first:
+      213: 1688874254332679757
+    second: Vitesse_SpriteSheet_254
+  - first:
+      213: -1510453165990470120
+    second: Vitesse_SpriteSheet_255
+  - first:
+      213: 5117136867663769290
+    second: Vitesse_SpriteSheet_256
+  - first:
+      213: -8249048863012559708
+    second: Vitesse_SpriteSheet_257
+  - first:
+      213: 5159878173662061727
+    second: Vitesse_SpriteSheet_258
+  - first:
+      213: -5933950594284400386
+    second: Vitesse_SpriteSheet_259
+  - first:
+      213: 8527614813329612005
+    second: Vitesse_SpriteSheet_260
+  - first:
+      213: -6371422180185596984
+    second: Vitesse_SpriteSheet_261
+  - first:
+      213: -990943405208099447
+    second: Vitesse_SpriteSheet_262
+  - first:
+      213: 8436878281700347677
+    second: Vitesse_SpriteSheet_263
+  - first:
+      213: -937756077486971406
+    second: Vitesse_SpriteSheet_264
+  - first:
+      213: -7369677834992380410
+    second: Vitesse_SpriteSheet_265
+  - first:
+      213: -3825977367326251162
+    second: Vitesse_SpriteSheet_266
+  - first:
+      213: -8006920683696499414
+    second: Vitesse_SpriteSheet_267
+  - first:
+      213: -3497812541956457969
+    second: Vitesse_SpriteSheet_268
+  - first:
+      213: -2121108362384361454
+    second: Vitesse_SpriteSheet_269
+  - first:
+      213: -4816080752673886880
+    second: Vitesse_SpriteSheet_270
+  - first:
+      213: -2486831257852569650
+    second: Vitesse_SpriteSheet_271
+  - first:
+      213: 5901621891782760062
+    second: Vitesse_SpriteSheet_272
+  - first:
+      213: 2568154230117302047
+    second: Vitesse_SpriteSheet_273
+  - first:
+      213: -4953832488303417091
+    second: Vitesse_SpriteSheet_274
+  - first:
+      213: -8936671051746672760
+    second: Vitesse_SpriteSheet_275
+  - first:
+      213: 6832142751334395766
+    second: Vitesse_SpriteSheet_276
+  - first:
+      213: -1139254782972572550
+    second: Vitesse_SpriteSheet_277
+  - first:
+      213: 881743708570344833
+    second: Vitesse_SpriteSheet_278
+  - first:
+      213: -6743149336252715944
+    second: Vitesse_SpriteSheet_279
+  - first:
+      213: -1721454883118220740
+    second: Vitesse_SpriteSheet_280
+  - first:
+      213: 2060211703450076738
+    second: Vitesse_SpriteSheet_281
+  - first:
+      213: 6117306442734490640
+    second: Vitesse_SpriteSheet_282
+  - first:
+      213: -194674536228031093
+    second: Vitesse_SpriteSheet_283
+  - first:
+      213: 5569942521408551576
+    second: Vitesse_SpriteSheet_284
+  - first:
+      213: 4547638008453851879
+    second: Vitesse_SpriteSheet_285
+  - first:
+      213: -8343286788518171348
+    second: Vitesse_SpriteSheet_286
+  - first:
+      213: 5842738039541193211
+    second: Vitesse_SpriteSheet_287
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b8a13b9d53cadb0800000000000000
+      internalID: -4779385895417902276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480bf903c292b66b0800000000000000
+      internalID: -5302098866527555452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ccc505d6a9a121d0800000000000000
+      internalID: -3377231711547568959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385d94f29316e6380800000000000000
+      internalID: -8976130109068421757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9433272d5dc6531b0800000000000000
+      internalID: -5677512089616108727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0543fcd3413dcd480800000000000000
+      internalID: -8872985081936923568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bffa4792ca77fb70800000000000000
+      internalID: 8932743362093186993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f330606b43264910800000000000000
+      internalID: 1821181905964381177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b977d5a41ec0e090800000000000000
+      internalID: -8007173549387712077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee96c44a98225ca0800000000000000
+      internalID: -6029712308051730705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba975defa06af9580800000000000000
+      internalID: -8818146979212854869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cb277ce446ca6e0800000000000000
+      internalID: -1824973459475481506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94fb15ff882483a10800000000000000
+      internalID: 1889333199848456009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210e95e898634ae50800000000000000
+      internalID: 6819635700172447762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c2d51bbec3daa60800000000000000
+      internalID: 7686867121981959209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2bfffdc02b69270800000000000000
+      internalID: 8256982735197811396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2725a27439e0d1bf0800000000000000
+      internalID: -352109170148093326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf95f2a66420c6f0800000000000000
+      internalID: -666492721611563045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0ab0a49c6b4c7e0800000000000000
+      internalID: -1746069779865952029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 6080
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30cbbe9ab970be330800000000000000
+      internalID: 3741092280613452803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 4800
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0525b6f2639788d40800000000000000
+      internalID: 5586848611383857744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e0e7444a2e7c710800000000000000
+      internalID: 1713587378389388925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b95dd1293e31c20800000000000000
+      internalID: 3176132378931600196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c059a77d2c24e4fc0800000000000000
+      internalID: -3508793655068814068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ffa22dd8131072e0800000000000000
+      internalID: -2130181626236063754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12444f9f5a4cb3de0800000000000000
+      internalID: -1352271045952519135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d38628fcc0c82600800000000000000
+      internalID: 443816549865128914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbfe9b8e58a69a30800000000000000
+      internalID: 4221746824729263030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a5012a16b2776e0800000000000000
+      internalID: -1839954224426755507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1519f90238d5d06b0800000000000000
+      internalID: -5328499966340001455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f928a62b70a50e170800000000000000
+      internalID: 8205657510173639327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b90fcf88fd5d16c0800000000000000
+      internalID: -4171074357729228365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ddf46a2acec26e0800000000000000
+      internalID: -1860852362691748452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09f83caa89473240800000000000000
+      internalID: 4771363190166059277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e68dbcff25e053e0800000000000000
+      internalID: -2066900234696554779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd3117603c920c80800000000000000
+      internalID: -8357946226744672827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a50f5ce8a9d5ee00800000000000000
+      internalID: 1073503405741114785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc44ba300e8249a0800000000000000
+      internalID: -6250277201200788229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6cdf2d31d88a980800000000000000
+      internalID: -8527410778142292320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb9f583e1a3af850800000000000000
+      internalID: 6411500920984542179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 6080
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f045c4c0582762df0800000000000000
+      internalID: -205350817236233201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 4480
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5380eeb4e08c987c0800000000000000
+      internalID: -4068500824623544267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9b55eaf95253b70800000000000000
+      internalID: 8878043608185682396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0997271a52e687200800000000000000
+      internalID: 178013293182613904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b610cba3ed13d3530800000000000000
+      internalID: 3836277288127431019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d75c30a9c6e3780800000000000000
+      internalID: -8701398021289181793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218a7f3a4d55da6d0800000000000000
+      internalID: -2977629406849685486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c58c2171ce93200800000000000000
+      internalID: 160418845591886905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb901381327f3a90800000000000000
+      internalID: -7332016111358010438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0bb4f20731f736a0800000000000000
+      internalID: -6469437121119339765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0567322431e085c40800000000000000
+      internalID: 5501162420709848656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd176158869bde6f0800000000000000
+      internalID: -653662512338275877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd296238b6668280800000000000000
+      internalID: -9041426260593922618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19052e84afe272cd0800000000000000
+      internalID: -2583044208774197103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b112e0e8363e7d1f0800000000000000
+      internalID: -1020096773851569893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e3a8fa162dd1730800000000000000
+      internalID: 3971561763409378949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61752f63fc29bf470800000000000000
+      internalID: 8429492546231752470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871bea6958e80e0d0800000000000000
+      internalID: -3395557414627528328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a5f2a730f3433a0800000000000000
+      internalID: -6686650262570968516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f6729a5163e8150800000000000000
+      internalID: 5876694030425223020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc249ede3ffef440800000000000000
+      internalID: 4971691684150914257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 6080
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756221da66c6f6e60800000000000000
+      internalID: 7957698254833067607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 4160
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4385047e25b816fb0800000000000000
+      internalID: -4656287351541049292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1128da5e95822a5b0800000000000000
+      internalID: -5358676240046915055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df35a955e084473f0800000000000000
+      internalID: -904018398791707651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be21f4b5e45cbdeb0800000000000000
+      internalID: -4693941246273580309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85674430be33749c0800000000000000
+      internalID: -3943125864274430376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 492d9928437e2a2c0800000000000000
+      internalID: -4421717671408971116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ca1b33d1898b950800000000000000
+      internalID: 6465084516279102467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cdc98a809f244b50800000000000000
+      internalID: 6576433653713849795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c6e5580c6031f90800000000000000
+      internalID: -6984231173180461972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe8ffdb91a652500800000000000000
+      internalID: 370819203122302713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbd2d7dc79198870800000000000000
+      internalID: 8685501380348271545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5541b9cacc23fc0800000000000000
+      internalID: -3516523317314693661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa5c534fcbd583f0800000000000000
+      internalID: -899070867355706638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a5ffeb4d753f0f0800000000000000
+      internalID: -1084426514017068478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de2ec9acaa6ebef0800000000000000
+      internalID: -90517652685050152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e430c0a98bb95b20800000000000000
+      internalID: 3123734016340014306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbbe65b912e96280800000000000000
+      internalID: -9049453376178308151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e5debc0d6183f60800000000000000
+      internalID: 8014180622936137248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38c7f330d1ed4610800000000000000
+      internalID: 1607188926382458939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35540726c249e5840800000000000000
+      internalID: 5214768336892609875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 6080
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc1f0aa245ef53f0800000000000000
+      internalID: -909756525221831487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 3840
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f792c696f899cfb0800000000000000
+      internalID: -4626998957287761936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4b1d0fe4c322be0800000000000000
+      internalID: -1503573015842933589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_85
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4e07d108e26f600800000000000000
+      internalID: 501639536283018432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_86
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff368eb50000f7ae0800000000000000
+      internalID: -1549519745250204673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_87
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cccd614e04a37c0800000000000000
+      internalID: -4090885963132384192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_88
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9520cc8b3ffbe9d90800000000000000
+      internalID: -7089017709936246183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_89
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cc51d04cdfe0de0800000000000000
+      internalID: -1364874618571731926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_90
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74dc73dfb28494370800000000000000
+      internalID: 8307250341430676807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_91
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f813b4fa03c4700800000000000000
+      internalID: 525848785934454606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_92
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f72c1fb72230720800000000000000
+      internalID: 2811128508141698973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_93
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a578c109486d350800000000000000
+      internalID: 6041161704652888715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_94
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d8cc63bf04c0930800000000000000
+      internalID: 4110732007582764446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41649082f7a97de50800000000000000
+      internalID: 6834100830481237524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_96
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43bee0ded05861750800000000000000
+      internalID: 6275349425645611828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_97
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0734b2bf20b1b9600800000000000000
+      internalID: 476003885235520368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0aee25c85d7d8580800000000000000
+      internalID: -8823258274730153461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f7319e39e1d7280800000000000000
+      internalID: -9044038856070693064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed5a72ba6d9a2d90800000000000000
+      internalID: -7121706779146560025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39cf2c1af3732b040800000000000000
+      internalID: 4661849310718262419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3520
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f735637e4f1d5b0d0800000000000000
+      internalID: -3407586693254589569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c283c8db3fc617f0800000000000000
+      internalID: -642098040907005248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce5856872c482470800000000000000
+      internalID: 8370023640109440708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da53e5c9be1532c0800000000000000
+      internalID: -4452618873348072749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e0c8740b9aeb160800000000000000
+      internalID: 7043253441833733788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3899acc0b9d5401f0800000000000000
+      internalID: -1079635090146158205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d40702732ec7970800000000000000
+      internalID: 8754120502096710920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c625738afbc2ee0800000000000000
+      internalID: -1284441064503874492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828deae29cc654360800000000000000
+      internalID: 7153243194475337768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1c0a8878d5740e0800000000000000
+      internalID: -2285755449173032454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec759140d80c5c10800000000000000
+      internalID: 2043518021465898223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba66e0bf94c421f0800000000000000
+      internalID: -1070514621260600656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_114
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a3e8d332b35c0d0800000000000000
+      internalID: -3403248920865916375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2ddcc0462b3c300800000000000000
+      internalID: 271256545353650920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968af63eb30a72550800000000000000
+      internalID: 6136049196394850409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9030d6509d4dc30a0800000000000000
+      internalID: -6900406500474420471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4397007726ddf6d0800000000000000
+      internalID: -2954970315613564085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121f337a89e44f260800000000000000
+      internalID: 7130410527581532449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_120
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095cc066b12fb48c0800000000000000
+      internalID: -4013848443380513392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3200
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efae55ce4c7f72ef0800000000000000
+      internalID: -132865238833435906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30cbd496f2eea1800800000000000000
+      internalID: 584040989095476227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e6ae416e9969150800000000000000
+      internalID: 5879055577051196977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cf0ebe7fd54fb00800000000000000
+      internalID: 861416748130303090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4823b5bd5d418ad0800000000000000
+      internalID: -2701793236569872305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_126
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75d7e438abcc6930800000000000000
+      internalID: 4137906080949196155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_127
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a446b86411da8b0800000000000000
+      internalID: -5139432605075879421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18c801092770ddc0800000000000000
+      internalID: -3616259482783791074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_129
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978d779b2544d32e0800000000000000
+      internalID: -2144482725468841863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8fa378ce2841c80800000000000000
+      internalID: -8352907456472745769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f603771e5a9b697e0800000000000000
+      internalID: -1759014482338172817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102a694b9b3816a20800000000000000
+      internalID: 3053866855955866113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_133
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae09413430eb50f0800000000000000
+      internalID: -1127060766956384597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_134
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab640662463e2a70800000000000000
+      internalID: 8804033980363205545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c918e3547893310800000000000000
+      internalID: 1385287091864312861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_136
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc4dd1036ee6f860800000000000000
+      internalID: 7563494733215780092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_137
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381297e92fca129b0800000000000000
+      internalID: -5106610344420630141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_138
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6959a02533d5f76a0800000000000000
+      internalID: -6449333666370120298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_139
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591baf02027c57470800000000000000
+      internalID: 8391832421480968597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_140
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2880
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1882dd0ea481159f0800000000000000
+      internalID: -481576975272695679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_141
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0eabcdf7b4a84d90800000000000000
+      internalID: -7113254501287743987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_142
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d604f7e06a98a7b0800000000000000
+      internalID: -5212746827682281772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219b1eadf49909e40800000000000000
+      internalID: 5661193299858405650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_144
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7160f4bd621def0800000000000000
+      internalID: -85244194577836093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc54da3c09eef10f0800000000000000
+      internalID: -1143933474803202611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e3581b2414fc140800000000000000
+      internalID: 4742080687346368119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611958f4579c63c40800000000000000
+      internalID: 5491798301307408662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_148
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6277158f182adf030800000000000000
+      internalID: 3530156362028906278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35325a5b367c6ace0800000000000000
+      internalID: -1394207803561401517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0be6cf9c4faccd70800000000000000
+      internalID: 9064812893622954762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa881f924adcde00800000000000000
+      internalID: 1070970791079217833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b80c74f494920c10800000000000000
+      internalID: 2018338950493243576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd9d82d99fa9d140800000000000000
+      internalID: 4745016757608881589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104a54b8886a3e6b0800000000000000
+      internalID: -5268184033710988287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4445532ae947db130800000000000000
+      internalID: 3584149103131841604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea353eeba44d0e330800000000000000
+      internalID: 3738221108212749230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf26f903865d6c60800000000000000
+      internalID: 7812996049365512137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924c3b79e55141110800000000000000
+      internalID: 1230632094195237929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2560
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df80eb41497c48d0800000000000000
+      internalID: -2860778341934264364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec9e29c4f2b5eac0800000000000000
+      internalID: -3826455543964328733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_161
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bf22e2b6fe6b37f0800000000000000
+      internalID: -631789316873244743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_162
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda8e0602162d8750800000000000000
+      internalID: 6308740511868816093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_163
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f64dba33c3a3c00800000000000000
+      internalID: 881082869728177982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_164
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4536bfba413a57ea0800000000000000
+      internalID: -5875610829654891692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_165
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e111d890f722ac0800000000000000
+      internalID: -3881400249841803710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_166
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e6d0f21657259f0800000000000000
+      internalID: -481193149913534885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_167
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f70485c988215a560800000000000000
+      internalID: 7324280746935861375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_168
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0ee645fea5dc1c0800000000000000
+      internalID: -4481826070203539230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_169
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8f830bfc3840940800000000000000
+      internalID: 5261475192713574586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_170
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156e1a9aed3da1cd0800000000000000
+      internalID: -2586522082688768431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_171
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43bae0324ec2e0f00800000000000000
+      internalID: 1084853918595197748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_172
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02c6c2a5e89781e0800000000000000
+      internalID: -2195618181273959924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_173
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4746fadb3789886c0800000000000000
+      internalID: -4140892234496121740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_174
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bbee9959c544280800000000000000
+      internalID: -9060014752760153342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_175
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0330fd9c0a85acf20800000000000000
+      internalID: 3443662312683012912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_176
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a7104f52d8b9aa0800000000000000
+      internalID: -6153169271724606851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_177
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2cdd5b53cfc7e560800000000000000
+      internalID: 7343066155409333290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_178
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2240
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa55ba3dbe12a400800000000000000
+      internalID: 333863120461453994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_179
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5a419a821975370800000000000000
+      internalID: 8311271241156961717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_180
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d23e1878f580d70800000000000000
+      internalID: 9009556090159050101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_181
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae47324b5a16e8fb0800000000000000
+      internalID: -4643666801452682006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_182
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd1b51a36aba5bf0800000000000000
+      internalID: -334750285214048773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_183
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5b3c9b3aa603580800000000000000
+      internalID: -8849456016354200122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_184
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0626f349c8970c0800000000000000
+      internalID: -4577472977898938130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_185
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3b30fd7e337bc60800000000000000
+      internalID: 7833787147806290871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_186
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c92727318c8d7f30800000000000000
+      internalID: 4574967283082275265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_187
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5c20d5b5c464270800000000000000
+      internalID: 8234352923979728335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_188
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd31a6bcd2d5c460800000000000000
+      internalID: 7261441819603451343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_189
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8e29b768c5bb960800000000000000
+      internalID: 7618784927295924454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_190
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825b404e97f79d9c0800000000000000
+      internalID: -3901947440646539992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_191
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae8683bf7baaae20800000000000000
+      internalID: 3362688636746632870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_192
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225410e25cb0f89d0800000000000000
+      internalID: -2769982304301267678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_193
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df884b18b4126670800000000000000
+      internalID: 8530403425157418968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_194
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4446043265863670800000000000000
+      internalID: 8518142402043987018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_195
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05718ca3483f2a530800000000000000
+      internalID: 3864919179484731216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_196
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce0648dc0e4765720800000000000000
+      internalID: 2834581524345807084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_197
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1920
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b467fb1f0941770800000000000000
+      internalID: 8580642558021356345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_198
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd09330c60ddb6dd0800000000000000
+      internalID: -2491654947755290403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_199
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c610b794bc004f0800000000000000
+      internalID: -864467611998393311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_200
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a166a830fc6a97970800000000000000
+      internalID: 8753210758819112474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_201
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8775ec7673797d7f0800000000000000
+      internalID: -587834962127988872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_202
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4856ffdb410cae0800000000000000
+      internalID: -1531201067039750995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_203
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a534bdb00921e0380800000000000000
+      internalID: -9003238195183533222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_204
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800da39d2f09dce90800000000000000
+      internalID: -7003782472790257656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_205
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82d4243af2a5fd30800000000000000
+      internalID: 4464653801108066954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_206
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63c1f00f565582d0800000000000000
+      internalID: -3277118187804441749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_207
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9cc00cdf0685880800000000000000
+      internalID: -8622034843635758659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_208
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22618591123f9290800000000000000
+      internalID: -7881525771770961361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_209
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b5a3a1f1953a340800000000000000
+      internalID: 4873837211863898952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_210
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402f6423d9fa653c0800000000000000
+      internalID: -4371113298628251132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_211
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5291039d35da9590800000000000000
+      internalID: -7666580955208773026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_212
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70536d99841df6ec0800000000000000
+      internalID: -3571405869732711161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_213
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec82cc43c5523750800000000000000
+      internalID: 6283178727430065391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_214
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b694a15d39a45ba0800000000000000
+      internalID: -6101065514352339276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_215
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f966828c592c8640800000000000000
+      internalID: 5083483556698024438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_216
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1600
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16e4407ff617d0b0800000000000000
+      internalID: -5704065116685408738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_217
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ee639dd894bc6b0800000000000000
+      internalID: -5275041664950931858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_218
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1f3663089b5a850800000000000000
+      internalID: 6387715606814388680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_219
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f861731c73e9635b0800000000000000
+      internalID: -5388945941800216945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_220
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5ab3b82be0524a0800000000000000
+      internalID: -6618867917348166193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_221
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459199c907de9e410800000000000000
+      internalID: 1506996618251540820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_222
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c3477e2ae4e5b30800000000000000
+      internalID: 4277943157623372828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_223
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b059808b50d9efa0800000000000000
+      internalID: -5770852356081495885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_224
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e295eb100c54050800000000000000
+      internalID: 5784240410148285964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_225
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ab0d8ba09a9ae20800000000000000
+      internalID: 3362404460324240018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_226
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983050e212ee31160800000000000000
+      internalID: 6995196472509924233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_227
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584444c188d87d650800000000000000
+      internalID: 6257625822983898245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_228
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e3932df4e934220800000000000000
+      internalID: 2468991086395735615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_229
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51590056bcad630b0800000000000000
+      internalID: -5749167307184106219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_230
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d04c1477f5eba300800000000000000
+      internalID: 264557854098997465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_231
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7fc34dad44cdd60800000000000000
+      internalID: 7916277951664814014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_232
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e8420e1147ee1a0800000000000000
+      internalID: -6778352769022259698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_233
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e22608852367d590800000000000000
+      internalID: -7649536429218454808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_234
+      rect:
+        serializedVersion: 2
+        x: 5440
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ebeacc8c4c815c0800000000000000
+      internalID: -4244426282090185214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_235
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1280
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a530e4830ba26900800000000000000
+      internalID: 676290925661533601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_236
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9f3d7192632baf0800000000000000
+      internalID: -382183468251743752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_237
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa48cdd54bb614a20800000000000000
+      internalID: 3044833245492184239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_238
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2990ca02e219121f0800000000000000
+      internalID: -1071415609034798702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_239
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2228d2627585f2470800000000000000
+      internalID: 8372007363630957090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_240
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bf3799f2441f860800000000000000
+      internalID: 7561900220560440196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_241
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5349b537e2d241550800000000000000
+      internalID: 6130574670285214773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_242
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a6c00dd12830bc0800000000000000
+      internalID: -3818064994523911591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_243
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a075855eec45ecf00800000000000000
+      internalID: 1138941003359082250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_244
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5f82454099bc4e0800000000000000
+      internalID: -1960304968918829608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_245
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c2e01ed5320b1f0800000000000000
+      internalID: -1031285428553110518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_246
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746cb5b6abfaa30d0800000000000000
+      internalID: -3442245749971368377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_247
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11e05a8ccb01ffb0800000000000000
+      internalID: -4615895169956257506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_248
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 960
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555668e598c511460800000000000000
+      internalID: 7210646223463015765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_249
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0d9073d84ba80e0800000000000000
+      internalID: -2266800943820844812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_250
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808c5cc528a6dd7c0800000000000000
+      internalID: -4044959782174078968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_251
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d6694849dd0ae80800000000000000
+      internalID: -8169286094100730569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_252
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db37821eacedbeee0800000000000000
+      internalID: -1230645110213413955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_253
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ba15de9147c27f0800000000000000
+      internalID: -636005792661525702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_254
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d465dcfaf26107710800000000000000
+      internalID: 1688874254332679757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_255
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e164729dac90be0800000000000000
+      internalID: -1510453165990470120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_256
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace67209ed8b30740800000000000000
+      internalID: 5117136867663769290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_257
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4eb41b3cd758d80800000000000000
+      internalID: -8249048863012559708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_258
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f942b695cd19b9740800000000000000
+      internalID: 5159878173662061727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_259
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0d5f8bf5f56ada0800000000000000
+      internalID: -5933950594284400386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_260
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ecded1dd7c285670800000000000000
+      internalID: 8527614813329612005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_261
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 640
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb1efbc8492497a0800000000000000
+      internalID: -6371422180185596984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_262
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9852e0429367f32f0800000000000000
+      internalID: -990943405208099447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_263
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f05f1c810d51570800000000000000
+      internalID: 8436878281700347677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_264
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5ec63e0db6cf2f0800000000000000
+      internalID: -937756077486971406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_265
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60695382e05a9b990800000000000000
+      internalID: -7369677834992380410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_266
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667a5d5fad567eac0800000000000000
+      internalID: -3825977367326251162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_267
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25da878f04b1e090800000000000000
+      internalID: -8006920683696499414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_268
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a77c97606457fc0800000000000000
+      internalID: -3497812541956457969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_269
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21838f9be2f4092e0800000000000000
+      internalID: -2121108362384361454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_270
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06de6477218d92db0800000000000000
+      internalID: -4816080752673886880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_271
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec71c5395200d7dd0800000000000000
+      internalID: -2486831257852569650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_272
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76516aa7d5c6e150800000000000000
+      internalID: 5901621891782760062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_273
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ffe866aaae3a320800000000000000
+      internalID: 2568154230117302047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_274
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 320
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8a2e13993704bb0800000000000000
+      internalID: -4953832488303417091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_275
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f7f16e6019af380800000000000000
+      internalID: -8936671051746672760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_276
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67feb0452a5a0de50800000000000000
+      internalID: 6832142751334395766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_277
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c41489fcd8030f0800000000000000
+      internalID: -1139254782972572550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_278
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d55443b359c3c00800000000000000
+      internalID: 881743708570344833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_279
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cee39c7658b62a0800000000000000
+      internalID: -6743149336252715944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_280
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a70ea87e92c18e0800000000000000
+      internalID: -1721454883118220740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_281
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2468e3af0a7579c10800000000000000
+      internalID: 2060211703450076738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_282
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 014d56d7cc905e450800000000000000
+      internalID: 6117306442734490640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_283
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85705d6a806c4df0800000000000000
+      internalID: -194674536228031093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_284
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a76ef56396c4d40800000000000000
+      internalID: 5569942521408551576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_285
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eae4fc9ca47c1f30800000000000000
+      internalID: 4547638008453851879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_286
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d2a27ded0b63c80800000000000000
+      internalID: -8343286788518171348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vitesse_SpriteSheet_287
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 320
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9d3827a43951150800000000000000
+      internalID: 5842738039541193211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Vitesse_SpriteSheet_76: -90517652685050152
+      Vitesse_SpriteSheet_280: -1721454883118220740
+      Vitesse_SpriteSheet_129: -2144482725468841863
+      Vitesse_SpriteSheet_1: -5302098866527555452
+      Vitesse_SpriteSheet_82: -909756525221831487
+      Vitesse_SpriteSheet_151: 1070970791079217833
+      Vitesse_SpriteSheet_3: -8976130109068421757
+      Vitesse_SpriteSheet_178: 333863120461453994
+      Vitesse_SpriteSheet_54: -1020096773851569893
+      Vitesse_SpriteSheet_85: 501639536283018432
+      Vitesse_SpriteSheet_138: -6449333666370120298
+      Vitesse_SpriteSheet_42: 8878043608185682396
+      Vitesse_SpriteSheet_52: -9041426260593922618
+      Vitesse_SpriteSheet_103: -642098040907005248
+      Vitesse_SpriteSheet_261: -6371422180185596984
+      Vitesse_SpriteSheet_162: 6308740511868816093
+      Vitesse_SpriteSheet_224: 5784240410148285964
+      Vitesse_SpriteSheet_133: -1127060766956384597
+      Vitesse_SpriteSheet_232: -6778352769022259698
+      Vitesse_SpriteSheet_237: 3044833245492184239
+      Vitesse_SpriteSheet_273: 2568154230117302047
+      Vitesse_SpriteSheet_147: 5491798301307408662
+      Vitesse_SpriteSheet_269: -2121108362384361454
+      Vitesse_SpriteSheet_283: -194674536228031093
+      Vitesse_SpriteSheet_62: -4656287351541049292
+      Vitesse_SpriteSheet_25: -1352271045952519135
+      Vitesse_SpriteSheet_46: -2977629406849685486
+      Vitesse_SpriteSheet_68: 6465084516279102467
+      Vitesse_SpriteSheet_169: 5261475192713574586
+      Vitesse_SpriteSheet_270: -4816080752673886880
+      Vitesse_SpriteSheet_116: 6136049196394850409
+      Vitesse_SpriteSheet_153: 4745016757608881589
+      Vitesse_SpriteSheet_75: -1084426514017068478
+      Vitesse_SpriteSheet_219: -5388945941800216945
+      Vitesse_SpriteSheet_63: -5358676240046915055
+      Vitesse_SpriteSheet_198: -2491654947755290403
+      Vitesse_SpriteSheet_60: 4971691684150914257
+      Vitesse_SpriteSheet_72: 8685501380348271545
+      Vitesse_SpriteSheet_152: 2018338950493243576
+      Vitesse_SpriteSheet_226: 6995196472509924233
+      Vitesse_SpriteSheet_93: 6041161704652888715
+      Vitesse_SpriteSheet_251: -8169286094100730569
+      Vitesse_SpriteSheet_86: -1549519745250204673
+      Vitesse_SpriteSheet_173: -4140892234496121740
+      Vitesse_SpriteSheet_95: 6834100830481237524
+      Vitesse_SpriteSheet_161: -631789316873244743
+      Vitesse_SpriteSheet_172: -2195618181273959924
+      Vitesse_SpriteSheet_26: 443816549865128914
+      Vitesse_SpriteSheet_216: -5704065116685408738
+      Vitesse_SpriteSheet_165: -3881400249841803710
+      Vitesse_SpriteSheet_33: 4771363190166059277
+      Vitesse_SpriteSheet_96: 6275349425645611828
+      Vitesse_SpriteSheet_253: -636005792661525702
+      Vitesse_SpriteSheet_132: 3053866855955866113
+      Vitesse_SpriteSheet_27: 4221746824729263030
+      Vitesse_SpriteSheet_0: -4779385895417902276
+      Vitesse_SpriteSheet_102: -3407586693254589569
+      Vitesse_SpriteSheet_105: -4452618873348072749
+      Vitesse_SpriteSheet_43: 178013293182613904
+      Vitesse_SpriteSheet_255: -1510453165990470120
+      Vitesse_SpriteSheet_157: 7812996049365512137
+      Vitesse_SpriteSheet_24: -2130181626236063754
+      Vitesse_SpriteSheet_22: 3176132378931600196
+      Vitesse_SpriteSheet_284: 5569942521408551576
+      Vitesse_SpriteSheet_57: -3395557414627528328
+      Vitesse_SpriteSheet_23: -3508793655068814068
+      Vitesse_SpriteSheet_121: -132865238833435906
+      Vitesse_SpriteSheet_221: 1506996618251540820
+      Vitesse_SpriteSheet_210: -4371113298628251132
+      Vitesse_SpriteSheet_186: 4574967283082275265
+      Vitesse_SpriteSheet_44: 3836277288127431019
+      Vitesse_SpriteSheet_64: -904018398791707651
+      Vitesse_SpriteSheet_196: 2834581524345807084
+      Vitesse_SpriteSheet_203: -9003238195183533222
+      Vitesse_SpriteSheet_286: -8343286788518171348
+      Vitesse_SpriteSheet_262: -990943405208099447
+      Vitesse_SpriteSheet_51: -653662512338275877
+      Vitesse_SpriteSheet_117: -6900406500474420471
+      Vitesse_SpriteSheet_115: 271256545353650920
+      Vitesse_SpriteSheet_70: -6984231173180461972
+      Vitesse_SpriteSheet_247: -4615895169956257506
+      Vitesse_SpriteSheet_94: 4110732007582764446
+      Vitesse_SpriteSheet_205: 4464653801108066954
+      Vitesse_SpriteSheet_182: -334750285214048773
+      Vitesse_SpriteSheet_227: 6257625822983898245
+      Vitesse_SpriteSheet_181: -4643666801452682006
+      Vitesse_SpriteSheet_267: -8006920683696499414
+      Vitesse_SpriteSheet_35: -8357946226744672827
+      Vitesse_SpriteSheet_114: -3403248920865916375
+      Vitesse_SpriteSheet_281: 2060211703450076738
+      Vitesse_SpriteSheet_180: 9009556090159050101
+      Vitesse_SpriteSheet_160: -3826455543964328733
+      Vitesse_SpriteSheet_264: -937756077486971406
+      Vitesse_SpriteSheet_106: 7043253441833733788
+      Vitesse_SpriteSheet_18: -1746069779865952029
+      Vitesse_SpriteSheet_155: 3584149103131841604
+      Vitesse_SpriteSheet_194: 8518142402043987018
+      Vitesse_SpriteSheet_277: -1139254782972572550
+      Vitesse_SpriteSheet_260: 8527614813329612005
+      Vitesse_SpriteSheet_122: 584040989095476227
+      Vitesse_SpriteSheet_80: 1607188926382458939
+      Vitesse_SpriteSheet_90: 8307250341430676807
+      Vitesse_SpriteSheet_110: 7153243194475337768
+      Vitesse_SpriteSheet_266: -3825977367326251162
+      Vitesse_SpriteSheet_236: -382183468251743752
+      Vitesse_SpriteSheet_67: -4421717671408971116
+      Vitesse_SpriteSheet_149: -1394207803561401517
+      Vitesse_SpriteSheet_36: 1073503405741114785
+      Vitesse_SpriteSheet_130: -8352907456472745769
+      Vitesse_SpriteSheet_21: 1713587378389388925
+      Vitesse_SpriteSheet_167: 7324280746935861375
+      Vitesse_SpriteSheet_6: 8932743362093186993
+      Vitesse_SpriteSheet_176: -6153169271724606851
+      Vitesse_SpriteSheet_98: -8823258274730153461
+      Vitesse_SpriteSheet_225: 3362404460324240018
+      Vitesse_SpriteSheet_131: -1759014482338172817
+      Vitesse_SpriteSheet_48: -7332016111358010438
+      Vitesse_SpriteSheet_123: 5879055577051196977
+      Vitesse_SpriteSheet_254: 1688874254332679757
+      Vitesse_SpriteSheet_282: 6117306442734490640
+      Vitesse_SpriteSheet_74: -899070867355706638
+      Vitesse_SpriteSheet_31: -4171074357729228365
+      Vitesse_SpriteSheet_135: 1385287091864312861
+      Vitesse_SpriteSheet_218: 6387715606814388680
+      Vitesse_SpriteSheet_240: 7561900220560440196
+      Vitesse_SpriteSheet_195: 3864919179484731216
+      Vitesse_SpriteSheet_50: 5501162420709848656
+      Vitesse_SpriteSheet_229: -5749167307184106219
+      Vitesse_SpriteSheet_61: 7957698254833067607
+      Vitesse_SpriteSheet_99: -9044038856070693064
+      Vitesse_SpriteSheet_217: -5275041664950931858
+      Vitesse_SpriteSheet_201: -587834962127988872
+      Vitesse_SpriteSheet_174: -9060014752760153342
+      Vitesse_SpriteSheet_252: -1230645110213413955
+      Vitesse_SpriteSheet_104: 8370023640109440708
+      Vitesse_SpriteSheet_100: -7121706779146560025
+      Vitesse_SpriteSheet_14: 7686867121981959209
+      Vitesse_SpriteSheet_39: 6411500920984542179
+      Vitesse_SpriteSheet_206: -3277118187804441749
+      Vitesse_SpriteSheet_212: -3571405869732711161
+      Vitesse_SpriteSheet_15: 8256982735197811396
+      Vitesse_SpriteSheet_141: -7113254501287743987
+      Vitesse_SpriteSheet_41: -4068500824623544267
+      Vitesse_SpriteSheet_197: 8580642558021356345
+      Vitesse_SpriteSheet_126: 4137906080949196155
+      Vitesse_SpriteSheet_188: 7261441819603451343
+      Vitesse_SpriteSheet_127: -5139432605075879421
+      Vitesse_SpriteSheet_228: 2468991086395735615
+      Vitesse_SpriteSheet_271: -2486831257852569650
+      Vitesse_SpriteSheet_17: -666492721611563045
+      Vitesse_SpriteSheet_112: 2043518021465898223
+      Vitesse_SpriteSheet_140: -481576975272695679
+      Vitesse_SpriteSheet_154: -5268184033710988287
+      Vitesse_SpriteSheet_215: 5083483556698024438
+      Vitesse_SpriteSheet_108: 8754120502096710920
+      Vitesse_SpriteSheet_192: -2769982304301267678
+      Vitesse_SpriteSheet_55: 3971561763409378949
+      Vitesse_SpriteSheet_87: -4090885963132384192
+      Vitesse_SpriteSheet_214: -6101065514352339276
+      Vitesse_SpriteSheet_185: 7833787147806290871
+      Vitesse_SpriteSheet_84: -1503573015842933589
+      Vitesse_SpriteSheet_120: -4013848443380513392
+      Vitesse_SpriteSheet_137: -5106610344420630141
+      Vitesse_SpriteSheet_245: -1031285428553110518
+      Vitesse_SpriteSheet_168: -4481826070203539230
+      Vitesse_SpriteSheet_259: -5933950594284400386
+      Vitesse_SpriteSheet_47: 160418845591886905
+      Vitesse_SpriteSheet_53: -2583044208774197103
+      Vitesse_SpriteSheet_257: -8249048863012559708
+      Vitesse_SpriteSheet_97: 476003885235520368
+      Vitesse_SpriteSheet_189: 7618784927295924454
+      Vitesse_SpriteSheet_40: -205350817236233201
+      Vitesse_SpriteSheet_278: 881743708570344833
+      Vitesse_SpriteSheet_285: 4547638008453851879
+      Vitesse_SpriteSheet_177: 7343066155409333290
+      Vitesse_SpriteSheet_11: -1824973459475481506
+      Vitesse_SpriteSheet_73: -3516523317314693661
+      Vitesse_SpriteSheet_244: -1960304968918829608
+      Vitesse_SpriteSheet_128: -3616259482783791074
+      Vitesse_SpriteSheet_136: 7563494733215780092
+      Vitesse_SpriteSheet_69: 6576433653713849795
+      Vitesse_SpriteSheet_166: -481193149913534885
+      Vitesse_SpriteSheet_246: -3442245749971368377
+      Vitesse_SpriteSheet_56: 8429492546231752470
+      Vitesse_SpriteSheet_139: 8391832421480968597
+      Vitesse_SpriteSheet_287: 5842738039541193211
+      Vitesse_SpriteSheet_200: 8753210758819112474
+      Vitesse_SpriteSheet_276: 6832142751334395766
+      Vitesse_SpriteSheet_16: -352109170148093326
+      Vitesse_SpriteSheet_2: -3377231711547568959
+      Vitesse_SpriteSheet_239: 8372007363630957090
+      Vitesse_SpriteSheet_58: -6686650262570968516
+      Vitesse_SpriteSheet_12: 1889333199848456009
+      Vitesse_SpriteSheet_59: 5876694030425223020
+      Vitesse_SpriteSheet_10: -8818146979212854869
+      Vitesse_SpriteSheet_79: 8014180622936137248
+      Vitesse_SpriteSheet_77: 3123734016340014306
+      Vitesse_SpriteSheet_88: -7089017709936246183
+      Vitesse_SpriteSheet_265: -7369677834992380410
+      Vitesse_SpriteSheet_71: 370819203122302713
+      Vitesse_SpriteSheet_204: -7003782472790257656
+      Vitesse_SpriteSheet_175: 3443662312683012912
+      Vitesse_SpriteSheet_272: 5901621891782760062
+      Vitesse_SpriteSheet_37: -6250277201200788229
+      Vitesse_SpriteSheet_233: -7649536429218454808
+      Vitesse_SpriteSheet_248: 7210646223463015765
+      Vitesse_SpriteSheet_220: -6618867917348166193
+      Vitesse_SpriteSheet_163: 881082869728177982
+      Vitesse_SpriteSheet_20: 5586848611383857744
+      Vitesse_SpriteSheet_231: 7916277951664814014
+      Vitesse_SpriteSheet_45: -8701398021289181793
+      Vitesse_SpriteSheet_89: -1364874618571731926
+      Vitesse_SpriteSheet_145: -1143933474803202611
+      Vitesse_SpriteSheet_202: -1531201067039750995
+      Vitesse_SpriteSheet_222: 4277943157623372828
+      Vitesse_SpriteSheet_38: -8527410778142292320
+      Vitesse_SpriteSheet_83: -4626998957287761936
+      Vitesse_SpriteSheet_158: 1230632094195237929
+      Vitesse_SpriteSheet_274: -4953832488303417091
+      Vitesse_SpriteSheet_190: -3901947440646539992
+      Vitesse_SpriteSheet_9: -6029712308051730705
+      Vitesse_SpriteSheet_164: -5875610829654891692
+      Vitesse_SpriteSheet_150: 9064812893622954762
+      Vitesse_SpriteSheet_171: 1084853918595197748
+      Vitesse_SpriteSheet_134: 8804033980363205545
+      Vitesse_SpriteSheet_81: 5214768336892609875
+      Vitesse_SpriteSheet_199: -864467611998393311
+      Vitesse_SpriteSheet_250: -4044959782174078968
+      Vitesse_SpriteSheet_29: -5328499966340001455
+      Vitesse_SpriteSheet_7: 1821181905964381177
+      Vitesse_SpriteSheet_66: -3943125864274430376
+      Vitesse_SpriteSheet_119: 7130410527581532449
+      Vitesse_SpriteSheet_148: 3530156362028906278
+      Vitesse_SpriteSheet_230: 264557854098997465
+      Vitesse_SpriteSheet_124: 861416748130303090
+      Vitesse_SpriteSheet_211: -7666580955208773026
+      Vitesse_SpriteSheet_113: -1070514621260600656
+      Vitesse_SpriteSheet_242: -3818064994523911591
+      Vitesse_SpriteSheet_209: 4873837211863898952
+      Vitesse_SpriteSheet_170: -2586522082688768431
+      Vitesse_SpriteSheet_235: 676290925661533601
+      Vitesse_SpriteSheet_249: -2266800943820844812
+      Vitesse_SpriteSheet_32: -1860852362691748452
+      Vitesse_SpriteSheet_263: 8436878281700347677
+      Vitesse_SpriteSheet_13: 6819635700172447762
+      Vitesse_SpriteSheet_234: -4244426282090185214
+      Vitesse_SpriteSheet_78: -9049453376178308151
+      Vitesse_SpriteSheet_111: -2285755449173032454
+      Vitesse_SpriteSheet_238: -1071415609034798702
+      Vitesse_SpriteSheet_143: 5661193299858405650
+      Vitesse_SpriteSheet_268: -3497812541956457969
+      Vitesse_SpriteSheet_28: -1839954224426755507
+      Vitesse_SpriteSheet_191: 3362688636746632870
+      Vitesse_SpriteSheet_92: 2811128508141698973
+      Vitesse_SpriteSheet_146: 4742080687346368119
+      Vitesse_SpriteSheet_279: -6743149336252715944
+      Vitesse_SpriteSheet_184: -4577472977898938130
+      Vitesse_SpriteSheet_5: -8872985081936923568
+      Vitesse_SpriteSheet_275: -8936671051746672760
+      Vitesse_SpriteSheet_65: -4693941246273580309
+      Vitesse_SpriteSheet_213: 6283178727430065391
+      Vitesse_SpriteSheet_118: -2954970315613564085
+      Vitesse_SpriteSheet_142: -5212746827682281772
+      Vitesse_SpriteSheet_208: -7881525771770961361
+      Vitesse_SpriteSheet_156: 3738221108212749230
+      Vitesse_SpriteSheet_34: -2066900234696554779
+      Vitesse_SpriteSheet_183: -8849456016354200122
+      Vitesse_SpriteSheet_91: 525848785934454606
+      Vitesse_SpriteSheet_187: 8234352923979728335
+      Vitesse_SpriteSheet_109: -1284441064503874492
+      Vitesse_SpriteSheet_30: 8205657510173639327
+      Vitesse_SpriteSheet_193: 8530403425157418968
+      Vitesse_SpriteSheet_179: 8311271241156961717
+      Vitesse_SpriteSheet_159: -2860778341934264364
+      Vitesse_SpriteSheet_19: 3741092280613452803
+      Vitesse_SpriteSheet_258: 5159878173662061727
+      Vitesse_SpriteSheet_101: 4661849310718262419
+      Vitesse_SpriteSheet_241: 6130574670285214773
+      Vitesse_SpriteSheet_243: 1138941003359082250
+      Vitesse_SpriteSheet_256: 5117136867663769290
+      Vitesse_SpriteSheet_207: -8622034843635758659
+      Vitesse_SpriteSheet_144: -85244194577836093
+      Vitesse_SpriteSheet_8: -8007173549387712077
+      Vitesse_SpriteSheet_223: -5770852356081495885
+      Vitesse_SpriteSheet_49: -6469437121119339765
+      Vitesse_SpriteSheet_4: -5677512089616108727
+      Vitesse_SpriteSheet_107: -1079635090146158205
+      Vitesse_SpriteSheet_125: -2701793236569872305
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
