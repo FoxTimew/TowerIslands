@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public static event Action<int> EnemyDeathCristalEvent;
     public AXD_EnemySO enemyStats;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
     private Block initPos;
     private Block destination;
     private BargeSO bargeItComesFrom;
@@ -23,13 +23,17 @@ public class Enemy : MonoBehaviour
 
     private AXD_TowerShoot target;
 
-    private int currentHP { get; set; }
+    public int currentDamage { get; set; }
+    public int currentHP { get; private set; }
     private Coroutine movement;
-    
+
+
 
     private void Init()
     {
+        sr.color = Color.white;
         currentHP = enemyStats.maxHealthPoints;
+        currentDamage = enemyStats.damage;
         speed = enemyStats.speed;
         path.Clear();
         FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
@@ -39,7 +43,7 @@ public class Enemy : MonoBehaviour
 
     public void StartMovement()
     {
-        movement = StartCoroutine(MoveEnemy());
+        if(gameObject.activeSelf) movement = StartCoroutine(MoveEnemy());
     }
 
     
@@ -55,6 +59,7 @@ public class Enemy : MonoBehaviour
     
     public void StopMovement()
     {
+        if (movement is null) return;
         StopCoroutine(movement);
     }
     public void StopMovement(WaitForSeconds stunDuration)
@@ -63,6 +68,7 @@ public class Enemy : MonoBehaviour
         if (stunned) return;
         StartCoroutine(StopMovementDelayed(stunDuration));
     }
+    
 
     private IEnumerator StopMovementDelayed(WaitForSeconds stunDuration)
     {
@@ -82,6 +88,7 @@ public class Enemy : MonoBehaviour
     }
     public bool TakeDamage(DamageType damageType, int damageToTake)
     {
+        sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         currentHP -= damageToTake;
         if (currentHP <= 0)
         {
@@ -145,17 +152,12 @@ public class Enemy : MonoBehaviour
         if (signX > 0 && signY > 0) dir = 1;
         if (signX > 0 && signY < 0) dir = 2;
         if (signX < 0 && signY < 0) dir = 3;
-
-        //animator.SetInteger("Direction", dir);
+        
         animator.SetFloat("Direction", dir);
     }
 
     IEnumerator Attack(Building target)
     {
-        // var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
-        // transform.DOMove(pos, (pos - transform.position).magnitude / speed)
-        //     .SetEase(Ease.Linear);
-        // yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
         StopMovement();
         tween.Pause();
         animator.SetInteger("Speed", 0);
@@ -164,7 +166,7 @@ public class Enemy : MonoBehaviour
             animator.SetTrigger("Attack");
             /*Sound*/ AudioManager.instance.Play(UnityEngine.Random.Range(5, 8), false, true);
             yield return new WaitForSeconds(enemyStats.attackSpeed);
-            target.takeDamage(enemyStats.damage);
+            target.takeDamage(currentDamage);
         }
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
@@ -182,6 +184,7 @@ public class Enemy : MonoBehaviour
         //GameManager.instance.enemies.Add(this);
     }
 
+    [SerializeField] private SpriteRenderer sr;
     public void Death()
     {
         /*SOund*/ AudioManager.instance.Play(UnityEngine.Random.Range(enemyStats.dieSoundIndex[0], enemyStats.dieSoundIndex[enemyStats.dieSoundIndex.Length]), false, true);
@@ -194,8 +197,10 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
         }
-        //GameManager.instance.enemies.Remove(this);
-        Pooler.instance.Depop(enemyStats.eName, this.gameObject);
+        animator.SetTrigger("AttackEnd");
+        animator.SetInteger("Speed", 0);
+        animator.SetTrigger("Death");
+        sr.DOFade(1, 0.5f).OnComplete(() => Pooler.instance.Depop(enemyStats.eName, this.gameObject));
     }
     
 }

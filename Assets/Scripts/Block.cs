@@ -172,6 +172,7 @@ public class Block : MonoBehaviour
 
     public void PlaceBlock()
     {
+        if (placed) return;
         construction.Play();
     }
 }

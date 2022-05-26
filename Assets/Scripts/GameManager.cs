@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel()
     {
+        if (buildings.Count <= 0) return;
         if (levelManager.selectedLevel != null)
         {
             /*Sound*/ AudioManager.instance.Play(2, true);
@@ -167,12 +168,13 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
+        currentWave++;
         StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
     public void Retry()
     {
-        StopCoroutine(levelRoutine);
+        if(levelRoutine is not null) StopCoroutine(levelRoutine);
         for(int i = enemyGroup.childCount-1;i>-1;i--)
             Pooler.instance.Depop(enemyGroup.GetChild(0).name,enemyGroup.GetChild(0).gameObject);
         HDV.Repair();
@@ -198,7 +200,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(waveCount);
         while (waveCount > -1)
         {
-
+            currentWave++;
             StartCoroutine(SpawnWave(level.waves[currentWave]));
             
             while (enemyGroup.childCount > 0) yield return null;
@@ -240,7 +242,7 @@ public class GameManager : MonoBehaviour
         /*Sound*/ AudioManager.instance.Play(1, true);
         var bargeGO = new GameObject();
         
-        currentWave++;
+        
         selectableBlock = false;
         selectedBlock = null;
         foreach (var bargeSo in wave.bargesInWave)
@@ -279,12 +281,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     private void UnSelectBlock()
     {
-        
         if (!Input.GetMouseButtonDown(0)) return;
         hit2D = Physics2D.Raycast(cam.ScreenToWorldPoint(Input.mousePosition), Vector2.zero,layerMask);
         if (hit2D)
         {
-            
             if (hit2D.transform.CompareTag("Block")) return;
             if (Utils.IsPointerOverUI()) return;
             selectedBlock = null;
@@ -307,6 +307,7 @@ public class GameManager : MonoBehaviour
     public void SetEditor(bool value)
     {
         editorActivated = value;
+        gridGroup.SetActive(editorActivated);
     }
 
     public void Upgrade()
@@ -317,8 +318,9 @@ public class GameManager : MonoBehaviour
         to.Upgrade();
     }
 
-
-
-
-
+    public void Repair()
+    {
+        if (selectedBlock is null) return;
+        selectedBlock.building.Repair();
+    }
 }

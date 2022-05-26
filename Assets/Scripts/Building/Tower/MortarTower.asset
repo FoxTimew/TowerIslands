@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f899f34b85484c646bd3a3932341acdf, type: 3}
   m_Name: MortarTower
   m_EditorClassIdentifier: 
-  bName: 
+  bName: MortarTower
   type: 0
   healthPoints: 0
   energyRequired: 0
@@ -28,4 +28,3 @@ MonoBehaviour:
   priority: 0
   bulletSpeed: 0
   bulletPrefab: {fileID: 0}
-  soundIndex: 16
