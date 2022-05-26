@@ -1599,6 +1599,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518dd676735ca804d962327ccbeb5318, type: 3}
+--- !u!1001 &693762828
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4492550082505762581, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6629424225218766822, guid: cabc256fdeae5f441aad6562af074e6e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cabc256fdeae5f441aad6562af074e6e, type: 3}
 --- !u!114 &767865863 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 784417849554604366, guid: 518dd676735ca804d962327ccbeb5318,
@@ -1645,6 +1714,7 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: 42bbd87aa899a9649b2f11a1019c00f7, type: 2}
+  destruction: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 9aa6fc402c834204cb9494e59dd33853, type: 3}
   sr: {fileID: 874716579}
@@ -2744,11 +2814,15 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: f9a36b2c5687d124e9b470e1a37e1246, type: 2}
+  destruction: {fileID: 0}
   sprites: []
   sr: {fileID: 0}
   towerSO: {fileID: 11400000, guid: 573223857a2841f4889f464ec63a3af4, type: 2}
   target: {fileID: 0}
   pc: {fileID: 0}
+  level1: {fileID: 0}
+  level2: {fileID: 0}
+  ruins: []
 --- !u!212 &1819306093
 SpriteRenderer:
   m_ObjectHideFlags: 0

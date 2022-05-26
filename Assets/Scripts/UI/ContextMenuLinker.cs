@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,8 +19,18 @@ public class ContextMenuLinker : MonoBehaviour
     private RectTransform UIManagerCanvasRect;
     private RectTransform contextMenuRectTransform;
     public Button[] buttons;
-    public GameObject tmpChild;
+    private GameObject tmpChild;
     private Button tmpButton;
+    private TowerSO tmpTowerSO;
+    private Tower tmpTower;
+    public TMP_Text towerCostText;
+    public TMP_Text mortarCostText;
+    public TMP_Text supportCostText;
+    public TMP_Text trapCostText;
+    public TMP_Text upgradeCostText;
+    public TMP_Text sellCostText;
+    public TMP_Text repairCostText;
+    
 
     private void Awake()
     {
@@ -34,8 +46,6 @@ public class ContextMenuLinker : MonoBehaviour
         if (GameManager.instance.selectedBlock is null) return;
         UpdateUIPosition();
         if (type != ContextMenuType.BlockEmpty) return;
-        
-
     }
 
     public void LinkListeners(Block block)
@@ -49,6 +59,7 @@ public class ContextMenuLinker : MonoBehaviour
                 case (ContextMenuType.BlockEmpty):
                     Debug.Log("Block Empty");
                     foreach (var button in buttons) button.onClick.RemoveAllListeners();
+                    towerCostText.text = GameManager.instance.rapidTowerSO.goldRequired.ToString();
                     if (GameManager.instance.rapidTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
                         buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.towerButtonSprite;
@@ -60,10 +71,12 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                         buttons[0].interactable = false;
                     }
+
+                    mortarCostText.text = GameManager.instance.mortarTowerSO.goldRequired.ToString();
                     if (GameManager.instance.mortarTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
                         buttons[1].GetComponent<Image>().sprite = UI_Manager.instance.towerButtonSprite;
-                        buttons[1].onClick.AddListener(RapidTowerBuilder);
+                        buttons[1].onClick.AddListener(MortarTowerBuilder);
                         buttons[1].interactable = true;
                     }
                     else
@@ -71,6 +84,8 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[1].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                         buttons[1].interactable = false;
                     }
+
+                    supportCostText.text = GameManager.instance.energySupportSO.goldRequired.ToString();
                     if (GameManager.instance.energySupportSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
                         buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.supportButtonSprite;
@@ -82,8 +97,9 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                         buttons[2].interactable = false;
                     }
-                    
-                    if (GameManager.instance.energySupportSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
+
+                    trapCostText.text = GameManager.instance.stunTrapSO.goldRequired.ToString();
+                    if (GameManager.instance.stunTrapSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
                         buttons[3].GetComponent<Image>().sprite = UI_Manager.instance.trapButtonSprite;
                         buttons[3].onClick.AddListener(StunTrapTowerBuilder);
@@ -94,27 +110,76 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[3].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                         buttons[3].interactable = false;
                     }
-                    for (int i = 0; i < transform.childCount-1; i++)
+
+                    for (int i = 0; i < transform.childCount - 1; i++)
                     {
                         buttons[i].onClick.AddListener(MenuCloserListener);
                     }
+
                     break;
                 case (ContextMenuType.BlockBuilt):
                     Debug.Log("Block Built");
                     //Upgrade button
                     //Si l'upgrade est dispo + on a assez d'argent
-                    tmpButton = transform.GetChild(2).GetComponent<Button>();
-                    tmpButton.onClick.RemoveAllListeners();
-                    tmpButton.onClick.AddListener(SellBuildingListener);
+
+                    if (GameManager.instance.selectedBlock.building.GetType() == typeof(TowerSO))
+                    {
+                        tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
+                        if (tmpTowerSO.nextLevel != null &&
+                            EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost)
+                        {
+
+                            buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.upgradeSprite;
+                            buttons[0].onClick.RemoveAllListeners();
+                            buttons[0].onClick.AddListener(UpgradeBuildingListener);
+                        }
+                        else
+                        {
+                            buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                            buttons[0].interactable = false;
+                        }
+
+                        upgradeCostText.text = tmpTowerSO.upgradeCost.ToString();
+                    }
+                    else
+                    {
+                        buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[0].interactable = false;
+                        upgradeCostText.text = "0";
+                    }
+
+                    //Sell button
+                    buttons[1].onClick.RemoveAllListeners();
+                    buttons[1].onClick.AddListener(SellBuildingListener);
+                    sellCostText.text = GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
                     //Repair button
                     //Si le repair est dispo + on a assez d'argent
-                    tmpButton = transform.GetChild(3).GetComponent<Button>();
-                    tmpButton.onClick.RemoveAllListeners();
-                    tmpButton.onClick.AddListener(RepairBuildingListener);
-                    for (int i = 1; i < transform.childCount; i++)
+                    if (GameManager.instance.selectedBlock.building.isBuildingDestroyed() &&
+                        EconomyManager.instance.GetGoldAmount() >
+                        GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
+                        (GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)*100/GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
                     {
-                        transform.GetChild(i).GetComponent<Button>().onClick.AddListener(MenuCloserListener);
+                        
+                        buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.repairSprite;
+                        buttons[2].onClick.RemoveAllListeners();
+                        buttons[2].onClick.AddListener(RepairBuildingListener);
+                        
                     }
+                    else
+                    {
+                        buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[2].interactable = false;
+                    }
+
+                    repairCostText.text = (GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
+                                           (GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
+                                            GameManager.instance.selectedBlock.building.hp) * 100
+                                           / GameManager.instance.selectedBlock.building.buildingSO.healthPoints).ToString();
+                    foreach (Button button in buttons)
+                    {
+                        button.onClick.AddListener(MenuCloserListener);
+                    }
+
                     break;
             }
         }
@@ -153,10 +218,18 @@ public class ContextMenuLinker : MonoBehaviour
         
     }
 
+    private void UpgradeBuildingListener()
+    {
+        Debug.Log("Upgrade tower");
+        tmpTower = (Tower)GameManager.instance.selectedBlock.building;
+        tmpTower.Upgrade();
+    }
+
     private void RepairBuildingListener()
     {
-        Debug.Log("Build Stun Trap");
+        Debug.Log("Repair tower");
         /*Sound*/AudioManager.instance.Play(24);
+        GameManager.instance.selectedBlock.building.Repair();
         
     }
     private void SellBuildingListener()
