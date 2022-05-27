@@ -56,7 +56,6 @@ public class UI_Manager : MonoBehaviour
     [Header("Transition Reference")]
     [SerializeField] private RectTransform  LeftTransition;
     [SerializeField] private RectTransform  RightTransition;
-    [SerializeField] private RectTransform transitionClouds;
     [SerializeField] private float transitionDuration;
 
     [Header("DynamicButtonsReferences")] 
@@ -400,7 +399,8 @@ public class UI_Manager : MonoBehaviour
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>
             {
-                GameManager.instance.islandCreator.PopBuild($"Blocks{block.Key}",tmpButton.GetComponent<RectTransform>());
+                GameManager.instance.islandCreator.
+                    PopBuild($"Blocks{block.Key}",tmpButton.GetComponent<RectTransform>());
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
