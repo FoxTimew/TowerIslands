@@ -15,7 +15,7 @@ public class Tower : Building
 
     private bool shooting;
     public Enemy target;
-    private List<Enemy> inRange = new List<Enemy>();
+    [SerializeField] private List<Enemy> inRange = new List<Enemy>();
     [SerializeField] private PolygonCollider2D pc;
 
     [SerializeField] private GameObject level1;
@@ -39,31 +39,29 @@ public class Tower : Building
     void Update()
     {
         if (destroyed) return;
-        if (inRange.Count > 0 && target is null)
-            target = inRange[0];
         if (shooting) return;
         if (target is null) return;
-        if (!target.gameObject.activeSelf) return;
+        if (!target.gameObject.activeSelf) ResetTarget();
+        if (target is null) return;
         StartCoroutine(ShootCoroutine());
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.transform.parent.CompareTag("Enemy"))
         {
-            inRange.Add(other.GetComponent<Enemy>());
+            inRange.Add(other.GetComponentInParent<Enemy>());
+            if (target == null) target = other.GetComponentInParent<Enemy>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.CompareTag("Enemy")) return;
-        if (inRange.Contains(other.GetComponent<Enemy>()))
-        {
-            inRange.Remove(other.GetComponent<Enemy>());
-            if (inRange.Count <= 0) return;
-            target = inRange[0];
-        }
+        if (!other.transform.parent.CompareTag("Enemy")) return;
+        if (!inRange.Contains(other.GetComponentInParent<Enemy>())) return;
+        inRange.Remove(other.GetComponentInParent<Enemy>());
+        if (inRange.Count <= 0) return;
+        target = inRange[0];
     }
 
     public override void Ruins()
@@ -94,6 +92,13 @@ public class Tower : Building
                 level1.SetActive(false);
                 break;
         }
+    }
+
+    public override void ResetTarget()
+    {
+        inRange.Remove(target);
+        target = null;
+        if (inRange.Count > 0) target = inRange[0];
     }
     public override void Repair()
     {

@@ -29,9 +29,12 @@ public class Enemy : MonoBehaviour
     private Coroutine movement;
 
 
-
+    private Vector2 pos;
     private void Init()
     {
+        pos.x = Random.Range(-0.5f, 0.5f);
+        pos.y = Random.Range(-0.5f, 0.5f);
+        sr.transform.localPosition = pos;
         sr.color = Color.white;
         currentHP = enemyStats.maxHealthPoints;
         currentDamage = enemyStats.damage;
@@ -83,18 +86,15 @@ public class Enemy : MonoBehaviour
         stunned = false;
     }
     
-    public bool TakeDamage(DamageType damageType, int damageToTake)
+    public bool TakeDamage(DamageType damageType, int damageToTake,Tower origin)
     {
         sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         currentHP -= damageToTake;
-        if (currentHP <= 0)
-        {
-            currentHP = 0;
-            Death(); 
-            return true;
-        }
-
-        return false;
+        if (currentHP > 0) return false;
+        currentHP = 0;
+        if(origin is not null) origin.ResetTarget();
+        Death(); 
+        return true;
     }
 
 
