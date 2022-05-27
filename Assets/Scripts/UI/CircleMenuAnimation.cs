@@ -18,17 +18,9 @@ public class CircleMenuAnimation : MonoBehaviour
         transform.DOScale(Vector3.zero, animationTime).OnComplete(
             ()=>gameObject.SetActive(false));
     }
-
-
-
+    
     public void PlayAnimation()
     {
-        transform.DOScale(Vector3.one, animationTime);
+        transform.DOScale(Vector3.one*1.4f, animationTime);
     }
-
-    public void ReOpenContextMenu(Vector2 position)
-    {
-        
-    }
-    
 }
