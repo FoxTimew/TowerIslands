@@ -75,6 +75,26 @@ public class Tower : Building
         /*Sound*/ AudioManager.instance.Play(12, false);
     }
 
+
+
+    public override void SetBuilding()
+    {
+        destroyed = false;
+        hp = buildingSO.healthPoints;
+        foreach (var go in ruins) go.SetActive(false);
+        switch (towerSO.level)
+        {
+            case 1 :
+                level1.SetActive(true);
+                level2.SetActive(false);
+                
+                break;
+            case 2 :
+                level2.SetActive(true);
+                level1.SetActive(false);
+                break;
+        }
+    }
     public override void Repair()
     {
         destroyed = false;

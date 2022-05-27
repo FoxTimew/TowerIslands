@@ -69,15 +69,19 @@ MonoBehaviour:
   gridGroup: {fileID: 0}
   timeBetweenWaves: 10
   selectableBlock: 0
+  currentWave: 0
   bargeSpawn:
   - {x: 40, y: 25, z: 0}
   - {x: 40, y: -25, z: 0}
   - {x: -40, y: 25, z: 0}
   - {x: -40, y: -25, z: 0}
   enemyGroup: {fileID: 0}
+  waveText: {fileID: 0}
+  buildings: []
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  editorActivated: 0
 --- !u!114 &6823177744949319018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +101,7 @@ MonoBehaviour:
   - {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
   - {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
   - {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
+  canvas: {fileID: 0}
 --- !u!114 &6823177744949319021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +122,13 @@ MonoBehaviour:
   selectedLevel: {fileID: 0}
   levels:
   - {fileID: 11400000, guid: 41520a42c7ce38844bada83ff6b606c6, type: 2}
+  - {fileID: 11400000, guid: af745bca7c73f3242865a49ea7f1ee34, type: 2}
+  - {fileID: 11400000, guid: 24bcaa9ca489ee74b91f5bbb430ae979, type: 2}
+  - {fileID: 11400000, guid: 72b3fcec3de616844a13b364839bff4e, type: 2}
+  - {fileID: 11400000, guid: 211eac579aeeccf48baa99a4a08fb3f2, type: 2}
+  - {fileID: 11400000, guid: 5623e6604bb9eab49a2eb3c765e905d5, type: 2}
+  - {fileID: 11400000, guid: dd34b6a59b96a6e43bd2cdcbf9c77da4, type: 2}
+  - {fileID: 11400000, guid: 72db81165e38e484390b9aac5ce4cb63, type: 2}
 --- !u!114 &6823177744949319020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,5 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95376bce49ac0c04bb3c3d8ff5a5c9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldUI: {fileID: 0}
   goldAmount: 200
