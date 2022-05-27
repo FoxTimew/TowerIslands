@@ -32,12 +32,7 @@ public class IslandCreator : MonoBehaviour
         if(current != null || currentType == key) Pooler.instance.Depop(currentType,current);
         currentType = key;
         current = Pooler.instance.Pop(currentType);
-        // origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
-        // origin.z = 0;
-        // origin.y += 2 * 2.67f;
-        
-        origin = new Vector3(0,GameManager.instance.grid.size * 1.335f,0);
-        //origin.x -= 150;
+        origin = new Vector3(0,1.335f +GameManager.instance.grid.size * 1.335f,0);
         origin.z = 0;
         current.transform.position = origin;
         drag = current.GetComponent<Drag>();
@@ -65,11 +60,10 @@ public class IslandCreator : MonoBehaviour
         {
             block.PlaceBlock();
             GameManager.instance.grid.AddBlock(block);
-            
         }
         GameManager.instance.UpdateBlocks();
-        transform.parent = GameManager.instance.blockGroup.transform;
-        gameObject.SetActive(false);
+        drag.transform.parent = GameManager.instance.blockGroup.transform;
+        drag.gameObject.SetActive(false);
         drag.enabled = false;
         drag.dragPointer.enabled = false;
         GameManager.instance.cameraZoom.enabled = true;

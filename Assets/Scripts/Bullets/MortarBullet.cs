@@ -33,7 +33,7 @@ public class MortarBullet : Bullet
     {
         foreach (var enemy in targets)
         {
-            if (enemy.GetComponent<Enemy>().TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage)) originTower.target = null;
+            enemy.GetComponent<Enemy>().TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage,originTower);
         }
     }
     

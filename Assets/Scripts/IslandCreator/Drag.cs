@@ -31,12 +31,14 @@ public class Drag : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (Utils.IsPointerOverUI()) return;
         GameManager.instance.cameraZoom.enabled = false;
     }
     
 
     private void OnMouseDrag()
     {
+        if (Utils.IsPointerOverUI()) return;
         origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
         origin.z = 0;
         origin.y += 2 * 2.67f;

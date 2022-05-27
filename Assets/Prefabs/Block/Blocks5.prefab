@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 3916769427991020009}
   - {fileID: 9025710083753673695}
   - {fileID: 6801483896287014040}
+  canvas: {fileID: 0}
   dragPointer: {fileID: 7249216694818452154}
 --- !u!58 &3950338628995762458
 CircleCollider2D:
@@ -118,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4179234675314205378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.97, y: -0.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -44,7 +44,7 @@ public class EconomyManager : MonoBehaviour
         return goldAmount;
     }
 
-    private void UpdateEconomyUI()
+    public void UpdateEconomyUI()
     {
         if (UI_Manager.instance != null)
         {
