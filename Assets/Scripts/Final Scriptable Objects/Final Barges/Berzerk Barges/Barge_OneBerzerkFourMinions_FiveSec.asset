@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Barge_OneBerzerkFourMinions_FiveSec
   m_EditorClassIdentifier: 
   troops:
-  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
     cristalToEarn: 0
-  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
     cristalToEarn: 0
-  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
     cristalToEarn: 0
-  - enemy: {fileID: 6754775258513878111, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
     cristalToEarn: 0
   - enemy: {fileID: 6754775258513878111, guid: 65a5acb26393d8f409f3ca0209af38a5, type: 3}
     cristalToEarn: 0
