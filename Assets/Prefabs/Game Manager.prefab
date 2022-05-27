@@ -98,11 +98,10 @@ MonoBehaviour:
   current: {fileID: 0}
   currentType: 
   blocks:
-  - {fileID: 5744572294132932168, guid: ccbc9c87665117a49a804e54ff755db2, type: 3}
-  - {fileID: 5866609134711335595, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
-  - {fileID: 660197909831716575, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
-  - {fileID: 3794926003884879259, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
-  - {fileID: 3794926003884879259, guid: b069236a792dbd247b8f8db5053e132f, type: 3}
+  - {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2, type: 3}
+  - {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
+  - {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
+  - {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
   canvas: {fileID: 0}
 --- !u!114 &6823177744949319021
 MonoBehaviour:
