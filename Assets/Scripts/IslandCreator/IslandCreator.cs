@@ -56,7 +56,7 @@ public class IslandCreator : MonoBehaviour
     
     public void PlaceBlock()
     {
-        
+        AudioManager.instance.Play(4, false);
         drag.blocksGo.transform.parent = GameManager.instance.blockGroup.transform;
         GameManager.instance.islandCreator.current = null;
         GameManager.instance.islandCreator.currentType = null;

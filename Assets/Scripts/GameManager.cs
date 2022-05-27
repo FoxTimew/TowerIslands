@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
-        currentWave++;
+        
         StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
@@ -194,18 +194,19 @@ public class GameManager : MonoBehaviour
     
     public IEnumerator LevelCoroutine(LevelSO level)
     {
+        /*Sound*/ AudioManager.instance.Play(1, true);
         UI_Manager.instance.CloseMenu(13);
         waveCount = level.waves.Count;
         currentWave = 0;
         Debug.Log(waveCount);
-        while (waveCount > -1)
+        while (waveCount > 0)
         {
-            currentWave++;
             StartCoroutine(SpawnWave(level.waves[currentWave]));
             
             while (enemyGroup.childCount > 0) yield return null;
             
-            if (waveCount > -1)
+            
+            if (waveCount > 0)
             {
                 selectableBlock = true;
                 yield return preparationTime;
@@ -239,10 +240,10 @@ public class GameManager : MonoBehaviour
     private Tween tween;
     IEnumerator SpawnWave(Wave wave)
     {
-        /*Sound*/ AudioManager.instance.Play(1, true);
+        
         var bargeGO = new GameObject();
-        
-        
+
+        currentWave++;
         selectableBlock = false;
         selectedBlock = null;
         foreach (var bargeSo in wave.bargesInWave)
