@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
     public BuildingSO damageTrapSO;
     public BuildingSO defenseSupportSO;
     public BuildingSO energySupportSO;
-    
+    [SerializeField] private GameObject startLevelButton;
+
 
     #region Unity Methods
 
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
+        startLevelButton.SetActive(buildings.Count>0);
         if (!selectableBlock) return;
         UnSelectBlock();
     }
@@ -150,7 +153,6 @@ public class GameManager : MonoBehaviour
     public void StartLevel()
     {
         ResetLevel();
-        if (buildings.Count <= 0) return;
         if (levelManager.selectedLevel != null)
         {
             /*Sound*/ AudioManager.instance.Play(2, true);
