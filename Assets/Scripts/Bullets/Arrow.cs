@@ -32,6 +32,6 @@ public class Arrow : Bullet
     {
         Pooler.instance.Depop("Arrow",gameObject);
         if (!target.isActiveAndEnabled) return;
-        if (target.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage)) originTower.target = null;
+        target.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage,originTower);
     }
 }

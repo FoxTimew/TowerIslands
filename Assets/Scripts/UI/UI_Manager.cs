@@ -484,18 +484,14 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateWaveUI()
     {
-        if (waveUIText.IsActive())
-        {
-            if (GameManager.instance.levelManager.selectedLevel is null) return;
-            waveUIText.text = $"{GameManager.instance.currentWave}/{GameManager.instance.levelManager.selectedLevel.waves.Count}";
-        }
+
+        if (GameManager.instance.levelManager.selectedLevel is null) return;
+        waveUIText.text = $"{GameManager.instance.currentWave}/{GameManager.instance.levelManager.selectedLevel.waves.Count}";
+
     }
     public void UpdateGoldUI(int goldAmount)
     {
-        if (goldUIText.IsActive())
-        {
-            goldUIText.text = $"{goldAmount}";
-        }
+        goldUIText.text = $"{goldAmount}";
     }
 
 

@@ -80,4 +80,9 @@ public class Building : MonoBehaviour
     {
         return destroyed;
     }
+
+    public virtual void ResetTarget()
+    {
+        return;
+    }
 }
