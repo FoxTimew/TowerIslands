@@ -198,7 +198,7 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 0);
         animator.SetTrigger("Death");
-        sr.DOFade(1, 0.5f).OnComplete(() => Pooler.instance.Depop(enemyStats.eName, this.gameObject));
+        sr.DOFade(1, 1).OnComplete(() => Pooler.instance.Depop(enemyStats.eName, this.gameObject));
     }
     
 }
