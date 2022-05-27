@@ -66,6 +66,7 @@ MonoBehaviour:
   damageTrapSO: {fileID: 11400000, guid: 9ee88a045c609964f9ab2f36fb11e76b, type: 2}
   defenseSupportSO: {fileID: 11400000, guid: 9090473de08815e4884f9088d38cdff5, type: 2}
   energySupportSO: {fileID: 11400000, guid: d803339cf488ce44281dca7580f79450, type: 2}
+  startLevelButton: {fileID: 0}
   gridGroup: {fileID: 0}
   timeBetweenWaves: 10
   selectableBlock: 0
@@ -97,10 +98,11 @@ MonoBehaviour:
   current: {fileID: 0}
   currentType: 
   blocks:
-  - {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2, type: 3}
-  - {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
-  - {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
-  - {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
+  - {fileID: 5744572294132932168, guid: ccbc9c87665117a49a804e54ff755db2, type: 3}
+  - {fileID: 5866609134711335595, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
+  - {fileID: 660197909831716575, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
+  - {fileID: 3794926003884879259, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
+  - {fileID: 3794926003884879259, guid: b069236a792dbd247b8f8db5053e132f, type: 3}
   canvas: {fileID: 0}
 --- !u!114 &6823177744949319021
 MonoBehaviour:

@@ -2342,41 +2342,6 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 674307209}
-    - target: {fileID: 6823177744949319018, guid: 707d224df9b5948498f0f10c6b5796e5,
-        type: 3}
-      propertyPath: blocks.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6823177744949319018, guid: 707d224df9b5948498f0f10c6b5796e5,
-        type: 3}
-      propertyPath: blocks.Array.data[0]
-      value: 
-      objectReference: {fileID: 5744572294132932168, guid: ccbc9c87665117a49a804e54ff755db2,
-        type: 3}
-    - target: {fileID: 6823177744949319018, guid: 707d224df9b5948498f0f10c6b5796e5,
-        type: 3}
-      propertyPath: blocks.Array.data[1]
-      value: 
-      objectReference: {fileID: 5866609134711335595, guid: 9829c912975b1934bba7c6e3b23c3b7e,
-        type: 3}
-    - target: {fileID: 6823177744949319018, guid: 707d224df9b5948498f0f10c6b5796e5,
-        type: 3}
-      propertyPath: blocks.Array.data[2]
-      value: 
-      objectReference: {fileID: 660197909831716575, guid: 6a46330f48150c54bbf67bc6b883d46f,
-        type: 3}
-    - target: {fileID: 6823177744949319018, guid: 707d224df9b5948498f0f10c6b5796e5,
-        type: 3}
-      propertyPath: blocks.Array.data[3]
-      value: 
-      objectReference: {fileID: 3794926003884879259, guid: 42002107bfd228b40a39d103a7150c23,
-        type: 3}
-    - target: {fileID: 6823177744949319018, guid: 707d224df9b5948498f0f10c6b5796e5,
-        type: 3}
-      propertyPath: blocks.Array.data[4]
-      value: 
-      objectReference: {fileID: 3794926003884879259, guid: b069236a792dbd247b8f8db5053e132f,
-        type: 3}
     - target: {fileID: 6823177744949319019, guid: 707d224df9b5948498f0f10c6b5796e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -2460,11 +2425,6 @@ PrefabInstance:
     - target: {fileID: 6823177744949319021, guid: 707d224df9b5948498f0f10c6b5796e5,
         type: 3}
       propertyPath: destroyGroup
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6823177744949319021, guid: 707d224df9b5948498f0f10c6b5796e5,
-        type: 3}
-      propertyPath: blockInfogroup
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6823177744949319021, guid: 707d224df9b5948498f0f10c6b5796e5,
