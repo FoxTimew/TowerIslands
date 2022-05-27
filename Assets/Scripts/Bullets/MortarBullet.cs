@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class MortarBullet : Bullet
 {
-
+    
+    [SerializeField] private GameObject bullet;
     [SerializeField] private ParticleSystem shoot;
     [SerializeField] private ParticleSystem impact;
     [SerializeField] private List<Collider2D> targets;
@@ -22,28 +23,41 @@ public class MortarBullet : Bullet
         pos = target.transform.position;
         duration = (pos - transform.position).magnitude / speed;
         shoot.Play();
-         transform.DOJump(
+        impact.transform.position = pos;
+        bullet.transform.DOJump(
                  pos,5, 1 , duration).SetEase(Ease.Linear)
-             .OnComplete(impact.Play).OnComplete(DoDamage).OnComplete(()=> Pooler.instance.DelayedDepop(1f,"MortarBullet",gameObject));
+             .OnComplete(Impact);
          
     }
 
-
+    void Impact()
+    {
+        impact.Play();
+        DoDamage();
+        Pooler.instance.DelayedDepop(1.5f, "MortarBullet", gameObject);
+    }
     private void DoDamage()
     {
+        Debug.Log("target : " + targets.Count);
         foreach (var enemy in targets)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage,originTower);
+            enemy.GetComponentInParent<Enemy>().TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage,originTower);
         }
     }
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.transform.CompareTag("Enemy")) return;
-        targets.Add(other);
+        if (targets.Contains(other)) targets.Remove(other);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (targets.Contains(other)) targets.Remove(other);
+        if (!other.transform.parent.CompareTag("Enemy")) return;
+        targets.Add(other);
+    }
+
+    private void OnDisable()
+    {
+        impact.transform.localPosition = Vector3.zero;
+        bullet.transform.position = Vector3.zero;
     }
 }
