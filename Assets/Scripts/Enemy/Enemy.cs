@@ -162,7 +162,7 @@ public class Enemy : MonoBehaviour
         {
             animator.SetTrigger("Attack");
             /*Sound*/ AudioManager.instance.Play(UnityEngine.Random.Range(5, 8), false, true);
-            yield return new WaitForSeconds(enemyStats.attackSpeed);
+            yield return new WaitForSeconds(1/enemyStats.attackSpeed);
             target.takeDamage(currentDamage);
         }
         animator.SetTrigger("AttackEnd");

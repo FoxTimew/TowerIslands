@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel()
     {
+        ResetLevel();
         if (buildings.Count <= 0) return;
         if (levelManager.selectedLevel != null)
         {
@@ -168,17 +169,16 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
-        
         StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
     public void Retry()
     {
         if(levelRoutine is not null) StopCoroutine(levelRoutine);
+        ResetLevel();
         for(int i = enemyGroup.childCount-1;i>-1;i--)
             Pooler.instance.Depop(enemyGroup.GetChild(0).name,enemyGroup.GetChild(0).gameObject);
         HDV.Repair();
-        ResetLevel();
         selectableBlock = true;
     }
 
@@ -216,6 +216,7 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.Play(2, true);
             yield return null;
         }
+        ResetLevel();
         ClearBuildings();
         levelManager.selectedLevel.isCompleted = true;
         Debug.Log(key);
@@ -224,7 +225,7 @@ public class GameManager : MonoBehaviour
         HDV.Repair();
         UI_Manager.instance.CloseMenuWithoutTransition(8);
         UI_Manager.instance.OpenMenuWithoutTransition(12);
-        ResetLevel();
+        
 
     }
     public List<Building> buildings = new List<Building>();
