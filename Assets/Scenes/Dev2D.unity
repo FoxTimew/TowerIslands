@@ -135,6 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dcd08c5ac013c4aa56c1cb179e7b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &381971282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2518563837951389202, guid: 518dd676735ca804d962327ccbeb5318,
+    type: 3}
+  m_PrefabInstance: {fileID: 905295879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400970464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2327,11 @@ PrefabInstance:
       propertyPath: enemyGroup
       value: 
       objectReference: {fileID: 1064944089}
+    - target: {fileID: 6823177744949319016, guid: 707d224df9b5948498f0f10c6b5796e5,
+        type: 3}
+      propertyPath: startLevelButton
+      value: 
+      objectReference: {fileID: 381971282}
     - target: {fileID: 6823177744949319017, guid: 707d224df9b5948498f0f10c6b5796e5,
         type: 3}
       propertyPath: m_Name
