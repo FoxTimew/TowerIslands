@@ -180,12 +180,15 @@ public class GameManager : MonoBehaviour
             Pooler.instance.Depop(enemyGroup.GetChild(0).name,enemyGroup.GetChild(0).gameObject);
         HDV.Repair();
         selectableBlock = true;
+        EconomyManager.instance.SetGold(levelManager.selectedLevel.startGold);
+        
     }
 
     private void ResetLevel()
     {
         waveCount = 0;
         currentWave = 0;
+        
     }
 
 
@@ -216,6 +219,7 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.Play(2, true);
             yield return null;
         }
+        while (enemyGroup.childCount > 0) yield return null;
         ResetLevel();
         ClearBuildings();
         levelManager.selectedLevel.isCompleted = true;
