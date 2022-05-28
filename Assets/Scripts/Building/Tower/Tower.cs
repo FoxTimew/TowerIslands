@@ -122,6 +122,7 @@ public class Tower : Building
     public override void Reset()
     {
         towerSO = level1SO;
+        buildingSO = level1SO;
         Debug.Log(towerSO.level);
         attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
         Repair();
@@ -133,10 +134,8 @@ public class Tower : Building
         level1.SetActive(false);
         level2.SetActive(true);
         EconomyManager.instance.RemoveGold(towerSO.upgradeCost);
-        towerSO = towerSO.nextLevel;
-        buildingSO = towerSO;
-        towerSO = (TowerSO) buildingSO;
-        attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
+        towerSO = level1SO.nextLevel;
+        buildingSO = level1SO.nextLevel;
 
     }
     
