@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public BuildingSO defenseSupportSO;
     public BuildingSO energySupportSO;
     [SerializeField] private GameObject startLevelButton;
+    [SerializeField] private GameObject nextWaveButton;
     
     #region Unity Methods
 
@@ -62,6 +63,8 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
+        if (levelManager.selectedLevel) nextWaveButton.SetActive(currentWave < levelManager.selectedLevel.waves.Count);
+        
         startLevelButton.SetActive(buildings.Count>0);
         if (!selectableBlock) return;
         UnSelectBlock();

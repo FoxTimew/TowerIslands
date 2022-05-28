@@ -309,6 +309,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
+                playingLevelMenu.transform.GetChild(0).gameObject.SetActive(true);
                 /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.FeedbackUI):
