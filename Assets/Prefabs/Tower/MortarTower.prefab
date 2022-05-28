@@ -364,7 +364,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -405,6 +405,7 @@ MonoBehaviour:
   sr: {fileID: 126142124043114283}
   towerSO: {fileID: 11400000, guid: 9097ef34b5907e24199e5a85f7d80a47, type: 2}
   target: {fileID: 0}
+  inRange: []
   pc: {fileID: 126142124089701537}
   level1: {fileID: 126142122342891750}
   level2: {fileID: 0}

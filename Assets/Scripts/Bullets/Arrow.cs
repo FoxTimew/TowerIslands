@@ -13,8 +13,6 @@ public class Arrow : Bullet
         originTower = origin;
         SetTarget(targetToSet);
         pos = target.transform.position;
-        pos.y += 1f;
-        
         transform.right = (pos - transform.position);
         pos -= (pos - transform.position) * 0.2f;
         

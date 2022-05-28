@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
     public bool selectableBlock = false;
 
     public int currentWave;
-    private int waveCount;
+    public int waveCount;
     [SerializeField] private Vector3[] bargeSpawn;
 
     private Vector3 spawnPoint;

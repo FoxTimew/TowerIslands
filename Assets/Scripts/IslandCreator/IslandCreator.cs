@@ -17,7 +17,7 @@ public class IslandCreator : MonoBehaviour
     void Start()
     {
         foreach(var drag in blocks)
-            blocksCount.Add(drag.index,1);
+            blocksCount.Add(drag.index,0);
     }
 
     void Update()

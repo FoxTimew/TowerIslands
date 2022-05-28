@@ -6,6 +6,6 @@ public class NextWaveButton : MonoBehaviour
 {
     void Update()
     {
-        gameObject.SetActive(GameManager.instance.currentWave<GameManager.instance.levelManager.selectedLevel.waves.Count);
+        gameObject.SetActive(GameManager.instance.waveCount>0);
     }
 }
