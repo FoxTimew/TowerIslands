@@ -121,20 +121,30 @@ public class ContextMenuLinker : MonoBehaviour
                     Debug.Log("Block Built");
                     //Upgrade button
                     //Si l'upgrade est dispo + on a assez d'argent
-                    
+                    Debug.Log($"Machin built : {GameManager.instance.selectedBlock.building.GetType()}");
                     if (GameManager.instance.selectedBlock.building.GetType() == typeof(Tower))
                     {
+                        Debug.Log("Passé le test");
                         tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
                         
                         if (tmpTowerSO.nextLevel != null &&
                             EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost)
                         {
+                            Debug.Log("Upgrade dispo + assez d'argent");
                             buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.upgradeSprite;
                             buttons[0].onClick.RemoveAllListeners();
                             buttons[0].onClick.AddListener(UpgradeBuildingListener);
                         }
+                        else if( tmpTowerSO.nextLevel != null && EconomyManager.instance.GetGoldAmount() < tmpTowerSO.upgradeCost)
+                        {
+                            Debug.Log("Upgrade dispo + pas assez d'argent");
+                            buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                            buttons[0].interactable = false;
+                            upgradeCostText.text = tmpTowerSO.upgradeCost.ToString();
+                        }
                         else
                         {
+                            Debug.Log("Upgrade pas dispo");
                             buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                             buttons[0].interactable = false;
                             upgradeCostText.text = "0";
@@ -172,11 +182,20 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[2].interactable = false;
                     }
 
-                    repairCostText.text = (GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
-                                           (GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
-                                            GameManager.instance.selectedBlock.building.hp) * 100
-                                           / GameManager.instance.selectedBlock.building.buildingSO.healthPoints).ToString();
-                    foreach (Button button in buttons)
+                    if (GameManager.instance.selectedBlock.building.isBuildingDestroyed())
+                    {
+                        repairCostText.text = (GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
+                                               (GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
+                                                GameManager.instance.selectedBlock.building.hp) * 100
+                                               / GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                            .ToString();
+                    }
+                    else
+                    {
+                        repairCostText.text = "0";
+                    }
+
+                        foreach (Button button in buttons)
                     {
                         button.onClick.AddListener(MenuCloserListener);
                     }
