@@ -16,10 +16,12 @@ public class Berzerk : MonoBehaviour
 
     private void Rage()
     {
+        enemy.StopMovementRageAnim();
         enemy.animator.SetFloat("Speed",0);
         enemy.animator.SetTrigger("AttackEnd");
         enemy.animator.SetTrigger("Rage");
         enemy.currentDamage = (int) (enemy.enemyStats.damage * 1.2f);
         rage = true;
+        enemy.rageAnim = false;
     }
 }

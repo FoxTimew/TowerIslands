@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     private Vector2 pos;
     private void Init()
     {
+        isDying = false;
         pos.x = Random.Range(-0.5f, 0.5f);
         pos.y = Random.Range(-0.5f, 0.5f);
         sr.transform.localPosition = pos;
@@ -60,6 +61,12 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public bool rageAnim;
+    public void StopMovementRageAnim()
+    {
+        rageAnim = true;
+        StopMovement();
+    }
     
     public void StopMovement()
     {
@@ -91,8 +98,12 @@ public class Enemy : MonoBehaviour
         sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         currentHP -= damageToTake;
         if (currentHP > 0) return false;
+        if (isDying) return true;
+        isDying = true;
         currentHP = 0;
-        if(origin is not null) origin.ResetTarget();
+        if( origin is not null) origin.ResetTarget();
+        tween.Kill();
+        StopAllCoroutines();
         Death(); 
         return true;
     }
@@ -160,6 +171,7 @@ public class Enemy : MonoBehaviour
         animator.SetInteger("Speed", 0);
         while (target.hp > 0)
         {
+            if (rageAnim) yield return null;
             animator.SetTrigger("Attack");
             /*Sound*/ AudioManager.instance.Play(UnityEngine.Random.Range(5, 8), false, true);
             yield return new WaitForSeconds(1/enemyStats.attackSpeed);
@@ -181,6 +193,7 @@ public class Enemy : MonoBehaviour
         //GameManager.instance.enemies.Add(this);
     }
 
+    public bool isDying;
     [SerializeField] private SpriteRenderer sr;
     public void Death()
     {
@@ -198,7 +211,7 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 0);
         animator.SetTrigger("Death");
-        sr.DOFade(1, 1).OnComplete(() => Pooler.instance.Depop(enemyStats.eName, this.gameObject));
+        Pooler.instance.DelayedDepop(0.8f, enemyStats.eName, this.gameObject);
     }
     
 }

@@ -38,6 +38,7 @@ public class Building : MonoBehaviour
         {
             UI_Manager.instance.OpenMenuWithoutTransition(11); 
             UI_Manager.instance.CloseMenuWithoutTransition(8);
+            GameManager.instance.ClearBuildings();
         }
         else
         {
