@@ -123,6 +123,7 @@ public class Tower : Building
     {
         towerSO = level1SO;
         Debug.Log(towerSO.level);
+        attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
         Repair();
         target = null;
     }
@@ -133,6 +134,10 @@ public class Tower : Building
         level2.SetActive(true);
         EconomyManager.instance.RemoveGold(towerSO.upgradeCost);
         towerSO = towerSO.nextLevel;
+        buildingSO = towerSO;
+        towerSO = (TowerSO) buildingSO;
+        attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
+
     }
     
     private WaitForSeconds attackSpeed;
