@@ -121,14 +121,14 @@ public class ContextMenuLinker : MonoBehaviour
                     Debug.Log("Block Built");
                     //Upgrade button
                     //Si l'upgrade est dispo + on a assez d'argent
-
-                    if (GameManager.instance.selectedBlock.building.GetType() == typeof(TowerSO))
+                    
+                    if (GameManager.instance.selectedBlock.building.GetType() == typeof(Tower))
                     {
                         tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
+                        
                         if (tmpTowerSO.nextLevel != null &&
                             EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost)
                         {
-
                             buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.upgradeSprite;
                             buttons[0].onClick.RemoveAllListeners();
                             buttons[0].onClick.AddListener(UpgradeBuildingListener);
@@ -137,6 +137,7 @@ public class ContextMenuLinker : MonoBehaviour
                         {
                             buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                             buttons[0].interactable = false;
+                            upgradeCostText.text = "0";
                         }
 
                         upgradeCostText.text = tmpTowerSO.upgradeCost.ToString();
