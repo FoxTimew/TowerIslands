@@ -273,6 +273,7 @@ MonoBehaviour:
     x: 0
     y: 0
   buildingSO: {fileID: 11400000, guid: 9770f1f2bcf4df24a86b3934a73e061a, type: 2}
+  destruction: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 4bc816cb5f445954c8ee73b81a4d0770, type: 3}
   sr: {fileID: 6093415403763890944}
@@ -292,9 +293,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19091643, y: 0}
+  m_Offset: {x: -0.017742515, y: 0.10514128}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 1.1225761
 --- !u!1001 &361000533045571128
 PrefabInstance:
   m_ObjectHideFlags: 0

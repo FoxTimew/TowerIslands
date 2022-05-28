@@ -42,7 +42,6 @@ public class Tower : Building
         if (shooting) return;
         if (target is null) return;
         if (!target.gameObject.activeSelf) ResetTarget();
-        if (target is null) return;
         StartCoroutine(ShootCoroutine());
     }
 
@@ -125,6 +124,7 @@ public class Tower : Building
         towerSO = level1SO;
         Debug.Log(towerSO.level);
         Repair();
+        target = null;
     }
 
     public void Upgrade()
@@ -138,7 +138,7 @@ public class Tower : Building
     private WaitForSeconds attackSpeed;
     IEnumerator ShootCoroutine()
     {
-        
+        if(target is null) yield break;
         shooting = true;
         GameObject go = Pooler.instance.Pop(towerSO.bulletPrefab.gameObject.name);
         go.transform.position = transform.position + Vector3.up;

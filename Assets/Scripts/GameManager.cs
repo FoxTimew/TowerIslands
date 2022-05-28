@@ -64,7 +64,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (levelManager.selectedLevel) nextWaveButton.SetActive(currentWave < levelManager.selectedLevel.waves.Count);
-        
         startLevelButton.SetActive(buildings.Count>0);
         if (!selectableBlock) return;
         UnSelectBlock();
