@@ -248,6 +248,7 @@ public class GameManager : MonoBehaviour
         GameObject bargeGO;
 
         currentWave++;
+        UI_Manager.instance.UpdateWaveUI();
         selectableBlock = false;
         selectedBlock = null;
         foreach (var bargeSo in wave.bargesInWave)
