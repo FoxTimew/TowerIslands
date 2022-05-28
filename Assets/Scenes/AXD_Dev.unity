@@ -502,6 +502,12 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
+--- !u!198 &546450830 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5888285796838570126, guid: 2355f296966ac5b4692af34c0d15b92f,
+    type: 3}
+  m_PrefabInstance: {fileID: 144147250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &663703981
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +599,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1187775500, guid: 518dd676735ca804d962327ccbeb5318, type: 3}
+      propertyPath: particleSystem
+      value: 
+      objectReference: {fileID: 546450830}
     - target: {fileID: 20251916884090342, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
       propertyPath: m_IsActive
@@ -2075,279 +2085,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[0].key
-      value: Minion
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[1].key
-      value: RapidBullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[2].key
-      value: Barge
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[3].key
-      value: Fast Attack Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[4].key
-      value: EnergySupport
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[5].key
-      value: StunTrap
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[6].key
-      value: Blocks1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[7].key
-      value: Blocks2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[8].key
-      value: Blocks3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[9].key
-      value: Blocks4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[10].key
-      value: Tank
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[11].key
-      value: Berzerk
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[12].key
-      value: Berzerk
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[0].pool.prefab
-      value: 
-      objectReference: {fileID: 1691961859449996100, guid: d05fbcc84e77a6744b608bb2d82c1097,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[1].pool.prefab
-      value: 
-      objectReference: {fileID: 8121574140305436561, guid: 32be0a0b41d61d74cb15736e888906b4,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[2].pool.prefab
-      value: 
-      objectReference: {fileID: 2806747945817723420, guid: 22effb08ff1d4df49aa37f1cdb8cd99f,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[3].pool.prefab
-      value: 
-      objectReference: {fileID: 5140832759016273425, guid: bf1646a145647ee45b9d386fc79f0d33,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[4].pool.prefab
-      value: 
-      objectReference: {fileID: 8175417795234099611, guid: be04b73018bfda8478dd8a234ebad850,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[5].pool.prefab
-      value: 
-      objectReference: {fileID: 7189452039542709175, guid: 88b98bc8147b7a24bafd05dc4d8449bd,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[6].pool.prefab
-      value: 
-      objectReference: {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[7].pool.prefab
-      value: 
-      objectReference: {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[8].pool.prefab
-      value: 
-      objectReference: {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[9].pool.prefab
-      value: 
-      objectReference: {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[10].pool.prefab
-      value: 
-      objectReference: {fileID: 1691961859449996100, guid: 39fcb4abb52e31149ac6d613b1da7049,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[11].pool.prefab
-      value: 
-      objectReference: {fileID: 1691961859449996100, guid: 65a5acb26393d8f409f3ca0209af38a5,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[12].pool.prefab
-      value: 
-      objectReference: {fileID: 1691961859449996100, guid: 65a5acb26393d8f409f3ca0209af38a5,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[0].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[1].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[2].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[3].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[4].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[5].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[6].pool.baseCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[7].pool.baseCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[8].pool.baseCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[9].pool.baseCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[10].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[11].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[12].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[1].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[2].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[3].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[4].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[5].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[6].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[7].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[8].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[9].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[10].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[11].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[12].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7260527157548714834, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: m_RootOrder
@@ -2632,6 +2369,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1394833780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2518563837951389202, guid: 518dd676735ca804d962327ccbeb5318,
+    type: 3}
+  m_PrefabInstance: {fileID: 693626561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1507654479
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,6 +2865,11 @@ PrefabInstance:
       propertyPath: enemyGroup
       value: 
       objectReference: {fileID: 1064944089}
+    - target: {fileID: 6823177744949319016, guid: 707d224df9b5948498f0f10c6b5796e5,
+        type: 3}
+      propertyPath: startLevelButton
+      value: 
+      objectReference: {fileID: 1394833780}
     - target: {fileID: 6823177744949319017, guid: 707d224df9b5948498f0f10c6b5796e5,
         type: 3}
       propertyPath: m_Name
