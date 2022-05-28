@@ -6,7 +6,7 @@ public class Berzerk : MonoBehaviour
 {
     [SerializeField] private Enemy enemy;
     public bool rage = false;
-
+    private WaitForSeconds animTime = new WaitForSeconds(0.8f);
     void Update()
     {
         if (rage) return;
@@ -22,6 +22,12 @@ public class Berzerk : MonoBehaviour
         enemy.animator.SetTrigger("Rage");
         enemy.currentDamage = (int) (enemy.enemyStats.damage * 1.2f);
         rage = true;
+        StartCoroutine(AnimTime());
+    }
+
+    IEnumerator AnimTime()
+    {
+        yield return animTime;
         enemy.rageAnim = false;
     }
 }

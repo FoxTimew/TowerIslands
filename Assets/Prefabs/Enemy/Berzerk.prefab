@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.27757108, y: -0.03271365}
@@ -203,6 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 62cd4472339a3f4428f97559dc7e7479, type: 2}
   animator: {fileID: 6432146496183651692}
+  rageAnim: 0
+  isDying: 0
   sr: {fileID: 7059655157019609591}
 --- !u!50 &8385593734642031524
 Rigidbody2D:
@@ -249,7 +251,7 @@ CircleCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -280,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889001880012368652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
