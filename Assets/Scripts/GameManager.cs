@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,8 +40,7 @@ public class GameManager : MonoBehaviour
     public BuildingSO defenseSupportSO;
     public BuildingSO energySupportSO;
     [SerializeField] private GameObject startLevelButton;
-
-
+    
     #region Unity Methods
 
     void Awake()
@@ -70,8 +68,7 @@ public class GameManager : MonoBehaviour
     }
     
     #endregion
-    
-    
+
     #region Grid
 
     public GameObject gridGroup;
@@ -132,7 +129,6 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    
     #region Level
 
     public Coroutine levelRoutine;
@@ -289,8 +285,7 @@ public class GameManager : MonoBehaviour
             Pooler.instance.Depop("Barge",bargeGO));
     }
     #endregion
-    
-    
+
     [SerializeField] private LayerMask layerMask;
     private void UnSelectBlock()
     {
