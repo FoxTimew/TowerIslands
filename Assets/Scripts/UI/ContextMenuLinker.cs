@@ -131,9 +131,10 @@ public class ContextMenuLinker : MonoBehaviour
                             EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost)
                         {
                             Debug.Log("Upgrade dispo + assez d'argent");
-                            //buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.upgradeSprite;
-                            //buttons[0].onClick.RemoveAllListeners();
-                            //buttons[0].onClick.AddListener(UpgradeBuildingListener);
+                            buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.upgradeSprite;
+                            buttons[0].onClick.RemoveAllListeners();
+                            buttons[0].interactable = true;
+                            buttons[0].onClick.AddListener(UpgradeBuildingListener);
                         }
                         else if( tmpTowerSO.nextLevel != null && EconomyManager.instance.GetGoldAmount() < tmpTowerSO.upgradeCost)
                         {
