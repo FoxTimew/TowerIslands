@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
-        StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
+        if(currentWave<levelManager.selectedLevel.waves.Count) StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
     public void Retry()
@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(waveCount);
         while (waveCount > 0)
         {
-            StartCoroutine(SpawnWave(level.waves[currentWave]));
+            if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
             
             while (enemyGroup.childCount > 0) yield return null;
             UI_Manager.instance.LaunchWaveClearedTransition();

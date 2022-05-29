@@ -138,6 +138,7 @@ public class Tower : Building
         Debug.Log(towerSO.level);
         attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
         Repair();
+        inRange.Clear();
         target = null;
     }
 
