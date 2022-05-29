@@ -239,6 +239,8 @@ public class GameManager : MonoBehaviour
         for (int i = buildings.Count - 1; i > -1; i--)
             grid.GridElements[buildings[i].index.x,buildings[i].index.y].block.SellBuilding();
     }
+
+
     
     IEnumerator SpawnWave(Wave wave)
     {
@@ -256,12 +258,14 @@ public class GameManager : MonoBehaviour
         
         yield return null;
     }
-
+    private Vector3 lastBargeSpawnPoint = Vector3.zero;
     private void SpawnBarge(BargeSO bargeSo)
     {
         GameObject bargeGO;
         
-        var spawnPoint = bargeSpawn[Random.Range(0,4)];
+        Vector3 spawnPoint = bargeSpawn[Random.Range(0,4)];
+        while(spawnPoint == lastBargeSpawnPoint) spawnPoint = bargeSpawn[Random.Range(0,4)];
+        lastBargeSpawnPoint = spawnPoint;
         var des = grid.GetNearestBlock(spawnPoint).transform.position; 
         var dir = Utils.CheckDirection(spawnPoint, des);
         switch (dir)

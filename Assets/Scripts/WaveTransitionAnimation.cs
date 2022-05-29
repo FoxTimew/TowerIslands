@@ -36,6 +36,7 @@ public class WaveTransitionAnimation : MonoBehaviour
 
     private void WaveClearShow()
     {
+        waveClearedImage.gameObject.SetActive(true);
         waveClearedImage.transform.DOScale(Vector3.one, appearingTime);
     }
 
@@ -44,7 +45,9 @@ public class WaveTransitionAnimation : MonoBehaviour
         VignetteFadeOut();
         waveClearedImage.DOFade(0, disappearingTime).OnComplete(() =>
         {
-            waveClearedImage.transform.DOScale(Vector3.zero, disappearingTime);
+            waveClearedImage.transform.localScale = Vector3.zero;
+            waveClearedImage.color = Color.white;
+            waveClearedImage.gameObject.SetActive(false);
             buildYourDefensesImage.DOFade(1, appearingTime);
         });
     }
