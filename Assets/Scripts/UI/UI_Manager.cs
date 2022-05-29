@@ -125,21 +125,41 @@ public class UI_Manager : MonoBehaviour
                 linker = blockInfo.transform.GetChild(1).GetComponent<ContextMenuLinker>();
                 if (GameManager.instance.selectedBlock.building == null)
                 {
+                    Debug.Log(("No Building"));
                     tmpChild = blockInfo.transform.GetChild(0).gameObject;
                     linker = tmpChild.GetComponent<ContextMenuLinker>();
                     if (!tmpChild.activeSelf)
                     {
+                        Debug.Log(("MenuNotActive"));
                         tmpChild.SetActive(true);
-                        linker.LinkListeners(GameManager.instance.selectedBlock);
+                        if (GameManager.instance.selectedBlock != null)
+                        {
+                            Debug.Log("OpenMenu 1 Block not null");
+                            linker.LinkListeners(GameManager.instance.selectedBlock);
+                        }
+                        else
+                        {
+                            Debug.Log("OpenMenu 1 Block null");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Menu Already Opened");
                     }
                 }
                 else
                 {
+                    Debug.Log(("1 Building"));
                     linker.cma.PlayAnimation();
                     linker.gameObject.SetActive(true);
                     if (GameManager.instance.selectedBlock != null)
                     {
+                        Debug.Log("OpenMenu 2 Block not null");
                         linker.LinkListeners(GameManager.instance.selectedBlock);
+                    }
+                    else
+                    {
+                        Debug.Log("OpenMenu 2 Block null");
                     }
                 }
             }else
