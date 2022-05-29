@@ -118,34 +118,29 @@ public class ContextMenuLinker : MonoBehaviour
 
                     break;
                 case (ContextMenuType.BlockBuilt):
-                    Debug.Log("Block Built");
                     //Upgrade button
-                    //Si l'upgrade est dispo + on a assez d'argent
-                    Debug.Log($"Machin built : {GameManager.instance.selectedBlock.building.GetType()}");
+                    //Si l'upgrade est dispo + on a assez d'argent + la tour n'est pas morte
                     if (GameManager.instance.selectedBlock.building.GetType() == typeof(Tower))
                     {
-                        Debug.Log("Passé le test");
                         tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
                         
                         if (tmpTowerSO.nextLevel != null &&
-                            EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost)
+                            EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost && 
+                            GameManager.instance.selectedBlock.building.hp > 0)
                         {
-                            Debug.Log("Upgrade dispo + assez d'argent");
                             buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.upgradeSprite;
                             buttons[0].onClick.RemoveAllListeners();
                             buttons[0].interactable = true;
                             buttons[0].onClick.AddListener(UpgradeBuildingListener);
                         }
-                        else if( tmpTowerSO.nextLevel != null && EconomyManager.instance.GetGoldAmount() < tmpTowerSO.upgradeCost)
+                        else if( tmpTowerSO.nextLevel != null && (EconomyManager.instance.GetGoldAmount() < tmpTowerSO.upgradeCost || GameManager.instance.selectedBlock.building.hp <= 0))
                         {
-                            Debug.Log("Upgrade dispo + pas assez d'argent");
                             buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                             buttons[0].interactable = false;
                             upgradeCostText.text = tmpTowerSO.upgradeCost.ToString();
                         }
                         else
                         {
-                            Debug.Log("Upgrade pas dispo");
                             buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                             buttons[0].interactable = false;
                             upgradeCostText.text = "0";
@@ -165,7 +160,7 @@ public class ContextMenuLinker : MonoBehaviour
                     buttons[1].onClick.AddListener(SellBuildingListener);
                     sellCostText.text = GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
                     //Repair button
-                    //Si le repair est dispo + on a assez d'argent
+                    //Si le repair est dispo + on a assez d'argent 
                     if (GameManager.instance.selectedBlock.building.isBuildingDestroyed() &&
                         EconomyManager.instance.GetGoldAmount() >
                         GameManager.instance.selectedBlock.building.buildingSO.goldRequired *

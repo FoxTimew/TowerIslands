@@ -12,7 +12,6 @@ public class BuildButton : MonoBehaviour
     public void Build()
     {
         GameManager.instance.selectedBlock.Build(buildingSO);
-        GameManager.instance.levelManager.OpenBlockUI();
     }
 
     private void Update()

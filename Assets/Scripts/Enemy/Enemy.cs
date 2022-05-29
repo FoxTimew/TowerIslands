@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
 {
     
     public static event Action<int> EnemyDeathGoldEvent;
-    public static event Action<int> EnemyDeathCristalEvent;
     public AXD_EnemySO enemyStats;
 
     [SerializeField] public Animator animator;
@@ -152,10 +151,7 @@ public class Enemy : MonoBehaviour
 
     void CheckDirection(Vector2 pos, Vector2 des)
     {
-        // -x / +y = N
-        // +x / +y = E
-        // +x / -y = S
-        // -x / -y = W
+
         int signX = Math.Sign(des.x - pos.x);
         int signY = Math.Sign(des.y - pos.y);
 
@@ -207,15 +203,23 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
         }
-
-        if (EnemyDeathCristalEvent != null && cristalStored > 0)
-        {
-            EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
-        }
+        
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 0);
         animator.SetTrigger("Death");
+        StartCoroutine(DeathDepop());
         Pooler.instance.DelayedDepop(0.8f, enemyStats.eName, this.gameObject);
     }
-    
+
+    private WaitForSeconds waitDepop = new WaitForSeconds(0.5f);
+
+    IEnumerator DeathDepop()
+    {
+        yield return waitDepop;
+        sr.DOFade(0, 0.3f);
+        
+        var go = Pooler.instance.Pop("GoldFx");
+        go.transform.position = transform.position;
+        Pooler.instance.DelayedDepop(0.8f,"GoldFx",go);
+    }
 }
