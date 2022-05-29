@@ -6,6 +6,7 @@ using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -58,6 +59,11 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private RectTransform  RightTransition;
     [SerializeField] private float transitionDuration;
 
+    [Header("Wave Transition Reference")] 
+    public GameObject waveTransitionObject;
+
+    public float waveTransitionTime;
+ 
     [Header("DynamicButtonsReferences")] 
     [SerializeField] private GameObject levelButtonPrefab;
     [SerializeField] private GameObject blockButtonPrefab;
@@ -494,6 +500,12 @@ public class UI_Manager : MonoBehaviour
     public void UpdateGoldUI(int goldAmount)
     {
         goldUIText.text = $"{goldAmount}";
+    }
+
+    public void LaunchWaveClearedTransition()
+    {
+        Debug.Log("transition intitiated");
+        waveTransitionObject.SetActive(true);
     }
 
 

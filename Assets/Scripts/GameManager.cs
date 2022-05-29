@@ -207,6 +207,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(SpawnWave(level.waves[currentWave]));
             
             while (enemyGroup.childCount > 0) yield return null;
+            UI_Manager.instance.LaunchWaveClearedTransition();
             
             
             if (waveCount > 0)
@@ -242,9 +243,6 @@ public class GameManager : MonoBehaviour
     
     IEnumerator SpawnWave(Wave wave)
     {
-        
-        GameObject bargeGO;
-
         currentWave++;
         UI_Manager.instance.UpdateWaveUI();
         selectableBlock = false;
@@ -256,6 +254,7 @@ public class GameManager : MonoBehaviour
         }
         waveCount--;
         foreach (var building in buildings) building.ResetTarget();
+        
         yield return null;
     }
 

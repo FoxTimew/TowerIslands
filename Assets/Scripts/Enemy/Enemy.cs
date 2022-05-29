@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
 {
     
     public static event Action<int> EnemyDeathGoldEvent;
-    public static event Action<int> EnemyDeathCristalEvent;
     public AXD_EnemySO enemyStats;
 
     [SerializeField] public Animator animator;
@@ -207,11 +206,7 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
         }
-
-        if (EnemyDeathCristalEvent != null && cristalStored > 0)
-        {
-            EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
-        }
+        
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 0);
         animator.SetTrigger("Death");
