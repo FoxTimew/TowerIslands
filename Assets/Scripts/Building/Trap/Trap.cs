@@ -21,7 +21,7 @@ public class Trap : Building
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.transform.parent.CompareTag("Enemy")) return;
+        if (!other.transform.CompareTag("Enemy")) return;
         enemies.Add(other);
         
         
@@ -46,7 +46,7 @@ public class Trap : Building
             yield return psTime;
             foreach (var enemy in enemies)
             {
-                StartCoroutine(effect.ApplyEffect(enemy.GetComponentInParent<Enemy>(), ps));
+                StartCoroutine(effect.ApplyEffect(enemy.GetComponent<Enemy>(), ps));
             }
             yield return reloadingTime;
             reloading = false;
