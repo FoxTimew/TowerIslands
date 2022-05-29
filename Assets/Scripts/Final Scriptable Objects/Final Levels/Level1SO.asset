@@ -16,7 +16,8 @@ MonoBehaviour:
   isCompleted: 0
   waves:
   - bargesInWave:
-    - {fileID: 11400000, guid: 3bbde7306345ed146a0021ed517d2d95, type: 2}
+    - {fileID: 11400000, guid: b8535f39c872b22408026fdd19022c7e, type: 2}
+    - {fileID: 11400000, guid: b8535f39c872b22408026fdd19022c7e, type: 2}
   - bargesInWave:
     - {fileID: 11400000, guid: 3bbde7306345ed146a0021ed517d2d95, type: 2}
     - {fileID: 11400000, guid: ab68531978efd544f97863f728aca368, type: 2}
