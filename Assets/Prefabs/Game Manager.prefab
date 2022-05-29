@@ -67,10 +67,12 @@ MonoBehaviour:
   defenseSupportSO: {fileID: 11400000, guid: 9090473de08815e4884f9088d38cdff5, type: 2}
   energySupportSO: {fileID: 11400000, guid: d803339cf488ce44281dca7580f79450, type: 2}
   startLevelButton: {fileID: 0}
+  nextWaveButton: {fileID: 0}
   gridGroup: {fileID: 0}
   timeBetweenWaves: 10
   selectableBlock: 0
   currentWave: 0
+  waveCount: 0
   bargeSpawn:
   - {x: 40, y: 25, z: 0}
   - {x: 40, y: -25, z: 0}
@@ -98,11 +100,24 @@ MonoBehaviour:
   current: {fileID: 0}
   currentType: 
   blocks:
-  - {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2, type: 3}
-  - {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
-  - {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
-  - {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
+  - {fileID: 5744572294132932168, guid: ccbc9c87665117a49a804e54ff755db2, type: 3}
+  - {fileID: 5866609134711335595, guid: 9829c912975b1934bba7c6e3b23c3b7e, type: 3}
+  - {fileID: 660197909831716575, guid: 6a46330f48150c54bbf67bc6b883d46f, type: 3}
+  - {fileID: 3794926003884879259, guid: 42002107bfd228b40a39d103a7150c23, type: 3}
+  - {fileID: 3794926003884879259, guid: b069236a792dbd247b8f8db5053e132f, type: 3}
+  - {fileID: 3794926003884879259, guid: 2e3b19d01815a7f4f8d51329cf964d9c, type: 3}
+  - {fileID: 3794926003884879259, guid: 0fc4a844fda13fb4c8ec8e6a3ec1056e, type: 3}
+  - {fileID: 3794926003884879259, guid: 325da59856c7b1749813f7d06112a535, type: 3}
   canvas: {fileID: 0}
+  blockPreviewSprites:
+  - {fileID: 21300000, guid: 00980ef0ffae24e488662683955e66c2, type: 3}
+  - {fileID: 21300000, guid: ec68ebe145c52ce40ba4efd845cf0782, type: 3}
+  - {fileID: 21300000, guid: 356cc8e4e59f4754d8051aba559f4e09, type: 3}
+  - {fileID: 21300000, guid: 5377d3a640c83f54b90e683deddfe969, type: 3}
+  - {fileID: 21300000, guid: d7b2f472e85f6ee44b672369a6dccdf0, type: 3}
+  - {fileID: 21300000, guid: 53f58eb849b92084aadcb02c4e2d1a8e, type: 3}
+  - {fileID: 21300000, guid: e8b4dd2f055a0ce4bbc3aa21017c7c8f, type: 3}
+  - {fileID: 21300000, guid: fd5fe572c4b0e0c4c8ede6da9d382ed7, type: 3}
 --- !u!114 &6823177744949319021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,11 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a2be21133d3d5418445796d9c827dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockInfogroup: {fileID: 0}
-  buildGroup: {fileID: 0}
-  destroyGroup: {fileID: 0}
-  energy: {fileID: 0}
-  blockEnergy: {fileID: 0}
   selectedLevel: {fileID: 0}
   levels:
   - {fileID: 11400000, guid: 41520a42c7ce38844bada83ff6b606c6, type: 2}

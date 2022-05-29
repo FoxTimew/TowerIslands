@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 016e22d30966c7045ab3be80b1c98568, type: 2}
   animator: {fileID: 2059272086626258493}
+  rageAnim: 0
+  isDying: 0
   sr: {fileID: 5369108899363768706}
 --- !u!50 &4936826215063726550
 Rigidbody2D:
