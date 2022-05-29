@@ -103,10 +103,12 @@ public class UI_Manager : MonoBehaviour
     
     public void CloudTransition()
     {
-        LeftTransition.DOLocalMoveX(-50, transitionDuration*0.5f).SetEase(Ease.Unset)
-            .OnComplete(() => LeftTransition.DOLocalMoveX(-800, transitionDuration*0.5f).SetEase(Ease.Unset));
-        RightTransition.DOLocalMoveX(50, transitionDuration*0.5f).SetEase(Ease.Unset)
-            .OnComplete(() => RightTransition.DOLocalMoveX(800, transitionDuration*0.5f).SetEase(Ease.Unset));
+        LeftTransition.DOLocalMoveX(-50, transitionDuration*0.48f).SetEase(Ease.Unset)
+            .OnComplete(()=>LeftTransition.DOScale(Vector3.one, transitionDuration*0.02f)
+                .OnComplete(() => LeftTransition.DOLocalMoveX(-800, transitionDuration*0.48f).SetEase(Ease.Unset)));
+        RightTransition.DOLocalMoveX(50, transitionDuration*0.48f).SetEase(Ease.Unset)
+            .OnComplete(()=>LeftTransition.DOScale(Vector3.one, transitionDuration*0.02f)
+                .OnComplete(() => RightTransition.DOLocalMoveX(800, transitionDuration*0.48f).SetEase(Ease.Unset)));
     }
     public void OpenMenu(int menuEnumValue)
     {
