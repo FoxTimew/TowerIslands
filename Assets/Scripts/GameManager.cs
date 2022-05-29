@@ -200,15 +200,17 @@ public class GameManager : MonoBehaviour
         UI_Manager.instance.CloseMenu(13);
         waveCount = level.waves.Count;
         currentWave = 0;
-        Debug.Log(waveCount);
+        Debug.Log($"Wave count : {waveCount}");
         while (waveCount > 0)
         {
             if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
             
             while (enemyGroup.childCount > 0) yield return null;
-            UI_Manager.instance.LaunchWaveClearedTransition();
-            
-            
+            if (currentWave < levelManager.selectedLevel.waves.Count)
+            {
+                UI_Manager.instance.LaunchWaveClearedTransition();
+            }
+
             if (waveCount > 0)
             {
                 selectableBlock = true;
