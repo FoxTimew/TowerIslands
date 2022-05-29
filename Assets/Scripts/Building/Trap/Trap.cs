@@ -32,8 +32,12 @@ public class Trap : Building
         if (!enemies.Contains(other)) return;
         enemies.Remove(other);
     }
+    public override void Reset()
+    {
+        base.Reset();
+        reloading = false;
+    }
 
-    
     private IEnumerator StartTrap()
     {
         while (true)

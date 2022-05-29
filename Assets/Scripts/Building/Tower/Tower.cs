@@ -130,6 +130,7 @@ public class Tower : Building
 
     public override void Reset()
     {
+        shooting = false;
         towerSO = level1SO;
         buildingSO = level1SO;
         Debug.Log(towerSO.level);
