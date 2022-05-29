@@ -62,7 +62,10 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
-        if (levelManager.selectedLevel) nextWaveButton.SetActive(currentWave < levelManager.selectedLevel.waves.Count);
+        if (nextWaveActivable)
+        {
+            if (levelManager.selectedLevel) nextWaveButton.SetActive(currentWave < levelManager.selectedLevel.waves.Count);
+        }
         startLevelButton.SetActive(buildings.Count>0);
         if (!selectableBlock) return;
         UnSelectBlock();
@@ -193,7 +196,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text waveText;
     private string key;
-    
+    private WaitForSeconds timerNextWave = new WaitForSeconds(8);
     public IEnumerator LevelCoroutine(LevelSO level)
     {
         /*Sound*/ AudioManager.instance.Play(1, true);
@@ -213,8 +216,10 @@ public class GameManager : MonoBehaviour
 
             if (waveCount > 0)
             {
+                StartCoroutine(DisableNextWave());
                 selectableBlock = true;
                 yield return preparationTime;
+                nextWaveActivable = true;
                 UI_Manager.instance.CloseMenu(13);
             }
             yield return null;
@@ -232,6 +237,17 @@ public class GameManager : MonoBehaviour
         
 
     }
+
+    public bool nextWaveActivable = true;
+    private IEnumerator DisableNextWave()
+    {
+        
+        yield return timerNextWave;
+        if (currentWave + 1 < levelManager.selectedLevel.waves.Count) yield break;
+        nextWaveActivable = false;
+        nextWaveButton.SetActive(false);
+    }
+
     public List<Building> buildings = new List<Building>();
 
     public void ClearBuildings()

@@ -25,6 +25,9 @@ public class CameraZoom : MonoBehaviour
 	
     // Update is called once per frame
     void Update () {
+        camPos = camera.transform.position;
+        camPos.z = -10;
+        camera.transform.position = camPos;
         if (Utils.IsPointerOverUI()) return;
         if(Input.GetMouseButtonDown(0))
         {

@@ -12,7 +12,7 @@ public class Block : MonoBehaviour
 
     public Index index;
     public SpriteRenderer spriteRenderer;
-    public Dictionary<Block,int> adjacentBlocks = new Dictionary<Block, int>();
+    public readonly Dictionary<Block,int> adjacentBlocks = new Dictionary<Block, int>();
     public bool selectable = true;
     [SerializeField] private List<Sprite> sprites;
 
@@ -25,6 +25,8 @@ public class Block : MonoBehaviour
     public Building building;
     
     public int energy = 2;
+
+    public bool effect;
     
     
     #region Unity Methods
@@ -32,6 +34,15 @@ public class Block : MonoBehaviour
     private void Start()
     {
         spriteRenderer.sprite = sprites[Random.Range(0,2)];
+    }
+
+    private void Update()
+    {
+        if (!effect) return;
+        if (building is null) return;
+        if (building.buildingSO.type != BuildingType.Tower) return;
+        Tower to = (Tower) building;
+        to.attackSpeedMultiplier = 0.8f;
     }
 
     private void OnMouseDown()
