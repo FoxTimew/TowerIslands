@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public AXD_EnemySO enemyStats;
 
     [SerializeField] public Animator animator;
+    [SerializeField] private Collider2D col;
     private Block initPos;
     private Block destination;
     private BargeSO bargeItComesFrom;
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
         pos.x = Random.Range(-0.5f, 0.5f);
         pos.y = Random.Range(-0.5f, 0.5f);
         sr.transform.localPosition = pos;
+        col.offset = pos;
         sr.color = Color.white;
         currentHP = enemyStats.maxHealthPoints;
         currentDamage = enemyStats.damage;
@@ -53,10 +55,17 @@ public class Enemy : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.transform.CompareTag("Block")) return;
-        if (other.GetComponent<Block>().building is null) return;
-        if (other.GetComponent<Block>().building.buildingSO.type == BuildingType.Trap) return;
-        StartCoroutine(Attack(other.GetComponent<Block>().building));
+        if (other.transform.CompareTag("Block"))
+        {
+            if (other.GetComponent<Block>().building is null) return;
+            if (other.GetComponent<Block>().building.buildingSO.type == BuildingType.Trap) return;
+            StartCoroutine(Attack(other.GetComponent<Block>().building));
+        }
+
+        if (!other.GetComponent<Tower>()) return;
+        if(other.GetComponent<Tower>().inRange.Contains(this)) return;
+        other.GetComponent<Tower>().inRange.Add(this);
+
 
     }
 
@@ -192,6 +201,7 @@ public class Enemy : MonoBehaviour
         /*Sound*/ AudioManager.instance.Play(enemyStats.spawnSoundIndex, false, true);
         //GameManager.instance.enemies.Add(this);
     }
+
 
     public bool isDying;
     [SerializeField] private SpriteRenderer sr;

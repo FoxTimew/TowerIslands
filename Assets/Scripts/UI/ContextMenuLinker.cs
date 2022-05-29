@@ -191,7 +191,7 @@ public class ContextMenuLinker : MonoBehaviour
                         repairCostText.text = "0";
                     }
 
-                        foreach (Button button in buttons)
+                    foreach (Button button in buttons)
                     {
                         button.onClick.AddListener(MenuCloserListener);
                     }

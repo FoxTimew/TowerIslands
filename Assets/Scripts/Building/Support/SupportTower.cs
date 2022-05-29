@@ -24,7 +24,13 @@ public class SupportTower : Building
         supportSo.RemoveEffects(affectedBlocks);
     }
 
-
+    private void UpdateEffects()
+    {
+        supportSo.RemoveEffects(affectedBlocks);
+        supportSo.AddEffects(affectedBlocks);
+    }
+    
+    
 
     private void GetAffectedBlocks(int range,Block b)
     {

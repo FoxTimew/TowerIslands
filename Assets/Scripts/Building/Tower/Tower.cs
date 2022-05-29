@@ -15,7 +15,7 @@ public class Tower : Building
 
     private bool shooting;
     public Enemy target;
-    [SerializeField] private List<Enemy> inRange = new List<Enemy>();
+    [SerializeField] public List<Enemy> inRange = new List<Enemy>();
     [SerializeField] private PolygonCollider2D pc;
 
     [SerializeField] private GameObject level1;
@@ -51,25 +51,22 @@ public class Tower : Building
         {
             StartCoroutine(ShootCoroutine());
         }
-
-        
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.parent.CompareTag("Enemy"))
+        if (other.transform.CompareTag("Enemy"))
         {
-            inRange.Add(other.GetComponentInParent<Enemy>());
+            inRange.Add(other.GetComponent<Enemy>());
             if (target == null) target = other.GetComponentInParent<Enemy>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.transform.parent.CompareTag("Enemy")) return;
-        if (!inRange.Contains(other.GetComponentInParent<Enemy>())) return;
-        inRange.Remove(other.GetComponentInParent<Enemy>());
+        if (!other.transform.CompareTag("Enemy")) return;
+        if (!inRange.Contains(other.GetComponent<Enemy>())) return;
+        inRange.Remove(other.GetComponent<Enemy>());
         if (inRange.Count <= 0) return;
         target = inRange[0];
     }
@@ -133,6 +130,7 @@ public class Tower : Building
 
     public override void Reset()
     {
+        shooting = false;
         towerSO = level1SO;
         buildingSO = level1SO;
         Debug.Log(towerSO.level);
