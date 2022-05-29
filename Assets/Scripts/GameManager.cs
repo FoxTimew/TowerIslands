@@ -204,8 +204,10 @@ public class GameManager : MonoBehaviour
         waveCount = level.waves.Count;
         currentWave = 0;
         Debug.Log($"Wave count : {waveCount}");
+        nextWaveActivable = true;
         while (waveCount > 0)
         {
+            
             if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
             
             while (enemyGroup.childCount > 0) yield return null;
