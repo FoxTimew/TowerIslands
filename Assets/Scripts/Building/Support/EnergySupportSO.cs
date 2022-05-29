@@ -9,13 +9,12 @@ public class EnergySupportSO : SupportSO
     
     public override void AddEffect(Block block)
     {
-        block.energy += energyValue;
+        block.effect = true;
     }
 
     public override void RemoveEffect(Block block)
     {
-        block.energy -= energyValue;
-        if(block.energy < 0) block.SellBuilding();
+        block.effect = false;
     }
     
     public override void AddEffects(List<Block> blocks)
