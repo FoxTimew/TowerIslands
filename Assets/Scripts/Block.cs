@@ -40,6 +40,7 @@ public class Block : MonoBehaviour
     {
         if (!effect) return;
         if (building is null) return;
+        if (building == GameManager.instance.HDV) return;
         if (building.buildingSO.type != BuildingType.Tower) return;
         Tower to = (Tower) building;
         to.attackSpeedMultiplier = 0.8f;
