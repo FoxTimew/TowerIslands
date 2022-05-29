@@ -10,11 +10,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private Image timer;
     private void OnEnable()
     {
+        timer.fillAmount = 1;
         timer.DOFillAmount(0,10).SetEase(Ease.Linear);
     }
-
-    private void OnDisable()
-    {
-        timer.fillAmount = 1;
-    }
+    
 }
