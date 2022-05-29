@@ -10,7 +10,7 @@ public class Building : MonoBehaviour
     public Index index;
     public BuildingSO buildingSO;
     [SerializeField] private ParticleSystem destruction;
-    public int hp { get; protected set; }
+    public int hp { get; set; }
 
     public delegate void TakeDamage(int dmg);
 
