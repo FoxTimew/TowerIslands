@@ -31,5 +31,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1ddc816a103afdc4bb12198300846364, type: 2}
     - {fileID: 11400000, guid: b1fbb783580e1554786f10022008e714, type: 2}
     - {fileID: 11400000, guid: 8100f52e68ccbbb49a7b8222e8a7bc12, type: 2}
-  startGold: 40
+  startGold: 36
   block: {fileID: 3794926003884879259, guid: 2e3b19d01815a7f4f8d51329cf964d9c, type: 3}
