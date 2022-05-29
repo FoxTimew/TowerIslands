@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public BuildingSO energySupportSO;
     [SerializeField] private GameObject startLevelButton;
     [SerializeField] private GameObject nextWaveButton;
+    [SerializeField] private GameObject timer;
     
     #region Unity Methods
 
@@ -213,15 +214,18 @@ public class GameManager : MonoBehaviour
             while (enemyGroup.childCount > 0) yield return null;
             if (currentWave < levelManager.selectedLevel.waves.Count)
             {
-                UI_Manager.instance.LaunchWaveClearedTransition();
+                UI_Manager.instance.waveTransitionObject.gameObject.SetActive(true);
+                yield return StartCoroutine(UI_Manager.instance.waveTransitionObject.WaveClearedAnimationCoroutine());
             }
 
             if (waveCount > 0)
             {
                 StartCoroutine(DisableNextWave());
+                timer.SetActive(true);
                 selectableBlock = true;
                 yield return preparationTime;
                 nextWaveActivable = true;
+                timer.SetActive(false);
                 UI_Manager.instance.CloseMenu(13);
             }
             yield return null;

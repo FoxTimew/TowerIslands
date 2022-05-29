@@ -75,7 +75,7 @@ public class WaveTransitionAnimation : MonoBehaviour
         yield return new WaitForSeconds(imageShowTime + appearingTime);
         BuildDefenseDisappear();
     } 
-    private IEnumerator WaveClearedAnimationCoroutine()
+    public IEnumerator WaveClearedAnimationCoroutine()
     {
         Debug.Log("Wave Cleared Coroutine launched");
         WaveClearShow();
