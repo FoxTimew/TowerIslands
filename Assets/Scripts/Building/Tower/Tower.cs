@@ -21,6 +21,7 @@ public class Tower : Building
     [SerializeField] private GameObject level1;
     [SerializeField] private GameObject level2;
     [SerializeField] private GameObject[] ruins;
+    [SerializeField] private GameObject alertFx;
 
     void Awake()
     {
@@ -39,7 +40,7 @@ public class Tower : Building
     void Update()
     {
         if (destroyed) return;
-
+        alertFx.SetActive(inRange.Count>0);
         if (target is null) return;
         if (target.currentHP <= 0)
         {
@@ -75,6 +76,7 @@ public class Tower : Building
 
     public override void Ruins()
     {
+        alertFx.SetActive(false);
         ruins[Random.Range(0,2)].SetActive(true);
         level1.SetActive(false);
         level2.SetActive(false);
