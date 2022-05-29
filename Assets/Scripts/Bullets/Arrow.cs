@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Arrow : Bullet
 {
     private Vector3 pos;
     public override void Shoot(Tower origin, Enemy targetToSet, float speedToSet)
     {
+        //transform.GetChild(0).transform.localRotation = Quaternion.Euler(0,90,Random.Range(0f,360f));
         transform.position += Vector3.up;
         originTower = origin;
         SetTarget(targetToSet);
