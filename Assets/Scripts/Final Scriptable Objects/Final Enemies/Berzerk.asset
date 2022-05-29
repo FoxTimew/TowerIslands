@@ -19,5 +19,7 @@ MonoBehaviour:
   attackSpeed: 1.2
   range: 2
   goldToAddOnDeath: 10
-  dieSoundIndex: 08000000090000000a000000
-  spawnSoundIndex: 8
+  dieSoundIndex: 240000002500000026000000
+  dammageSoundIndex: 210000002200000023000000
+  attackSoundIndex: 1e0000001f00000020000000
+  spawnSoundIndex: 25
