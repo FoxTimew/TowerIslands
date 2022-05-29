@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bName: Fast Attack Tower
   type: 0
-  healthPoints: 900
+  healthPoints: 1400
   energyRequired: 2
   goldRequired: 22
   level: 2
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 11400000}
   upgradeCost: 0
-  damage: 40
-  attackSpeed: 3
+  damage: 50
+  attackSpeed: 2
   damageType: 0
   range: 3
   maxTargets: 1
   priority: 0
-  bulletSpeed: 6
+  bulletSpeed: 15
   bulletPrefab: {fileID: 2375004557264797407, guid: c3ee92c76e6edae4585a16788b5ee966,
     type: 3}
   soundIndex: 16

@@ -16,4 +16,4 @@ MonoBehaviour:
   type: 2
   healthPoints: 15
   energyRequired: 1
-  goldRequired: 12
+  goldRequired: 6
