@@ -422,9 +422,44 @@ PrefabInstance:
       objectReference: {fileID: 1873866929}
     - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1873866929}
+    - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 361067122}
+    - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551313312822268172, guid: 518dd676735ca804d962327ccbeb5318,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4564830543425084877, guid: 518dd676735ca804d962327ccbeb5318,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target

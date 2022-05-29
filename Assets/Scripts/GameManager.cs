@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
-        if(levelRoutine is not null) StopCoroutine(levelRoutine);
+        StopAllCoroutines();
         ResetLevel();
         for(int i = enemyGroup.childCount-1;i>-1;i--)
             Pooler.instance.Depop(enemyGroup.GetChild(0).name,enemyGroup.GetChild(0).gameObject);
