@@ -18,7 +18,7 @@ MonoBehaviour:
   damage: 30
   attackSpeed: 1
   range: 1
-  goldToAddOnDeath: 2
+  goldToAddOnDeath: 3
   dieSoundIndex: 08000000090000000a000000
   dammageSoundIndex: 1b0000001c0000001d000000
   attackSoundIndex: 050000000600000007000000
