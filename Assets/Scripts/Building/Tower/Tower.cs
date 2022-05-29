@@ -39,10 +39,20 @@ public class Tower : Building
     void Update()
     {
         if (destroyed) return;
-        if (shooting) return;
+
         if (target is null) return;
-        if (!target.gameObject.activeSelf) ResetTarget();
-        StartCoroutine(ShootCoroutine());
+        if (target.currentHP <= 0)
+        {
+            ResetTarget();
+        }
+        if (target is null) return;
+        if (!shooting)
+        {
+            StartCoroutine(ShootCoroutine());
+        }
+
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
