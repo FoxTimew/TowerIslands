@@ -113,7 +113,7 @@ public class UI_Manager : MonoBehaviour
     public void OpenMenu(int menuEnumValue)
     {
         /*Sound*/ AudioManager.instance.Play(21, false);
-        if (menuEnumValue != (int)MenuEnum.BlockInfo && menuEnumValue != (int)MenuEnum.FeedbackUI)
+        if (menuEnumValue != (int)MenuEnum.BlockInfo)
         {
             StartCoroutine(OpenMenuWithTransition(menuEnumValue));
         }
@@ -228,7 +228,7 @@ public class UI_Manager : MonoBehaviour
         {
             defeatMenu.GetComponent<DefeatMenu>().Close();
         }
-        else if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
+        else if (menuEnumValue != (int) MenuEnum.BlockInfo)
         {
             StartCoroutine(CloseMenuWithTransition(menuEnumValue));
         }

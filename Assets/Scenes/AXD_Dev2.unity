@@ -129,6 +129,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 905295879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &350702700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 361067122, guid: 518dd676735ca804d962327ccbeb5318,
+    type: 3}
+  m_PrefabInstance: {fileID: 905295879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &381971282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2518563837951389202, guid: 518dd676735ca804d962327ccbeb5318,
@@ -2052,6 +2058,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1201370249}
+    - target: {fileID: 6823177744949319016, guid: 707d224df9b5948498f0f10c6b5796e5,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 350702700}
     - target: {fileID: 6823177744949319016, guid: 707d224df9b5948498f0f10c6b5796e5,
         type: 3}
       propertyPath: waveText
