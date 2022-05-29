@@ -413,6 +413,7 @@ public class UI_Manager : MonoBehaviour
             tmpButton.name = $"Blocks{block.Key}";
             //tmpButton.GetComponent<BlockButton>().index = block.Key;
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
+            tmpButton.GetComponent<BlockButton>().index = block.Key;
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>

@@ -47,8 +47,8 @@ public class WaveTransitionAnimation : MonoBehaviour
         {
             waveClearedImage.transform.localScale = Vector3.zero;
             waveClearedImage.color = Color.white;
-            waveClearedImage.gameObject.SetActive(false);
             buildYourDefensesImage.DOFade(1, appearingTime);
+            waveClearedImage.gameObject.SetActive(false);
         });
     }
     
