@@ -411,7 +411,7 @@ public class UI_Manager : MonoBehaviour
         {
             tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
             tmpButton.name = $"Blocks{block.Key}";
-            tmpButton.GetComponent<BlockButton>().index = block.Key;
+            //tmpButton.GetComponent<BlockButton>().index = block.Key;
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerDown;
@@ -422,6 +422,8 @@ public class UI_Manager : MonoBehaviour
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
+            tmpButton.transform.GetChild(1).GetComponent<Image>().sprite =
+                GameManager.instance.islandCreator.blockPreviewSprites[block.Key-1];
         }
     }
 
