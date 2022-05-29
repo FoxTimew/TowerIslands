@@ -62,16 +62,15 @@ public class AudioManager : MonoBehaviour
                 if ((a.clip == clips[5] || a.clip == clips[6] || a.clip == clips[7]) && a.isPlaying) return;
             }
         }
-        
-        if (coroutine != null)
-        {
-            StopCoroutine(coroutine);
-            coroutine = null;
-        }
 
         AudioSource sourceSelected = null;
         if (loop)
         {
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+            }
             sourceSelected = sources[0];
             sourceSelected.outputAudioMixerGroup = mixers[0];
             if (soundIndex == 1) sourceSelected.loop = false;
@@ -90,7 +89,7 @@ public class AudioManager : MonoBehaviour
                 sources.Add(sourceSelected);
                 
                 Debug.LogWarning("Too much FX sounds playing.");
-                return;
+                //return;
             }
             sourceSelected.outputAudioMixerGroup = mixers[1];
         }

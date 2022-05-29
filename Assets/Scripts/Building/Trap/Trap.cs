@@ -42,6 +42,7 @@ public class Trap : Building
             while(reloading) yield return null;
             reloading = true;
             ps.Play();
+            /*Sound*/AudioManager.instance.Play(41, false);
             yield return psTime;
             foreach (var enemy in enemies)
             {

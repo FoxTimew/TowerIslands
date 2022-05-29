@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
 {
     
     public static event Action<int> EnemyDeathGoldEvent;
-    public static event Action<int> EnemyDeathCristalEvent;
     public AXD_EnemySO enemyStats;
 
     [SerializeField] public Animator animator;
@@ -97,7 +96,11 @@ public class Enemy : MonoBehaviour
     {
         sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         currentHP -= damageToTake;
-        if (currentHP > 0) return false;
+        if (currentHP > 0)
+        {
+            /*Sound*/ AudioManager.instance.Play(enemyStats.dammageSoundIndex[UnityEngine.Random.Range(0, enemyStats.dammageSoundIndex.Length)], false, true);
+            return false;
+        }
         if (isDying) return true;
         isDying = true;
         currentHP = 0;
@@ -173,7 +176,7 @@ public class Enemy : MonoBehaviour
         {
             if (rageAnim) yield return null;
             animator.SetTrigger("Attack");
-            /*Sound*/ AudioManager.instance.Play(UnityEngine.Random.Range(5, 8), false, true);
+            /*Sound*/ AudioManager.instance.Play(enemyStats.attackSoundIndex[UnityEngine.Random.Range(0, enemyStats.attackSoundIndex.Length)], false, true);
             yield return new WaitForSeconds(1/enemyStats.attackSpeed);
             target.takeDamage(currentDamage);
         }
@@ -203,11 +206,7 @@ public class Enemy : MonoBehaviour
         {
             EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
         }
-
-        if (EnemyDeathCristalEvent != null && cristalStored > 0)
-        {
-            EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
-        }
+        
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 0);
         animator.SetTrigger("Death");
