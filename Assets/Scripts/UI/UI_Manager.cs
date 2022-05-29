@@ -60,8 +60,9 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private float transitionDuration;
 
     [Header("Wave Transition Reference")] 
-    public GameObject waveTransitionObject;
+    public WaveTransitionAnimation waveTransitionObject;
 
+    public WaveTransitionAnimation buildYourDefenseTransitionObject;
     public float waveTransitionTime;
  
     [Header("DynamicButtonsReferences")] 
@@ -265,6 +266,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(false);
+                
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(false);
@@ -313,11 +315,14 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
                 /*Sound*/ AudioManager.instance.Play(2, true);
+
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
                 playingLevelMenu.transform.GetChild(0).gameObject.SetActive(true);
                 /*Sound*/ AudioManager.instance.Play(17, true, true);
+                
+
                 break;
             case (MenuEnum.FeedbackUI):
                 feedbackUI.SetActive(true);
@@ -370,6 +375,9 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
                 /*Sound*/AudioManager.instance.Play(2, true);
+                Debug.Log("PreparationMenu");
+                buildYourDefenseTransitionObject.gameObject.SetActive(true);
+                buildYourDefenseTransitionObject.BuildYourDefenseTransition();
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
@@ -505,7 +513,8 @@ public class UI_Manager : MonoBehaviour
     public void LaunchWaveClearedTransition()
     {
         Debug.Log("transition intitiated");
-        waveTransitionObject.SetActive(true);
+        waveTransitionObject.gameObject.SetActive(true);
+        waveTransitionObject.WaveClearedTransition();
     }
 
 
