@@ -9,7 +9,7 @@ public class Arrow : Bullet
     private Vector3 pos;
     public override void Shoot(Tower origin, Enemy targetToSet, float speedToSet)
     {
-        
+        transform.position += Vector3.up;
         originTower = origin;
         SetTarget(targetToSet);
         pos = target.transform.position;

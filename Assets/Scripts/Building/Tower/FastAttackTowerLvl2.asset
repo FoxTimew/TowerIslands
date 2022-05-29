@@ -21,7 +21,7 @@ MonoBehaviour:
   nextLevel: {fileID: 0}
   upgradeCost: 0
   damage: 40
-  attackSpeed: 3
+  attackSpeed: 2.5
   damageType: 0
   range: 3
   maxTargets: 1
@@ -29,4 +29,4 @@ MonoBehaviour:
   bulletSpeed: 6
   bulletPrefab: {fileID: 2375004557264797407, guid: c3ee92c76e6edae4585a16788b5ee966,
     type: 3}
-  soundIndex: 16
+  soundIndex: 13

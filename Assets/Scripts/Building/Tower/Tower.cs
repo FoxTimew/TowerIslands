@@ -146,6 +146,7 @@ public class Tower : Building
         EconomyManager.instance.RemoveGold(towerSO.upgradeCost);
         towerSO = level1SO.nextLevel;
         buildingSO = level1SO.nextLevel;
+        attackSpeed = new WaitForSeconds(1 / towerSO.attackSpeed);
 
     }
     
