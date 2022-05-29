@@ -39,6 +39,7 @@ public class MortarBullet : Bullet
     private void DoDamage()
     {
         Debug.Log("target : " + targets.Count);
+        /*Sound*/AudioManager.instance.Play(15, false);
         foreach (var enemy in targets)
         {
             enemy.GetComponentInParent<Enemy>().TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage,originTower);

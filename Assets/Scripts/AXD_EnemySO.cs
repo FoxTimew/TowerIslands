@@ -20,7 +20,7 @@ public class AXD_EnemySO : ScriptableObject
     
     public int goldToAddOnDeath;
 
-    public int[] dieSoundIndex;
+    public int[] dieSoundIndex, dammageSoundIndex, attackSoundIndex;
 
     public int spawnSoundIndex;
 }

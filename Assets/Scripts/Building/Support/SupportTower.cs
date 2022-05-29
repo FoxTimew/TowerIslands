@@ -16,6 +16,7 @@ public class SupportTower : Building
     {
         GetAffectedBlocks(supportSo.range,GameManager.instance.grid.GridElements[index.x,index.y].block);
         supportSo.AddEffects(affectedBlocks);
+        /*Sound*/AudioManager.instance.Play(42, false);
     }
     
     private void OnDisable()
@@ -23,8 +24,8 @@ public class SupportTower : Building
         supportSo.RemoveEffects(affectedBlocks);
     }
 
-    
-    
+
+
     private void GetAffectedBlocks(int range,Block b)
     {
         if (range == 0) return;

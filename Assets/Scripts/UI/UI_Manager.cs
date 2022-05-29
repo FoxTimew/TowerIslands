@@ -103,6 +103,7 @@ public class UI_Manager : MonoBehaviour
     }
     public void OpenMenu(int menuEnumValue)
     {
+        /*Sound*/ AudioManager.instance.Play(21, false);
         if (menuEnumValue != (int)MenuEnum.BlockInfo && menuEnumValue != (int)MenuEnum.FeedbackUI)
         {
             StartCoroutine(OpenMenuWithTransition(menuEnumValue));
