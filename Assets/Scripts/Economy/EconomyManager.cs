@@ -15,30 +15,27 @@ public class EconomyManager : MonoBehaviour
     }
     private void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-
         Enemy.EnemyDeathGoldEvent += Enemy_EnemyDeathGoldEvent;
-        UpdateEconomyUI();
     }
 
     public void GainGold(int goldToGain)
     {
         goldAmount += goldToGain;
+        Debug.Log("Gain Gold UI Update");
         UpdateEconomyUI();
     }
 
     public void SetGold(int gold)
     {
         goldAmount = gold;
+        Debug.Log("Set Gold UI Update");
         UpdateEconomyUI();
     }
 
     public void RemoveGold(int goldToRemove)
     {
         goldAmount -= goldToRemove;
+        Debug.Log("Remove Gold UI Update");
         UpdateEconomyUI();
     }
 
@@ -47,10 +44,18 @@ public class EconomyManager : MonoBehaviour
         return goldAmount;
     }
 
-    private void UpdateEconomyUI()
+    public void UpdateEconomyUI()
     {
-        UI_Manager.instance.UpdateGoldUI(goldAmount);
-        UI_Manager.instance.UpdateWaveUI();
+        if (UI_Manager.instance != null)
+        {
+            UI_Manager.instance.UpdateGoldUI(goldAmount);
+            UI_Manager.instance.UpdateWaveUI();
+        }
+        else
+        {
+            Debug.Log("l'instance existe pas");
+        }
+
     }
     
 

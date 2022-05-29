@@ -14,7 +14,7 @@ public class DamageTrapSO : TrapEffectSO
     {
         while (true)
         {
-            enemy.TakeDamage(damageType,damage);
+            enemy.TakeDamage(damageType,damage,null);
             yield return new WaitForSeconds(attackSpeed);
         }
     }

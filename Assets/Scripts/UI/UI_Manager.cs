@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -55,9 +56,7 @@ public class UI_Manager : MonoBehaviour
     [Header("Transition Reference")]
     [SerializeField] private RectTransform  LeftTransition;
     [SerializeField] private RectTransform  RightTransition;
-    [SerializeField] private RectTransform transitionClouds;
     [SerializeField] private float transitionDuration;
-    private Vector3 initialCloudPosition;
 
     [Header("DynamicButtonsReferences")] 
     [SerializeField] private GameObject levelButtonPrefab;
@@ -71,6 +70,8 @@ public class UI_Manager : MonoBehaviour
     public Sprite supportButtonSprite;
     public Sprite trapButtonSprite;
     public Sprite mortarButtonSprite;
+    public Sprite upgradeSprite;
+    public Sprite repairSprite;
     
     private GameObject tmpButton;
     private TMP_Text tmpButtonText;
@@ -80,13 +81,12 @@ public class UI_Manager : MonoBehaviour
 
     private WaitForSeconds closeMenuTransitionDuration;
     private GameObject tmpChild;
+    private ContextMenuLinker linker;
     
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        Debug.Log("instance");
+        instance = this;
     }
 
     private void Start()
@@ -96,10 +96,6 @@ public class UI_Manager : MonoBehaviour
     
     public void CloudTransition()
     {
-        //transitionClouds.DOMove(-transitionClouds.position/3, 
-        //        transitionDuration).OnComplete(() => { transitionClouds.position = initialCloudPosition;
-        //    });
-
         LeftTransition.DOLocalMoveX(-50, transitionDuration*0.5f).SetEase(Ease.Unset)
             .OnComplete(() => LeftTransition.DOLocalMoveX(-800, transitionDuration*0.5f).SetEase(Ease.Unset));
         RightTransition.DOLocalMoveX(50, transitionDuration*0.5f).SetEase(Ease.Unset)
@@ -116,7 +112,7 @@ public class UI_Manager : MonoBehaviour
             if (menuEnumValue == (int) MenuEnum.BlockInfo)
             {
                 blockInfo.SetActive(true);
-                ContextMenuLinker linker = blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>();
+                linker = blockInfo.transform.GetChild(1).GetComponent<ContextMenuLinker>();
                 if (GameManager.instance.selectedBlock.building == null)
                 {
                     tmpChild = blockInfo.transform.GetChild(0).gameObject;
@@ -161,7 +157,6 @@ public class UI_Manager : MonoBehaviour
                 islandMenu.SetActive(false);
                 break;
             case (MenuEnum.IslandEditorMenu):
-                //Détruire tous les boutons générés lors de l'ouverture du menu.
                 foreach (Transform child in islandEditorScroller.transform.GetChild(0).transform)
                 {
                     Destroy(child.gameObject);
@@ -169,7 +164,6 @@ public class UI_Manager : MonoBehaviour
                 islandEditorMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelSelectionMenu):
-                //Détruire tous les boutons générés lors de l'ouverture du menu.
                 foreach (Transform child in levelSelectionScroller.transform.GetChild(0).transform)
                 {
                     Destroy(child.gameObject);
@@ -299,6 +293,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandMenu):
                 islandMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.IslandEditorMenu):
                 islandEditorMenu.SetActive(true);
@@ -310,9 +305,12 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(2, true);
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
+                playingLevelMenu.transform.GetChild(0).gameObject.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.FeedbackUI):
                 feedbackUI.SetActive(true);
@@ -323,15 +321,20 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.DefeatMenu):
                 //Appeler menu de défaite
                 defeatMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(19, false, true);
                 break;
             case (MenuEnum.VictoryMenu):
                 //Apeler menu de victoire
                 victoryMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(18, false, true);
                 break;
         }
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
+        /*Sound*/ AudioManager.instance.Play(20, false);
         yield return new WaitForSeconds(transitionDuration / 2);
         switch ((MenuEnum)menuID)
         {
@@ -346,6 +349,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandMenu):
                 islandMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.IslandEditorMenu):
                 islandEditorMenu.SetActive(true);
@@ -354,9 +358,11 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.LevelSelectionMenu):
                 levelSelectionMenu.SetActive(true);
                 DrawLevelSelectionButton();
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
+                /*Sound*/AudioManager.instance.Play(2, true);
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
@@ -370,10 +376,14 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.DefeatMenu):
                 //Appeler menu de défaite
                 defeatMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(19, false, true);
                 break;
             case (MenuEnum.VictoryMenu):
                 //Apeler menu de victoire
                 victoryMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(18, false, true);
                 break;
         }
     }
@@ -390,7 +400,8 @@ public class UI_Manager : MonoBehaviour
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>
             {
-                GameManager.instance.islandCreator.PopBuild($"Blocks{block.Key}",tmpButton.GetComponent<RectTransform>());
+                GameManager.instance.islandCreator.
+                    PopBuild($"Blocks{block.Key}",tmpButton.GetComponent<RectTransform>());
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
@@ -407,7 +418,7 @@ public class UI_Manager : MonoBehaviour
             tmpPrepareButton.interactable = false;
             
             tmpButton.GetComponent<Button>().onClick.AddListener(EnablePrepareButtonListener);
-            
+
             tmpButtonText = tmpButton.transform.GetChild(0).GetComponent<TMP_Text>();
             tmpButtonImage = tmpButton.transform.GetChild(1).GetComponent<Image>();
             tmpButton.GetComponent<LevelButton>().levelContained = level;
@@ -474,17 +485,14 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdateWaveUI()
     {
-        if (waveUIText.IsActive())
-        {
-            waveUIText.text = $"{GameManager.instance.currentWave}/{GameManager.instance.levelManager.selectedLevel.waves.Count}";
-        }
+
+        if (GameManager.instance.levelManager.selectedLevel is null) return;
+        waveUIText.text = $"{GameManager.instance.currentWave}/{GameManager.instance.levelManager.selectedLevel.waves.Count}";
+
     }
     public void UpdateGoldUI(int goldAmount)
     {
-        if (goldUIText.IsActive())
-        {
-            goldUIText.text = $"{goldAmount}";
-        }
+        goldUIText.text = $"{goldAmount}";
     }
 
 

@@ -26,6 +26,7 @@ MonoBehaviour:
   range: 3
   maxTargets: 1
   priority: 0
-  bulletSpeed: 10
-  bulletPrefab: {fileID: 8745237546067475234, guid: e59b06886211ec04db313bc40d11dd88,
+  bulletSpeed: 15
+  bulletPrefab: {fileID: 2375004557264797407, guid: c3ee92c76e6edae4585a16788b5ee966,
     type: 3}
+  soundIndex: 13

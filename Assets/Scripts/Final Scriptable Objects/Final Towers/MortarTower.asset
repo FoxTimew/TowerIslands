@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f899f34b85484c646bd3a3932341acdf, type: 3}
   m_Name: MortarTower
   m_EditorClassIdentifier: 
-  bName: Mortar
+  bName: MortarTower
   type: 0
   healthPoints: 1600
   energyRequired: 10
   goldRequired: 40
+  level: 0
+  nextLevel: {fileID: 0}
+  upgradeCost: 0
   damage: 150
   attackSpeed: 0.33
   damageType: 0
@@ -24,4 +27,6 @@ MonoBehaviour:
   maxTargets: 1
   priority: 0
   bulletSpeed: 3
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: -6909482101512744307, guid: 32be0a0b41d61d74cb15736e888906b4,
+    type: 3}
+  soundIndex: 13

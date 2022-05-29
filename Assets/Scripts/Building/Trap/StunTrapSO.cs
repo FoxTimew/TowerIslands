@@ -15,11 +15,8 @@ public class StunTrapSO : TrapEffectSO
 
     public override IEnumerator ApplyEffect(Enemy enemy, ParticleSystem particleSystem)
     {
-        while (true)
-        {
-            if(!particleSystem.isPlaying)particleSystem.Play();
-            enemy.StopMovement(stun);
-            yield return stun;
-        }
+        enemy.StopMovement(stun);
+        yield return stun;
+
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
@@ -55,5 +56,23 @@ public class CameraZoom : MonoBehaviour
 
     void zoom(float increment){
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - increment, zoomOutMin, zoomOutMax);
+    }
+
+    public void DeZoomAnim()
+    {
+        float difference = 15 - camera.orthographicSize;
+        float timeStep = 0.5f / 0.01f;
+        float step = difference / timeStep;
+        StartCoroutine(DeZoom(0.5f,step));
+    }
+
+    private WaitForSeconds dezoomTime = new WaitForSeconds(0.01f);
+    IEnumerator DeZoom(float t,float step)
+    {
+        if (t < 0) yield break;
+        camera.orthographicSize += step;
+        t -= 0.01f;
+        yield return dezoomTime;
+        StartCoroutine(DeZoom(t,step));
     }
 }

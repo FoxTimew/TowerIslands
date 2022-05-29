@@ -24,7 +24,7 @@ public class Building : MonoBehaviour
     {
         hp = buildingSO.healthPoints;
         takeDamage += BaseTakeDamage;
-        Repair();
+        SetBuilding();
     }
     
     public void BaseTakeDamage(int dmg)
@@ -32,16 +32,19 @@ public class Building : MonoBehaviour
         if (destroyed) return;
         hp -= dmg;
         sr.DOComplete();
-        sr.DOColor(Color.red, .1f).SetLoops(6,LoopType.Yoyo);
+        sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         if (hp > 0) return;
         if (GameManager.instance.HDV == this)
         {
             UI_Manager.instance.OpenMenuWithoutTransition(11); 
             UI_Manager.instance.CloseMenuWithoutTransition(8);
+            GameManager.instance.ClearBuildings();
+            GameManager.instance.StopAllCoroutines();
         }
         else
         {
             Ruins();
+            /*Sound*/ AudioManager.instance.Play(12);
         }
     }
 
@@ -62,7 +65,26 @@ public class Building : MonoBehaviour
     {
         destroyed = false;
         hp = buildingSO.healthPoints;
+        if (GameManager.instance.HDV == this) return;
         sr.sortingLayerName = "Characters";
         sr.sprite = sprites[0];
+        EconomyManager.instance.RemoveGold(buildingSO.goldRequired * (buildingSO.healthPoints-hp)*100/buildingSO.healthPoints);
+    }
+
+    public virtual void SetBuilding()
+    {
+        destroyed = false;
+        hp = buildingSO.healthPoints;
+        sr.sortingLayerName = "Characters";
+        sr.sprite = sprites[0];
+    }
+    public bool isBuildingDestroyed()
+    {
+        return destroyed;
+    }
+
+    public virtual void ResetTarget()
+    {
+        return;
     }
 }

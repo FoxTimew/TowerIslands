@@ -37,7 +37,7 @@ public class AXD_Bullet : MonoBehaviour
         {
             Pooler.instance.Depop("Bullet", gameObject);
             Enemy tmpEnemy = collider.gameObject.GetComponent<Enemy>();
-            if (tmpEnemy.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage))
+            if (tmpEnemy.TakeDamage(originTower.towerSO.damageType,originTower.towerSO.damage,originTower))
             {
                 originTower.target = null;
             }
