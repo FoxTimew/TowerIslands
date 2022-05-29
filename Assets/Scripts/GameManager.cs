@@ -215,8 +215,6 @@ public class GameManager : MonoBehaviour
                 yield return preparationTime;
                 UI_Manager.instance.CloseMenu(13);
             }
-            /*Sound*/ AudioManager.instance.StopMusic();
-            AudioManager.instance.Play(2, true);
             yield return null;
         }
         while (enemyGroup.childCount > 0) yield return null;

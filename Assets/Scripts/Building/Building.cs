@@ -33,7 +33,11 @@ public class Building : MonoBehaviour
         hp -= dmg;
         sr.DOComplete();
         sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
-        if (hp > 0) return;
+        if (hp > 0)
+        {
+            /*Sound*/AudioManager.instance.Play(40, false);
+            return;
+        }
         if (GameManager.instance.HDV == this)
         {
             UI_Manager.instance.OpenMenuWithoutTransition(11); 
