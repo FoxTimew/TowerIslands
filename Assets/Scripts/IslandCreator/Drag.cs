@@ -31,7 +31,7 @@ public class Drag : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //if (Utils.IsPointerOverUI()) return;
+        if (Utils.IsPointerOverUI()) return;
         GameManager.instance.cameraZoom.enabled = false;
     }
     

@@ -15,6 +15,7 @@ public class MortarBullet : Bullet
     private float duration;
     public override void Shoot(Tower origin, Enemy targetToSet, float speedToSet)
     {
+        transform.position += Vector3.up;
         originTower = origin;
         SetTarget(targetToSet);
         speed = speedToSet;
