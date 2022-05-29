@@ -784,37 +784,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.size
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[17].key
-      value: GoldFx
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[17].pool.prefab
-      value: 
-      objectReference: {fileID: 2672893586001309763, guid: c55204ce21ba1f24d8998634d479d4c7,
-        type: 3}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[1].pool.baseCount
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[17].pool.baseCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6937688040863544548, guid: ab4f85309bc218a408ec2a2d958b80fb,
-        type: 3}
-      propertyPath: poolKeys.Array.data[17].pool.baseRefreshSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7260527157548714834, guid: ab4f85309bc218a408ec2a2d958b80fb,
         type: 3}
       propertyPath: m_RootOrder
