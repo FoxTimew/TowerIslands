@@ -21,6 +21,7 @@ public class Tower : Building
     [SerializeField] private GameObject level1;
     [SerializeField] private GameObject level2;
     [SerializeField] private GameObject[] ruins;
+    [SerializeField] private GameObject alertFx;
 
     void Awake()
     {
@@ -39,10 +40,20 @@ public class Tower : Building
     void Update()
     {
         if (destroyed) return;
-        if (shooting) return;
+        alertFx.SetActive(inRange.Count>0);
         if (target is null) return;
-        if (!target.gameObject.activeSelf) ResetTarget();
-        StartCoroutine(ShootCoroutine());
+        if (target.currentHP <= 0)
+        {
+            ResetTarget();
+        }
+        if (target is null) return;
+        if (!shooting)
+        {
+            StartCoroutine(ShootCoroutine());
+        }
+
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -65,6 +76,7 @@ public class Tower : Building
 
     public override void Ruins()
     {
+        alertFx.SetActive(false);
         ruins[Random.Range(0,2)].SetActive(true);
         level1.SetActive(false);
         level2.SetActive(false);
@@ -136,6 +148,7 @@ public class Tower : Building
         EconomyManager.instance.RemoveGold(towerSO.upgradeCost);
         towerSO = level1SO.nextLevel;
         buildingSO = level1SO.nextLevel;
+        attackSpeed = new WaitForSeconds(1 / towerSO.attackSpeed);
 
     }
     

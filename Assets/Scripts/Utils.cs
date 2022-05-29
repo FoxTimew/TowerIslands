@@ -94,4 +94,18 @@ public static class Utils
         }
         return finalPoints.ToArray();
     }
+
+    public static int CheckDirection(Vector3 pos,Vector3 des)
+    {
+        int signX = Math.Sign(des.x - pos.x);
+        int signY = Math.Sign(des.y - pos.y);
+
+        int dir = 0;
+        if (signX < 0 && signY > 0) dir = 0;
+        if (signX > 0 && signY > 0) dir = 1;
+        if (signX > 0 && signY < 0) dir = 2;
+        if (signX < 0 && signY < 0) dir = 3;
+
+        return dir;
+    }
 }

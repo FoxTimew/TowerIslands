@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
         instance = this;
         cam.transparencySortMode = TransparencySortMode.CustomAxis;
         cam.transparencySortAxis = Vector3.up;
-        
         InitGrid();
         preparationTime = new WaitForSeconds(timeBetweenWaves);
     }
@@ -142,7 +141,7 @@ public class GameManager : MonoBehaviour
     public int waveCount;
     [SerializeField] private Vector3[] bargeSpawn;
 
-    private Vector3 spawnPoint;
+    
     [SerializeField] private Transform enemyGroup;
     private GameObject bargeGO;
     private GameObject enemyGO;
@@ -261,22 +260,41 @@ public class GameManager : MonoBehaviour
     private void SpawnBarge(BargeSO bargeSo)
     {
         GameObject bargeGO;
-        spawnPoint = bargeSpawn[Random.Range(0,4)];
+        
+        var spawnPoint = bargeSpawn[Random.Range(0,4)];
+        var des = grid.GetNearestBlock(spawnPoint).transform.position; 
+        var dir = Utils.CheckDirection(spawnPoint, des);
+        switch (dir)
+        {
+            case 0:
+                des += new Vector3(1.72f*0.8f, -1.335f*0.5f);
+                break;
+            case 1:
+                des += new Vector3(-1.84f*0.8f, -1.335f*0.5f);
+                break;
+            case 2:
+                des += new Vector3(-1.72f*0.8f, 1.335f*0.5f);
+                break;
+            case 3:
+                des += new Vector3(1.84f*0.8f, 1.335f*0.5f);
+                break;
+            
+        }
         bargeGO = Pooler.instance.Pop("Barge");
         bargeGO.transform.position = spawnPoint;
         bargeGO.transform.parent = enemyGroup;
-        bargeGO.transform.DOMove(grid.GetNearestBlock(spawnPoint).transform.position, (grid.GetNearestBlock(spawnPoint).transform.position - spawnPoint).magnitude / bargeSo.bargeSpeed)
-            .OnComplete(() => StartCoroutine(SpawnEnemies(bargeSo,bargeGO,spawnPoint)));
+        bargeGO.transform.DOMove(des, (des - spawnPoint).magnitude / bargeSo.bargeSpeed)
+            .OnComplete(() => StartCoroutine(SpawnEnemies(bargeSo,bargeGO,spawnPoint,grid.GetNearestBlock(spawnPoint).transform.position)));
     }
     
-    private IEnumerator SpawnEnemies(BargeSO barge,GameObject go,Vector3 spawn)
+    private IEnumerator SpawnEnemies(BargeSO barge,GameObject go,Vector3 spawn,Vector3 blockpos)
     {
         var bargeGO = go;
         GameObject enemyGO;
         foreach (var troop in barge.troops)
         {
             enemyGO = Pooler.instance.Pop(troop.enemy.enemyStats.eName);
-            enemyGO.transform.position = bargeGO.transform.position;
+            enemyGO.transform.position = blockpos;
             enemyGO.transform.parent = enemyGroup;
             enemyGO.GetComponent<Enemy>().OnSpawn(barge,troop.cristalToEarn);
             yield return new WaitForSeconds(0.5f);
