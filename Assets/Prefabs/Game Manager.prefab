@@ -109,6 +109,15 @@ MonoBehaviour:
   - {fileID: 3794926003884879259, guid: 0fc4a844fda13fb4c8ec8e6a3ec1056e, type: 3}
   - {fileID: 3794926003884879259, guid: 325da59856c7b1749813f7d06112a535, type: 3}
   canvas: {fileID: 0}
+  blockPreviewSprites:
+  - {fileID: 21300000, guid: 00980ef0ffae24e488662683955e66c2, type: 3}
+  - {fileID: 21300000, guid: ec68ebe145c52ce40ba4efd845cf0782, type: 3}
+  - {fileID: 21300000, guid: 356cc8e4e59f4754d8051aba559f4e09, type: 3}
+  - {fileID: 21300000, guid: 5377d3a640c83f54b90e683deddfe969, type: 3}
+  - {fileID: 21300000, guid: d7b2f472e85f6ee44b672369a6dccdf0, type: 3}
+  - {fileID: 21300000, guid: 53f58eb849b92084aadcb02c4e2d1a8e, type: 3}
+  - {fileID: 21300000, guid: e8b4dd2f055a0ce4bbc3aa21017c7c8f, type: 3}
+  - {fileID: 21300000, guid: fd5fe572c4b0e0c4c8ede6da9d382ed7, type: 3}
 --- !u!114 &6823177744949319021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,11 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a2be21133d3d5418445796d9c827dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockInfogroup: {fileID: 0}
-  buildGroup: {fileID: 0}
-  destroyGroup: {fileID: 0}
-  energy: {fileID: 0}
-  blockEnergy: {fileID: 0}
   selectedLevel: {fileID: 0}
   levels:
   - {fileID: 11400000, guid: 41520a42c7ce38844bada83ff6b606c6, type: 2}

@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 9025710083753673695}
   - {fileID: 6801483896287014040}
   canvas: {fileID: 0}
+  previewSprite: {fileID: 21300000, guid: d7b2f472e85f6ee44b672369a6dccdf0, type: 3}
   dragPointer: {fileID: 7249216694818452154}
 --- !u!58 &3950338628995762458
 CircleCollider2D:

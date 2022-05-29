@@ -13,6 +13,7 @@ public class IslandCreator : MonoBehaviour
     public Dictionary<int, int> blocksCount = new Dictionary<int, int>();
     [SerializeField] private GameObject canvas;
     Drag drag;
+    public Sprite[] blockPreviewSprites;
 
     void Start()
     {
