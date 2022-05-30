@@ -117,6 +117,7 @@ public class Tower : Building
     {
         destroyed = false;
         hp = buildingSO.healthPoints;
+        EconomyManager.instance.RemoveGold(buildingSO.goldRequired * (buildingSO.healthPoints-hp)*100/buildingSO.healthPoints);
         /*Sound*/
         foreach (var go in ruins) go.SetActive(false);
         switch (towerSO.level)
@@ -131,6 +132,7 @@ public class Tower : Building
                 level1.SetActive(false);
                 break;
         }
+        
     }
 
     public override void Reset()
