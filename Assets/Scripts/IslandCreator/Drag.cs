@@ -29,15 +29,23 @@ public class Drag : MonoBehaviour
         blocksGo.transform.position = dragPointer.isSnapped ? dragPointer.snapPosition : transform.position;
     }
 
-    // private void OnMouseDown()
-    // {
-    //     if (Utils.IsPointerOverUI()) return;
-    //     GameManager.instance.cameraZoom.enabled = false;
-    // }
+    private bool dragable = true;
+    private void OnMouseDown()
+    {
+         if (Utils.IsPointerOverUI())
+         {
+             dragable = false;
+             return;
+         }
+
+         dragable = true;
+
+    }
     
 
     private void OnMouseDrag()
     {
+        if (!dragable) return;
         //if (Utils.IsPointerOverUI()) return;
         origin = GameManager.instance.cam.ScreenToWorldPoint(Input.mousePosition);
         origin.z = 0;
