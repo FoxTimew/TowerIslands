@@ -10027,6 +10027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 1528226579}
   defeat: {fileID: 1694690790}
+  transition: {fileID: 8399276921020318879}
 --- !u!1 &6651040935885440035
 GameObject:
   m_ObjectHideFlags: 0

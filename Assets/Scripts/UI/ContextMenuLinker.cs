@@ -164,12 +164,19 @@ public class ContextMenuLinker : MonoBehaviour
                     sellCostText.text = GameManager.instance.selectedBlock.building.IsBuildingDestroyed() ? "3" : GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
                     //Repair button
                     //Si le repair est dispo + on a assez d'argent 
+                    int tmpGoldRequired = GameManager.instance.selectedBlock.building.buildingSO.goldRequired;
+                    int tmpMissingHealth = GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
+                                           GameManager.instance.selectedBlock.building.hp;
+                    int tmpMaxHealth = GameManager.instance.selectedBlock.building.buildingSO.healthPoints;
+                    Debug.Log($"Gold required : {tmpGoldRequired}, Missing Health : {tmpMissingHealth}, Max Health : {tmpMaxHealth}");
+                    Debug.Log($"Calcul : {tmpGoldRequired*(tmpMissingHealth)/tmpMaxHealth}");
                     if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed() &&
                         EconomyManager.instance.GetGoldAmount() >
                         GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
-                        (GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)*100/GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                        ((GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)/GameManager.instance.selectedBlock.building.buildingSO.healthPoints) )
                     {
-                        
+                        Debug.Log($"Gold required : {GameManager.instance.selectedBlock.building.buildingSO.goldRequired}, " +
+                                  $"Missing health : {(GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)}");
                         buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.repairSprite;
                         buttons[2].onClick.RemoveAllListeners();
                         buttons[2].onClick.AddListener(RepairBuildingListener);
@@ -184,9 +191,7 @@ public class ContextMenuLinker : MonoBehaviour
                     if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed())
                     {
                         repairCostText.text = (GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
-                                               (GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
-                                                GameManager.instance.selectedBlock.building.hp) * 100
-                                               / GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                                               ((GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)/GameManager.instance.selectedBlock.building.buildingSO.healthPoints))
                             .ToString();
                     }
                     else

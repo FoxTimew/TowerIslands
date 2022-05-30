@@ -49,14 +49,14 @@ MonoBehaviour:
     pool:
       prefab: {fileID: 1691961859449996100, guid: d05fbcc84e77a6744b608bb2d82c1097,
         type: 3}
-      baseCount: 5
+      baseCount: 100
       baseRefreshSpeed: 5
       refreshSpeed: 0
   - key: Arrow
     pool:
       prefab: {fileID: 5238814771564932069, guid: c3ee92c76e6edae4585a16788b5ee966,
         type: 3}
-      baseCount: 50
+      baseCount: 200
       baseRefreshSpeed: 5
       refreshSpeed: 0
   - key: Barge
@@ -119,7 +119,7 @@ MonoBehaviour:
     pool:
       prefab: {fileID: 1691961859449996100, guid: 65a5acb26393d8f409f3ca0209af38a5,
         type: 3}
-      baseCount: 5
+      baseCount: 20
       baseRefreshSpeed: 5
       refreshSpeed: 0
   - key: MortarBullet
@@ -167,6 +167,20 @@ MonoBehaviour:
   - key: GoldFx
     pool:
       prefab: {fileID: 2672893586001309763, guid: c55204ce21ba1f24d8998634d479d4c7,
+        type: 3}
+      baseCount: 100
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: FoudreFx
+    pool:
+      prefab: {fileID: 1712590614451201630, guid: e71d9aa9ead4aeb45a33a135053c77f7,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: DestructionFx
+    pool:
+      prefab: {fileID: 1104296214469462904, guid: d84d1ad55bd67dc4f80b93da2ba38599,
         type: 3}
       baseCount: 5
       baseRefreshSpeed: 5
