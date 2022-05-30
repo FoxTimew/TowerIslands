@@ -12,6 +12,7 @@ public class DefenseSupportSO : SupportSO
     
     public override void AddEffect(Block block)
     {
+        if (block.building is null) return;
         block.building.hp += healthValue;
     }
 

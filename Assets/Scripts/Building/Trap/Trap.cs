@@ -14,17 +14,16 @@ public class Trap : Building
     private WaitForSeconds reloadingTime = new WaitForSeconds(1.5f);
     
     private Coroutine routine;
-    void Start()
+    void OnEnable()
     {
+        StopAllCoroutines();
         StartCoroutine(StartTrap());
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.transform.parent.CompareTag("Enemy")) return;
+        if (!other.transform.CompareTag("Enemy")) return;
         enemies.Add(other);
-        
-        
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -32,8 +31,13 @@ public class Trap : Building
         if (!enemies.Contains(other)) return;
         enemies.Remove(other);
     }
+    public override void Reset()
+    {
+        base.Reset();
+        reloading = false;
+        enemies.Clear();
+    }
 
-    
     private IEnumerator StartTrap()
     {
         while (true)
@@ -46,7 +50,7 @@ public class Trap : Building
             yield return psTime;
             foreach (var enemy in enemies)
             {
-                StartCoroutine(effect.ApplyEffect(enemy.GetComponentInParent<Enemy>(), ps));
+                StartCoroutine(effect.ApplyEffect(enemy.GetComponent<Enemy>(), ps));
             }
             yield return reloadingTime;
             reloading = false;

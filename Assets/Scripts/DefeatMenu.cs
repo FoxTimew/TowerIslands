@@ -8,11 +8,12 @@ public class DefeatMenu : MonoBehaviour
 {
     [SerializeField] private Transform background;
     [SerializeField] private Transform defeat;
-
+    public GameObject transition;
     private Tween tween;
     
     private void OnEnable()
     {
+        transition.SetActive(false);
         background.transform.localScale = Vector3.zero;
         defeat.transform.localScale = Vector3.zero;
         UI_Manager.instance.CloseMenu(9);
@@ -25,13 +26,21 @@ public class DefeatMenu : MonoBehaviour
     public void Close()
     {
         background.DOScale(Vector3.zero, 0.25f).SetEase(Ease.OutSine);
-        defeat.DOScale(Vector3.zero, 0.25f).SetEase(Ease.OutSine).OnComplete( ()=> gameObject.SetActive(false));
+        defeat.DOScale(Vector3.zero, 0.25f).SetEase(Ease.OutSine).OnComplete(Disable);
+         
+    }
+
+    public void Disable()
+    {
+        gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
+        
         GameManager.instance.ClearBuildings();
         tween.Kill();
         background.rotation= Quaternion.Euler(Vector3.zero);
     }
+
 }

@@ -9,7 +9,6 @@ public class Building : MonoBehaviour
 {
     public Index index;
     public BuildingSO buildingSO;
-    [SerializeField] private ParticleSystem destruction;
     public int hp { get; set; }
 
     public delegate void TakeDamage(int dmg);
@@ -60,7 +59,9 @@ public class Building : MonoBehaviour
     {
         sr.sprite = sprites[Random.Range(1, 3)];
         destroyed = true;
-        destruction.Play();
+        GameObject go = Pooler.instance.Pop("DestructionFx");
+        go.transform.position = transform.position;
+        Pooler.instance.DelayedDepop(1f,"DestructionFx",go);
         sr.sortingLayerName = "Shadows";
         sr.sortingOrder = 0;
     }
@@ -82,7 +83,7 @@ public class Building : MonoBehaviour
         sr.sortingLayerName = "Characters";
         sr.sprite = sprites[0];
     }
-    public bool isBuildingDestroyed()
+    public bool IsBuildingDestroyed()
     {
         return destroyed;
     }

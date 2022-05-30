@@ -15,20 +15,22 @@ public class Tower : Building
 
     private bool shooting;
     public Enemy target;
-    [SerializeField] private List<Enemy> inRange = new List<Enemy>();
+    [SerializeField] public List<Enemy> inRange = new List<Enemy>();
     [SerializeField] private PolygonCollider2D pc;
 
     [SerializeField] private GameObject level1;
     [SerializeField] private GameObject level2;
     [SerializeField] private GameObject[] ruins;
     [SerializeField] private GameObject alertFx;
+    [SerializeField] private ParticleSystem UpgradeFx;
 
+    [HideInInspector] public float attackSpeedMultiplier = 1;
     void Awake()
     {
         level1SO = towerSO;
         pc.points = Utils.UpdatePoints(towerSO.range);
         towerSO = (TowerSO) buildingSO;
-        attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
+        attackSpeed = new WaitForSeconds(attackSpeedMultiplier/towerSO.attackSpeed);
     }
 
     private void OnDisable()
@@ -51,31 +53,31 @@ public class Tower : Building
         {
             StartCoroutine(ShootCoroutine());
         }
-
-        
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.parent.CompareTag("Enemy"))
+        if (other.transform.CompareTag("Enemy"))
         {
-            inRange.Add(other.GetComponentInParent<Enemy>());
+            inRange.Add(other.GetComponent<Enemy>());
             if (target == null) target = other.GetComponentInParent<Enemy>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.transform.parent.CompareTag("Enemy")) return;
-        if (!inRange.Contains(other.GetComponentInParent<Enemy>())) return;
-        inRange.Remove(other.GetComponentInParent<Enemy>());
+        if (!other.transform.CompareTag("Enemy")) return;
+        if (!inRange.Contains(other.GetComponent<Enemy>())) return;
+        inRange.Remove(other.GetComponent<Enemy>());
         if (inRange.Count <= 0) return;
         target = inRange[0];
     }
 
     public override void Ruins()
     {
+        GameObject go = Pooler.instance.Pop("DestructionFx");
+        go.transform.position = transform.position;
+        Pooler.instance.DelayedDepop(1f,"DestructionFx",go);
         alertFx.SetActive(false);
         ruins[Random.Range(0,2)].SetActive(true);
         level1.SetActive(false);
@@ -133,10 +135,12 @@ public class Tower : Building
 
     public override void Reset()
     {
+        attackSpeedMultiplier = 1;
+        shooting = false;
         towerSO = level1SO;
         buildingSO = level1SO;
         Debug.Log(towerSO.level);
-        attackSpeed = new WaitForSeconds(1/towerSO.attackSpeed);
+        attackSpeed = new WaitForSeconds(attackSpeedMultiplier/towerSO.attackSpeed);
         Repair();
         inRange.Clear();
         target = null;
@@ -144,13 +148,13 @@ public class Tower : Building
 
     public void Upgrade()
     {
+        UpgradeFx.Play();
         level1.SetActive(false);
         level2.SetActive(true);
         EconomyManager.instance.RemoveGold(towerSO.upgradeCost);
         towerSO = level1SO.nextLevel;
         buildingSO = level1SO.nextLevel;
-        buildingSO.goldRequired = level1SO.goldRequired + level1SO.upgradeCost;
-        attackSpeed = new WaitForSeconds(1 / towerSO.attackSpeed);
+        attackSpeed = new WaitForSeconds(attackSpeedMultiplier/ towerSO.attackSpeed);
 
     }
     

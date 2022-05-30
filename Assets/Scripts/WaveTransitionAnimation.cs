@@ -42,10 +42,12 @@ public class WaveTransitionAnimation : MonoBehaviour
 
     private void WaveClearTransitionBuildYourDefenses()
     {
+        Debug.Log("Wave Cleared Transition");
         VignetteFadeOut();
         waveClearedImage.DOFade(0, disappearingTime).OnComplete(() =>
         {
             waveClearedImage.transform.localScale = Vector3.zero;
+            Debug.Log($"waveCleared scale : {waveClearedImage.transform.localScale.x},{waveClearedImage.transform.localScale.y},{waveClearedImage.transform.localScale.z}");
             waveClearedImage.color = Color.white;
             buildYourDefensesImage.DOFade(1, appearingTime);
             waveClearedImage.gameObject.SetActive(false);
@@ -73,7 +75,7 @@ public class WaveTransitionAnimation : MonoBehaviour
         yield return new WaitForSeconds(imageShowTime + appearingTime);
         BuildDefenseDisappear();
     } 
-    private IEnumerator WaveClearedAnimationCoroutine()
+    public IEnumerator WaveClearedAnimationCoroutine()
     {
         Debug.Log("Wave Cleared Coroutine launched");
         WaveClearShow();

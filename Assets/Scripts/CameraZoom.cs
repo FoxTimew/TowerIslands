@@ -25,6 +25,9 @@ public class CameraZoom : MonoBehaviour
 	
     // Update is called once per frame
     void Update () {
+        camPos = camera.transform.position;
+        camPos.z = -10;
+        camera.transform.position = camPos;
         if (Utils.IsPointerOverUI()) return;
         if(Input.GetMouseButtonDown(0))
         {
@@ -42,27 +45,28 @@ public class CameraZoom : MonoBehaviour
 
             difference = currentMagnitude - prevMagnitude;
 
-            zoom(difference * 0.02f);
+            Zoom(difference * 0.02f);
         }else if(Input.GetMouseButton(0)){
             direction = touchStart - camera.ScreenToWorldPoint(Input.mousePosition);
             camera.transform.position += direction;
         }
-        zoom(Input.GetAxis("Mouse ScrollWheel"));
+        Zoom(Input.GetAxis("Mouse ScrollWheel"));
         camPos = camera.transform.position;
         camPos.x = Mathf.Clamp(camPos.x, xMin, xMax);
         camPos.y = Mathf.Clamp(camPos.y, yMin, yMax);
         camera.transform.position = camPos;
     }
 
-    void zoom(float increment){
+    void Zoom(float increment){
         camera.orthographicSize = Mathf.Clamp(camera.orthographicSize - increment, zoomOutMin, zoomOutMax);
     }
 
     public void DeZoomAnim()
     {
-        float difference = 15 - camera.orthographicSize;
+        float difference = 18 - camera.orthographicSize;
         float timeStep = 0.5f / 0.01f;
         float step = difference / timeStep;
+        transform.DOMove(new Vector3(0, 0, -10), 0.5f);
         StartCoroutine(DeZoom(0.5f,step));
     }
 

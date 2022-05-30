@@ -50,8 +50,10 @@ public class ContextMenuLinker : MonoBehaviour
 
     public void LinkListeners(Block block)
     {
+        Debug.Log("LinkListeners");
         if (block != null)
         {
+            Debug.Log("BlockNotNull");
             blockToHover = block;
 
             switch (type)
@@ -59,6 +61,7 @@ public class ContextMenuLinker : MonoBehaviour
                 case (ContextMenuType.BlockEmpty):
                     Debug.Log("Block Empty");
                     foreach (var button in buttons) button.onClick.RemoveAllListeners();
+                    Debug.Log("Tower prix update");
                     towerCostText.text = GameManager.instance.rapidTowerSO.goldRequired.ToString();
                     if (GameManager.instance.rapidTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
@@ -71,11 +74,11 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                         buttons[0].interactable = false;
                     }
-
+                    Debug.Log("Mortier prix update");
                     mortarCostText.text = GameManager.instance.mortarTowerSO.goldRequired.ToString();
                     if (GameManager.instance.mortarTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
-                        buttons[1].GetComponent<Image>().sprite = UI_Manager.instance.towerButtonSprite;
+                        buttons[1].GetComponent<Image>().sprite = UI_Manager.instance.mortarButtonSprite;
                         buttons[1].onClick.AddListener(MortarTowerBuilder);
                         buttons[1].interactable = true;
                     }
@@ -84,7 +87,7 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[1].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                         buttons[1].interactable = false;
                     }
-
+                    Debug.Log("Support prix update");
                     supportCostText.text = GameManager.instance.energySupportSO.goldRequired.ToString();
                     if (GameManager.instance.energySupportSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
@@ -97,7 +100,7 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
                         buttons[2].interactable = false;
                     }
-
+                    Debug.Log("Trap prix update");
                     trapCostText.text = GameManager.instance.stunTrapSO.goldRequired.ToString();
                     if (GameManager.instance.stunTrapSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
                     {
@@ -124,7 +127,7 @@ public class ContextMenuLinker : MonoBehaviour
                     {
                         tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
                         
-                        if (tmpTowerSO.nextLevel != null &&
+                        if (tmpTowerSO.level != 2 &&
                             EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost && 
                             GameManager.instance.selectedBlock.building.hp > 0)
                         {
@@ -158,15 +161,22 @@ public class ContextMenuLinker : MonoBehaviour
                     //Sell button
                     buttons[1].onClick.RemoveAllListeners();
                     buttons[1].onClick.AddListener(SellBuildingListener);
-                    sellCostText.text = GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
+                    sellCostText.text = GameManager.instance.selectedBlock.building.IsBuildingDestroyed() ? "3" : GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
                     //Repair button
                     //Si le repair est dispo + on a assez d'argent 
-                    if (GameManager.instance.selectedBlock.building.isBuildingDestroyed() &&
+                    int tmpGoldRequired = GameManager.instance.selectedBlock.building.buildingSO.goldRequired;
+                    int tmpMissingHealth = GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
+                                           GameManager.instance.selectedBlock.building.hp;
+                    int tmpMaxHealth = GameManager.instance.selectedBlock.building.buildingSO.healthPoints;
+                    Debug.Log($"Gold required : {tmpGoldRequired}, Missing Health : {tmpMissingHealth}, Max Health : {tmpMaxHealth}");
+                    Debug.Log($"Calcul : {tmpGoldRequired*(tmpMissingHealth)/tmpMaxHealth}");
+                    if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed() &&
                         EconomyManager.instance.GetGoldAmount() >
                         GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
-                        (GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)*100/GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                        ((GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)/GameManager.instance.selectedBlock.building.buildingSO.healthPoints) )
                     {
-                        
+                        Debug.Log($"Gold required : {GameManager.instance.selectedBlock.building.buildingSO.goldRequired}, " +
+                                  $"Missing health : {(GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)}");
                         buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.repairSprite;
                         buttons[2].onClick.RemoveAllListeners();
                         buttons[2].onClick.AddListener(RepairBuildingListener);
@@ -178,12 +188,10 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[2].interactable = false;
                     }
 
-                    if (GameManager.instance.selectedBlock.building.isBuildingDestroyed())
+                    if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed())
                     {
                         repairCostText.text = (GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
-                                               (GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
-                                                GameManager.instance.selectedBlock.building.hp) * 100
-                                               / GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                                               ((GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)/GameManager.instance.selectedBlock.building.buildingSO.healthPoints))
                             .ToString();
                     }
                     else
@@ -191,7 +199,7 @@ public class ContextMenuLinker : MonoBehaviour
                         repairCostText.text = "0";
                     }
 
-                        foreach (Button button in buttons)
+                    foreach (Button button in buttons)
                     {
                         button.onClick.AddListener(MenuCloserListener);
                     }

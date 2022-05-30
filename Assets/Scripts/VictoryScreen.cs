@@ -10,11 +10,13 @@ public class VictoryScreen : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem;
     public Transform victory;
     public Transform sun;
+    public GameObject transition;
 
     private Tween tween;
 
     private void OnEnable()
     {
+        transition.SetActive(false);
         particleSystem.Play();
         UI_Manager.instance.CloseMenu(9);
         sun.DOScale(Vector3.one*0.5f, 0.25f).SetEase(Ease.OutSine);
@@ -42,15 +44,15 @@ public class VictoryScreen : MonoBehaviour
     {
         UI_Manager.instance.CloseMenu(12);
         UI_Manager.instance.OpenMenu(4);
-        
+        particleSystem.Stop();
     }
 
     private void OnDisable()
     {
-        particleSystem.Stop();
         tween.Kill();
         sun.rotation= Quaternion.Euler(Vector3.zero);
     }
+    
 }
 
 

@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public BuildingSO energySupportSO;
     [SerializeField] private GameObject startLevelButton;
     [SerializeField] private GameObject nextWaveButton;
+    [SerializeField] private GameObject timer;
     
     #region Unity Methods
 
@@ -62,7 +63,10 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
-        if (levelManager.selectedLevel) nextWaveButton.SetActive(currentWave < levelManager.selectedLevel.waves.Count);
+        if (nextWaveActivable)
+        {
+            if (levelManager.selectedLevel) nextWaveButton.SetActive(currentWave < levelManager.selectedLevel.waves.Count);
+        }
         startLevelButton.SetActive(buildings.Count>0);
         if (!selectableBlock) return;
         UnSelectBlock();
@@ -145,6 +149,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform enemyGroup;
     private GameObject bargeGO;
     private GameObject enemyGO;
+    public LevelButton selectedLevelButton;
 
 
     public void StartLevel()
@@ -168,12 +173,14 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
+        nextWavePressed = true;
+        if(selectableBlock)StopCoroutine(timerNextWaveRoutine);
         if(currentWave<levelManager.selectedLevel.waves.Count) StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
     public void Retry()
     {
-        if(levelRoutine is not null) StopCoroutine(levelRoutine);
+        StopAllCoroutines();
         ResetLevel();
         for(int i = enemyGroup.childCount-1;i>-1;i--)
             Pooler.instance.Depop(enemyGroup.GetChild(0).name,enemyGroup.GetChild(0).gameObject);
@@ -190,29 +197,43 @@ public class GameManager : MonoBehaviour
         
     }
 
-
+    private Coroutine timerNextWaveRoutine;
+    private bool nextWavePressed;
     [SerializeField] private TMP_Text waveText;
     private string key;
-    
+    private WaitForSeconds timerNextWave = new WaitForSeconds(8);
     public IEnumerator LevelCoroutine(LevelSO level)
     {
         /*Sound*/ AudioManager.instance.Play(1, true);
         UI_Manager.instance.CloseMenu(13);
         waveCount = level.waves.Count;
         currentWave = 0;
-        Debug.Log(waveCount);
+        Debug.Log($"Wave count : {waveCount}");
+        nextWaveActivable = true;
+        nextWavePressed = false;
         while (waveCount > 0)
         {
-            if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
+            if(!nextWavePressed) 
+                if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
+            
+            nextWavePressed = false;
             
             while (enemyGroup.childCount > 0) yield return null;
-            UI_Manager.instance.LaunchWaveClearedTransition();
-            
-            
+            nextWavePressed = false;
+            if (currentWave < levelManager.selectedLevel.waves.Count)
+            {
+                UI_Manager.instance.waveTransitionObject.gameObject.SetActive(true);
+                yield return StartCoroutine(UI_Manager.instance.waveTransitionObject.WaveClearedAnimationCoroutine());
+            }
+
             if (waveCount > 0)
             {
                 selectableBlock = true;
+                timerNextWaveRoutine = StartCoroutine(DisableNextWave());
+                timer.SetActive(true);
                 yield return preparationTime;
+                nextWaveActivable = true;
+                timer.SetActive(false);
                 UI_Manager.instance.CloseMenu(13);
             }
             yield return null;
@@ -220,6 +241,7 @@ public class GameManager : MonoBehaviour
         while (enemyGroup.childCount > 0) yield return null;
         ResetLevel();
         ClearBuildings();
+        selectedLevelButton = null;
         levelManager.selectedLevel.isCompleted = true;
         Debug.Log(key);
         islandCreator.blocksCount[levelManager.selectedLevel.block.index]++;
@@ -230,6 +252,16 @@ public class GameManager : MonoBehaviour
         
 
     }
+
+    public bool nextWaveActivable = true;
+    private IEnumerator DisableNextWave()
+    {
+        yield return timerNextWave;
+        if (currentWave + 1 < levelManager.selectedLevel.waves.Count) yield break;
+        nextWaveActivable = false;
+        nextWaveButton.SetActive(false);
+    }
+
     public List<Building> buildings = new List<Building>();
 
     public void ClearBuildings()
@@ -254,8 +286,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(bargeSo.waitingTime);
         }
         waveCount--;
-        foreach (var building in buildings) building.ResetTarget();
-        
         yield return null;
     }
     private Vector3 lastBargeSpawnPoint = Vector3.zero;
