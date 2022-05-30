@@ -125,6 +125,11 @@ public class Block : MonoBehaviour
     private int buildingValue;
     public void SellBuilding()
     {
+        GameObject go = Pooler.instance.Pop("DestructionFx");
+        go.transform.position = transform.position;
+        Pooler.instance.DelayedDepop(1f,"DestructionFx",go);
+        EconomyManager.instance.GainGold(building.IsBuildingDestroyed() ? 3 : building.buildingSO.goldRequired);
+
         buildingValue = building.buildingSO.energyRequired;
         foreach (var block in adjacentBlocks.Keys)
         {
@@ -136,7 +141,6 @@ public class Block : MonoBehaviour
         if (buildingValue <= 0) return;
         energy += buildingValue;
         Pooler.instance.Depop(building.buildingSO.bName, building.gameObject);
-        EconomyManager.instance.GainGold(building.buildingSO.goldRequired);
         GameManager.instance.buildings.Remove(building);
         building = null;
     }

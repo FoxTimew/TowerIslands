@@ -22,6 +22,7 @@ public class Tower : Building
     [SerializeField] private GameObject level2;
     [SerializeField] private GameObject[] ruins;
     [SerializeField] private GameObject alertFx;
+    [SerializeField] private ParticleSystem UpgradeFx;
 
     [HideInInspector] public float attackSpeedMultiplier = 1;
     void Awake()
@@ -74,6 +75,9 @@ public class Tower : Building
 
     public override void Ruins()
     {
+        GameObject go = Pooler.instance.Pop("DestructionFx");
+        go.transform.position = transform.position;
+        Pooler.instance.DelayedDepop(1f,"DestructionFx",go);
         alertFx.SetActive(false);
         ruins[Random.Range(0,2)].SetActive(true);
         level1.SetActive(false);
@@ -144,6 +148,7 @@ public class Tower : Building
 
     public void Upgrade()
     {
+        UpgradeFx.Play();
         level1.SetActive(false);
         level2.SetActive(true);
         EconomyManager.instance.RemoveGold(towerSO.upgradeCost);

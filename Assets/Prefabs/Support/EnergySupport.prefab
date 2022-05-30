@@ -143,6 +143,7 @@ MonoBehaviour:
   sr: {fileID: 3314126449326028525}
   supportSo: {fileID: 11400000, guid: 55d708ddf7c36984b9b9537a1b82be05, type: 2}
   affectedBlocks: []
+  affectedBuildings: []
 --- !u!1001 &1590982209511058707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,7 +300,7 @@ PrefabInstance:
     - target: {fileID: 1712590614451201631, guid: e71d9aa9ead4aeb45a33a135053c77f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1712590614451201631, guid: e71d9aa9ead4aeb45a33a135053c77f7,
         type: 3}
