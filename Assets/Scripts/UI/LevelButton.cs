@@ -11,10 +11,14 @@ public class LevelButton : MonoBehaviour
     public Image image;
     public void SetLevel()
     {
-        if(GameManager.instance.selectedLevelButton is not null )GameManager.instance.selectedLevelButton.image.sprite = sprites[0];
-        image.sprite = sprites[1];
+        
         GameManager.instance.selectedLevelButton = this;
         GameManager.instance.levelManager.selectedLevel = levelContained;
         /*Sound*/ AudioManager.instance.Play(21);
+    }
+
+    void Update()
+    {
+        image.sprite = GameManager.instance.selectedLevelButton == this ? sprites[1] : sprites[0];
     }
 }
