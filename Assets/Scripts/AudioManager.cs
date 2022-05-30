@@ -113,16 +113,19 @@ public bool IsPlaying()
 public void SetMusicVolume(float volume)
 {
     mixers[0].audioMixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+    if(volume == 0) mixers[0].audioMixer.SetFloat("MusicVolume", -80);
 }
 
 public void SetEffectsVolume(float volume)
 {
     mixers[0].audioMixer.SetFloat("EffectsVolume", Mathf.Log10(volume) * 20);
+    if(volume == 0) mixers[0].audioMixer.SetFloat("EffectsVolume", -80);
 }
 
 public void SetMasterVolume(float volume)
 {
     mixers[0].audioMixer.SetFloat("MasterVolume", Mathf.Log10(volume) * 20);
+    if(volume == 0) mixers[0].audioMixer.SetFloat("MasterVolume", -80);
 }
 
 public void StopMusic()
