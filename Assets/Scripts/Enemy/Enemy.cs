@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
     
     public static event Action<int> EnemyDeathGoldEvent;
-    public static event Action<int> EnemyDeathCristalEvent;
     public AXD_EnemySO enemyStats;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] public Animator animator;
+    [SerializeField] private Collider2D col;
     private Block initPos;
     private Block destination;
     private BargeSO bargeItComesFrom;
@@ -23,13 +24,22 @@ public class Enemy : MonoBehaviour
 
     private AXD_TowerShoot target;
 
-    private int currentHP { get; set; }
+    public int currentDamage { get; set; }
+    public int currentHP { get; private set; }
     private Coroutine movement;
-    
 
+
+    private Vector2 pos;
     private void Init()
     {
+        isDying = false;
+        pos.x = Random.Range(-0.5f, 0.5f);
+        pos.y = Random.Range(-0.5f, 0.5f);
+        sr.transform.localPosition = pos;
+        col.offset = pos;
+        sr.color = Color.white;
         currentHP = enemyStats.maxHealthPoints;
+        currentDamage = enemyStats.damage;
         speed = enemyStats.speed;
         path.Clear();
         FindPath(GameManager.instance.grid.GetNearestBlock(transform.position));
@@ -39,22 +49,36 @@ public class Enemy : MonoBehaviour
 
     public void StartMovement()
     {
-        movement = StartCoroutine(MoveEnemy());
+        if(gameObject.activeSelf) movement = StartCoroutine(MoveEnemy());
     }
 
     
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.transform.CompareTag("Block")) return;
-        if (other.GetComponent<Block>().building is null) return;
-        if (other.GetComponent<Block>().building.buildingSO.type == BuildingType.Trap) return;
-        StartCoroutine(Attack(other.GetComponent<Block>().building));
+        if (other.transform.CompareTag("Block"))
+        {
+            if (other.GetComponent<Block>().building is null) return;
+            if (other.GetComponent<Block>().building.buildingSO.type == BuildingType.Trap) return;
+            StartCoroutine(Attack(other.GetComponent<Block>().building));
+        }
+
+        if (!other.GetComponent<Tower>()) return;
+        if(other.GetComponent<Tower>().inRange.Contains(this)) return;
+        other.GetComponent<Tower>().inRange.Add(this);
+
 
     }
 
+    public bool rageAnim;
+    public void StopMovementRageAnim()
+    {
+        rageAnim = true;
+        StopMovement();
+    }
     
     public void StopMovement()
     {
+        if (movement is null) return;
         StopCoroutine(movement);
     }
     public void StopMovement(WaitForSeconds stunDuration)
@@ -63,6 +87,7 @@ public class Enemy : MonoBehaviour
         if (stunned) return;
         StartCoroutine(StopMovementDelayed(stunDuration));
     }
+    
 
     private IEnumerator StopMovementDelayed(WaitForSeconds stunDuration)
     {
@@ -75,22 +100,24 @@ public class Enemy : MonoBehaviour
         yield return stunDuration;
         stunned = false;
     }
-
-    void Update()
+    
+    public bool TakeDamage(DamageType damageType, int damageToTake,Tower origin)
     {
-        if(currentHP<=0) Death();
-    }
-    public bool TakeDamage(DamageType damageType, int damageToTake)
-    {
+        sr.DOColor(Color.HSVToRGB(1,0.5f,1), .1f).SetLoops(2,LoopType.Yoyo);
         currentHP -= damageToTake;
-        if (currentHP <= 0)
+        if (currentHP > 0)
         {
-            currentHP = 0;
-            Death(); 
-            return true;
+            /*Sound*/ AudioManager.instance.Play(enemyStats.dammageSoundIndex[UnityEngine.Random.Range(0, enemyStats.dammageSoundIndex.Length)], false, true);
+            return false;
         }
-
-        return false;
+        if (isDying) return true;
+        isDying = true;
+        currentHP = 0;
+        if( origin is not null) origin.ResetTarget();
+        tween.Kill();
+        StopAllCoroutines();
+        Death(); 
+        return true;
     }
 
 
@@ -133,10 +160,7 @@ public class Enemy : MonoBehaviour
 
     void CheckDirection(Vector2 pos, Vector2 des)
     {
-        // -x / +y = N
-        // +x / +y = E
-        // +x / -y = S
-        // -x / -y = W
+
         int signX = Math.Sign(des.x - pos.x);
         int signY = Math.Sign(des.y - pos.y);
 
@@ -145,25 +169,22 @@ public class Enemy : MonoBehaviour
         if (signX > 0 && signY > 0) dir = 1;
         if (signX > 0 && signY < 0) dir = 2;
         if (signX < 0 && signY < 0) dir = 3;
-
-        //animator.SetInteger("Direction", dir);
+        
         animator.SetFloat("Direction", dir);
     }
 
     IEnumerator Attack(Building target)
     {
-        // var pos = target.transform.position - (target.transform.position - transform.position).normalized * 2f;
-        // transform.DOMove(pos, (pos - transform.position).magnitude / speed)
-        //     .SetEase(Ease.Linear);
-        // yield return new WaitForSeconds((pos - transform.position).magnitude / speed);
         StopMovement();
         tween.Pause();
         animator.SetInteger("Speed", 0);
         while (target.hp > 0)
         {
+            if (rageAnim) yield return null;
             animator.SetTrigger("Attack");
-            yield return new WaitForSeconds(enemyStats.attackSpeed);
-            target.takeDamage(enemyStats.damage);
+            /*Sound*/ AudioManager.instance.Play(enemyStats.attackSoundIndex[UnityEngine.Random.Range(0, enemyStats.attackSoundIndex.Length)], false, true);
+            yield return new WaitForSeconds(1/enemyStats.attackSpeed);
+            target.takeDamage(currentDamage);
         }
         animator.SetTrigger("AttackEnd");
         animator.SetInteger("Speed", 1);
@@ -177,22 +198,38 @@ public class Enemy : MonoBehaviour
         Init();
         bargeItComesFrom = _barge;
         cristalStored = _barge.troops[troopListIndex].cristalToEarn;
+        /*Sound*/ AudioManager.instance.Play(enemyStats.spawnSoundIndex, false, true);
         //GameManager.instance.enemies.Add(this);
     }
 
+
+    public bool isDying;
+    [SerializeField] private SpriteRenderer sr;
     public void Death()
     {
+        int rand = Random.Range(0, 3);
+        /*SOund*/ AudioManager.instance.Play(enemyStats.dieSoundIndex[rand], false, true);
         if (EnemyDeathGoldEvent != null)
         {
             EnemyDeathGoldEvent((int) (enemyStats.goldToAddOnDeath * bargeItComesFrom.rewardModifier));
         }
-
-        if (EnemyDeathCristalEvent != null && cristalStored > 0)
-        {
-            EnemyDeathCristalEvent((int)(cristalStored * bargeItComesFrom.rewardModifier));
-        }
-        //GameManager.instance.enemies.Remove(this);
-        Pooler.instance.Depop(enemyStats.eName, this.gameObject);
+        
+        animator.SetTrigger("AttackEnd");
+        animator.SetInteger("Speed", 0);
+        animator.SetTrigger("Death");
+        StartCoroutine(DeathDepop());
+        Pooler.instance.DelayedDepop(0.8f, enemyStats.eName, this.gameObject);
     }
-    
+
+    private WaitForSeconds waitDepop = new WaitForSeconds(0.5f);
+
+    IEnumerator DeathDepop()
+    {
+        yield return waitDepop;
+        sr.DOFade(0, 0.3f);
+        
+        var go = Pooler.instance.Pop("GoldFx");
+        go.transform.position = transform.position;
+        Pooler.instance.DelayedDepop(0.8f,"GoldFx",go);
+    }
 }

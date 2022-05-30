@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   healthPoints: 900
   energyRequired: 2
-  goldRequired: 12
+  goldRequired: 10
   level: 1
   nextLevel: {fileID: 11400000, guid: e91e5022c67493945aca70eaad01553a, type: 2}
   upgradeCost: 10
@@ -26,6 +26,7 @@ MonoBehaviour:
   range: 3
   maxTargets: 1
   priority: 0
-  bulletSpeed: 6
-  bulletPrefab: {fileID: 2761374500971916386, guid: 32be0a0b41d61d74cb15736e888906b4,
+  bulletSpeed: 15
+  bulletPrefab: {fileID: 2375004557264797407, guid: c3ee92c76e6edae4585a16788b5ee966,
     type: 3}
+  soundIndex: 13

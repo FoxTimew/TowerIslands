@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum ContextMenuType
 {
     BlockEmpty,
-    BlockEmptyTowerChoice,
     BlockBuilt
 }
 public class ContextMenuLinker : MonoBehaviour
@@ -18,8 +19,19 @@ public class ContextMenuLinker : MonoBehaviour
     private RectTransform UIManagerCanvasRect;
     private RectTransform contextMenuRectTransform;
     public Button[] buttons;
+    private GameObject tmpChild;
+    private Button tmpButton;
+    private TowerSO tmpTowerSO;
+    private Tower tmpTower;
+    public TMP_Text towerCostText;
+    public TMP_Text mortarCostText;
+    public TMP_Text supportCostText;
+    public TMP_Text trapCostText;
+    public TMP_Text upgradeCostText;
+    public TMP_Text sellCostText;
+    public TMP_Text repairCostText;
     
-    
+
     private void Awake()
     {
         cma = GetComponent<CircleMenuAnimation>();
@@ -34,46 +46,159 @@ public class ContextMenuLinker : MonoBehaviour
         if (GameManager.instance.selectedBlock is null) return;
         UpdateUIPosition();
         if (type != ContextMenuType.BlockEmpty) return;
-        buttons[0].gameObject.SetActive(GameManager.instance.rapidTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount());
-        buttons[1].gameObject.SetActive(GameManager.instance.energySupportSO.goldRequired <= EconomyManager.instance.GetGoldAmount());
-        buttons[2].gameObject.SetActive(GameManager.instance.stunTrapSO.goldRequired <= EconomyManager.instance.GetGoldAmount());
-
     }
 
     public void LinkListeners(Block block)
     {
+        Debug.Log("LinkListeners");
         if (block != null)
         {
+            Debug.Log("BlockNotNull");
             blockToHover = block;
 
             switch (type)
             {
                 case (ContextMenuType.BlockEmpty):
-                    
+                    Debug.Log("Block Empty");
                     foreach (var button in buttons) button.onClick.RemoveAllListeners();
-                    buttons[0].onClick.AddListener(RapidTowerBuilder);
-                    buttons[1].onClick.AddListener(EnergySupportTowerBuilder);
-                    buttons[2].onClick.AddListener(StunTrapTowerBuilder);
-                    for (int i = 0; i < transform.childCount-1; i++)
+                    Debug.Log("Tower prix update");
+                    towerCostText.text = GameManager.instance.rapidTowerSO.goldRequired.ToString();
+                    if (GameManager.instance.rapidTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
+                    {
+                        buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.towerButtonSprite;
+                        buttons[0].onClick.AddListener(RapidTowerBuilder);
+                        buttons[0].interactable = true;
+                    }
+                    else
+                    {
+                        buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[0].interactable = false;
+                    }
+                    Debug.Log("Mortier prix update");
+                    mortarCostText.text = GameManager.instance.mortarTowerSO.goldRequired.ToString();
+                    if (GameManager.instance.mortarTowerSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
+                    {
+                        buttons[1].GetComponent<Image>().sprite = UI_Manager.instance.mortarButtonSprite;
+                        buttons[1].onClick.AddListener(MortarTowerBuilder);
+                        buttons[1].interactable = true;
+                    }
+                    else
+                    {
+                        buttons[1].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[1].interactable = false;
+                    }
+                    Debug.Log("Support prix update");
+                    supportCostText.text = GameManager.instance.energySupportSO.goldRequired.ToString();
+                    if (GameManager.instance.energySupportSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
+                    {
+                        buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.supportButtonSprite;
+                        buttons[2].onClick.AddListener(EnergySupportTowerBuilder);
+                        buttons[2].interactable = true;
+                    }
+                    else
+                    {
+                        buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[2].interactable = false;
+                    }
+                    Debug.Log("Trap prix update");
+                    trapCostText.text = GameManager.instance.stunTrapSO.goldRequired.ToString();
+                    if (GameManager.instance.stunTrapSO.goldRequired <= EconomyManager.instance.GetGoldAmount())
+                    {
+                        buttons[3].GetComponent<Image>().sprite = UI_Manager.instance.trapButtonSprite;
+                        buttons[3].onClick.AddListener(StunTrapTowerBuilder);
+                        buttons[3].interactable = true;
+                    }
+                    else
+                    {
+                        buttons[3].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[3].interactable = false;
+                    }
+
+                    for (int i = 0; i < transform.childCount - 1; i++)
                     {
                         buttons[i].onClick.AddListener(MenuCloserListener);
                     }
 
                     break;
-                case (ContextMenuType.BlockEmptyTowerChoice):
-                    for (int i = 1; i < transform.childCount; i++)
-                    {
-                        transform.GetChild(i).GetComponent<Button>().onClick.AddListener(MenuCloserListener);
-                    }
-                    break;
                 case (ContextMenuType.BlockBuilt):
-                    Debug.Log("Block Built");
-                    transform.GetChild(2).GetComponent<Button>().onClick.RemoveAllListeners();
-                    transform.GetChild(2).GetComponent<Button>().onClick.AddListener(SellBuildingLinstener);
-                    for (int i = 1; i < transform.childCount; i++)
+                    //Upgrade button
+                    //Si l'upgrade est dispo + on a assez d'argent + la tour n'est pas morte
+                    if (GameManager.instance.selectedBlock.building.GetType() == typeof(Tower))
                     {
-                        transform.GetChild(i).GetComponent<Button>().onClick.AddListener(MenuCloserListener);
+                        tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
+                        
+                        if (tmpTowerSO.level != 2 &&
+                            EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost && 
+                            GameManager.instance.selectedBlock.building.hp > 0)
+                        {
+                            buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.upgradeSprite;
+                            buttons[0].onClick.RemoveAllListeners();
+                            buttons[0].interactable = true;
+                            buttons[0].onClick.AddListener(UpgradeBuildingListener);
+                        }
+                        else if( tmpTowerSO.nextLevel != null && (EconomyManager.instance.GetGoldAmount() < tmpTowerSO.upgradeCost || GameManager.instance.selectedBlock.building.hp <= 0))
+                        {
+                            buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                            buttons[0].interactable = false;
+                            upgradeCostText.text = tmpTowerSO.upgradeCost.ToString();
+                        }
+                        else
+                        {
+                            buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                            buttons[0].interactable = false;
+                            upgradeCostText.text = "0";
+                        }
+
+                        upgradeCostText.text = tmpTowerSO.upgradeCost.ToString();
                     }
+                    else
+                    {
+                        buttons[0].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[0].interactable = false;
+                        upgradeCostText.text = "0";
+                    }
+
+                    //Sell button
+                    buttons[1].onClick.RemoveAllListeners();
+                    buttons[1].onClick.AddListener(SellBuildingListener);
+                    sellCostText.text = GameManager.instance.selectedBlock.building.IsBuildingDestroyed() ? "3" : GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
+                    //Repair button
+                    //Si le repair est dispo + on a assez d'argent 
+                    if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed() &&
+                        EconomyManager.instance.GetGoldAmount() >
+                        GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
+                        (GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)*100/GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                    {
+                        
+                        buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.repairSprite;
+                        buttons[2].onClick.RemoveAllListeners();
+                        buttons[2].onClick.AddListener(RepairBuildingListener);
+                        
+                    }
+                    else
+                    {
+                        buttons[2].GetComponent<Image>().sprite = UI_Manager.instance.lockedButtonSprite;
+                        buttons[2].interactable = false;
+                    }
+
+                    if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed())
+                    {
+                        repairCostText.text = (GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
+                                               (GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
+                                                GameManager.instance.selectedBlock.building.hp) * 100
+                                               / GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
+                            .ToString();
+                    }
+                    else
+                    {
+                        repairCostText.text = "0";
+                    }
+
+                    foreach (Button button in buttons)
+                    {
+                        button.onClick.AddListener(MenuCloserListener);
+                    }
+
                     break;
             }
         }
@@ -81,24 +206,55 @@ public class ContextMenuLinker : MonoBehaviour
 
     private void RapidTowerBuilder()
     {
+        /*Sound*/ AudioManager.instance.Play(11, false);
+        Debug.Log("Build Rapid Tower");
         GameManager.instance.selectedBlock.Build(GameManager.instance.rapidTowerSO);
+    }
+
+    private void OnEnable()
+    {
+        cma.PlayAnimation();
+    }
+
+    private void MortarTowerBuilder()
+    {
+        /*Sound*/ AudioManager.instance.Play(11, false);
+        Debug.Log("Build Mortar Tower");
+        GameManager.instance.selectedBlock.Build(GameManager.instance.mortarTowerSO);
     }
 
     private void EnergySupportTowerBuilder()
     {
+        /*Sound*/ AudioManager.instance.Play(11, false);
+        Debug.Log("Build Energy Support");
         GameManager.instance.selectedBlock.Build(GameManager.instance.energySupportSO);
     }
     private void StunTrapTowerBuilder()
     {
+        /*Sound*/ AudioManager.instance.Play(11, false);
+        Debug.Log("Build Stun Trap");
         GameManager.instance.selectedBlock.Build(GameManager.instance.stunTrapSO);
         
     }
 
-    private void SellBuildingLinstener()
+    private void UpgradeBuildingListener()
+    {
+        Debug.Log("Upgrade tower");
+        tmpTower = (Tower)GameManager.instance.selectedBlock.building;
+        tmpTower.Upgrade();
+    }
+
+    private void RepairBuildingListener()
+    {
+        Debug.Log("Repair tower");
+        /*Sound*/AudioManager.instance.Play(24);
+        GameManager.instance.selectedBlock.building.Repair();
+        
+    }
+    private void SellBuildingListener()
     {
         GameManager.instance.selectedBlock.SellBuilding();
-        
-        
+        /*Sound*/AudioManager.instance.Play(22);
     }
     private void MenuCloserListener()
     {

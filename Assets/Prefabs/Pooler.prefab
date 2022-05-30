@@ -45,17 +45,129 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolKeys:
-  - key: Bullet
+  - key: Minion
     pool:
-      prefab: {fileID: 6321074685585687459, guid: 1d72c19154c1e754f954b7eaeeaa1df3,
+      prefab: {fileID: 1691961859449996100, guid: d05fbcc84e77a6744b608bb2d82c1097,
         type: 3}
-      baseCount: 1
+      baseCount: 5
       baseRefreshSpeed: 5
       refreshSpeed: 0
-  - key: Enemy
+  - key: Arrow
     pool:
-      prefab: {fileID: 5805961861920261736, guid: 97056109632476f498061306809850ef,
+      prefab: {fileID: 5238814771564932069, guid: c3ee92c76e6edae4585a16788b5ee966,
         type: 3}
-      baseCount: 1
+      baseCount: 50
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Barge
+    pool:
+      prefab: {fileID: 2806747945817723420, guid: 22effb08ff1d4df49aa37f1cdb8cd99f,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Fast Attack Tower
+    pool:
+      prefab: {fileID: 5140832759016273425, guid: bf1646a145647ee45b9d386fc79f0d33,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: EnergySupport
+    pool:
+      prefab: {fileID: 8175417795234099611, guid: be04b73018bfda8478dd8a234ebad850,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: StunTrap
+    pool:
+      prefab: {fileID: 7189452039542709175, guid: 88b98bc8147b7a24bafd05dc4d8449bd,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks1
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: ccbc9c87665117a49a804e54ff755db2,
+        type: 3}
+      baseCount: 2
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks2
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: 9829c912975b1934bba7c6e3b23c3b7e,
+        type: 3}
+      baseCount: 2
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks3
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: 6a46330f48150c54bbf67bc6b883d46f,
+        type: 3}
+      baseCount: 2
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks4
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: 42002107bfd228b40a39d103a7150c23,
+        type: 3}
+      baseCount: 2
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Berzerk
+    pool:
+      prefab: {fileID: 1691961859449996100, guid: 65a5acb26393d8f409f3ca0209af38a5,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: MortarBullet
+    pool:
+      prefab: {fileID: 8121574140305436561, guid: 32be0a0b41d61d74cb15736e888906b4,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks5
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: b069236a792dbd247b8f8db5053e132f,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks6
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: 2e3b19d01815a7f4f8d51329cf964d9c,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks7
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: 0fc4a844fda13fb4c8ec8e6a3ec1056e,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: Blocks8
+    pool:
+      prefab: {fileID: 1211986816860430671, guid: 325da59856c7b1749813f7d06112a535,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: MortarTower
+    pool:
+      prefab: {fileID: 126142124089701540, guid: e981e58a3f5673d41884b41824a39f7a,
+        type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 5
+      refreshSpeed: 0
+  - key: GoldFx
+    pool:
+      prefab: {fileID: 2672893586001309763, guid: c55204ce21ba1f24d8998634d479d4c7,
+        type: 3}
+      baseCount: 5
       baseRefreshSpeed: 5
       refreshSpeed: 0

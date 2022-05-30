@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="" />
+=======
+    <list default="true" id="f33956b9-4dd5-4f5b-8ef5-1ad4823c08c9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TowerIslands/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Z Asset Constance/FX Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Z Asset Constance/FX Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Z Asset Constance/sprites/New Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Z Asset Constance/sprites/New Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Support/EnergySupport.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tower/Fast Attack Tower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tower/Fast Attack Tower.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trap/StunTrap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trap/StunTrap.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev2D.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Building.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Building.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/DamageTrapSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/DamageTrapSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/StunTrapSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/StunTrapSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/Trap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/Trap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/TrapEffectSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Trap/TrapEffectSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/RapidBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/RapidBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/IslandCreator/IslandCreator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VictoryScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +46,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< Updated upstream
     <setting file="file://$PROJECT_DIR$/Assets/UpgradeButton.cs" root0="FORCE_HIGHLIGHTING" />
+=======
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullets/MortarBullet.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> Stashed changes
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -112,7 +140,11 @@
       <workItem from="1652688455382" duration="10329000" />
       <workItem from="1652775004635" duration="18735000" />
       <workItem from="1652868627109" duration="674000" />
+<<<<<<< Updated upstream
       <workItem from="1652949139192" duration="4342000" />
+=======
+      <workItem from="1653228435972" duration="3385000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

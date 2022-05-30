@@ -13,12 +13,10 @@ public class StunTrapSO : TrapEffectSO
         stun = new WaitForSeconds(stunDuration);
     }
 
-    public override IEnumerator ApplyEffect(Enemy enemy)
+    public override IEnumerator ApplyEffect(Enemy enemy, ParticleSystem particleSystem)
     {
-        while (true)
-        {
-            enemy.StopMovement(stun);
-            yield return stun;
-        }
+        enemy.StopMovement(stun);
+        yield return stun;
+
     }
 }

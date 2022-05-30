@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Tank
   m_EditorClassIdentifier: 
   eName: Tank
-  speed: 6
+  speed: 1
   maxHealthPoints: 1200
   damage: 180
   attackSpeed: 0.55
   range: 1
   goldToAddOnDeath: 30
+  dieSoundIndex: 08000000090000000a000000
+  spawnSoundIndex: 8

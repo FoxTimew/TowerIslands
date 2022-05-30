@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Berzerk
   m_EditorClassIdentifier: 
   eName: Berzerk
-  speed: 12
-  maxHealthPoints: 250
-  damage: 40
+  speed: 4
+  maxHealthPoints: 230
+  damage: 30
   attackSpeed: 1.2
   range: 2
   goldToAddOnDeath: 10
+  dieSoundIndex: 240000002500000026000000
+  dammageSoundIndex: 210000002200000023000000
+  attackSoundIndex: 1e0000001f00000020000000
+  spawnSoundIndex: 25

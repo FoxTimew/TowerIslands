@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -49,21 +51,35 @@ public class UI_Manager : MonoBehaviour
         blockInfo,
         islandEditorScroller,
         levelSelectionScroller;
-        
 
+    [SerializeField] private TMP_Text goldUIText;
+    [SerializeField] private TMP_Text waveUIText;
     [Header("Transition Reference")]
     [SerializeField] private RectTransform  LeftTransition;
     [SerializeField] private RectTransform  RightTransition;
-    [SerializeField] private RectTransform transitionClouds;
     [SerializeField] private float transitionDuration;
-    private Vector3 initialCloudPosition;
 
+    [Header("Wave Transition Reference")] 
+    public WaveTransitionAnimation waveTransitionObject;
+
+    public WaveTransitionAnimation buildYourDefenseTransitionObject;
+    public float waveTransitionTime;
+ 
     [Header("DynamicButtonsReferences")] 
     [SerializeField] private GameObject levelButtonPrefab;
     [SerializeField] private GameObject blockButtonPrefab;
 
     [SerializeField] private Sprite tickImage;
     [SerializeField] private Sprite redCrossImage;
+
+    [Header("Button Sprites")] public Sprite lockedButtonSprite;
+    public Sprite towerButtonSprite;
+    public Sprite supportButtonSprite;
+    public Sprite trapButtonSprite;
+    public Sprite mortarButtonSprite;
+    public Sprite upgradeSprite;
+    public Sprite repairSprite;
+    
     private GameObject tmpButton;
     private TMP_Text tmpButtonText;
     private Image tmpButtonImage;
@@ -71,35 +87,33 @@ public class UI_Manager : MonoBehaviour
     private EventTrigger tmpEventTrigger;
 
     private WaitForSeconds closeMenuTransitionDuration;
+    private GameObject tmpChild;
+    private ContextMenuLinker linker;
     
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        Debug.Log("instance");
+        instance = this;
     }
 
     private void Start()
     {
-        initialCloudPosition = transitionClouds.position;
         closeMenuTransitionDuration = new WaitForSeconds(transitionDuration * .5f);
     }
     
     public void CloudTransition()
     {
-        //transitionClouds.DOMove(-transitionClouds.position/3, 
-        //        transitionDuration).OnComplete(() => { transitionClouds.position = initialCloudPosition;
-        //    });
-
-        LeftTransition.DOLocalMoveX(-50, transitionDuration*0.5f).SetEase(Ease.Unset)
-            .OnComplete(() => LeftTransition.DOLocalMoveX(-800, transitionDuration*0.5f).SetEase(Ease.Unset));
-        RightTransition.DOLocalMoveX(50, transitionDuration*0.5f).SetEase(Ease.Unset)
-            .OnComplete(() => RightTransition.DOLocalMoveX(800, transitionDuration*0.5f).SetEase(Ease.Unset));
+        LeftTransition.DOLocalMoveX(-50, transitionDuration*0.48f).SetEase(Ease.Unset)
+            .OnComplete(()=>LeftTransition.DOScale(Vector3.one, transitionDuration*0.02f)
+                .OnComplete(() => LeftTransition.DOLocalMoveX(-800, transitionDuration*0.48f).SetEase(Ease.Unset)));
+        RightTransition.DOLocalMoveX(50, transitionDuration*0.48f).SetEase(Ease.Unset)
+            .OnComplete(()=>LeftTransition.DOScale(Vector3.one, transitionDuration*0.02f)
+                .OnComplete(() => RightTransition.DOLocalMoveX(800, transitionDuration*0.48f).SetEase(Ease.Unset)));
     }
     public void OpenMenu(int menuEnumValue)
     {
-        if (menuEnumValue != (int)MenuEnum.BlockInfo && menuEnumValue != (int)MenuEnum.FeedbackUI)
+        /*Sound*/ AudioManager.instance.Play(21, false);
+        if (menuEnumValue != (int)MenuEnum.BlockInfo)
         {
             StartCoroutine(OpenMenuWithTransition(menuEnumValue));
         }
@@ -108,26 +122,45 @@ public class UI_Manager : MonoBehaviour
             if (menuEnumValue == (int) MenuEnum.BlockInfo)
             {
                 blockInfo.SetActive(true);
+                linker = blockInfo.transform.GetChild(1).GetComponent<ContextMenuLinker>();
                 if (GameManager.instance.selectedBlock.building == null)
                 {
-                    blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().cma.PlayAnimation();
-                    if (!blockInfo.transform.GetChild(0).gameObject.activeSelf)
+                    Debug.Log(("No Building"));
+                    tmpChild = blockInfo.transform.GetChild(0).gameObject;
+                    linker = tmpChild.GetComponent<ContextMenuLinker>();
+                    if (!tmpChild.activeSelf)
                     {
-                        blockInfo.transform.GetChild(0).gameObject.SetActive(true);
-                        blockInfo.transform.GetChild(0).GetComponent<ContextMenuLinker>().LinkListeners(GameManager.instance.selectedBlock);
+                        Debug.Log(("MenuNotActive"));
+                        tmpChild.SetActive(true);
+                        if (GameManager.instance.selectedBlock != null)
+                        {
+                            Debug.Log("OpenMenu 1 Block not null");
+                            linker.LinkListeners(GameManager.instance.selectedBlock);
+                        }
+                        else
+                        {
+                            Debug.Log("OpenMenu 1 Block null");
+                        }
                     }
-                    /*else
+                    else
                     {
-                        // A Ajouter pour activer le menu sur 2 niveaux
-                        blockInfo.transform.GetChild(1).gameObject.SetActive(true);
-                    }*/
+                        Debug.Log("Menu Already Opened");
+                    }
                 }
                 else
                 {
-                    ContextMenuLinker linker = blockInfo.transform.GetChild(2).GetComponent<ContextMenuLinker>();
+                    Debug.Log(("1 Building"));
                     linker.cma.PlayAnimation();
                     linker.gameObject.SetActive(true);
-                    linker.LinkListeners(GameManager.instance.selectedBlock);
+                    if (GameManager.instance.selectedBlock != null)
+                    {
+                        Debug.Log("OpenMenu 2 Block not null");
+                        linker.LinkListeners(GameManager.instance.selectedBlock);
+                    }
+                    else
+                    {
+                        Debug.Log("OpenMenu 2 Block null");
+                    }
                 }
             }else
             {
@@ -154,7 +187,6 @@ public class UI_Manager : MonoBehaviour
                 islandMenu.SetActive(false);
                 break;
             case (MenuEnum.IslandEditorMenu):
-                //Détruire tous les boutons générés lors de l'ouverture du menu.
                 foreach (Transform child in islandEditorScroller.transform.GetChild(0).transform)
                 {
                     Destroy(child.gameObject);
@@ -162,7 +194,6 @@ public class UI_Manager : MonoBehaviour
                 islandEditorMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelSelectionMenu):
-                //Détruire tous les boutons générés lors de l'ouverture du menu.
                 foreach (Transform child in levelSelectionScroller.transform.GetChild(0).transform)
                 {
                     Destroy(child.gameObject);
@@ -197,7 +228,7 @@ public class UI_Manager : MonoBehaviour
         {
             defeatMenu.GetComponent<DefeatMenu>().Close();
         }
-        else if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
+        else if (menuEnumValue != (int) MenuEnum.BlockInfo)
         {
             StartCoroutine(CloseMenuWithTransition(menuEnumValue));
         }
@@ -257,6 +288,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(false);
+                
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(false);
@@ -292,6 +324,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandMenu):
                 islandMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.IslandEditorMenu):
                 islandEditorMenu.SetActive(true);
@@ -303,9 +336,15 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(2, true);
+
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
+                playingLevelMenu.transform.GetChild(0).gameObject.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
+                
+
                 break;
             case (MenuEnum.FeedbackUI):
                 feedbackUI.SetActive(true);
@@ -316,15 +355,20 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.DefeatMenu):
                 //Appeler menu de défaite
                 defeatMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(19, false, true);
                 break;
             case (MenuEnum.VictoryMenu):
                 //Apeler menu de victoire
                 victoryMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(18, false, true);
                 break;
         }
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
+        /*Sound*/ AudioManager.instance.Play(20, false);
         yield return new WaitForSeconds(transitionDuration / 2);
         switch ((MenuEnum)menuID)
         {
@@ -339,6 +383,7 @@ public class UI_Manager : MonoBehaviour
                 break;
             case (MenuEnum.IslandMenu):
                 islandMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.IslandEditorMenu):
                 islandEditorMenu.SetActive(true);
@@ -347,9 +392,14 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.LevelSelectionMenu):
                 levelSelectionMenu.SetActive(true);
                 DrawLevelSelectionButton();
+                /*Sound*/ AudioManager.instance.Play(17, true, true);
                 break;
             case (MenuEnum.LevelPreparationMenu):
                 levelPreparationMenu.SetActive(true);
+                /*Sound*/AudioManager.instance.Play(2, true);
+                Debug.Log("PreparationMenu");
+                buildYourDefenseTransitionObject.gameObject.SetActive(true);
+                buildYourDefenseTransitionObject.BuildYourDefenseTransition();
                 break;
             case (MenuEnum.PlayingLevelMenu):
                 playingLevelMenu.SetActive(true);
@@ -363,10 +413,14 @@ public class UI_Manager : MonoBehaviour
             case (MenuEnum.DefeatMenu):
                 //Appeler menu de défaite
                 defeatMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(19, false, true);
                 break;
             case (MenuEnum.VictoryMenu):
                 //Apeler menu de victoire
                 victoryMenu.SetActive(true);
+                /*Sound*/ AudioManager.instance.StopMusic();
+                AudioManager.instance.Play(18, false, true);
                 break;
         }
     }
@@ -377,16 +431,20 @@ public class UI_Manager : MonoBehaviour
         {
             tmpButton = Instantiate(blockButtonPrefab, islandEditorScroller.transform.GetChild(0));
             tmpButton.name = $"Blocks{block.Key}";
-            tmpButton.GetComponent<BlockButton>().index = block.Key;
+            //tmpButton.GetComponent<BlockButton>().index = block.Key;
             tmpEventTrigger = tmpButton.GetComponent<EventTrigger>();
+            tmpButton.GetComponent<BlockButton>().index = block.Key;
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerDown;
             entry.callback.AddListener((data) =>
             {
-                GameManager.instance.islandCreator.PopBuild($"Blocks{block.Key}",tmpButton.GetComponent<RectTransform>());
+                GameManager.instance.islandCreator.
+                    PopBuild($"Blocks{block.Key}",tmpButton.GetComponent<RectTransform>());
             });
             tmpEventTrigger.triggers.Add(entry);
             tmpButton.transform.GetChild(0).GetComponent<TMP_Text>().text = block.Value.ToString();
+            tmpButton.transform.GetChild(1).GetComponent<Image>().sprite =
+                GameManager.instance.islandCreator.blockPreviewSprites[block.Key-1];
         }
     }
 
@@ -400,7 +458,7 @@ public class UI_Manager : MonoBehaviour
             tmpPrepareButton.interactable = false;
             
             tmpButton.GetComponent<Button>().onClick.AddListener(EnablePrepareButtonListener);
-            
+
             tmpButtonText = tmpButton.transform.GetChild(0).GetComponent<TMP_Text>();
             tmpButtonImage = tmpButton.transform.GetChild(1).GetComponent<Image>();
             tmpButton.GetComponent<LevelButton>().levelContained = level;
@@ -417,7 +475,7 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    public bool isMenuOpen(MenuEnum menu)
+    public bool IsMenuOpen(MenuEnum menu)
     {
         switch (menu)
         {
@@ -464,6 +522,25 @@ public class UI_Manager : MonoBehaviour
         tmpPrepareButton.interactable = true;
 
     }
-    
+
+    public void UpdateWaveUI()
+    {
+
+        if (GameManager.instance.levelManager.selectedLevel is null) return;
+        waveUIText.text = $"{GameManager.instance.currentWave}/{GameManager.instance.levelManager.selectedLevel.waves.Count}";
+
+    }
+    public void UpdateGoldUI(int goldAmount)
+    {
+        goldUIText.text = $"{goldAmount}";
+    }
+
+    public void LaunchWaveClearedTransition()
+    {
+        Debug.Log("transition intitiated");
+        waveTransitionObject.gameObject.SetActive(true);
+        waveTransitionObject.WaveClearedTransition();
+    }
+
 
 }

@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Minion
   m_EditorClassIdentifier: 
   eName: Minion
-  speed: 3
+  speed: 2
   maxHealthPoints: 100
-  damage: 30
+  damage: 20
   attackSpeed: 1
   range: 1
-  goldToAddOnDeath: 0
+  goldToAddOnDeath: 2
+  dieSoundIndex: 08000000090000000a000000
+  dammageSoundIndex: 1b0000001c0000001d000000
+  attackSoundIndex: 050000000600000007000000
+  spawnSoundIndex: 39

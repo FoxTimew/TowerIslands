@@ -1,0 +1,5934 @@
+fileFormatVersion: 2
+guid: 5e2fb52ba3fca6c498876206471d8ba0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6330567026404200162
+    second: Crotte_SpriteSheet_0
+  - first:
+      213: 7713324866739697338
+    second: Crotte_SpriteSheet_1
+  - first:
+      213: 8153580138171559922
+    second: Crotte_SpriteSheet_2
+  - first:
+      213: -3508240857852140127
+    second: Crotte_SpriteSheet_3
+  - first:
+      213: -2013227481024733315
+    second: Crotte_SpriteSheet_4
+  - first:
+      213: -7335196581469204213
+    second: Crotte_SpriteSheet_5
+  - first:
+      213: -1153502695358499966
+    second: Crotte_SpriteSheet_6
+  - first:
+      213: 2383091940546531565
+    second: Crotte_SpriteSheet_7
+  - first:
+      213: 5171953498858257032
+    second: Crotte_SpriteSheet_8
+  - first:
+      213: 5503485210033509302
+    second: Crotte_SpriteSheet_9
+  - first:
+      213: -8510933780553358302
+    second: Crotte_SpriteSheet_10
+  - first:
+      213: -8248206260012898629
+    second: Crotte_SpriteSheet_11
+  - first:
+      213: -5797293785544266669
+    second: Crotte_SpriteSheet_12
+  - first:
+      213: -3880188599548756131
+    second: Crotte_SpriteSheet_13
+  - first:
+      213: 1119206780380091483
+    second: Crotte_SpriteSheet_14
+  - first:
+      213: 443222774779247713
+    second: Crotte_SpriteSheet_15
+  - first:
+      213: 3299388442801029898
+    second: Crotte_SpriteSheet_16
+  - first:
+      213: -2901831788624923401
+    second: Crotte_SpriteSheet_17
+  - first:
+      213: -7635682480532183387
+    second: Crotte_SpriteSheet_18
+  - first:
+      213: -7447106620482916015
+    second: Crotte_SpriteSheet_19
+  - first:
+      213: -7461860144344869702
+    second: Crotte_SpriteSheet_20
+  - first:
+      213: -5159582871492447790
+    second: Crotte_SpriteSheet_21
+  - first:
+      213: -4421489729465677164
+    second: Crotte_SpriteSheet_22
+  - first:
+      213: 601061897001963731
+    second: Crotte_SpriteSheet_23
+  - first:
+      213: 8522843521842268408
+    second: Crotte_SpriteSheet_24
+  - first:
+      213: 1416163099332581559
+    second: Crotte_SpriteSheet_25
+  - first:
+      213: 2940426165952949802
+    second: Crotte_SpriteSheet_26
+  - first:
+      213: 5060822935521466761
+    second: Crotte_SpriteSheet_27
+  - first:
+      213: 592341989436152018
+    second: Crotte_SpriteSheet_28
+  - first:
+      213: -3937699235413376633
+    second: Crotte_SpriteSheet_29
+  - first:
+      213: 3926564842339505343
+    second: Crotte_SpriteSheet_30
+  - first:
+      213: -2091077863853311833
+    second: Crotte_SpriteSheet_31
+  - first:
+      213: 7970711268851935856
+    second: Crotte_SpriteSheet_32
+  - first:
+      213: -6497808139387301841
+    second: Crotte_SpriteSheet_33
+  - first:
+      213: -4141603938288994091
+    second: Crotte_SpriteSheet_34
+  - first:
+      213: -4805830408300106013
+    second: Crotte_SpriteSheet_35
+  - first:
+      213: -1405796887918634618
+    second: Crotte_SpriteSheet_36
+  - first:
+      213: -6540636181540956687
+    second: Crotte_SpriteSheet_37
+  - first:
+      213: -5424623026347239084
+    second: Crotte_SpriteSheet_38
+  - first:
+      213: -5562080193366879315
+    second: Crotte_SpriteSheet_39
+  - first:
+      213: -1298884460008051612
+    second: Crotte_SpriteSheet_40
+  - first:
+      213: -7789314814253654561
+    second: Crotte_SpriteSheet_41
+  - first:
+      213: 4229432280758640148
+    second: Crotte_SpriteSheet_42
+  - first:
+      213: 8218200239078553062
+    second: Crotte_SpriteSheet_43
+  - first:
+      213: 177452079795728011
+    second: Crotte_SpriteSheet_44
+  - first:
+      213: 5289239323194887609
+    second: Crotte_SpriteSheet_45
+  - first:
+      213: -7256406440812624962
+    second: Crotte_SpriteSheet_46
+  - first:
+      213: -7025989473001178975
+    second: Crotte_SpriteSheet_47
+  - first:
+      213: 627841640208508609
+    second: Crotte_SpriteSheet_48
+  - first:
+      213: 4619030744993586823
+    second: Crotte_SpriteSheet_49
+  - first:
+      213: 2291577571040398031
+    second: Crotte_SpriteSheet_50
+  - first:
+      213: -5431907645076918231
+    second: Crotte_SpriteSheet_51
+  - first:
+      213: -7467211371194563763
+    second: Crotte_SpriteSheet_52
+  - first:
+      213: 6701869753406681113
+    second: Crotte_SpriteSheet_53
+  - first:
+      213: -175275774041920918
+    second: Crotte_SpriteSheet_54
+  - first:
+      213: -3052287453629780961
+    second: Crotte_SpriteSheet_55
+  - first:
+      213: 316637327264859421
+    second: Crotte_SpriteSheet_56
+  - first:
+      213: 8092314666071789705
+    second: Crotte_SpriteSheet_57
+  - first:
+      213: -3412559615863618207
+    second: Crotte_SpriteSheet_58
+  - first:
+      213: 6454443917274344475
+    second: Crotte_SpriteSheet_59
+  - first:
+      213: -6174937625888913741
+    second: Crotte_SpriteSheet_60
+  - first:
+      213: 6828495486346262958
+    second: Crotte_SpriteSheet_61
+  - first:
+      213: -8571006806202880610
+    second: Crotte_SpriteSheet_62
+  - first:
+      213: 6219129911369488446
+    second: Crotte_SpriteSheet_63
+  - first:
+      213: -4455428417961000254
+    second: Crotte_SpriteSheet_64
+  - first:
+      213: 8113568940400018600
+    second: Crotte_SpriteSheet_65
+  - first:
+      213: -2919932105383845808
+    second: Crotte_SpriteSheet_66
+  - first:
+      213: -2499715342989357281
+    second: Crotte_SpriteSheet_67
+  - first:
+      213: 5292959978827879743
+    second: Crotte_SpriteSheet_68
+  - first:
+      213: -6493251056337013204
+    second: Crotte_SpriteSheet_69
+  - first:
+      213: 5530212349352758384
+    second: Crotte_SpriteSheet_70
+  - first:
+      213: -562846446997464526
+    second: Crotte_SpriteSheet_71
+  - first:
+      213: -6120771327457075280
+    second: Crotte_SpriteSheet_72
+  - first:
+      213: 5385161157226815604
+    second: Crotte_SpriteSheet_73
+  - first:
+      213: -4685685653418053671
+    second: Crotte_SpriteSheet_74
+  - first:
+      213: -1619505673223854285
+    second: Crotte_SpriteSheet_75
+  - first:
+      213: -3221390512662973330
+    second: Crotte_SpriteSheet_76
+  - first:
+      213: -125657528567791072
+    second: Crotte_SpriteSheet_77
+  - first:
+      213: 830170546126193507
+    second: Crotte_SpriteSheet_78
+  - first:
+      213: -7600563807678605258
+    second: Crotte_SpriteSheet_79
+  - first:
+      213: 8172565297212123462
+    second: Crotte_SpriteSheet_80
+  - first:
+      213: -3039711289024853777
+    second: Crotte_SpriteSheet_81
+  - first:
+      213: -8361009507055172651
+    second: Crotte_SpriteSheet_82
+  - first:
+      213: 1535177652392178865
+    second: Crotte_SpriteSheet_83
+  - first:
+      213: -5461262006913497903
+    second: Crotte_SpriteSheet_84
+  - first:
+      213: -2375104092965582510
+    second: Crotte_SpriteSheet_85
+  - first:
+      213: -4082142893631964716
+    second: Crotte_SpriteSheet_86
+  - first:
+      213: -7003576506822245553
+    second: Crotte_SpriteSheet_87
+  - first:
+      213: -924705859627220583
+    second: Crotte_SpriteSheet_88
+  - first:
+      213: 7935776132849187778
+    second: Crotte_SpriteSheet_89
+  - first:
+      213: 3942985991657732488
+    second: Crotte_SpriteSheet_90
+  - first:
+      213: 6907522946466059182
+    second: Crotte_SpriteSheet_91
+  - first:
+      213: 4505307931855821595
+    second: Crotte_SpriteSheet_92
+  - first:
+      213: 4582712426805316205
+    second: Crotte_SpriteSheet_93
+  - first:
+      213: -8743444638447017329
+    second: Crotte_SpriteSheet_94
+  - first:
+      213: -4449483204681791382
+    second: Crotte_SpriteSheet_95
+  - first:
+      213: -7744852886423271205
+    second: Crotte_SpriteSheet_96
+  - first:
+      213: -4576558763233399354
+    second: Crotte_SpriteSheet_97
+  - first:
+      213: 6989255240133141500
+    second: Crotte_SpriteSheet_98
+  - first:
+      213: 2293538641533393519
+    second: Crotte_SpriteSheet_99
+  - first:
+      213: 7482063578172001871
+    second: Crotte_SpriteSheet_100
+  - first:
+      213: -2364490960902977837
+    second: Crotte_SpriteSheet_101
+  - first:
+      213: -7359041782387804404
+    second: Crotte_SpriteSheet_102
+  - first:
+      213: 1403589916122038280
+    second: Crotte_SpriteSheet_103
+  - first:
+      213: -7590332023464076145
+    second: Crotte_SpriteSheet_104
+  - first:
+      213: 6829926758310281940
+    second: Crotte_SpriteSheet_105
+  - first:
+      213: 3264349816755300144
+    second: Crotte_SpriteSheet_106
+  - first:
+      213: -4672646855580049720
+    second: Crotte_SpriteSheet_107
+  - first:
+      213: 8265562194021799046
+    second: Crotte_SpriteSheet_108
+  - first:
+      213: -8160297454853689582
+    second: Crotte_SpriteSheet_109
+  - first:
+      213: 314352628015067246
+    second: Crotte_SpriteSheet_110
+  - first:
+      213: -6052993283991489246
+    second: Crotte_SpriteSheet_111
+  - first:
+      213: -1408592926880173755
+    second: Crotte_SpriteSheet_112
+  - first:
+      213: 8180070568672337774
+    second: Crotte_SpriteSheet_113
+  - first:
+      213: 2974791404643590919
+    second: Crotte_SpriteSheet_114
+  - first:
+      213: -4706619804272425814
+    second: Crotte_SpriteSheet_115
+  - first:
+      213: -7435457966643907742
+    second: Crotte_SpriteSheet_116
+  - first:
+      213: 4982221998581158757
+    second: Crotte_SpriteSheet_117
+  - first:
+      213: 6918780150372701855
+    second: Crotte_SpriteSheet_118
+  - first:
+      213: -5074650076485767378
+    second: Crotte_SpriteSheet_119
+  - first:
+      213: 4784232686474456962
+    second: Crotte_SpriteSheet_120
+  - first:
+      213: -2538886218257167225
+    second: Crotte_SpriteSheet_121
+  - first:
+      213: 322983171131081937
+    second: Crotte_SpriteSheet_122
+  - first:
+      213: 8143002381214975856
+    second: Crotte_SpriteSheet_123
+  - first:
+      213: -6326359421472126297
+    second: Crotte_SpriteSheet_124
+  - first:
+      213: 2266569934192646288
+    second: Crotte_SpriteSheet_125
+  - first:
+      213: -6075443256103429570
+    second: Crotte_SpriteSheet_126
+  - first:
+      213: -6158378528828022076
+    second: Crotte_SpriteSheet_127
+  - first:
+      213: -1646958513367775673
+    second: Crotte_SpriteSheet_128
+  - first:
+      213: -7628072991061072589
+    second: Crotte_SpriteSheet_129
+  - first:
+      213: -5053245044810508045
+    second: Crotte_SpriteSheet_130
+  - first:
+      213: 5955201152133961653
+    second: Crotte_SpriteSheet_131
+  - first:
+      213: -5880305790070795465
+    second: Crotte_SpriteSheet_132
+  - first:
+      213: 9081248415949111292
+    second: Crotte_SpriteSheet_133
+  - first:
+      213: 4031256343719845094
+    second: Crotte_SpriteSheet_134
+  - first:
+      213: 6283477113736367134
+    second: Crotte_SpriteSheet_135
+  - first:
+      213: -5802942813008818867
+    second: Crotte_SpriteSheet_136
+  - first:
+      213: -5711328320146042974
+    second: Crotte_SpriteSheet_137
+  - first:
+      213: 5274807753010473385
+    second: Crotte_SpriteSheet_138
+  - first:
+      213: -6252083191192985011
+    second: Crotte_SpriteSheet_139
+  - first:
+      213: -4881468929180108663
+    second: Crotte_SpriteSheet_140
+  - first:
+      213: -7163451428264307110
+    second: Crotte_SpriteSheet_141
+  - first:
+      213: -7656012121885234895
+    second: Crotte_SpriteSheet_142
+  - first:
+      213: 1163553610017396590
+    second: Crotte_SpriteSheet_143
+  - first:
+      213: 2032744407884658636
+    second: Crotte_SpriteSheet_144
+  - first:
+      213: 8856856314106898750
+    second: Crotte_SpriteSheet_145
+  - first:
+      213: -8049321346674232350
+    second: Crotte_SpriteSheet_146
+  - first:
+      213: -4749607862077747908
+    second: Crotte_SpriteSheet_147
+  - first:
+      213: -5326707582564575295
+    second: Crotte_SpriteSheet_148
+  - first:
+      213: -2742063732712712123
+    second: Crotte_SpriteSheet_149
+  - first:
+      213: 2520453241072957495
+    second: Crotte_SpriteSheet_150
+  - first:
+      213: 23199105626776297
+    second: Crotte_SpriteSheet_151
+  - first:
+      213: 2831207173896689878
+    second: Crotte_SpriteSheet_152
+  - first:
+      213: 7051676220409497935
+    second: Crotte_SpriteSheet_153
+  - first:
+      213: 8502690447954008802
+    second: Crotte_SpriteSheet_154
+  - first:
+      213: -8366508008253295891
+    second: Crotte_SpriteSheet_155
+  - first:
+      213: -4465162810438509628
+    second: Crotte_SpriteSheet_156
+  - first:
+      213: 6266229125947255176
+    second: Crotte_SpriteSheet_157
+  - first:
+      213: -3428514451016885612
+    second: Crotte_SpriteSheet_158
+  - first:
+      213: -7082179509727847846
+    second: Crotte_SpriteSheet_159
+  - first:
+      213: -9083734461303288043
+    second: Crotte_SpriteSheet_160
+  - first:
+      213: -3447957242860660784
+    second: Crotte_SpriteSheet_161
+  - first:
+      213: 5329653536634960647
+    second: Crotte_SpriteSheet_162
+  - first:
+      213: -4443517194619160485
+    second: Crotte_SpriteSheet_163
+  - first:
+      213: -8822498259594909155
+    second: Crotte_SpriteSheet_164
+  - first:
+      213: 6695900968126184366
+    second: Crotte_SpriteSheet_165
+  - first:
+      213: 6817795274994358524
+    second: Crotte_SpriteSheet_166
+  - first:
+      213: -3310132579241835897
+    second: Crotte_SpriteSheet_167
+  - first:
+      213: 8259886293693844240
+    second: Crotte_SpriteSheet_168
+  - first:
+      213: -5822596231143538783
+    second: Crotte_SpriteSheet_169
+  - first:
+      213: 3397208014608106431
+    second: Crotte_SpriteSheet_170
+  - first:
+      213: 7748576587150193005
+    second: Crotte_SpriteSheet_171
+  - first:
+      213: -327238723316776428
+    second: Crotte_SpriteSheet_172
+  - first:
+      213: 2763701706167419854
+    second: Crotte_SpriteSheet_173
+  - first:
+      213: 8811226969741743278
+    second: Crotte_SpriteSheet_174
+  - first:
+      213: 1297074032074212129
+    second: Crotte_SpriteSheet_175
+  - first:
+      213: 7850908532905112557
+    second: Crotte_SpriteSheet_176
+  - first:
+      213: 4621064300554722196
+    second: Crotte_SpriteSheet_177
+  - first:
+      213: -6459625140200486225
+    second: Crotte_SpriteSheet_178
+  - first:
+      213: 4620293208685616521
+    second: Crotte_SpriteSheet_179
+  - first:
+      213: 7375362661822765876
+    second: Crotte_SpriteSheet_180
+  - first:
+      213: -1898868559323947903
+    second: Crotte_SpriteSheet_181
+  - first:
+      213: 7928896586300574964
+    second: Crotte_SpriteSheet_182
+  - first:
+      213: -7032148151125202149
+    second: Crotte_SpriteSheet_183
+  - first:
+      213: -8421790965087992177
+    second: Crotte_SpriteSheet_184
+  - first:
+      213: 2683202661841839069
+    second: Crotte_SpriteSheet_185
+  - first:
+      213: 6218956688935991268
+    second: Crotte_SpriteSheet_186
+  - first:
+      213: 7014755885384321581
+    second: Crotte_SpriteSheet_187
+  - first:
+      213: -6916788553637918632
+    second: Crotte_SpriteSheet_188
+  - first:
+      213: 7917593624093560262
+    second: Crotte_SpriteSheet_189
+  - first:
+      213: 5436901788325640904
+    second: Crotte_SpriteSheet_190
+  - first:
+      213: -523344584505064536
+    second: Crotte_SpriteSheet_191
+  - first:
+      213: 6959551186199311304
+    second: Crotte_SpriteSheet_192
+  - first:
+      213: 5136617836603081170
+    second: Crotte_SpriteSheet_193
+  - first:
+      213: -1890231799340507480
+    second: Crotte_SpriteSheet_194
+  - first:
+      213: 5324796880102312738
+    second: Crotte_SpriteSheet_195
+  - first:
+      213: 7853157702765585615
+    second: Crotte_SpriteSheet_196
+  - first:
+      213: -4628701942225899981
+    second: Crotte_SpriteSheet_197
+  - first:
+      213: 3430179646232033414
+    second: Crotte_SpriteSheet_198
+  - first:
+      213: -512651708928288464
+    second: Crotte_SpriteSheet_199
+  - first:
+      213: 7132234445200636033
+    second: Crotte_SpriteSheet_200
+  - first:
+      213: -5074643665095054622
+    second: Crotte_SpriteSheet_201
+  - first:
+      213: -1154861997928209614
+    second: Crotte_SpriteSheet_202
+  - first:
+      213: -1342613122878327974
+    second: Crotte_SpriteSheet_203
+  - first:
+      213: -5697504442675410339
+    second: Crotte_SpriteSheet_204
+  - first:
+      213: -8701457592948186894
+    second: Crotte_SpriteSheet_205
+  - first:
+      213: -357246055687043049
+    second: Crotte_SpriteSheet_206
+  - first:
+      213: 8059133449010095360
+    second: Crotte_SpriteSheet_207
+  - first:
+      213: -5750226161002176341
+    second: Crotte_SpriteSheet_208
+  - first:
+      213: 8222679017673857367
+    second: Crotte_SpriteSheet_209
+  - first:
+      213: 6538129161763456916
+    second: Crotte_SpriteSheet_210
+  - first:
+      213: 2489183678121118832
+    second: Crotte_SpriteSheet_211
+  - first:
+      213: 6311143404761681467
+    second: Crotte_SpriteSheet_212
+  - first:
+      213: 6576810814358757782
+    second: Crotte_SpriteSheet_213
+  - first:
+      213: 2012500977187579426
+    second: Crotte_SpriteSheet_214
+  - first:
+      213: -6923559507975463159
+    second: Crotte_SpriteSheet_215
+  - first:
+      213: -3744040310947671382
+    second: Crotte_SpriteSheet_216
+  - first:
+      213: -1576755025147974581
+    second: Crotte_SpriteSheet_217
+  - first:
+      213: 7699256065770234550
+    second: Crotte_SpriteSheet_218
+  - first:
+      213: 2218982712412933471
+    second: Crotte_SpriteSheet_219
+  - first:
+      213: 6713332085569509327
+    second: Crotte_SpriteSheet_220
+  - first:
+      213: 8359896755980593832
+    second: Crotte_SpriteSheet_221
+  - first:
+      213: -3500002768371924523
+    second: Crotte_SpriteSheet_222
+  - first:
+      213: 3147129664890277215
+    second: Crotte_SpriteSheet_223
+  - first:
+      213: 2543142537150057137
+    second: Crotte_SpriteSheet_224
+  - first:
+      213: 2564375967213596090
+    second: Crotte_SpriteSheet_225
+  - first:
+      213: -3018331986550636644
+    second: Crotte_SpriteSheet_226
+  - first:
+      213: 9218375750393366020
+    second: Crotte_SpriteSheet_227
+  - first:
+      213: -7306805276525580964
+    second: Crotte_SpriteSheet_228
+  - first:
+      213: -1357497180865891628
+    second: Crotte_SpriteSheet_229
+  - first:
+      213: -6446521636969838253
+    second: Crotte_SpriteSheet_230
+  - first:
+      213: -5869251059464346770
+    second: Crotte_SpriteSheet_231
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_92
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee8f937b21bad750800000000000000
+      internalID: 6330567026404200162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6f43f691c3b0b60800000000000000
+      internalID: 7713324866739697338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff6567afe5572170800000000000000
+      internalID: 8153580138171559922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a52639f689305fc0800000000000000
+      internalID: -3508240857852140127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f5775c5449f04e0800000000000000
+      internalID: -2013227481024733315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_203
+      rect:
+        serializedVersion: 2
+        x: 5888
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b015edb9295243a90800000000000000
+      internalID: -7335196581469204213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28373bbf86fedffe0800000000000000
+      internalID: -1153502695358499966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de05f576e71721120800000000000000
+      internalID: 2383091940546531565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88af8461e4876c740800000000000000
+      internalID: 5171953498858257032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3d9aac3ae406c40800000000000000
+      internalID: 5503485210033509302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_204
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224ae37c1d613e980800000000000000
+      internalID: -8510933780553358302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb627cd7b1c788d80800000000000000
+      internalID: -8248206260012898629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_216
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ced067400eb8fa0800000000000000
+      internalID: -5797293785544266669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f306ed60dc62ac0800000000000000
+      internalID: -3880188599548756131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5493ce03a8388f00800000000000000
+      internalID: 1119206780380091483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_164
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c741fe3c4a62600800000000000000
+      internalID: 443222774779247713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a034f2dce48c9cd20800000000000000
+      internalID: 3299388442801029898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f43311ec5f9ab7d0800000000000000
+      internalID: -2901831788624923401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_209
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6a4325d3b980690800000000000000
+      internalID: -7635682480532183387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151f7a13cff86a890800000000000000
+      internalID: -7447106620482916015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4ddacbbb5227890800000000000000
+      internalID: -7461860144344869702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_174
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1b08b07ba7568b0800000000000000
+      internalID: -5159582871492447790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_181
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a09216486b3a2c0800000000000000
+      internalID: -4421489729465677164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d013da5c96675800800000000000000
+      internalID: 601061897001963731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8c5a3f609374670800000000000000
+      internalID: 8522843521842268408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_179
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b81cbfe5d837a310800000000000000
+      internalID: 1416163099332581559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_189
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ea3e5d40e7ec820800000000000000
+      internalID: 2940426165952949802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_199
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98918ee75a7ab3640800000000000000
+      internalID: 5060822935521466761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d8d3e9a6eb683800800000000000000
+      internalID: 592341989436152018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781cbd0886b7a59c0800000000000000
+      internalID: -3937699235413376633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb41f279be5fd7630800000000000000
+      internalID: 3926564842339505343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_129
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8375703cffaf2e0800000000000000
+      internalID: -2091077863853311833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_91
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a6f1b1ba7ad9e60800000000000000
+      internalID: 7970711268851935856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f209d219ce523d5a0800000000000000
+      internalID: -6497808139387301841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8fce949211686c0800000000000000
+      internalID: -4141603938288994091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee608eb4b24e4db0800000000000000
+      internalID: -4805830408300106013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_171
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689924dbd2b9d7ce0800000000000000
+      internalID: -1405796887918634618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f51f22fb0efa35a0800000000000000
+      internalID: -6540636181540956687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4591b22391ed7b4b0800000000000000
+      internalID: -5424623026347239084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_218
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3912688858fc2b0800000000000000
+      internalID: -5562080193366879315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_86
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ce1f4277f69fde0800000000000000
+      internalID: -1298884460008051612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_168
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd19bc227bc6e390800000000000000
+      internalID: -7789314814253654561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_191
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e50383046f1ba30800000000000000
+      internalID: 4229432280758640148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_114
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5be475399ec0270800000000000000
+      internalID: 8218200239078553062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_142
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ee0e4f9bf667200800000000000000
+      internalID: 177452079795728011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bd0f0f0427276940800000000000000
+      internalID: 5289239323194887609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_182
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3c185c9c01c4b90800000000000000
+      internalID: -7256406440812624962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_223
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a87122bccbae7e90800000000000000
+      internalID: -7025989473001178975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_94
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6a3d335aa86b800800000000000000
+      internalID: 627841640208508609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e53f96df71a1040800000000000000
+      internalID: 4619030744993586823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca8d19d8a15dcf10800000000000000
+      internalID: 2291577571040398031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920367ab6ccfd94b0800000000000000
+      internalID: -5431907645076918231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_225
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43c03522d22f5890800000000000000
+      internalID: -7467211371194563763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9107dbe5803d10d50800000000000000
+      internalID: 6701869753406681113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_210
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6aef76bc9b419df0800000000000000
+      internalID: -175275774041920918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ce30e8bb814a5d0800000000000000
+      internalID: -3052287453629780961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_180
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d154046b8fbe46400800000000000000
+      internalID: 316637327264859421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98094e9505dad4070800000000000000
+      internalID: 8092314666071789705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1650b912c1724a0d0800000000000000
+      internalID: -3412559615863618207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c61dfab8ac29950800000000000000
+      internalID: 6454443917274344475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_208
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b682ba02f63e4aa0800000000000000
+      internalID: -6174937625888913741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9f6064770b3ce50800000000000000
+      internalID: 6828495486346262958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_161
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d62dc88baad0980800000000000000
+      internalID: -8571006806202880610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_126
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e385f2b34b9ce4650800000000000000
+      internalID: 6219129911369488446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_178
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c20141b5732b22c0800000000000000
+      internalID: -4455428417961000254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a48f29b6ff299070800000000000000
+      internalID: 8113568940400018600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 050665a78315a77d0800000000000000
+      internalID: -2919932105383845808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_136
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f868db32a3f4dd0800000000000000
+      internalID: -2499715342989357281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_186
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f351564be0f547940800000000000000
+      internalID: 5292959978827879743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c263a95219653e5a0800000000000000
+      internalID: -6493251056337013204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_205
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c46a7d4d24fbc40800000000000000
+      internalID: 5530212349352758384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a10a7732e5038f0800000000000000
+      internalID: -562846446997464526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf568b28e6ae0ba0800000000000000
+      internalID: -6120771327457075280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4706cba6a8febba40800000000000000
+      internalID: 5385161157226815604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df6fda59b919feb0800000000000000
+      internalID: -4685685653418053671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33723c3bb2c5689e0800000000000000
+      internalID: -1619505673223854285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_196
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64f8e975625b43d0800000000000000
+      internalID: -3221390512662973330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_97
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0220d5eb423914ef0800000000000000
+      internalID: -125657528567791072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36308d896bb558b00800000000000000
+      internalID: 830170546126193507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_163
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63850a68c7f558690800000000000000
+      internalID: -7600563807678605258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_183
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649630476d8ca6170800000000000000
+      internalID: 8172565297212123462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8cded00b6c0d5d0800000000000000
+      internalID: -3039711289024853777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d30050e62ab7fb80800000000000000
+      internalID: -8361009507055172651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_170
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b434fde0fb0e4510800000000000000
+      internalID: 1535177652392178865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d48594c323b534b0800000000000000
+      internalID: -5461262006913497903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_190
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259c53a496fe90fd0800000000000000
+      internalID: -2375104092965582510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d97ea69aa05957c0800000000000000
+      internalID: -4082142893631964716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_219
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43c699064c4ece90800000000000000
+      internalID: -7003576506822245553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_224
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99182338be8ca23f0800000000000000
+      internalID: -924705859627220583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbbf77e85a812e60800000000000000
+      internalID: 7935776132849187778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_177
+      rect:
+        serializedVersion: 2
+        x: 5888
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889b91b5edc48b630800000000000000
+      internalID: 3942985991657732488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_198
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea318fda5837cdf50800000000000000
+      internalID: 6907522946466059182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b1402a1b1168e30800000000000000
+      internalID: 4505307931855821595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_202
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6acf730ca0199f30800000000000000
+      internalID: 4582712426805316205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8262141d6b09a680800000000000000
+      internalID: -8743444638447017329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6800e689924042c0800000000000000
+      internalID: -4449483204681791382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd805137551c48490800000000000000
+      internalID: -7744852886423271205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cda5cf6d0ccc70c0800000000000000
+      internalID: -4576558763233399354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf36ca83c92def060800000000000000
+      internalID: 6989255240133141500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ada372e3944df10800000000000000
+      internalID: 2293538641533393519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e84d3ce21a5d760800000000000000
+      internalID: 7482063578172001871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_140
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d681c8aff3af2fd0800000000000000
+      internalID: -2364490960902977837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_96
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0774812d7e6fd990800000000000000
+      internalID: -7359041782387804404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80046c8979d8a7310800000000000000
+      internalID: 1403589916122038280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cd62e6d39b9a690800000000000000
+      internalID: -7590332023464076145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2050f3336c8ce50800000000000000
+      internalID: 6829926758310281940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037af42fcdc4d4d20800000000000000
+      internalID: 3264349816755300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_215
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce1e4c017c672fb0800000000000000
+      internalID: -4672646855580049720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_144
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684519bc50d25b270800000000000000
+      internalID: 8265562194021799046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_221
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21febed23bcc0ce80800000000000000
+      internalID: -8160297454853689582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e607c07bc0ecc5400800000000000000
+      internalID: 314352628015067246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225bcd7ada27ffba0800000000000000
+      internalID: -6052993283991489246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_213
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541fd20323ca37ce0800000000000000
+      internalID: -1408592926880173755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_127
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f9753a7d2758170800000000000000
+      internalID: 8180070568672337774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_88
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703aaaa7505984920800000000000000
+      internalID: 2974791404643590919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa40689893abeaeb0800000000000000
+      internalID: -4706619804272425814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_193
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26377d3cf52ffc890800000000000000
+      internalID: -7435457966643907742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_229
+      rect:
+        serializedVersion: 2
+        x: 5888
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5631191c288642540800000000000000
+      internalID: 4982221998581158757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f961df5b3e1740060800000000000000
+      internalID: 6918780150372701855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f28af54a83399b0800000000000000
+      internalID: -5074650076485767378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28f6f18c742056240800000000000000
+      internalID: 4784232686474456962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_139
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c85a3af6014ccd0800000000000000
+      internalID: -2538886218257167225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d482bf9b777b7400800000000000000
+      internalID: 322983171131081937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0778a71b581c10170800000000000000
+      internalID: 8143002381214975856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa45b9ef914438a0800000000000000
+      internalID: -6326359421472126297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098122aa859747f10800000000000000
+      internalID: 2266569934192646288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_172
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3a99e23c80bfaba0800000000000000
+      internalID: -6075443256103429570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c220d44b5b098aa0800000000000000
+      internalID: -6158378528828022076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74688e245f3d429e0800000000000000
+      internalID: -1646958513367775673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 335ad07a704a32690800000000000000
+      internalID: -7628072991061072589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_166
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8111da7644fd9b0800000000000000
+      internalID: -5053245044810508045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b711f655ef15a250800000000000000
+      internalID: 5955201152133961653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_228
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73358240a05f46ea0800000000000000
+      internalID: -5880305790070795465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffb9bdd153170e70800000000000000
+      internalID: 9081248415949111292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_162
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec16fd3946e1f730800000000000000
+      internalID: 4031256343719845094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_134
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c8d86c425633750800000000000000
+      internalID: 6283477113736367134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d04b2c14ec77fa0800000000000000
+      internalID: -5802942813008818867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_175
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af011a17294db0b0800000000000000
+      internalID: -5711328320146042974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a96aa844b1e33940800000000000000
+      internalID: 5274807753010473385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4260ca66732c39a0800000000000000
+      internalID: -6252083191192985011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988fc1e3fd9814cb0800000000000000
+      internalID: -4881468929180108663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a569a8c21ee469c90800000000000000
+      internalID: -7163451428264307110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13922f6d98160c590800000000000000
+      internalID: -7656012121885234895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67d532f7d5c52010800000000000000
+      internalID: 1163553610017396590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_148
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7702fd442c53c10800000000000000
+      internalID: 2032744407884658636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_194
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39640d54efd9ea70800000000000000
+      internalID: 8856856314106898750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e37380e1e01b4090800000000000000
+      internalID: -8049321346674232350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_184
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d047e50d0061eb0800000000000000
+      internalID: -4749607862077747908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_165
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7dbdefcabb316b0800000000000000
+      internalID: -5326707582564575295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5485d2c209b32f9d0800000000000000
+      internalID: -2742063732712712123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_188
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738b22b6ed27af220800000000000000
+      internalID: 2520453241072957495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_185
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2adf1b67b625000800000000000000
+      internalID: 23199105626776297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d856ad9ce77a4720800000000000000
+      internalID: 2831207173896689878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_200
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49c39c39269cd160800000000000000
+      internalID: 7051676220409497935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ead769c9ef9ff570800000000000000
+      internalID: 8502690447954008802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_85
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2f99d4b4134eb80800000000000000
+      internalID: -8366508008253295891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb1783d41e8802c0800000000000000
+      internalID: -4465162810438509628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889ea4da03e16f650800000000000000
+      internalID: 6266229125947255176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_222
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a58d795487b60d0800000000000000
+      internalID: -3428514451016885612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a1f17424b07bd90800000000000000
+      internalID: -7082179509727847846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f0b0892a710f180800000000000000
+      internalID: -9083734461303288043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d71e8ad7256620d0800000000000000
+      internalID: -3447957242860660784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_173
+      rect:
+        serializedVersion: 2
+        x: 4864
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bf70367abb6f940800000000000000
+      internalID: 5329653536634960647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58726d77a47552c0800000000000000
+      internalID: -4443517194619160485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_167
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ae7559390309580800000000000000
+      internalID: -8822498259594909155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabfa50447e9cec50800000000000000
+      internalID: 6695900968126184366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_220
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8106d2eacad9e50800000000000000
+      internalID: 6817795274994358524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 5888
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782c7def4fb0012d0800000000000000
+      internalID: -3310132579241835897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b4db442d201a270800000000000000
+      internalID: 8259886293693844240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af3924c39bf13fa0800000000000000
+      internalID: -5822596231143538783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb383daa0be452f20800000000000000
+      internalID: 3397208014608106431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61feff2a59788b60800000000000000
+      internalID: 7748576587150193005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_230
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41283fb6d1a657bf0800000000000000
+      internalID: -327238723316776428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3004d1f04aa5620800000000000000
+      internalID: 2763701706167419854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_87
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea45ccebe34c74a70800000000000000
+      internalID: 8811226969741743278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123ca21c5f1200210800000000000000
+      internalID: 1297074032074212129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de374ebf6b704fc60800000000000000
+      internalID: 7850908532905112557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_206
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b9dc67f71512040800000000000000
+      internalID: 4621064300554722196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_211
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faaca28d82dca56a0800000000000000
+      internalID: -6459625140200486225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_214
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d1bd5a1349e1040800000000000000
+      internalID: 4620293208685616521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_93
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b10abb34d8a5660800000000000000
+      internalID: 7375362661822765876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c965e1b1dd5a5e0800000000000000
+      internalID: -1898868559323947903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_90
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcc047af69190e60800000000000000
+      internalID: 7928896586300574964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_176
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1b2344b38ac86e90800000000000000
+      internalID: -7032148151125202149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_197
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f860651ecb9cf1b80800000000000000
+      internalID: -8421790965087992177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_187
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3277fca96ac3520800000000000000
+      internalID: 2683202661841839069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7b19db82c2e4650800000000000000
+      internalID: 6218956688935991268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ac96edf4b695160800000000000000
+      internalID: 7014755885384321581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8588ce90571a200a0800000000000000
+      internalID: -6916788553637918632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd8effa371f0ed60800000000000000
+      internalID: 7917593624093560262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8caf5dbde51c37b40800000000000000
+      internalID: 5436901788325640904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a383798fd4bcb8f0800000000000000
+      internalID: -523344584505064536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_195
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3fe893eea459060800000000000000
+      internalID: 6959551186199311304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d189a915bee84740800000000000000
+      internalID: 5136617836603081170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_212
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae5921813c84c5e0800000000000000
+      internalID: -1890231799340507480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b4b9bec8a75e940800000000000000
+      internalID: 5324796880102312738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc42776a2550cfc60800000000000000
+      internalID: 7853157702765585615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ee6728b1c83cfb0800000000000000
+      internalID: -4628701942225899981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6887f61e6327a9f20800000000000000
+      internalID: 3430179646232033414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03915d3acf1b2e8f0800000000000000
+      internalID: -512651708928288464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_169
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1883df09079caf260800000000000000
+      internalID: 7132234445200636033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2304
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eaa254297e3399b0800000000000000
+      internalID: -5074643665095054622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_89
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23324e0b12b19ffe0800000000000000
+      internalID: -1154861997928209614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a533f0c6a741e5de0800000000000000
+      internalID: -1342613122878327974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a4f1465e56ee0b0800000000000000
+      internalID: -5697504442675410339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_133
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0a238eb663e3780800000000000000
+      internalID: -8701457592948186894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_137
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7184d59ea9eca0bf0800000000000000
+      internalID: -357246055687043049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_201
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00527b93c2bc7df60800000000000000
+      internalID: 8059133449010095360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0ae47c5c71330b0800000000000000
+      internalID: -5750226161002176341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_138
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759128e3003dc1270800000000000000
+      internalID: 8222679017673857367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_207
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 497888605d91cba50800000000000000
+      internalID: 6538129161763456916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c0c13fd5b5b8220800000000000000
+      internalID: 2489183678121118832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e8e5f1d7fa59750800000000000000
+      internalID: 6311143404761681467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_231
+      rect:
+        serializedVersion: 2
+        x: 6400
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6912dc81796854b50800000000000000
+      internalID: 6576810814358757782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226646fd9f6ddeb10800000000000000
+      internalID: 2012500977187579426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f18d16f439aef90800000000000000
+      internalID: -6923559507975463159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa298398c2f7a0cc0800000000000000
+      internalID: -3744040310947671382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_141
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c2e3c98ad3e1ae0800000000000000
+      internalID: -1576755025147974581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_192
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2a103799049da60800000000000000
+      internalID: 7699256065770234550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_226
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d0b1035096bce10800000000000000
+      internalID: 2218982712412933471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc75a9b86fb8a2d50800000000000000
+      internalID: 6713332085569509327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_120
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aae9239ec1540470800000000000000
+      internalID: 8359896755980593832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1ce46a60e7d6fc0800000000000000
+      internalID: -3500002768371924523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d01e981c9dcab20800000000000000
+      internalID: 3147129664890277215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bac304d9ae0b4320800000000000000
+      internalID: 2543142537150057137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_217
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abda0540b5e769320800000000000000
+      internalID: 2564375967213596090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 4352
+        y: 2560
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f337fcc0bbc16d0800000000000000
+      internalID: -3018331986550636644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 2048
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 406854867ef3eef70800000000000000
+      internalID: 9218375750393366020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d2eb96053099a90800000000000000
+      internalID: -7306805276525580964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2816
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2f4ee9183392de0800000000000000
+      internalID: -1357497180865891628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3590b8fe9ba5986a0800000000000000
+      internalID: -6446521636969838253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crotte_SpriteSheet_227
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63ea0f024b3c8ea0800000000000000
+      internalID: -5869251059464346770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Crotte_SpriteSheet_92: 6330567026404200162
+      Crotte_SpriteSheet_81: 7713324866739697338
+      Crotte_SpriteSheet_56: 8153580138171559922
+      Crotte_SpriteSheet_48: -3508240857852140127
+      Crotte_SpriteSheet_122: -2013227481024733315
+      Crotte_SpriteSheet_203: -7335196581469204213
+      Crotte_SpriteSheet_49: -1153502695358499966
+      Crotte_SpriteSheet_13: 2383091940546531565
+      Crotte_SpriteSheet_130: 5171953498858257032
+      Crotte_SpriteSheet_100: 5503485210033509302
+      Crotte_SpriteSheet_204: -8510933780553358302
+      Crotte_SpriteSheet_6: -8248206260012898629
+      Crotte_SpriteSheet_216: -5797293785544266669
+      Crotte_SpriteSheet_77: -3880188599548756131
+      Crotte_SpriteSheet_147: 1119206780380091483
+      Crotte_SpriteSheet_164: 443222774779247713
+      Crotte_SpriteSheet_16: 3299388442801029898
+      Crotte_SpriteSheet_132: -2901831788624923401
+      Crotte_SpriteSheet_209: -7635682480532183387
+      Crotte_SpriteSheet_52: -7447106620482916015
+      Crotte_SpriteSheet_35: -7461860144344869702
+      Crotte_SpriteSheet_174: -5159582871492447790
+      Crotte_SpriteSheet_181: -4421489729465677164
+      Crotte_SpriteSheet_20: 601061897001963731
+      Crotte_SpriteSheet_110: 8522843521842268408
+      Crotte_SpriteSheet_179: 1416163099332581559
+      Crotte_SpriteSheet_189: 2940426165952949802
+      Crotte_SpriteSheet_199: 5060822935521466761
+      Crotte_SpriteSheet_145: 592341989436152018
+      Crotte_SpriteSheet_37: -3937699235413376633
+      Crotte_SpriteSheet_60: 3926564842339505343
+      Crotte_SpriteSheet_129: -2091077863853311833
+      Crotte_SpriteSheet_91: 7970711268851935856
+      Crotte_SpriteSheet_104: -6497808139387301841
+      Crotte_SpriteSheet_23: -4141603938288994091
+      Crotte_SpriteSheet_15: -4805830408300106013
+      Crotte_SpriteSheet_171: -1405796887918634618
+      Crotte_SpriteSheet_44: -6540636181540956687
+      Crotte_SpriteSheet_46: -5424623026347239084
+      Crotte_SpriteSheet_218: -5562080193366879315
+      Crotte_SpriteSheet_86: -1298884460008051612
+      Crotte_SpriteSheet_168: -7789314814253654561
+      Crotte_SpriteSheet_191: 4229432280758640148
+      Crotte_SpriteSheet_114: 8218200239078553062
+      Crotte_SpriteSheet_142: 177452079795728011
+      Crotte_SpriteSheet_33: 5289239323194887609
+      Crotte_SpriteSheet_182: -7256406440812624962
+      Crotte_SpriteSheet_223: -7025989473001178975
+      Crotte_SpriteSheet_94: 627841640208508609
+      Crotte_SpriteSheet_10: 4619030744993586823
+      Crotte_SpriteSheet_40: 2291577571040398031
+      Crotte_SpriteSheet_112: -5431907645076918231
+      Crotte_SpriteSheet_225: -7467211371194563763
+      Crotte_SpriteSheet_155: 6701869753406681113
+      Crotte_SpriteSheet_210: -175275774041920918
+      Crotte_SpriteSheet_25: -3052287453629780961
+      Crotte_SpriteSheet_180: 316637327264859421
+      Crotte_SpriteSheet_14: 8092314666071789705
+      Crotte_SpriteSheet_74: -3412559615863618207
+      Crotte_SpriteSheet_68: 6454443917274344475
+      Crotte_SpriteSheet_208: -6174937625888913741
+      Crotte_SpriteSheet_128: 6828495486346262958
+      Crotte_SpriteSheet_161: -8571006806202880610
+      Crotte_SpriteSheet_126: 6219129911369488446
+      Crotte_SpriteSheet_178: -4455428417961000254
+      Crotte_SpriteSheet_106: 8113568940400018600
+      Crotte_SpriteSheet_111: -2919932105383845808
+      Crotte_SpriteSheet_136: -2499715342989357281
+      Crotte_SpriteSheet_186: 5292959978827879743
+      Crotte_SpriteSheet_4: -6493251056337013204
+      Crotte_SpriteSheet_205: 5530212349352758384
+      Crotte_SpriteSheet_150: -562846446997464526
+      Crotte_SpriteSheet_27: -6120771327457075280
+      Crotte_SpriteSheet_117: 5385161157226815604
+      Crotte_SpriteSheet_65: -4685685653418053671
+      Crotte_SpriteSheet_124: -1619505673223854285
+      Crotte_SpriteSheet_196: -3221390512662973330
+      Crotte_SpriteSheet_97: -125657528567791072
+      Crotte_SpriteSheet_38: 830170546126193507
+      Crotte_SpriteSheet_163: -7600563807678605258
+      Crotte_SpriteSheet_183: 8172565297212123462
+      Crotte_SpriteSheet_123: -3039711289024853777
+      Crotte_SpriteSheet_3: -8361009507055172651
+      Crotte_SpriteSheet_170: 1535177652392178865
+      Crotte_SpriteSheet_54: -5461262006913497903
+      Crotte_SpriteSheet_190: -2375104092965582510
+      Crotte_SpriteSheet_135: -4082142893631964716
+      Crotte_SpriteSheet_219: -7003576506822245553
+      Crotte_SpriteSheet_224: -924705859627220583
+      Crotte_SpriteSheet_80: 7935776132849187778
+      Crotte_SpriteSheet_177: 3942985991657732488
+      Crotte_SpriteSheet_198: 6907522946466059182
+      Crotte_SpriteSheet_156: 4505307931855821595
+      Crotte_SpriteSheet_202: 4582712426805316205
+      Crotte_SpriteSheet_153: -8743444638447017329
+      Crotte_SpriteSheet_71: -4449483204681791382
+      Crotte_SpriteSheet_58: -7744852886423271205
+      Crotte_SpriteSheet_99: -4576558763233399354
+      Crotte_SpriteSheet_17: 6989255240133141500
+      Crotte_SpriteSheet_76: 2293538641533393519
+      Crotte_SpriteSheet_53: 7482063578172001871
+      Crotte_SpriteSheet_140: -2364490960902977837
+      Crotte_SpriteSheet_96: -7359041782387804404
+      Crotte_SpriteSheet_160: 1403589916122038280
+      Crotte_SpriteSheet_29: -7590332023464076145
+      Crotte_SpriteSheet_79: 6829926758310281940
+      Crotte_SpriteSheet_64: 3264349816755300144
+      Crotte_SpriteSheet_215: -4672646855580049720
+      Crotte_SpriteSheet_144: 8265562194021799046
+      Crotte_SpriteSheet_221: -8160297454853689582
+      Crotte_SpriteSheet_45: 314352628015067246
+      Crotte_SpriteSheet_55: -6052993283991489246
+      Crotte_SpriteSheet_213: -1408592926880173755
+      Crotte_SpriteSheet_127: 8180070568672337774
+      Crotte_SpriteSheet_88: 2974791404643590919
+      Crotte_SpriteSheet_50: -4706619804272425814
+      Crotte_SpriteSheet_193: -7435457966643907742
+      Crotte_SpriteSheet_229: 4982221998581158757
+      Crotte_SpriteSheet_146: 6918780150372701855
+      Crotte_SpriteSheet_28: -5074650076485767378
+      Crotte_SpriteSheet_61: 4784232686474456962
+      Crotte_SpriteSheet_139: -2538886218257167225
+      Crotte_SpriteSheet_57: 322983171131081937
+      Crotte_SpriteSheet_75: 8143002381214975856
+      Crotte_SpriteSheet_105: -6326359421472126297
+      Crotte_SpriteSheet_63: 2266569934192646288
+      Crotte_SpriteSheet_172: -6075443256103429570
+      Crotte_SpriteSheet_103: -6158378528828022076
+      Crotte_SpriteSheet_102: -1646958513367775673
+      Crotte_SpriteSheet_154: -7628072991061072589
+      Crotte_SpriteSheet_166: -5053245044810508045
+      Crotte_SpriteSheet_19: 5955201152133961653
+      Crotte_SpriteSheet_228: -5880305790070795465
+      Crotte_SpriteSheet_2: 9081248415949111292
+      Crotte_SpriteSheet_162: 4031256343719845094
+      Crotte_SpriteSheet_134: 6283477113736367134
+      Crotte_SpriteSheet_11: -5802942813008818867
+      Crotte_SpriteSheet_175: -5711328320146042974
+      Crotte_SpriteSheet_42: 5274807753010473385
+      Crotte_SpriteSheet_47: -6252083191192985011
+      Crotte_SpriteSheet_30: -4881468929180108663
+      Crotte_SpriteSheet_159: -7163451428264307110
+      Crotte_SpriteSheet_0: -7656012121885234895
+      Crotte_SpriteSheet_82: 1163553610017396590
+      Crotte_SpriteSheet_148: 2032744407884658636
+      Crotte_SpriteSheet_194: 8856856314106898750
+      Crotte_SpriteSheet_157: -8049321346674232350
+      Crotte_SpriteSheet_184: -4749607862077747908
+      Crotte_SpriteSheet_165: -5326707582564575295
+      Crotte_SpriteSheet_8: -2742063732712712123
+      Crotte_SpriteSheet_188: 2520453241072957495
+      Crotte_SpriteSheet_185: 23199105626776297
+      Crotte_SpriteSheet_31: 2831207173896689878
+      Crotte_SpriteSheet_200: 7051676220409497935
+      Crotte_SpriteSheet_78: 8502690447954008802
+      Crotte_SpriteSheet_85: -8366508008253295891
+      Crotte_SpriteSheet_59: -4465162810438509628
+      Crotte_SpriteSheet_62: 6266229125947255176
+      Crotte_SpriteSheet_222: -3428514451016885612
+      Crotte_SpriteSheet_152: -7082179509727847846
+      Crotte_SpriteSheet_109: -9083734461303288043
+      Crotte_SpriteSheet_67: -3447957242860660784
+      Crotte_SpriteSheet_131: 6695900968126184366
+      Crotte_SpriteSheet_158: -4443517194619160485
+      Crotte_SpriteSheet_167: -8822498259594909155
+      Crotte_SpriteSheet_173: 5329653536634960647
+      Crotte_SpriteSheet_220: 6817795274994358524
+      Crotte_SpriteSheet_151: -3310132579241835897
+      Crotte_SpriteSheet_51: 8259886293693844240
+      Crotte_SpriteSheet_125: -5822596231143538783
+      Crotte_SpriteSheet_32: 3397208014608106431
+      Crotte_SpriteSheet_22: 7748576587150193005
+      Crotte_SpriteSheet_230: -327238723316776428
+      Crotte_SpriteSheet_9: 2763701706167419854
+      Crotte_SpriteSheet_87: 8811226969741743278
+      Crotte_SpriteSheet_101: 1297074032074212129
+      Crotte_SpriteSheet_108: 7850908532905112557
+      Crotte_SpriteSheet_206: 4621064300554722196
+      Crotte_SpriteSheet_211: -6459625140200486225
+      Crotte_SpriteSheet_214: 4620293208685616521
+      Crotte_SpriteSheet_93: 7375362661822765876
+      Crotte_SpriteSheet_34: -1898868559323947903
+      Crotte_SpriteSheet_90: 7928896586300574964
+      Crotte_SpriteSheet_176: -7032148151125202149
+      Crotte_SpriteSheet_197: -8421790965087992177
+      Crotte_SpriteSheet_187: 2683202661841839069
+      Crotte_SpriteSheet_113: 6218956688935991268
+      Crotte_SpriteSheet_98: 7014755885384321581
+      Crotte_SpriteSheet_41: -6916788553637918632
+      Crotte_SpriteSheet_116: 7917593624093560262
+      Crotte_SpriteSheet_69: 5436901788325640904
+      Crotte_SpriteSheet_39: -523344584505064536
+      Crotte_SpriteSheet_195: 6959551186199311304
+      Crotte_SpriteSheet_83: 5136617836603081170
+      Crotte_SpriteSheet_212: -1890231799340507480
+      Crotte_SpriteSheet_149: 5324796880102312738
+      Crotte_SpriteSheet_143: 7853157702765585615
+      Crotte_SpriteSheet_21: -4628701942225899981
+      Crotte_SpriteSheet_66: 3430179646232033414
+      Crotte_SpriteSheet_115: -512651708928288464
+      Crotte_SpriteSheet_169: 7132234445200636033
+      Crotte_SpriteSheet_43: -5074643665095054622
+      Crotte_SpriteSheet_89: -1154861997928209614
+      Crotte_SpriteSheet_95: -1342613122878327974
+      Crotte_SpriteSheet_118: -5697504442675410339
+      Crotte_SpriteSheet_133: -8701457592948186894
+      Crotte_SpriteSheet_137: -357246055687043049
+      Crotte_SpriteSheet_201: 8059133449010095360
+      Crotte_SpriteSheet_1: -5750226161002176341
+      Crotte_SpriteSheet_138: 8222679017673857367
+      Crotte_SpriteSheet_207: 6538129161763456916
+      Crotte_SpriteSheet_5: 2489183678121118832
+      Crotte_SpriteSheet_18: 6311143404761681467
+      Crotte_SpriteSheet_231: 6576810814358757782
+      Crotte_SpriteSheet_73: 2012500977187579426
+      Crotte_SpriteSheet_24: -6923559507975463159
+      Crotte_SpriteSheet_26: -3744040310947671382
+      Crotte_SpriteSheet_141: -1576755025147974581
+      Crotte_SpriteSheet_192: 7699256065770234550
+      Crotte_SpriteSheet_226: 2218982712412933471
+      Crotte_SpriteSheet_84: 6713332085569509327
+      Crotte_SpriteSheet_120: 8359896755980593832
+      Crotte_SpriteSheet_72: -3500002768371924523
+      Crotte_SpriteSheet_107: 3147129664890277215
+      Crotte_SpriteSheet_7: 2543142537150057137
+      Crotte_SpriteSheet_217: 2564375967213596090
+      Crotte_SpriteSheet_36: -3018331986550636644
+      Crotte_SpriteSheet_70: 9218375750393366020
+      Crotte_SpriteSheet_121: -7306805276525580964
+      Crotte_SpriteSheet_12: -1357497180865891628
+      Crotte_SpriteSheet_119: -6446521636969838253
+      Crotte_SpriteSheet_227: -5869251059464346770
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

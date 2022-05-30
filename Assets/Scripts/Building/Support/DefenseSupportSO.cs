@@ -10,4 +10,23 @@ public class DefenseSupportSO : SupportSO
 
     private Building tower;
     
+    public override void AddEffect(Block block)
+    {
+        if (block.building is null) return;
+        block.building.hp += healthValue;
+    }
+
+    public override void RemoveEffect(Block block)
+    {
+        block.building.hp -= healthValue;
+        if(block.building.hp <= 0) block.building.takeDamage(1);
+    }
+    
+    public override void AddEffects(List<Block> blocks)
+    {
+        foreach (var block in blocks)
+        {
+            AddEffect(block);
+        }
+    }
 }

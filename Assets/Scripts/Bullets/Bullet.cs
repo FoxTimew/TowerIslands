@@ -19,7 +19,4 @@ public class Bullet : MonoBehaviour
         target = targetToSet;
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collider)
-    {
-    }
 }

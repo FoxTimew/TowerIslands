@@ -7,27 +7,54 @@ public class Trap : Building
 {
     [SerializeField] private TrapEffectSO effect;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    private Dictionary<Collider2D, Coroutine> enemies = new Dictionary<Collider2D, Coroutine>();
-
+    [SerializeField] private ParticleSystem ps;
+    private List<Collider2D> enemies = new List<Collider2D>();
+    private bool reloading;
+    private WaitForSeconds psTime = new WaitForSeconds(0.5f);
+    private WaitForSeconds reloadingTime = new WaitForSeconds(1.5f);
     
     private Coroutine routine;
     void Start()
     {
-        //spriteRenderer.sprite = TrapEffectSO.sprite;
+        StartCoroutine(StartTrap());
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Enemy")) return;
-        routine = StartCoroutine(effect.ApplyEffect(other.GetComponent<Enemy>()));
-        enemies.Add(other,routine);
+        if (!other.transform.CompareTag("Enemy")) return;
+        enemies.Add(other);
+        
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!enemies.ContainsKey(other)) return;
-        StopCoroutine(enemies[other]);
+        if (!enemies.Contains(other)) return;
         enemies.Remove(other);
+    }
+    public override void Reset()
+    {
+        base.Reset();
+        reloading = false;
+    }
+
+    private IEnumerator StartTrap()
+    {
+        while (true)
+        {
+            while (enemies.Count <= 0) yield return null;
+            while(reloading) yield return null;
+            reloading = true;
+            ps.Play();
+            /*Sound*/AudioManager.instance.Play(41, false);
+            yield return psTime;
+            foreach (var enemy in enemies)
+            {
+                StartCoroutine(effect.ApplyEffect(enemy.GetComponent<Enemy>(), ps));
+            }
+            yield return reloadingTime;
+            reloading = false;
+        }
     }
 }
 

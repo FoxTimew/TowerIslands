@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30a169d0d1540444a19c0ee25909468, type: 3}
+  m_Name: Barge_SixMinions_FiveSec
+  m_EditorClassIdentifier: 
+  troops:
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  - enemy: {fileID: 831606124479800156, guid: d05fbcc84e77a6744b608bb2d82c1097, type: 3}
+    cristalToEarn: 0
+  bargeSpeed: 10
+  bargeHP: 300
+  rewardModifier: 1
+  waitingTime: 5

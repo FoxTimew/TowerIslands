@@ -1,13 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeButton : MonoBehaviour
 {
-    
-    void Update()
+    private void OnEnable()
     {
-        Tower to = (Tower)GameManager.instance.selectedBlock.building;
-        gameObject.SetActive(to.towerSO.nextLevel is not null);
+        if (GameManager.instance.selectedBlock.building.buildingSO.type != BuildingType.Tower)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        Tower to = GameManager.instance.selectedBlock.building.gameObject.GetComponent<Tower>();
+        if(to.towerSO.level != 1)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        gameObject.SetActive(true);
     }
+    
 }

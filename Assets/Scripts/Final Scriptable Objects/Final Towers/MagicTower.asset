@@ -17,6 +17,9 @@ MonoBehaviour:
   healthPoints: 1200
   energyRequired: 6
   goldRequired: 20
+  level: 0
+  nextLevel: {fileID: 0}
+  upgradeCost: 0
   damage: 120
   attackSpeed: 1
   damageType: 1
@@ -25,3 +28,4 @@ MonoBehaviour:
   priority: 0
   bulletSpeed: 5
   bulletPrefab: {fileID: 0}
+  soundIndex: 13
