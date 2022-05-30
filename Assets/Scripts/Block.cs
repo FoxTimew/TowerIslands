@@ -133,16 +133,16 @@ public class Block : MonoBehaviour
         Pooler.instance.DelayedDepop(1f,"DestructionFx",go);
         EconomyManager.instance.GainGold(building.IsBuildingDestroyed() ? 3 : building.buildingSO.goldRequired);
 
-        buildingValue = building.buildingSO.energyRequired;
-        foreach (var block in adjacentBlocks.Keys)
-        {
-            if (adjacentBlocks[block] == 0) continue;
-            buildingValue -= adjacentBlocks[block];
-            block.energy += adjacentBlocks[block];
-            adjacentBlocks[block] = 0;
-        }
-        if (buildingValue <= 0) return;
-        energy += buildingValue;
+        // buildingValue = building.buildingSO.energyRequired;
+        // foreach (var block in adjacentBlocks.Keys)
+        // {
+        //     if (adjacentBlocks[block] == 0) continue;
+        //     buildingValue -= adjacentBlocks[block];
+        //     block.energy += adjacentBlocks[block];
+        //     adjacentBlocks[block] = 0;
+        // }
+        // if (buildingValue <= 0) return;
+        //energy += buildingValue;
         Pooler.instance.Depop(building.buildingSO.bName, building.gameObject);
         GameManager.instance.buildings.Remove(building);
         building = null;
@@ -152,7 +152,7 @@ public class Block : MonoBehaviour
     public void Build(BuildingSO building)
     {
         constructionFx.Play();
-        SpentEnergy(building.energyRequired);
+        //SpentEnergy(building.energyRequired);
         go = Pooler.instance.Pop(building.bName);
         go.transform.parent = transform;
         go.transform.localPosition = Vector3.zero;
