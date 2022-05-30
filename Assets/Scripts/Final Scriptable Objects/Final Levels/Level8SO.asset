@@ -16,18 +16,6 @@ MonoBehaviour:
   isCompleted: 0
   waves:
   - bargesInWave:
-    - {fileID: 11400000, guid: dab111c03e82e7b42aaf72943a8fb270, type: 2}
-    - {fileID: 11400000, guid: dab111c03e82e7b42aaf72943a8fb270, type: 2}
-    - {fileID: 11400000, guid: 5f142b6771640a343bbe9fd2bbffe6f8, type: 2}
-    - {fileID: 11400000, guid: 5f142b6771640a343bbe9fd2bbffe6f8, type: 2}
-  - bargesInWave:
-    - {fileID: 11400000, guid: dab111c03e82e7b42aaf72943a8fb270, type: 2}
-    - {fileID: 11400000, guid: 1ffc27e2b4a8b3343899cd2217e885a0, type: 2}
-    - {fileID: 11400000, guid: 5f142b6771640a343bbe9fd2bbffe6f8, type: 2}
-    - {fileID: 11400000, guid: 9e6612e3fae981b44b850e899d962d2f, type: 2}
-    - {fileID: 11400000, guid: 4503cb4fc94f01b42b72c261c1d37888, type: 2}
-    - {fileID: 11400000, guid: cf190d76214bc704380b838663dbbf14, type: 2}
-  - bargesInWave:
     - {fileID: 11400000, guid: 4332f626e6963204988acb226574b678, type: 2}
     - {fileID: 11400000, guid: dab111c03e82e7b42aaf72943a8fb270, type: 2}
     - {fileID: 11400000, guid: 99ab7c126cf05804487f70751e0f413f, type: 2}
@@ -39,6 +27,18 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 87fd5ac2aaecc8149ad0384dc95bd01f, type: 2}
     - {fileID: 11400000, guid: 579b9c405f23d8544afd7c19ebf03c31, type: 2}
     - {fileID: 11400000, guid: 8c04198db5a4aa044993e5459237324d, type: 2}
+    - {fileID: 11400000, guid: 4332f626e6963204988acb226574b678, type: 2}
     - {fileID: 11400000, guid: 579b9c405f23d8544afd7c19ebf03c31, type: 2}
-  startGold: 180
+    - {fileID: 11400000, guid: dab111c03e82e7b42aaf72943a8fb270, type: 2}
+    - {fileID: 11400000, guid: dab111c03e82e7b42aaf72943a8fb270, type: 2}
+    - {fileID: 11400000, guid: 5f142b6771640a343bbe9fd2bbffe6f8, type: 2}
+    - {fileID: 11400000, guid: 5f142b6771640a343bbe9fd2bbffe6f8, type: 2}
+    - {fileID: 11400000, guid: 4332f626e6963204988acb226574b678, type: 2}
+    - {fileID: 11400000, guid: dab111c03e82e7b42aaf72943a8fb270, type: 2}
+    - {fileID: 11400000, guid: 1ffc27e2b4a8b3343899cd2217e885a0, type: 2}
+    - {fileID: 11400000, guid: 5f142b6771640a343bbe9fd2bbffe6f8, type: 2}
+    - {fileID: 11400000, guid: 9e6612e3fae981b44b850e899d962d2f, type: 2}
+    - {fileID: 11400000, guid: 4503cb4fc94f01b42b72c261c1d37888, type: 2}
+    - {fileID: 11400000, guid: cf190d76214bc704380b838663dbbf14, type: 2}
+  startGold: 220
   block: {fileID: 3794926003884879259, guid: 325da59856c7b1749813f7d06112a535, type: 3}
