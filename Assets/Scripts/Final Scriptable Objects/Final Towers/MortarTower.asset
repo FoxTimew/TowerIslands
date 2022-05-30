@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bName: MortarTower
   type: 0
-  healthPoints: 2000
+  healthPoints: 1600
   energyRequired: 10
-  goldRequired: 40
+  goldRequired: 30
   level: 0
   nextLevel: {fileID: 0}
   upgradeCost: 0
-  damage: 180
+  damage: 120
   attackSpeed: 0.5
   damageType: 0
   range: 5
