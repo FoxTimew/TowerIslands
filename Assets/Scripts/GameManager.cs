@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform enemyGroup;
     private GameObject bargeGO;
     private GameObject enemyGO;
+    public LevelButton selectedLevelButton;
 
 
     public void StartLevel()
@@ -173,7 +174,7 @@ public class GameManager : MonoBehaviour
     public void StartWave()
     {
         nextWavePressed = true;
-        StopCoroutine(timerNextWaveRoutine);
+        if(selectableBlock)StopCoroutine(timerNextWaveRoutine);
         if(currentWave<levelManager.selectedLevel.waves.Count) StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
@@ -226,9 +227,9 @@ public class GameManager : MonoBehaviour
 
             if (waveCount > 0)
             {
+                selectableBlock = true;
                 timerNextWaveRoutine = StartCoroutine(DisableNextWave());
                 timer.SetActive(true);
-                selectableBlock = true;
                 yield return preparationTime;
                 nextWaveActivable = true;
                 timer.SetActive(false);
@@ -239,6 +240,7 @@ public class GameManager : MonoBehaviour
         while (enemyGroup.childCount > 0) yield return null;
         ResetLevel();
         ClearBuildings();
+        selectedLevelButton = null;
         levelManager.selectedLevel.isCompleted = true;
         Debug.Log(key);
         islandCreator.blocksCount[levelManager.selectedLevel.block.index]++;

@@ -368,6 +368,7 @@ public class UI_Manager : MonoBehaviour
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
+        
         /*Sound*/ AudioManager.instance.Play(20, false);
         yield return new WaitForSeconds(transitionDuration / 2);
         switch ((MenuEnum)menuID)

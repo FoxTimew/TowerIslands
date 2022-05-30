@@ -36,6 +36,7 @@ public class Trap : Building
     {
         base.Reset();
         reloading = false;
+        enemies.Clear();
     }
 
     private IEnumerator StartTrap()
