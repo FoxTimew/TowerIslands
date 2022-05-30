@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 0
   healthPoints: 1400
   energyRequired: 2
-  goldRequired: 22
+  goldRequired: 20
   level: 2
   nextLevel: {fileID: 11400000}
   upgradeCost: 0

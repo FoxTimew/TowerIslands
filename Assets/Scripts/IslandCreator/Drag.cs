@@ -29,11 +29,11 @@ public class Drag : MonoBehaviour
         blocksGo.transform.position = dragPointer.isSnapped ? dragPointer.snapPosition : transform.position;
     }
 
-    private void OnMouseDown()
-    {
-        //if (Utils.IsPointerOverUI()) return;
-        GameManager.instance.cameraZoom.enabled = false;
-    }
+    // private void OnMouseDown()
+    // {
+    //     if (Utils.IsPointerOverUI()) return;
+    //     GameManager.instance.cameraZoom.enabled = false;
+    // }
     
 
     private void OnMouseDrag()
@@ -49,7 +49,7 @@ public class Drag : MonoBehaviour
     
     private void OnMouseUp()
     {
-        GameManager.instance.cameraZoom.enabled = true;
+        //GameManager.instance.cameraZoom.enabled = true;
         transform.position = blocksGo.transform.position;
         //blocksGo.transform.parent = transform.parent;
         ChangeSprite(IsPlaceable());

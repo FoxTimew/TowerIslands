@@ -67,8 +67,7 @@ public class IslandCreator : MonoBehaviour
         drag.gameObject.SetActive(false);
         drag.enabled = false;
         drag.dragPointer.enabled = false;
-        GameManager.instance.cameraZoom.enabled = true;
-        
+
     }
     
 }

@@ -113,7 +113,7 @@ public class UI_Manager : MonoBehaviour
     public void OpenMenu(int menuEnumValue)
     {
         /*Sound*/ AudioManager.instance.Play(21, false);
-        if (menuEnumValue != (int)MenuEnum.BlockInfo && menuEnumValue != (int)MenuEnum.FeedbackUI)
+        if (menuEnumValue != (int)MenuEnum.BlockInfo)
         {
             StartCoroutine(OpenMenuWithTransition(menuEnumValue));
         }
@@ -125,21 +125,41 @@ public class UI_Manager : MonoBehaviour
                 linker = blockInfo.transform.GetChild(1).GetComponent<ContextMenuLinker>();
                 if (GameManager.instance.selectedBlock.building == null)
                 {
+                    Debug.Log(("No Building"));
                     tmpChild = blockInfo.transform.GetChild(0).gameObject;
                     linker = tmpChild.GetComponent<ContextMenuLinker>();
                     if (!tmpChild.activeSelf)
                     {
+                        Debug.Log(("MenuNotActive"));
                         tmpChild.SetActive(true);
-                        linker.LinkListeners(GameManager.instance.selectedBlock);
+                        if (GameManager.instance.selectedBlock != null)
+                        {
+                            Debug.Log("OpenMenu 1 Block not null");
+                            linker.LinkListeners(GameManager.instance.selectedBlock);
+                        }
+                        else
+                        {
+                            Debug.Log("OpenMenu 1 Block null");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Menu Already Opened");
                     }
                 }
                 else
                 {
+                    Debug.Log(("1 Building"));
                     linker.cma.PlayAnimation();
                     linker.gameObject.SetActive(true);
                     if (GameManager.instance.selectedBlock != null)
                     {
+                        Debug.Log("OpenMenu 2 Block not null");
                         linker.LinkListeners(GameManager.instance.selectedBlock);
+                    }
+                    else
+                    {
+                        Debug.Log("OpenMenu 2 Block null");
                     }
                 }
             }else
@@ -208,7 +228,7 @@ public class UI_Manager : MonoBehaviour
         {
             defeatMenu.GetComponent<DefeatMenu>().Close();
         }
-        else if (menuEnumValue != (int) MenuEnum.BlockInfo && menuEnumValue != (int) MenuEnum.FeedbackUI)
+        else if (menuEnumValue != (int) MenuEnum.BlockInfo)
         {
             StartCoroutine(CloseMenuWithTransition(menuEnumValue));
         }
@@ -348,6 +368,7 @@ public class UI_Manager : MonoBehaviour
     }
     IEnumerator OpenMenuWithTransition(int menuID)
     {
+        
         /*Sound*/ AudioManager.instance.Play(20, false);
         yield return new WaitForSeconds(transitionDuration / 2);
         switch ((MenuEnum)menuID)
