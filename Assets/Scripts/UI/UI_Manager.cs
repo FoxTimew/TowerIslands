@@ -196,6 +196,7 @@ public class UI_Manager : MonoBehaviour
                 islandEditorMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelSelectionMenu):
+                GameManager.instance.selectedLevelButton = null;
                 foreach (Transform child in levelSelectionScroller.transform.GetChild(0).transform)
                 {
                     Destroy(child.gameObject);
@@ -203,6 +204,7 @@ public class UI_Manager : MonoBehaviour
                 levelSelectionMenu.SetActive(false);
                 break;
             case (MenuEnum.LevelPreparationMenu):
+                
                 levelPreparationMenu.SetActive(false);
                 break;
             case (MenuEnum.PlayingLevelMenu):
