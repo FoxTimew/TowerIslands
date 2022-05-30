@@ -172,6 +172,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
+        nextWavePressed = true;
         if(currentWave<levelManager.selectedLevel.waves.Count) StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
@@ -194,7 +195,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-
+    private bool nextWavePressed;
     [SerializeField] private TMP_Text waveText;
     private string key;
     private WaitForSeconds timerNextWave = new WaitForSeconds(8);
@@ -206,11 +207,12 @@ public class GameManager : MonoBehaviour
         currentWave = 0;
         Debug.Log($"Wave count : {waveCount}");
         nextWaveActivable = true;
+        nextWavePressed = false;
         while (waveCount > 0)
         {
-            
-            if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
-            
+            if(!nextWavePressed) 
+                if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
+            nextWavePressed = false;
             while (enemyGroup.childCount > 0) yield return null;
             if (currentWave < levelManager.selectedLevel.waves.Count)
             {
@@ -278,8 +280,6 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(bargeSo.waitingTime);
         }
         waveCount--;
-        foreach (var building in buildings) building.ResetTarget();
-        
         yield return null;
     }
     private Vector3 lastBargeSpawnPoint = Vector3.zero;
