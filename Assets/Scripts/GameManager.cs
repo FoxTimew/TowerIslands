@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     private RaycastHit2D hit2D;
     private void Update()
     {
+        if (enemyGroup.childCount <= 0) waveEnding = true;
         if (nextWaveActivable)
         {
             if (levelManager.selectedLevel) nextWaveButton.SetActive(currentWave < levelManager.selectedLevel.waves.Count);
@@ -172,6 +173,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartWave()
     {
+        skipPrepTime = true;
         if(currentWave<levelManager.selectedLevel.waves.Count) StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
@@ -194,7 +196,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-
+    private bool waveEnding;
     [SerializeField] private TMP_Text waveText;
     private string key;
     private WaitForSeconds timerNextWave = new WaitForSeconds(8);
@@ -208,27 +210,7 @@ public class GameManager : MonoBehaviour
         nextWaveActivable = true;
         while (waveCount > 0)
         {
-            
             if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
-            
-            while (enemyGroup.childCount > 0) yield return null;
-            if (currentWave < levelManager.selectedLevel.waves.Count)
-            {
-                UI_Manager.instance.waveTransitionObject.gameObject.SetActive(true);
-                yield return StartCoroutine(UI_Manager.instance.waveTransitionObject.WaveClearedAnimationCoroutine());
-            }
-
-            if (waveCount > 0)
-            {
-                StartCoroutine(DisableNextWave());
-                timer.SetActive(true);
-                selectableBlock = true;
-                yield return preparationTime;
-                nextWaveActivable = true;
-                timer.SetActive(false);
-                UI_Manager.instance.CloseMenu(13);
-            }
-            yield return null;
         }
         while (enemyGroup.childCount > 0) yield return null;
         ResetLevel();
@@ -265,9 +247,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
+    bool skipPrepTime;
     IEnumerator SpawnWave(Wave wave)
     {
+        waveEnding = false;
         currentWave++;
         UI_Manager.instance.UpdateWaveUI();
         selectableBlock = false;
@@ -277,9 +260,38 @@ public class GameManager : MonoBehaviour
             SpawnBarge(bargeSo);
             yield return new WaitForSeconds(bargeSo.waitingTime);
         }
+        
+        while (!waveEnding)
+        { 
+            yield return null;
+        }
+        
         waveCount--;
+
+
+        if (skipPrepTime)
+        {
+            skipPrepTime = false;
+            yield break;
+        }
         foreach (var building in buildings) building.ResetTarget();
         
+        if (currentWave < levelManager.selectedLevel.waves.Count)
+        {
+            UI_Manager.instance.waveTransitionObject.gameObject.SetActive(true);
+            yield return StartCoroutine(UI_Manager.instance.waveTransitionObject.WaveClearedAnimationCoroutine());
+        }
+
+        if (waveCount > 0)
+        {
+            StartCoroutine(DisableNextWave());
+            timer.SetActive(true);
+            selectableBlock = true;
+            yield return preparationTime;
+            nextWaveActivable = true;
+            timer.SetActive(false);
+            UI_Manager.instance.CloseMenu(13);
+        }
         yield return null;
     }
     private Vector3 lastBargeSpawnPoint = Vector3.zero;
