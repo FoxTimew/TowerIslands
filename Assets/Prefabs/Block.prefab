@@ -109,7 +109,8 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 29919b7c603634341a0151b3eea95e8b, type: 3}
   - {fileID: 21300000, guid: 3ab1c64cce6bc4b44a368a457a015f6c, type: 3}
-  construction: {fileID: 2859371981305781148}
+  placementFx: {fileID: 2859371981305781148}
+  constructionFx: {fileID: 1997989145751655550}
   placed: 0
   building: {fileID: 0}
   energy: 2
@@ -194,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 4306348081183486407, guid: cbd6e0b9950e28d43b1132cb2dc3b95b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.89
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306348081183486407, guid: cbd6e0b9950e28d43b1132cb2dc3b95b,
         type: 3}
@@ -351,6 +352,11 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4306348082872617439, guid: cbd6e0b9950e28d43b1132cb2dc3b95b,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd6e0b9950e28d43b1132cb2dc3b95b, type: 3}
 --- !u!198 &2859371981305781148 stripped
@@ -376,6 +382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_pouf
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570118383694488601, guid: 19453d6a2fb3e2a40baa11352500d95f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2570118383694488614, guid: 19453d6a2fb3e2a40baa11352500d95f,
         type: 3}
@@ -405,7 +416,7 @@ PrefabInstance:
     - target: {fileID: 2570118383694488615, guid: 19453d6a2fb3e2a40baa11352500d95f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2570118383694488615, guid: 19453d6a2fb3e2a40baa11352500d95f,
         type: 3}
@@ -444,6 +455,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19453d6a2fb3e2a40baa11352500d95f, type: 3}
+--- !u!198 &1997989145751655550 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2570118383694488614, guid: 19453d6a2fb3e2a40baa11352500d95f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4039919662615670872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1997989145751655551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2570118383694488615, guid: 19453d6a2fb3e2a40baa11352500d95f,

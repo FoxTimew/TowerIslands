@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
@@ -16,7 +17,9 @@ public class Block : MonoBehaviour
     public bool selectable = true;
     [SerializeField] private List<Sprite> sprites;
 
-    [SerializeField] private ParticleSystem construction;
+    [SerializeField] private ParticleSystem placementFx;
+    [SerializeField] private ParticleSystem constructionFx;
+    
 
     private Collider2D collider;
     public bool placed;
@@ -148,6 +151,7 @@ public class Block : MonoBehaviour
     private GameObject go;
     public void Build(BuildingSO building)
     {
+        constructionFx.Play();
         SpentEnergy(building.energyRequired);
         go = Pooler.instance.Pop(building.bName);
         go.transform.parent = transform;
@@ -190,6 +194,6 @@ public class Block : MonoBehaviour
     public void PlaceBlock()
     {
         if (placed) return;
-        construction.Play();
+        placementFx.Play();
     }
 }
