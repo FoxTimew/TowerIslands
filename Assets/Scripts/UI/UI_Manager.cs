@@ -71,6 +71,7 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField] private Sprite tickImage;
     [SerializeField] private Sprite redCrossImage;
+    [SerializeField] private GameObject transition;
 
     [Header("Button Sprites")] public Sprite lockedButtonSprite;
     public Sprite towerButtonSprite;
@@ -116,6 +117,7 @@ public class UI_Manager : MonoBehaviour
         if (menuEnumValue != (int)MenuEnum.BlockInfo)
         {
             StartCoroutine(OpenMenuWithTransition(menuEnumValue));
+            transition.SetActive(true);
         }
         else
         {

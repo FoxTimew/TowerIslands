@@ -32,7 +32,6 @@ public class DefeatMenu : MonoBehaviour
 
     public void Disable()
     {
-        StartCoroutine(SetransitionActive());
         gameObject.SetActive(false);
     }
 
@@ -43,10 +42,5 @@ public class DefeatMenu : MonoBehaviour
         tween.Kill();
         background.rotation= Quaternion.Euler(Vector3.zero);
     }
-    private WaitForSeconds time = new WaitForSeconds(0.5f);
-    IEnumerator SetransitionActive()
-    {
-        yield return time;
-        transition.SetActive(true);
-    }
+
 }

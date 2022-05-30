@@ -45,20 +45,12 @@ public class VictoryScreen : MonoBehaviour
         UI_Manager.instance.CloseMenu(12);
         UI_Manager.instance.OpenMenu(4);
         particleSystem.Stop();
-        StartCoroutine(SetransitionActive());
     }
 
     private void OnDisable()
     {
         tween.Kill();
         sun.rotation= Quaternion.Euler(Vector3.zero);
-    }
-
-    private WaitForSeconds time = new WaitForSeconds(0.5f);
-    IEnumerator SetransitionActive()
-    {
-        yield return time;
-        transition.SetActive(true);
     }
     
 }

@@ -14,8 +14,9 @@ public class Trap : Building
     private WaitForSeconds reloadingTime = new WaitForSeconds(1.5f);
     
     private Coroutine routine;
-    void Start()
+    void OnEnable()
     {
+        StopAllCoroutines();
         StartCoroutine(StartTrap());
     }
     
@@ -23,8 +24,6 @@ public class Trap : Building
     {
         if (!other.transform.CompareTag("Enemy")) return;
         enemies.Add(other);
-        
-        
     }
 
     private void OnTriggerExit2D(Collider2D other)
