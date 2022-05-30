@@ -173,6 +173,7 @@ public class GameManager : MonoBehaviour
     public void StartWave()
     {
         nextWavePressed = true;
+        StopCoroutine(timerNextWaveRoutine);
         if(currentWave<levelManager.selectedLevel.waves.Count) StartCoroutine(SpawnWave(levelManager.selectedLevel.waves[currentWave]));
     }
 
@@ -195,6 +196,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private Coroutine timerNextWaveRoutine;
     private bool nextWavePressed;
     [SerializeField] private TMP_Text waveText;
     private string key;
@@ -212,7 +214,9 @@ public class GameManager : MonoBehaviour
         {
             if(!nextWavePressed) 
                 if(currentWave<level.waves.Count) StartCoroutine(SpawnWave(level.waves[currentWave]));
+            
             nextWavePressed = false;
+            
             while (enemyGroup.childCount > 0) yield return null;
             if (currentWave < levelManager.selectedLevel.waves.Count)
             {
@@ -222,7 +226,7 @@ public class GameManager : MonoBehaviour
 
             if (waveCount > 0)
             {
-                StartCoroutine(DisableNextWave());
+                timerNextWaveRoutine = StartCoroutine(DisableNextWave());
                 timer.SetActive(true);
                 selectableBlock = true;
                 yield return preparationTime;
@@ -249,7 +253,6 @@ public class GameManager : MonoBehaviour
     public bool nextWaveActivable = true;
     private IEnumerator DisableNextWave()
     {
-        
         yield return timerNextWave;
         if (currentWave + 1 < levelManager.selectedLevel.waves.Count) yield break;
         nextWaveActivable = false;
