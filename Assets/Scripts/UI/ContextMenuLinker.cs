@@ -127,7 +127,7 @@ public class ContextMenuLinker : MonoBehaviour
                     {
                         tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
                         
-                        if (tmpTowerSO.nextLevel != null &&
+                        if (tmpTowerSO.level != 2 &&
                             EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost && 
                             GameManager.instance.selectedBlock.building.hp > 0)
                         {
@@ -161,10 +161,10 @@ public class ContextMenuLinker : MonoBehaviour
                     //Sell button
                     buttons[1].onClick.RemoveAllListeners();
                     buttons[1].onClick.AddListener(SellBuildingListener);
-                    sellCostText.text = GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
+                    sellCostText.text = GameManager.instance.selectedBlock.building.IsBuildingDestroyed() ? "3" : GameManager.instance.selectedBlock.building.buildingSO.goldRequired.ToString();
                     //Repair button
                     //Si le repair est dispo + on a assez d'argent 
-                    if (GameManager.instance.selectedBlock.building.isBuildingDestroyed() &&
+                    if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed() &&
                         EconomyManager.instance.GetGoldAmount() >
                         GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
                         (GameManager.instance.selectedBlock.building.buildingSO.healthPoints-GameManager.instance.selectedBlock.building.hp)*100/GameManager.instance.selectedBlock.building.buildingSO.healthPoints)
@@ -181,7 +181,7 @@ public class ContextMenuLinker : MonoBehaviour
                         buttons[2].interactable = false;
                     }
 
-                    if (GameManager.instance.selectedBlock.building.isBuildingDestroyed())
+                    if (GameManager.instance.selectedBlock.building.IsBuildingDestroyed())
                     {
                         repairCostText.text = (GameManager.instance.selectedBlock.building.buildingSO.goldRequired *
                                                (GameManager.instance.selectedBlock.building.buildingSO.healthPoints -
