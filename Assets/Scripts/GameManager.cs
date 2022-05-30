@@ -219,6 +219,7 @@ public class GameManager : MonoBehaviour
             nextWavePressed = false;
             
             while (enemyGroup.childCount > 0) yield return null;
+            nextWavePressed = false;
             if (currentWave < levelManager.selectedLevel.waves.Count)
             {
                 UI_Manager.instance.waveTransitionObject.gameObject.SetActive(true);
