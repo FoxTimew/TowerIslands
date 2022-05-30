@@ -127,7 +127,7 @@ public class ContextMenuLinker : MonoBehaviour
                     {
                         tmpTowerSO = (TowerSO) GameManager.instance.selectedBlock.building.buildingSO;
                         
-                        if (tmpTowerSO.level != 2 &&
+                        if (tmpTowerSO.level != 2 && tmpTowerSO.nextLevel is not null &&
                             EconomyManager.instance.GetGoldAmount() >= tmpTowerSO.upgradeCost && 
                             GameManager.instance.selectedBlock.building.hp > 0)
                         {
